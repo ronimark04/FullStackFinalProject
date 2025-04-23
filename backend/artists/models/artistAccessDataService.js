@@ -1,0 +1,75 @@
+const Artist = require('./mongodb/Artist');
+
+const getArtists = async () => {
+    try {
+        let artists = await Artist.find();
+        return artists;
+    }
+    catch (err) {
+        throw err;
+    }
+};
+
+const getArtist = async (artistId) => {
+    try {
+        let artist = await Artist.findById(artistId);
+        return artist;
+    }
+    catch (err) {
+        throw err;
+    }
+};
+
+const createArtist = async (newArtist) => {
+    try {
+        let artist = new Artist(newArtist);
+        artist = await artist.save();
+        return artist;
+    } catch (err) {
+        throw err;
+    }
+};
+
+const updateArtist = async (artistId, newArtist) => {
+    try {
+        let artist = await Artist.findByIdAndUpdate(artistId, newArtist, { new: true });
+        return artist;
+    }
+    catch (err) {
+        throw err;
+    }
+};
+
+const likeArtist = async (artistId, userId) => {
+    try {
+        let artist = await Artist.findById(artistId);
+        if (!artist) {
+            const error = new Error("Error: Artist not found in database");
+            error.status = 404;
+            throw error;
+        };
+        if (artist.likes.includes(userId)) {
+            let newLikesArray = artist.likes.filter(id => id !== userId);
+            artist.likes = newLikesArray;
+        } else {
+            artist.likes.push(userId);
+        }
+        await artist.save();
+        return artist;
+    }
+    catch (err) {
+        throw err;
+    }
+};
+
+const deleteArtist = async (artistId) => {
+    try {
+        let artist = await Artist.findByIdAndDelete(artistId);
+        return artist;
+    }
+    catch (err) {
+        throw err;
+    }
+};
+
+module.exports = { getArtists, getArtist, createArtist, updateArtist, likeArtist, deleteArtist };
