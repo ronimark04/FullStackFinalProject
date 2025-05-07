@@ -34,4 +34,4 @@ app.listen(PORT, async () => {
     // }
 });
 
-//TODO: uninstall unnecessary libraries, seed data
+//TODO: uninstall unnecessary libraries, seed data, choose areas

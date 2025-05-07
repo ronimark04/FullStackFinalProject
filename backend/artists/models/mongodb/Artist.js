@@ -17,10 +17,16 @@ const artistSchema = new mongoose.Schema({
             message: props => `${props.value} is not a valid 4-digit year!`
         }
     },
+    location: {
+        type: String,
+        required: true,
+        default: null
+    },
     area: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Area',
-        required: true
+        // required: true,
+        default: null
     },
     image: image,
     wiki: URL,

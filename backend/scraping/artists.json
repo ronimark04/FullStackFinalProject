@@ -1,0 +1,3316 @@
+[
+  {
+    "name": "סגול 59",
+    "isBand": false,
+    "birthYear": 1968,
+    "location": "עין החורש",
+    "area": "עמק חפר",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Sagol59_Official.jpg/250px-Sagol59_Official.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A1%D7%92%D7%95%D7%9C_59",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דין דין אביב",
+    "isBand": false,
+    "birthYear": 1974,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/No_free_image_-_woman-he.svg/150px-No_free_image_-_woman-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%99%D7%9F_%D7%93%D7%99%D7%9F_%D7%90%D7%91%D7%99%D7%91",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אביבה אבידן",
+    "isBand": false,
+    "birthYear": 1953,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Aviva_Avidan.jpg/250px-Aviva_Avidan.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%99%D7%91%D7%94_%D7%90%D7%91%D7%99%D7%93%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אילנה אביטל",
+    "isBand": false,
+    "birthYear": 1960,
+    "location": "נתניה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ilana_avital.jpg/250px-Ilana_avital.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%9C%D7%A0%D7%94_%D7%90%D7%91%D7%99%D7%98%D7%9C",
+    "bornElsewhere": "צרפת"
+  },
+  {
+    "name": "אדם (זמר)",
+    "isBand": false,
+    "birthYear": 1960,
+    "location": "עכו",
+    "area": "הגליל המערבי",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Adam_%28Singer%29.jpg/250px-Adam_%28Singer%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%93%D7%9D_(%D7%96%D7%9E%D7%A8)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עומר אדם",
+    "isBand": false,
+    "birthYear": 1993,
+    "location": "משמר השבעה",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Omer_Adam_1.jpg/250px-Omer_Adam_1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%95%D7%9E%D7%A8_%D7%90%D7%93%D7%9D",
+    "bornElsewhere": "ארצות הברית"
+  },
+  {
+    "name": "שלומית אהרון",
+    "isBand": false,
+    "birthYear": 1950,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Shlomit_Aharon1.jpg/250px-Shlomit_Aharon1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%9C%D7%95%D7%9E%D7%99%D7%AA_%D7%90%D7%94%D7%A8%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "קובי אוז",
+    "isBand": false,
+    "birthYear": 1969,
+    "location": "שדרות",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kobi_Oz_%28cropped%29.jpg/250px-Kobi_Oz_%28cropped%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%91%D7%99_%D7%90%D7%95%D7%96",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אלון אולארצ'יק",
+    "isBand": false,
+    "birthYear": 1950,
+    "location": "בת ים",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Alon_Oleartchik.jpg/250px-Alon_Oleartchik.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%95%D7%9F_%D7%90%D7%95%D7%9C%D7%90%D7%A8%D7%A6%27%D7%99%D7%A7",
+    "bornElsewhere": "פולין"
+  },
+  {
+    "name": "חיים אוליאל",
+    "isBand": false,
+    "birthYear": 1956,
+    "location": "שדרות",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Ha%C3%AFm_Ulliel.jpg/250px-Ha%C3%AFm_Ulliel.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%97%D7%99%D7%99%D7%9D_%D7%90%D7%95%D7%9C%D7%99%D7%90%D7%9C",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רם אוריון",
+    "isBand": false,
+    "birthYear": 1967,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Ram_Orion.jpg/250px-Ram_Orion.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%9D_%D7%90%D7%95%D7%A8%D7%99%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יגל אושרי",
+    "isBand": false,
+    "birthYear": 2000,
+    "location": "נתניה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Yagel_oshri.jpg/250px-Yagel_oshri.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%92%D7%9C_%D7%90%D7%95%D7%A9%D7%A8%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "איזי",
+    "isBand": false,
+    "birthYear": 1987,
+    "location": "כפר סבא",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/%D7%90%D7%99%D7%96%D7%99_%D7%91%D7%94%D7%A9%D7%A7%D7%94_%D7%9C%D7%90%D7%9C%D7%91%D7%95%D7%9D_%D7%91%D7%91%D7%99%D7%98%2C_%D7%97%D7%99%D7%A4%D7%94.jpeg/250px-%D7%90%D7%99%D7%96%D7%99_%D7%91%D7%94%D7%A9%D7%A7%D7%94_%D7%9C%D7%90%D7%9C%D7%91%D7%95%D7%9D_%D7%91%D7%91%D7%99%D7%98%2C_%D7%97%D7%99%D7%A4%D7%94.jpeg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%96%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "תמר אייזנמן",
+    "isBand": false,
+    "birthYear": 1980,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/071212-tamar_eisenman.jpg/250px-071212-tamar_eisenman.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%AA%D7%9E%D7%A8_%D7%90%D7%99%D7%99%D7%96%D7%A0%D7%9E%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אילנית",
+    "isBand": false,
+    "birthYear": 1947,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Ilanit_aug24.jpg/250px-Ilanit_aug24.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%9C%D7%A0%D7%99%D7%AA",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ששון איפרם שאולוב",
+    "isBand": false,
+    "birthYear": 2002,
+    "location": "חיפה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Sasson_Ifram_Shaulov.jpg/250px-Sasson_Ifram_Shaulov.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%A9%D7%95%D7%9F_%D7%90%D7%99%D7%A4%D7%A8%D7%9D_%D7%A9%D7%90%D7%95%D7%9C%D7%95%D7%91",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דורית ראובני",
+    "isBand": false,
+    "birthYear": 1952,
+    "location": "שער העמקים",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Moshe_Dayan%2C_David_Elazar_and_others_with_Yair_Dori%2C_who_was_returned_by_the_Egyptians_from_captivity%2C_got_wed_to_his_bride_Shoshana_in_Tel_Aviv_by_chief_rabbi_Shlomo_Goren_%28FL61590196%29.jpg/250px-thumbnail.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%A8%D7%99%D7%AA_%D7%A8%D7%90%D7%95%D7%91%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אישתאר",
+    "isBand": false,
+    "birthYear": 1968,
+    "location": "קריית אתא",
+    "area": "הקריות",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Ishtar%2C_briza_festival%2C_asqelon%27_2010_%28cropped%29.JPG/250px-Ishtar%2C_briza_festival%2C_asqelon%27_2010_%28cropped%29.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%A9%D7%AA%D7%90%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "קורין אלאל",
+    "isBand": false,
+    "birthYear": 1955,
+    "location": "הרצליה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/KorinAllal.jpg/250px-KorinAllal.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%A8%D7%99%D7%9F_%D7%90%D7%9C%D7%90%D7%9C",
+    "bornElsewhere": "תוניסיה"
+  },
+  {
+    "name": "חוה אלברשטיין",
+    "isBand": false,
+    "birthYear": 1946,
+    "location": "קריית חיים",
+    "area": "הקריות",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Chava_Alberstein_tight_composition.jpg/250px-Chava_Alberstein_tight_composition.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%94_%D7%90%D7%9C%D7%91%D7%A8%D7%A9%D7%98%D7%99%D7%99%D7%9F",
+    "bornElsewhere": "פולין"
+  },
+  {
+    "name": "גדי אלטמן",
+    "isBand": false,
+    "birthYear": 1978,
+    "location": "אבן יהודה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/%D7%92%D7%93%D7%99_%D7%90%D7%9C%D7%98%D7%9E%D7%9F.jpg/250px-%D7%92%D7%93%D7%99_%D7%90%D7%9C%D7%98%D7%9E%D7%9F.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%D7%93%D7%99_%D7%90%D7%9C%D7%98%D7%9E%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אליוט (זמרת)",
+    "isBand": false,
+    "birthYear": 1966,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Ellyott_by_alex_livac.JPG/250px-Ellyott_by_alex_livac.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%99%D7%95%D7%98_(%D7%96%D7%9E%D7%A8%D7%AA)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רן אלירן",
+    "isBand": false,
+    "birthYear": 1934,
+    "location": "חיפה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Ran_Eliran_-_Jerusalem1958.jpg/250px-Ran_Eliran_-_Jerusalem1958.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%9F_%D7%90%D7%9C%D7%99%D7%A8%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עדן אלנה",
+    "isBand": false,
+    "birthYear": 2000,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Eden_Alene_by_Moshe_Nachumovich.jpg/250px-Eden_Alene_by_Moshe_Nachumovich.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%93%D7%9F_%D7%90%D7%9C%D7%A0%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אסף אמדורסקי",
+    "isBand": false,
+    "birthYear": 1971,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Assaf_Amdursky_1.jpg/250px-Assaf_Amdursky_1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A1%D7%A3_%D7%90%D7%9E%D7%93%D7%95%D7%A8%D7%A1%D7%A7%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "בני אמדורסקי",
+    "isBand": false,
+    "birthYear": 1931,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Benny_Amdursky_%28FL45981723%29_%28cropped%29.jpg/250px-Benny_Amdursky_%28FL45981723%29_%28cropped%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%91%D7%A0%D7%99_%D7%90%D7%9E%D7%93%D7%95%D7%A8%D7%A1%D7%A7%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אתי אנקרי",
+    "isBand": false,
+    "birthYear": 1963,
+    "location": "לוד",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Etti_Ankri.jpg/250px-Etti_Ankri.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%AA%D7%99_%D7%90%D7%A0%D7%A7%D7%A8%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "תמר אפק",
+    "isBand": false,
+    "birthYear": null,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Tamar_Aphek_Photo_by_Adi_Segal.jpg/250px-Tamar_Aphek_Photo_by_Adi_Segal.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%AA%D7%9E%D7%A8_%D7%90%D7%A4%D7%A7",
+    "bornElsewhere": null
+  },
+  {
+    "name": "גרי אקשטיין",
+    "isBand": false,
+    "birthYear": 1948,
+    "location": "רחובות",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/1/1c/%D7%92%D7%A8%D7%99_%D7%90%D7%A7%D7%A9%D7%98%D7%99%D7%99%D7%9F_%D7%A6%D7%99%D7%9C%D7%9D_%D7%93%D7%A0%D7%99%D7%90%D7%9C_%D7%A6%27%D7%A6%27%D7%99%D7%A7_2006.jpg/250px-%D7%92%D7%A8%D7%99_%D7%90%D7%A7%D7%A9%D7%98%D7%99%D7%99%D7%9F_%D7%A6%D7%99%D7%9C%D7%9D_%D7%93%D7%A0%D7%99%D7%90%D7%9C_%D7%A6%27%D7%A6%27%D7%99%D7%A7_2006.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%D7%A8%D7%99_%D7%90%D7%A7%D7%A9%D7%98%D7%99%D7%99%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ירדנה ארזי",
+    "isBand": false,
+    "birthYear": 1951,
+    "location": "כברי",
+    "area": "הגליל המערבי",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Yardena_Arazi.jpg/250px-Yardena_Arazi.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%93%D7%A0%D7%94_%D7%90%D7%A8%D7%96%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דפנה ארמוני",
+    "isBand": false,
+    "birthYear": 1956,
+    "location": "רביבים",
+    "area": "דרום הנגב והערבה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Dafna_Armoni_Tel_Aviv_Fall_2017.jpg/250px-Dafna_Armoni_Tel_Aviv_Fall_2017.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%A4%D7%A0%D7%94_%D7%90%D7%A8%D7%9E%D7%95%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אגם בוחבוט",
+    "isBand": false,
+    "birthYear": 2003,
+    "location": "באר שבע",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Agam_Buhbut_by_Pini_Siluk.jpg/250px-Agam_Buhbut_by_Pini_Siluk.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%92%D7%9D_%D7%91%D7%95%D7%97%D7%91%D7%95%D7%98",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מאיה בוסקילה",
+    "isBand": false,
+    "birthYear": 1977,
+    "location": "נתניה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Maya_Bouskilla%2C_Yom_Hatzmaut_2014_%2814%29.JPG/250px-Maya_Bouskilla%2C_Yom_Hatzmaut_2014_%2814%29.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%90%D7%99%D7%94_%D7%91%D7%95%D7%A1%D7%A7%D7%99%D7%9C%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שמעון בוסקילה",
+    "isBand": false,
+    "birthYear": 1966,
+    "location": "אופקים",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Shimon_Buskila_1.webp/250px-Shimon_Buskila_1.webp.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%9E%D7%A2%D7%95%D7%9F_%D7%91%D7%95%D7%A1%D7%A7%D7%99%D7%9C%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אבי ביטר",
+    "isBand": false,
+    "birthYear": 1965,
+    "location": "אור יהודה",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Male_no_free_image_yet-he.svg/250px-Male_no_free_image_yet-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%99_%D7%91%D7%99%D7%98%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מוש בן ארי",
+    "isBand": false,
+    "birthYear": 1970,
+    "location": "עפולה",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Mosh_Ben-Ari_05_%28cropped%29.JPG/250px-Mosh_Ben-Ari_05_%28cropped%29.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A9_%D7%91%D7%9F_%D7%90%D7%A8%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עדן בן זקן",
+    "isBand": false,
+    "birthYear": 1994,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Eden_Ben_Zaken_2.jpg/250px-Eden_Ben_Zaken_2.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%93%D7%9F_%D7%91%D7%9F_%D7%96%D7%A7%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אפרת בן צור",
+    "isBand": false,
+    "birthYear": 1968,
+    "location": "עברון",
+    "area": "הגליל המערבי",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/%D7%90%D7%A4%D7%A8%D7%AA_%D7%91%D7%9F_%D7%A6%D7%95%D7%A8%2C_%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C_%D7%94%D7%A4%D7%A1%D7%A0%D7%AA%D7%A8_2022.jpg/250px-%D7%90%D7%A4%D7%A8%D7%AA_%D7%91%D7%9F_%D7%A6%D7%95%D7%A8%2C_%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C_%D7%94%D7%A4%D7%A1%D7%A0%D7%AA%D7%A8_2022.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A4%D7%A8%D7%AA_%D7%91%D7%9F_%D7%A6%D7%95%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "זהבה בן",
+    "isBand": false,
+    "birthYear": 1968,
+    "location": "באר שבע",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Zehava_Ben_1.jpg/250px-Zehava_Ben_1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%96%D7%94%D7%91%D7%94_%D7%91%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אהוד בנאי",
+    "isBand": false,
+    "birthYear": 1953,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/%D7%90%D7%94%D7%95%D7%93_%D7%91%D7%A0%D7%90%D7%99.jpg/250px-%D7%90%D7%94%D7%95%D7%93_%D7%91%D7%A0%D7%90%D7%99.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%94%D7%95%D7%93_%D7%91%D7%A0%D7%90%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אורי בנאי",
+    "isBand": false,
+    "birthYear": 1969,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Uri_Banai.jpg/250px-Uri_Banai.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A8%D7%99_%D7%91%D7%A0%D7%90%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יובל בנאי",
+    "isBand": false,
+    "birthYear": 1962,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Yuval_banay.jpg/250px-Yuval_banay.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%91%D7%9C_%D7%91%D7%A0%D7%90%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יוסי בנאי",
+    "isBand": false,
+    "birthYear": 1932,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Yossi_Banai_1998_1_%28cropped%29.jpg/260px-Yossi_Banai_1998_1_%28cropped%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99_%D7%91%D7%A0%D7%90%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רינת בר",
+    "isBand": false,
+    "birthYear": 1984,
+    "location": "אשדוד",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/%D7%A8%D7%99%D7%A0%D7%AA_%D7%91%D7%A8_%D7%91%D7%94%D7%95%D7%A4%D7%A2%D7%94.JPG/250px-%D7%A8%D7%99%D7%A0%D7%AA_%D7%91%D7%A8_%D7%91%D7%94%D7%95%D7%A4%D7%A2%D7%94.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%99%D7%A0%D7%AA_%D7%91%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "בניה ברבי",
+    "isBand": false,
+    "birthYear": 1989,
+    "location": "טבריה",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Benaia_Barabi_-_%D7%9E%D7%A9%D7%94_%D7%A0%D7%97%D7%95%D7%9E%D7%95%D7%91%D7%99%D7%A5.jpg/250px-Benaia_Barabi_-_%D7%9E%D7%A9%D7%94_%D7%A0%D7%97%D7%95%D7%9E%D7%95%D7%91%D7%99%D7%A5.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%91%D7%A0%D7%99%D7%94_%D7%91%D7%A8%D7%91%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דנה ברגר",
+    "isBand": false,
+    "birthYear": 1970,
+    "location": "חיפה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Dana_berger.jpg/250px-Dana_berger.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%A0%D7%94_%D7%91%D7%A8%D7%92%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דויד ברוזה",
+    "isBand": false,
+    "birthYear": 1955,
+    "location": "חיפה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/d/d9/David_Broza_in_Berlin_-_by_Nir_Nussbaum.jpg/250px-David_Broza_in_Berlin_-_by_Nir_Nussbaum.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%99%D7%93_%D7%91%D7%A8%D7%95%D7%96%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נטע ברזילי",
+    "isBand": false,
+    "birthYear": 1993,
+    "location": "הוד השרון",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Netta_Sofia_Pride_2019_2_%28cropped%29.png/250px-Netta_Sofia_Pride_2019_2_%28cropped%29.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%98%D7%A2_%D7%91%D7%A8%D7%96%D7%99%D7%9C%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שלווה ברטי",
+    "isBand": false,
+    "birthYear": 1961,
+    "location": "נתניה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Shalva_berti.jpg/250px-Shalva_berti.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%9C%D7%95%D7%95%D7%94_%D7%91%D7%A8%D7%98%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ישראל ברייט",
+    "isBand": false,
+    "birthYear": 1963,
+    "location": "חיפה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/%D7%99%D7%A9%D7%A8%D7%90%D7%9C_%D7%91%D7%A8%D7%99%D7%99%D7%98.jpg/250px-%D7%99%D7%A9%D7%A8%D7%90%D7%9C_%D7%91%D7%A8%D7%99%D7%99%D7%98.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%A9%D7%A8%D7%90%D7%9C_%D7%91%D7%A8%D7%99%D7%99%D7%98",
+    "bornElsewhere": null
+  },
+  {
+    "name": "בני ברמן",
+    "isBand": false,
+    "birthYear": 1938,
+    "location": "נתניה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Benny_Berman.jpg/250px-Benny_Berman.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%91%D7%A0%D7%99_%D7%91%D7%A8%D7%9E%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מיקי גבריאלוב",
+    "isBand": false,
+    "birthYear": 1949,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Miki_Gavrielov1.jpg/250px-Miki_Gavrielov1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%A7%D7%99_%D7%92%D7%91%D7%A8%D7%99%D7%90%D7%9C%D7%95%D7%91",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אבנר גדסי",
+    "isBand": false,
+    "birthYear": 1952,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Avner_gadassi.jpg/250px-Avner_gadassi.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%A0%D7%A8_%D7%92%D7%93%D7%A1%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "גידי גוב",
+    "isBand": false,
+    "birthYear": 1950,
+    "location": "רחובות",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Gidi_Gov2.jpg/250px-Gidi_Gov2.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%D7%99%D7%93%D7%99_%D7%92%D7%95%D7%91",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אדר גולד",
+    "isBand": false,
+    "birthYear": 1988,
+    "location": "חולון",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Adar_Gold.jpg/250px-Adar_Gold.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%93%D7%A8_%D7%92%D7%95%D7%9C%D7%93",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אייל גולן",
+    "isBand": false,
+    "birthYear": 1971,
+    "location": "רחובות",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Eyal_Golan_1_%28cropped%29.jpg/250px-Eyal_Golan_1_%28cropped%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%99%D7%9C_%D7%92%D7%95%D7%9C%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "טל גורדון",
+    "isBand": false,
+    "birthYear": 1968,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tal_Gordon_%28tal-4%29.jpg/250px-Tal_Gordon_%28tal-4%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%98%D7%9C_%D7%92%D7%95%D7%A8%D7%93%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ישראל גוריון",
+    "isBand": false,
+    "birthYear": 1935,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Israel_Gurion.jpg/250px-Israel_Gurion.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%A9%D7%A8%D7%90%D7%9C_%D7%92%D7%95%D7%A8%D7%99%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "גאולה גיל",
+    "isBand": false,
+    "birthYear": 1932,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/a/a0/Geula-Gill.jpg/250px-Geula-Gill.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%D7%90%D7%95%D7%9C%D7%94_%D7%92%D7%99%D7%9C",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ריקי גל",
+    "isBand": false,
+    "birthYear": 1950,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Riki_Gal.jpg/250px-Riki_Gal.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%99%D7%A7%D7%99_%D7%92%D7%9C",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עמרי גליקמן",
+    "isBand": false,
+    "birthYear": 1982,
+    "location": "רמת השרון",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/%D7%A2%D7%95%D7%9E%D7%A8%D7%99_%D7%92%D7%9C%D7%99%D7%A7%D7%9E%D7%9F_%D7%A1%D7%95%D7%9C%D7%9F_%D7%9C%D7%94%D7%A7%D7%AA_%D7%94%D7%AA%D7%A7%D7%95%D7%95%D7%94_6.jpg/250px-%D7%A2%D7%95%D7%9E%D7%A8%D7%99_%D7%92%D7%9C%D7%99%D7%A7%D7%9E%D7%9F_%D7%A1%D7%95%D7%9C%D7%9F_%D7%9C%D7%94%D7%A7%D7%AA_%D7%94%D7%AA%D7%A7%D7%95%D7%95%D7%94_6.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%A8%D7%99_%D7%92%D7%9C%D7%99%D7%A7%D7%9E%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נורית גלרון",
+    "isBand": false,
+    "birthYear": 1951,
+    "location": "הרצליה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Flickr_-_Government_Press_Office_%28GPO%29_-_SINGER_NURIT_GALRON_PERFORMING_AT_A_MEMORIAL_SERVICE_HELD_FOR_PM_YITZHAK_RABIN.jpg/250px-Flickr_-_Government_Press_Office_%28GPO%29_-_SINGER_NURIT_GALRON_PERFORMING_AT_A_MEMORIAL_SERVICE_HELD_FOR_PM_YITZHAK_RABIN.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%95%D7%A8%D7%99%D7%AA_%D7%92%D7%9C%D7%A8%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שלמה גרוניך",
+    "isBand": false,
+    "birthYear": 1949,
+    "location": "חדרה",
+    "area": "עמק חפר",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Shlomo_Gronich_at_Jems_December_2010.jpg/250px-Shlomo_Gronich_at_Jems_December_2010.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%9C%D7%9E%D7%94_%D7%92%D7%A8%D7%95%D7%A0%D7%99%D7%9A",
+    "bornElsewhere": null
+  },
+  {
+    "name": "טובה גרטנר",
+    "isBand": false,
+    "birthYear": 1956,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/TovaGertner.jpg/250px-TovaGertner.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%98%D7%95%D7%91%D7%94_%D7%92%D7%A8%D7%98%D7%A0%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "תמיר גרינברג (מוזיקאי)",
+    "isBand": false,
+    "birthYear": 1994,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/1_Tamir_Greenberg.jpg/250px-1_Tamir_Greenberg.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%AA%D7%9E%D7%99%D7%A8_%D7%92%D7%A8%D7%99%D7%A0%D7%91%D7%A8%D7%92_(%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%90%D7%99)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "צילה דגן",
+    "isBand": false,
+    "birthYear": 1946,
+    "location": "נהריה",
+    "area": "הגליל המערבי",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/2/27/Tzila_Dagan.jpg/250px-Tzila_Dagan.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A6%D7%99%D7%9C%D7%94_%D7%93%D7%92%D7%9F",
+    "bornElsewhere": "פולין"
+  },
+  {
+    "name": "אלון דה לוקו",
+    "isBand": false,
+    "birthYear": 1974,
+    "location": "באר שבע",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Alondelocooo.jpg/250px-Alondelocooo.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%95%D7%9F_%D7%93%D7%94_%D7%9C%D7%95%D7%A7%D7%95",
+    "bornElsewhere": null
+  },
+  {
+    "name": "גל דה פז",
+    "isBand": false,
+    "birthYear": 1987,
+    "location": "אילת",
+    "area": "דרום הנגב והערבה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/%D7%90%D7%95%D7%94%D7%93_%D7%91%D7%A8_%D7%91%D7%94%D7%95%D7%A4%D7%A2%D7%94_%D7%A2%D7%9D_%D7%92%D7%9C_%D7%93%D7%94_%D7%A4%D7%96.png/250px-%D7%90%D7%95%D7%94%D7%93_%D7%91%D7%A8_%D7%91%D7%94%D7%95%D7%A4%D7%A2%D7%94_%D7%A2%D7%9D_%D7%92%D7%9C_%D7%93%D7%94_%D7%A4%D7%96.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%D7%9C_%D7%93%D7%94_%D7%A4%D7%96",
+    "bornElsewhere": null
+  },
+  {
+    "name": "קוקו מאילת",
+    "isBand": false,
+    "birthYear": 1967,
+    "location": "אילת",
+    "area": "דרום הנגב והערבה",
+    "image": "https://www.haflanet.co.il/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-03-at-18.28.55-1.jpeg",
+    "wiki": "",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רוני דואני",
+    "isBand": false,
+    "birthYear": 1986,
+    "location": "ראשון לציון",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Roni_Duani_in_2019.jpg/250px-Roni_Duani_in_2019.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%95%D7%A0%D7%99_%D7%93%D7%95%D7%90%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ארקדי דוכין",
+    "isBand": false,
+    "birthYear": 1963,
+    "location": "קריית ים",
+    "area": "הקריות",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Arkadi_Duchin_%281%29.jpg/250px-Arkadi_Duchin_%281%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%A7%D7%93%D7%99_%D7%93%D7%95%D7%9B%D7%99%D7%9F",
+    "bornElsewhere": "בלארוס"
+  },
+  {
+    "name": "יובל דיין",
+    "isBand": false,
+    "birthYear": 1994,
+    "location": "אשדוד",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/%D7%99%D7%95%D7%91%D7%9C_%D7%93%D7%99%D7%99%D7%9F2.jpg/250px-%D7%99%D7%95%D7%91%D7%9C_%D7%93%D7%99%D7%99%D7%9F2.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%91%D7%9C_%D7%93%D7%99%D7%99%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דיקלה",
+    "isBand": false,
+    "birthYear": 1973,
+    "location": "באר שבע",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/DIKLA2013.jpg/250px-DIKLA2013.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%99%D7%A7%D7%9C%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שרי",
+    "isBand": false,
+    "birthYear": 1955,
+    "location": "טירת כרמל",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Sherry%2C_June_2010.jpg/250px-Sherry%2C_June_2010.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%A8%D7%99_(%D7%96%D7%9E%D7%A8%D7%AA)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יושי (מוזיקאי)",
+    "isBand": false,
+    "birthYear": 1983,
+    "location": "נצרת עילית",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Yoshi_musician_2021.jpg/250px-Yoshi_musician_2021.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A9%D7%99_(%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%90%D7%99)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ליעד מאיר",
+    "isBand": false,
+    "birthYear": 2002,
+    "location": "כרמיאל",
+    "area": "הגליל העליון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Liadmeir.png/250px-Liadmeir.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%A2%D7%93_%D7%9E%D7%90%D7%99%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שושנה דמארי",
+    "isBand": false,
+    "birthYear": 1923,
+    "location": "ראשון לציון",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Birthday_celebration_for_singer_Shoshana_Damari_organized_by_Galei_Tzahal_%28FL61650661%29.jpg/250px-Birthday_celebration_for_singer_Shoshana_Damari_organized_by_Galei_Tzahal_%28FL61650661%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%95%D7%A9%D7%A0%D7%94_%D7%93%D7%9E%D7%90%D7%A8%D7%99",
+    "bornElsewhere": "תימן"
+  },
+  {
+    "name": "צליל דנין",
+    "isBand": false,
+    "birthYear": 1988,
+    "location": "יקנעם עילית",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/%D7%A6%D7%9C%D7%99%D7%9C_%D7%93%D7%A0%D7%99%D7%9F_%D7%A6%D7%99%D7%9C%D7%95%D7%9D_%D7%99%D7%A8%D7%93%D7%9F_%D7%A8%D7%95%D7%A7%D7%97.jpg/250px-%D7%A6%D7%9C%D7%99%D7%9C_%D7%93%D7%A0%D7%99%D7%9F_%D7%A6%D7%99%D7%9C%D7%95%D7%9D_%D7%99%D7%A8%D7%93%D7%9F_%D7%A8%D7%95%D7%A7%D7%97.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A6%D7%9C%D7%99%D7%9C_%D7%93%D7%A0%D7%99%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "לירן דנינו",
+    "isBand": false,
+    "birthYear": 1991,
+    "location": "פתח תקווה",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/%D7%9C%D7%99%D7%A8%D7%9F_%D7%93%D7%A0%D7%99%D7%A0%D7%952.jpg/250px-%D7%9C%D7%99%D7%A8%D7%9F_%D7%93%D7%A0%D7%99%D7%A0%D7%952.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%A8%D7%9F_%D7%93%D7%A0%D7%99%D7%A0%D7%95",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רן דנקר",
+    "isBand": false,
+    "birthYear": 1984,
+    "location": "נתניה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Ran_Danker_1.jpg/250px-Ran_Danker_1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%9F_%D7%93%D7%A0%D7%A7%D7%A8",
+    "bornElsewhere": "ארצות הברית"
+  },
+  {
+    "name": "אורנה דץ",
+    "isBand": false,
+    "birthYear": 1964,
+    "location": "חולון",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Orna_Datz.jpg/250px-Orna_Datz.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A8%D7%A0%D7%94_%D7%93%D7%A5",
+    "bornElsewhere": null
+  },
+  {
+    "name": "משה דץ",
+    "isBand": false,
+    "birthYear": 1961,
+    "location": "חיפה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/%D7%9E%D7%A9%D7%94_%D7%93%D7%A5_2018.jpg/250px-%D7%9E%D7%A9%D7%94_%D7%93%D7%A5_2018.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%A9%D7%94_%D7%93%D7%A5",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דפנה דקל",
+    "isBand": false,
+    "birthYear": 1966,
+    "location": "אשדוד",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/%D7%93%D7%A4%D7%A0%D7%94_%D7%93%D7%A7%D7%9C.png/250px-%D7%93%D7%A4%D7%A0%D7%94_%D7%93%D7%A7%D7%9C.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%A4%D7%A0%D7%94_%D7%93%D7%A7%D7%9C",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יעל דקלבאום",
+    "isBand": false,
+    "birthYear": 1979,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/No_free_image_-_woman-he.svg/150px-No_free_image_-_woman-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%A2%D7%9C_%D7%93%D7%A7%D7%9C%D7%91%D7%90%D7%95%D7%9D",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רגב הוד",
+    "isBand": false,
+    "birthYear": 1980,
+    "location": "רחובות",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Male_no_free_image_yet-he.svg/250px-Male_no_free_image_yet-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%92%D7%91_%D7%94%D7%95%D7%93",
+    "bornElsewhere": null
+  },
+  {
+    "name": "סי היימן",
+    "isBand": false,
+    "birthYear": 1961,
+    "location": "בית אלפא",
+    "area": "בקעת הירדן",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/b/b2/Sihiman.jpg/250px-Sihiman.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A1%D7%99_%D7%94%D7%99%D7%99%D7%9E%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שי המבר",
+    "isBand": false,
+    "birthYear": 1998,
+    "location": "נתניה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Shay_Hamber_1.jpg/250px-Shay_Hamber_1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%99_%D7%94%D7%9E%D7%91%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נחמה הנדל",
+    "isBand": false,
+    "birthYear": 1936,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Nehama_Hendel.jpg/250px-Nehama_Hendel.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%97%D7%9E%D7%94_%D7%94%D7%A0%D7%93%D7%9C",
+    "bornElsewhere": null
+  },
+  {
+    "name": "הנרי (מוזיקאי)",
+    "isBand": false,
+    "birthYear": 1978,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/5/54/Pic1.jpg/250px-Pic1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%94%D7%A0%D7%A8%D7%99_(%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%90%D7%99)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אמיר פיי גוטמן",
+    "isBand": false,
+    "birthYear": 1972,
+    "location": "קריית חיים",
+    "area": "הקריות",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Michael_HarPaz.jpg/250px-Michael_HarPaz.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%99%D7%A7%D7%9C_%D7%94%D7%A8%D7%A4%D7%96",
+    "bornElsewhere": null
+  },
+  {
+    "name": "זהר וגנר",
+    "isBand": false,
+    "birthYear": 1970,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Zohar_Wagner_-_after_the_screening_of_her_film_Savoy_-_Van_Leer_Institute_Jerusalem.jpg/250px-Zohar_Wagner_-_after_the_screening_of_her_film_Savoy_-_Van_Leer_Institute_Jerusalem.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%96%D7%94%D7%A8_%D7%95%D7%92%D7%A0%D7%A8",
+    "bornElsewhere": "ארצות הברית"
+  },
+  {
+    "name": "איגי וקסמן",
+    "isBand": false,
+    "birthYear": 1972,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Iggy_Waxman_D504-078_%28cropped%29.jpg/250px-Iggy_Waxman_D504-078_%28cropped%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%92%D7%99_%D7%95%D7%A7%D7%A1%D7%9E%D7%9F",
+    "bornElsewhere": "קנדה"
+  },
+  {
+    "name": "עלמה זהר",
+    "isBand": false,
+    "birthYear": 1977,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Alma_Zohar.JPG/250px-Alma_Zohar.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%9C%D7%9E%D7%94_%D7%96%D7%94%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אריאל זילבר",
+    "isBand": false,
+    "birthYear": 1943,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/%D7%90%D7%A8%D7%99%D7%90%D7%9C_%D7%96%D7%99%D7%9C%D7%91%D7%A8.jpg/250px-%D7%90%D7%A8%D7%99%D7%90%D7%9C_%D7%96%D7%99%D7%9C%D7%91%D7%A8.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%99%D7%90%D7%9C_%D7%96%D7%99%D7%9C%D7%91%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ריקה זראי",
+    "isBand": false,
+    "birthYear": 1938,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Rika_Zara%C3%AF_%281963%29.jpg/250px-Rika_Zara%C3%AF_%281963%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%99%D7%A7%D7%94_%D7%96%D7%A8%D7%90%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עידן רפאל חביב",
+    "isBand": false,
+    "birthYear": 1980,
+    "location": "רחובות",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/%D7%A2%D7%99%D7%93%D7%9F_%D7%97%D7%91%D7%99%D7%91.JPG/250px-%D7%A2%D7%99%D7%93%D7%9F_%D7%97%D7%91%D7%99%D7%91.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%99%D7%93%D7%9F_%D7%A8%D7%A4%D7%90%D7%9C_%D7%97%D7%91%D7%99%D7%91",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ירון חדד",
+    "isBand": false,
+    "birthYear": null,
+    "location": "ראשון לציון",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Male_no_free_image_yet-he.svg/250px-Male_no_free_image_yet-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%95%D7%9F_%D7%97%D7%93%D7%93",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שרית חדד",
+    "isBand": false,
+    "birthYear": 1978,
+    "location": "חדרה",
+    "area": "עמק חפר",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Sarit_Hadad.jpg/250px-Sarit_Hadad.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%A8%D7%99%D7%AA_%D7%97%D7%93%D7%93",
+    "bornElsewhere": null
+  },
+  {
+    "name": "חן פורתי (מוזיקאי)",
+    "isBand": false,
+    "birthYear": 1995,
+    "location": "לוד",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/1/12/Porti.jpg/250px-Porti.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%97%D7%9F_%D7%A4%D7%95%D7%A8%D7%AA%D7%99_(%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%90%D7%99)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שולה חן",
+    "isBand": false,
+    "birthYear": 1947,
+    "location": "נהלל",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Shula_Chen.JPG/250px-Shula_Chen.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%95%D7%9C%D7%94_%D7%97%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ויקטוריה חנה",
+    "isBand": false,
+    "birthYear": null,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Victoria_Hanna_2019_B.jpg/250px-Victoria_Hanna_2019_B.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%A7%D7%98%D7%95%D7%A8%D7%99%D7%94_%D7%97%D7%A0%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שלום חנוך",
+    "isBand": false,
+    "birthYear": 1946,
+    "location": "משמרות",
+    "area": "עמק חפר",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Shalom_Hanoch_at_Zappa_Tel_Aviv_%28cropped%29.jpg/250px-Shalom_Hanoch_at_Zappa_Tel_Aviv_%28cropped%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%9C%D7%95%D7%9D_%D7%97%D7%A0%D7%95%D7%9A",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עדן חסון",
+    "isBand": false,
+    "birthYear": 1994,
+    "location": "פרדס חנה-כרכור",
+    "area": "עמק חפר",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Eden_hason.jpg/250px-Eden_hason.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%93%D7%9F_%D7%97%D7%A1%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "פאר טסי",
+    "isBand": false,
+    "birthYear": 1984,
+    "location": "פרדס חנה-כרכור",
+    "area": "עמק חפר",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/%D7%A4%D7%90%D7%A8_%D7%98%D7%A1%D7%99_%D7%91%D7%9E%D7%95%D7%A4%D7%A2.jpg/250px-%D7%A4%D7%90%D7%A8_%D7%98%D7%A1%D7%99_%D7%91%D7%9E%D7%95%D7%A4%D7%A2.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A4%D7%90%D7%A8_%D7%98%D7%A1%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אבי טולדנו",
+    "isBand": false,
+    "birthYear": 1948,
+    "location": "רוחמה",
+    "area": "צפון הנגב",
+    "image": "https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_700,w_950/752095",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%99_%D7%98%D7%95%D7%9C%D7%93%D7%A0%D7%95",
+    "bornElsewhere": "מרוקו"
+  },
+  {
+    "name": "נינט טייב",
+    "isBand": false,
+    "birthYear": 1983,
+    "location": "קריית גת",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Ninet_Tayeb_-_February_2017_-_3.jpg/250px-Ninet_Tayeb_-_February_2017_-_3.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%A0%D7%98_%D7%98%D7%99%D7%99%D7%91",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אברהם טל (זמר)",
+    "isBand": false,
+    "birthYear": 1976,
+    "location": "ניר משה",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Avraham_Tal.jpg/250px-Avraham_Tal.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%A8%D7%94%D7%9D_%D7%98%D7%9C_(%D7%96%D7%9E%D7%A8)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מיטל טרבלסי",
+    "isBand": false,
+    "birthYear": 1971,
+    "location": "רמלה",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Meital_Trabelsi_D595-054_%28cropped%29.jpg/250px-Meital_Trabelsi_D595-054_%28cropped%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%98%D7%9C_%D7%98%D7%A8%D7%91%D7%9C%D7%A1%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אורית טשומה",
+    "isBand": false,
+    "birthYear": 1989,
+    "location": "רחובות",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/No_free_image_-_woman-he.svg/150px-No_free_image_-_woman-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A8%D7%99%D7%AA_%D7%98%D7%A9%D7%95%D7%9E%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "חגית יאסו",
+    "isBand": false,
+    "birthYear": 1989,
+    "location": "שדרות",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Hagit-yaso001.jpg/250px-Hagit-yaso001.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%97%D7%92%D7%99%D7%AA_%D7%99%D7%90%D7%A1%D7%95",
+    "bornElsewhere": null
+  },
+  {
+    "name": "תומר יוסף",
+    "isBand": false,
+    "birthYear": 1975,
+    "location": "כפר סבא",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Tomer_Yosef_at_Akko%2C_Israel.jpg/250px-Tomer_Yosef_at_Akko%2C_Israel.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%AA%D7%95%D7%9E%D7%A8_%D7%99%D7%95%D7%A1%D7%A3",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שלמה יידוב",
+    "isBand": false,
+    "birthYear": 1951,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Shlomo_Ydov.jpg/250px-Shlomo_Ydov.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%9C%D7%9E%D7%94_%D7%99%D7%99%D7%93%D7%95%D7%91",
+    "bornElsewhere": "ארגנטינה"
+  },
+  {
+    "name": "ליאור ייני",
+    "isBand": false,
+    "birthYear": 1936,
+    "location": "אפיקים",
+    "area": "בקעת הירדן",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/%D7%9C%D7%99%D7%90%D7%95%D7%A8_%D7%99%D7%99%D7%A0%D7%99.JPG/250px-%D7%9C%D7%99%D7%90%D7%95%D7%A8_%D7%99%D7%99%D7%A0%D7%99.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%90%D7%95%D7%A8_%D7%99%D7%99%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ליאורה יצחק",
+    "isBand": false,
+    "birthYear": 1974,
+    "location": "לוד",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/No_free_image_-_woman-he.svg/150px-No_free_image_-_woman-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%90%D7%95%D7%A8%D7%94_%D7%99%D7%A6%D7%97%D7%A7",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יפה ירקוני",
+    "isBand": false,
+    "birthYear": 1925,
+    "location": "גבעתיים",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Dan_Hadani_collection_%28990044341260205171%29.jpg/250px-Dan_Hadani_collection_%28990044341260205171%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%A4%D7%94_%D7%99%D7%A8%D7%A7%D7%95%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יזהר כהן",
+    "isBand": false,
+    "birthYear": 1951,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Dan_Hadani_collection_%28990040381640205171%29.jpg/250px-Dan_Hadani_collection_%28990040381640205171%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%96%D7%94%D7%A8_%D7%9B%D7%94%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יעל שושנה כהן",
+    "isBand": false,
+    "birthYear": 1985,
+    "location": "כוכב יאיר",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Festival_du_Bout_du_Monde_2018_-_Lola_Marsh_-_004.jpg/250px-Festival_du_Bout_du_Monde_2018_-_Lola_Marsh_-_004.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%A2%D7%9C_%D7%A9%D7%95%D7%A9%D7%A0%D7%94_%D7%9B%D7%94%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מזי כהן",
+    "isBand": false,
+    "birthYear": 1959,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flickr_-_Government_Press_Office_%28GPO%29_-_Mazi_Cohen_singing_at_the_Jewish_Arab_Rally_for_Peace.jpg/250px-Flickr_-_Government_Press_Office_%28GPO%29_-_Mazi_Cohen_singing_at_the_Jewish_Arab_Rally_for_Peace.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%96%D7%99_%D7%9B%D7%94%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ריף כהן",
+    "isBand": false,
+    "birthYear": 1984,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Reef_Cohen.jpg/250px-Reef_Cohen.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%99%D7%A3_%D7%9B%D7%94%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "איה כורם",
+    "isBand": false,
+    "birthYear": 1980,
+    "location": "נצרת עילית",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Aya_korem.jpg/250px-Aya_korem.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%94_%D7%9B%D7%95%D7%A8%D7%9D",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רביד כחלני",
+    "isBand": false,
+    "birthYear": 1978,
+    "location": "בת ים",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Ravid_Kahalani.jpg/250px-Ravid_Kahalani.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%91%D7%99%D7%93_%D7%9B%D7%97%D7%9C%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רביב כנר",
+    "isBand": false,
+    "birthYear": 1994,
+    "location": "חולון",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Raviv_Kaner.png/250px-Raviv_Kaner.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%91%D7%99%D7%91_%D7%9B%D7%A0%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מתי כספי",
+    "isBand": false,
+    "birthYear": 1949,
+    "location": "חניתה",
+    "area": "הגליל העליון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Matti_Caspi_Zappa_08-2010.jpg/250px-Matti_Caspi_Zappa_08-2010.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%AA%D7%99_%D7%9B%D7%A1%D7%A4%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ג'וזי כץ",
+    "isBand": false,
+    "birthYear": 1940,
+    "location": "גשר הזיו",
+    "area": "הגליל המערבי",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/2/24/%D7%92%27%D7%95%D7%96%D7%99_%D7%9B%D7%A5-1995_%D7%A6%D7%99%D7%9C%D7%95%D7%9D-%D7%9E%D7%95%D7%98%D7%99_%D7%A7%D7%99%D7%A7%D7%99%D7%95%D7%9F.jpg/250px-%D7%92%27%D7%95%D7%96%D7%99_%D7%9B%D7%A5-1995_%D7%A6%D7%99%D7%9C%D7%95%D7%9D-%D7%9E%D7%95%D7%98%D7%99_%D7%A7%D7%99%D7%A7%D7%99%D7%95%D7%9F.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%27%D7%95%D7%96%D7%99_%D7%9B%D7%A5",
+    "bornElsewhere": "ארצות הברית"
+  },
+  {
+    "name": "לירון כרקוקלי",
+    "isBand": false,
+    "birthYear": 1992,
+    "location": "הוד השרון",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Liron_Carakukly.jpg/250px-Liron_Carakukly.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%A8%D7%95%D7%9F_%D7%9B%D7%A8%D7%A7%D7%95%D7%A7%D7%9C%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נימרוד לב",
+    "isBand": false,
+    "birthYear": 1970,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Nimrod_Lev.jpg/250px-Nimrod_Lev.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%9E%D7%A8%D7%95%D7%93_%D7%9C%D7%91",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אריק לביא",
+    "isBand": false,
+    "birthYear": 1927,
+    "location": "כפר יהושע",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Flickr_-_Government_Press_Office_%28GPO%29_-_SINGER_ARIK_LAVI_AT_THE_TELETROM_DONATIONS_EVENING.jpg/250px-Flickr_-_Government_Press_Office_%28GPO%29_-_SINGER_ARIK_LAVI_AT_THE_TELETROM_DONATIONS_EVENING.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%99%D7%A7_%D7%9C%D7%91%D7%99%D7%90",
+    "bornElsewhere": "גרמניה"
+  },
+  {
+    "name": "אברהם לגסה",
+    "isBand": false,
+    "birthYear": 1995,
+    "location": "עפולה",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Male_no_free_image_yet-he.svg/250px-Male_no_free_image_yet-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%A8%D7%94%D7%9D_%D7%9C%D7%92%D7%A1%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "סטפן לגר",
+    "isBand": false,
+    "birthYear": 1998,
+    "location": "בת ים",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Male_no_free_image_yet-he.svg/250px-Male_no_free_image_yet-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A1%D7%98%D7%A4%D7%9F_%D7%9C%D7%92%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אלה לי להב",
+    "isBand": false,
+    "birthYear": 2003,
+    "location": "שוהם",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Ella-Lee_Lahav.jpg/250px-Ella-Lee_Lahav.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%94_%D7%9C%D7%99_%D7%9C%D7%94%D7%91",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אושיק לוי",
+    "isBand": false,
+    "birthYear": 1944,
+    "location": "בני ברק",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Oshik_Levi.jpg/250px-Oshik_Levi.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A9%D7%99%D7%A7_%D7%9C%D7%95%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "איתי לוי",
+    "isBand": false,
+    "birthYear": 1988,
+    "location": "גן יבנה",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Itay_Levi_2.jpg/250px-Itay_Levi_2.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%AA%D7%99_%D7%9C%D7%95%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דודי לוי",
+    "isBand": false,
+    "birthYear": 1968,
+    "location": "חולון",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/%D7%93%D7%95%D7%93%D7%99_%D7%9C%D7%95%D7%99_01.jpg/250px-%D7%93%D7%95%D7%93%D7%99_%D7%9C%D7%95%D7%99_01.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%93%D7%99_%D7%9C%D7%95%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יעל לוי",
+    "isBand": false,
+    "birthYear": 1955,
+    "location": "נהריה",
+    "area": "הגליל המערבי",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/%D7%99%D7%A2%D7%9C_%D7%9C%D7%95%D7%99%2C_2022.jpg/250px-%D7%99%D7%A2%D7%9C_%D7%9C%D7%95%D7%99%2C_2022.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%A2%D7%9C_%D7%9C%D7%95%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ישי לוי",
+    "isBand": false,
+    "birthYear": 1963,
+    "location": "ראש העין",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/9/92/Y_levi.jpg/250px-Y_levi.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%A9%D7%99_%D7%9C%D7%95%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יסמין לוי",
+    "isBand": false,
+    "birthYear": 1975,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Yasmin_Levy_-_Festival_du_Bout_du_Monde_2013_-_011.jpg/250px-Yasmin_Levy_-_Festival_du_Bout_du_Monde_2013_-_011.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%A1%D7%9E%D7%99%D7%9F_%D7%9C%D7%95%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נס (ראפרית)",
+    "isBand": false,
+    "birthYear": 2002,
+    "location": "שתולים",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/20/Ness_Levy_%28cropped%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%A1_(%D7%A8%D7%90%D7%A4%D7%A8%D7%99%D7%AA)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רואי לוי",
+    "isBand": false,
+    "birthYear": 1970,
+    "location": "מטולה",
+    "area": "הגליל העליון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Roi_levi.jpg/250px-Roi_levi.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%95%D7%90%D7%99_%D7%9C%D7%95%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שם טוב לוי",
+    "isBand": false,
+    "birthYear": 1950,
+    "location": "רחובות",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Shem_Tov_Levy.jpg/250px-Shem_Tov_Levy.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%9D_%D7%98%D7%95%D7%91_%D7%9C%D7%95%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ליאורה",
+    "isBand": false,
+    "birthYear": 1970,
+    "location": "אשקלון",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/No_free_image_-_woman-he.svg/150px-No_free_image_-_woman-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%90%D7%95%D7%A8%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דני ליטני",
+    "isBand": false,
+    "birthYear": 1943,
+    "location": "חיפה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Dani_Litani_3_ST_08.jpg/250px-Dani_Litani_3_ST_08.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%A0%D7%99_%D7%9C%D7%99%D7%98%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "חני ליבנה",
+    "isBand": false,
+    "birthYear": 1953,
+    "location": "חדרה",
+    "area": "עמק חפר",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/%D7%97%D7%A0%D7%99_%D7%9C%D7%99%D7%91%D7%A0%D7%94.JPG/250px-%D7%97%D7%A0%D7%99_%D7%9C%D7%99%D7%91%D7%A0%D7%94.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%97%D7%A0%D7%99_%D7%9C%D7%99%D7%91%D7%A0%D7%94",
+    "bornElsewhere": "רומניה"
+  },
+  {
+    "name": "שרון ליפשיץ",
+    "isBand": false,
+    "birthYear": 1961,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/%D7%A9%D7%A8%D7%95%D7%9F_%D7%9C%D7%99%D7%A4%D7%A9%D7%99%D7%A5.jpg/250px-%D7%A9%D7%A8%D7%95%D7%9F_%D7%9C%D7%99%D7%A4%D7%A9%D7%99%D7%A5.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%A8%D7%95%D7%9F_%D7%9C%D7%99%D7%A4%D7%A9%D7%99%D7%A5",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אלי מגן",
+    "isBand": false,
+    "birthYear": 1948,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/2/28/Eli_Magen-1.jpg/250px-Eli_Magen-1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%99_%D7%9E%D7%92%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אביהו מדינה",
+    "isBand": false,
+    "birthYear": 1948,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/%D7%90%D7%91%D7%99%D7%94%D7%95_%D7%9E%D7%93%D7%99%D7%A0%D7%94.jpg/250px-%D7%90%D7%91%D7%99%D7%94%D7%95_%D7%9E%D7%93%D7%99%D7%A0%D7%94.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%99%D7%94%D7%95_%D7%9E%D7%93%D7%99%D7%A0%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יסמין מועלם",
+    "isBand": false,
+    "birthYear": 1995,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Jasmin_Moallem.jpg/250px-Jasmin_Moallem.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%A1%D7%9E%D7%99%D7%9F_%D7%9E%D7%95%D7%A2%D7%9C%D7%9D",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מוקי",
+    "isBand": false,
+    "birthYear": 1975,
+    "location": "ראשון לציון",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/2/29/Mooki1.jpeg/250px-Mooki1.jpeg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A7%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אקו (ראפרית)",
+    "isBand": false,
+    "birthYear": 1988,
+    "location": "כפר ורדים",
+    "area": "הגליל העליון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Echo_-_Red_Sea_Jazz_Festival_-_13_november_2021.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A7%D7%95_(%D7%A8%D7%90%D7%A4%D7%A8%D7%99%D7%AA)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ציון גולן",
+    "isBand": false,
+    "birthYear": 1955,
+    "location": "אשקלון",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/%D7%A6%D7%99%D7%95%D7%9F_%D7%92%D7%95%D7%9C%D7%9F.jpg/250px-%D7%A6%D7%99%D7%95%D7%9F_%D7%92%D7%95%D7%9C%D7%9F.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A6%D7%99%D7%95%D7%9F_%D7%92%D7%95%D7%9C%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אייל מזיג",
+    "isBand": false,
+    "birthYear": 1982,
+    "location": "לוד",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Male_no_free_image_yet-he.svg/250px-Male_no_free_image_yet-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%99%D7%9C_%D7%9E%D7%96%D7%99%D7%92",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רבקה מיכאלי",
+    "isBand": false,
+    "birthYear": 1938,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Rivka_Michaeli.jpg/250px-Rivka_Michaeli.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%91%D7%A7%D7%94_%D7%9E%D7%99%D7%9B%D7%90%D7%9C%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מיקיאגי",
+    "isBand": false,
+    "birthYear": 1968,
+    "location": "פתח תקווה",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Mickyagi2014.jpg/250px-Mickyagi2014.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%A7%D7%99%D7%90%D7%92%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עמי מנדלמן",
+    "isBand": false,
+    "birthYear": 1950,
+    "location": "חיפה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Ami_Mandelman%2C_2011.jpg/250px-Ami_Mandelman%2C_2011.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%99_%D7%9E%D7%A0%D7%93%D7%9C%D7%9E%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מארינה מקסימיליאן",
+    "isBand": false,
+    "birthYear": 1987,
+    "location": "בני ברק",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/U.S._Embassy_Jerusalem_celebrates_the_246th_U.S._Independence_Day._July_5%2C_2022_62.jpg/250px-U.S._Embassy_Jerusalem_celebrates_the_246th_U.S._Independence_Day._July_5%2C_2022_62.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%90%D7%A8%D7%99%D7%A0%D7%94_%D7%9E%D7%A7%D7%A1%D7%99%D7%9E%D7%99%D7%9C%D7%99%D7%90%D7%9F",
+    "bornElsewhere": "ברית המועצות"
+  },
+  {
+    "name": "מרגי (מוזיקאי)",
+    "isBand": false,
+    "birthYear": 2000,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Jonathan_Mergui_by_Moshe_Nachumovich.jpg/250px-Jonathan_Mergui_by_Moshe_Nachumovich.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%A8%D7%92%D7%99_(%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%90%D7%99)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "קובי מרימי",
+    "isBand": false,
+    "birthYear": 1991,
+    "location": "רמת גן",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/ESC2019_-_Israel_02.jpg/250px-ESC2019_-_Israel_02.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%91%D7%99_%D7%9E%D7%A8%D7%99%D7%9E%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "טדי נגוסה",
+    "isBand": false,
+    "birthYear": 1995,
+    "location": "לוד",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Teddy_Neguse.jpg/250px-Teddy_Neguse.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%98%D7%93%D7%99_%D7%A0%D7%92%D7%95%D7%A1%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "סימה נון",
+    "isBand": false,
+    "birthYear": 1989,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/No_free_image_-_woman-he.svg/150px-No_free_image_-_woman-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A1%D7%99%D7%9E%D7%94_%D7%A0%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נונו (זמרת)",
+    "isBand": false,
+    "birthYear": 1998,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Nunu_%28singer%29.jpg/250px-Nunu_%28singer%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%95%D7%A0%D7%95_(%D7%96%D7%9E%D7%A8%D7%AA)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נורוז (ראפר)",
+    "isBand": false,
+    "birthYear": 1999,
+    "location": "בת ים",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/%D7%90%D7%95%D7%A8_%D7%99%D7%A2%D7%A7%D7%91_%D7%A0%D7%95%D7%A8%D7%95%D7%96.jpg/250px-%D7%90%D7%95%D7%A8_%D7%99%D7%A2%D7%A7%D7%91_%D7%A0%D7%95%D7%A8%D7%95%D7%96.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%95%D7%A8%D7%95%D7%96_(%D7%A8%D7%90%D7%A4%D7%A8)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אליעד נחום",
+    "isBand": false,
+    "birthYear": 1990,
+    "location": "בת ים",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Eliad_Nachum.jpg/250px-Eliad_Nachum.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%99%D7%A2%D7%93_%D7%A0%D7%97%D7%95%D7%9D",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אחינועם ניני",
+    "isBand": false,
+    "birthYear": 1969,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Noa_%282012%29.jpg/250px-Noa_%282012%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%97%D7%99%D7%A0%D7%95%D7%A2%D7%9D_%D7%A0%D7%99%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יאיר ניצני",
+    "isBand": false,
+    "birthYear": 1958,
+    "location": "באר שבע",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Yair_Nitzani_1.jpg/250px-Yair_Nitzani_1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%90%D7%99%D7%A8_%D7%A0%D7%99%D7%A6%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אריס סאן",
+    "isBand": false,
+    "birthYear": 1940,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/6/65/Aris_san_album10years.jpg/250px-Aris_san_album10years.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%99%D7%A1_%D7%A1%D7%90%D7%9F",
+    "bornElsewhere": "יוון"
+  },
+  {
+    "name": "יהלי סובול",
+    "isBand": false,
+    "birthYear": 1972,
+    "location": "חיפה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Yahli_Sobol.jpg/250px-Yahli_Sobol.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%94%D7%9C%D7%99_%D7%A1%D7%95%D7%91%D7%95%D7%9C",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מיכאל סוויסה",
+    "isBand": false,
+    "birthYear": 1996,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/%D7%A1%D7%95%D7%95%D7%99%D7%A1%D7%94.jpg/250px-%D7%A1%D7%95%D7%95%D7%99%D7%A1%D7%94.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%9B%D7%90%D7%9C_%D7%A1%D7%95%D7%95%D7%99%D7%A1%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ברי סחרוף",
+    "isBand": false,
+    "birthYear": 1957,
+    "location": "בת ים",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Berry_Sakharof_1.jpg/250px-Berry_Sakharof_1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%99_%D7%A1%D7%97%D7%A8%D7%95%D7%A3",
+    "bornElsewhere": "טורקיה"
+  },
+  {
+    "name": "שאנן סטריט",
+    "isBand": false,
+    "birthYear": 1971,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Shaanan_Streett_appears_in_Carmiel%2C_Yom_Haatzmaut_2015_%283%29.JPG/250px-Shaanan_Streett_appears_in_Carmiel%2C_Yom_Haatzmaut_2015_%283%29.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%90%D7%A0%D7%9F_%D7%A1%D7%98%D7%A8%D7%99%D7%98",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אבי סינואני",
+    "isBand": false,
+    "birthYear": 1961,
+    "location": "רמת גן",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/%D7%90%D7%91%D7%99_%D7%A1%D7%99%D7%A0%D7%95%D7%90%D7%A0%D7%99.jpg/250px-%D7%90%D7%91%D7%99_%D7%A1%D7%99%D7%A0%D7%95%D7%90%D7%A0%D7%99.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%99_%D7%A1%D7%99%D7%A0%D7%95%D7%90%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אריק סיני",
+    "isBand": false,
+    "birthYear": 1949,
+    "location": "קריית ביאליק",
+    "area": "הקריות",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/d/d6/Arik-sinai-01.jpeg/250px-Arik-sinai-01.jpeg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%99%D7%A7_%D7%A1%D7%99%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דניאלה ספקטור",
+    "isBand": false,
+    "birthYear": 1981,
+    "location": "רמות השבים",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/%D7%93%D7%A0%D7%99%D7%90%D7%9C%D7%94_%D7%A1%D7%A4%D7%A7%D7%98%D7%95%D7%A8.JPG/250px-%D7%93%D7%A0%D7%99%D7%90%D7%9C%D7%94_%D7%A1%D7%A4%D7%A7%D7%98%D7%95%D7%A8.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%A0%D7%99%D7%90%D7%9C%D7%94_%D7%A1%D7%A4%D7%A7%D7%98%D7%95%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "הראל סקעת",
+    "isBand": false,
+    "birthYear": 1981,
+    "location": "כפר סבא",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/%D7%94%D7%A8%D7%90%D7%9C_%D7%A1%D7%A7%D7%A2%D7%AA_6O9A1652.jpg/250px-%D7%94%D7%A8%D7%90%D7%9C_%D7%A1%D7%A7%D7%A2%D7%AA_6O9A1652.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%94%D7%A8%D7%90%D7%9C_%D7%A1%D7%A7%D7%A2%D7%AA",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דנה עדיני",
+    "isBand": false,
+    "birthYear": 1979,
+    "location": "אלוני אבא",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Dana_Adini%2C_2009.jpg/250px-Dana_Adini%2C_2009.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%A0%D7%94_%D7%A2%D7%93%D7%99%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אהובה עוזרי",
+    "isBand": false,
+    "birthYear": 1948,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/he/4/46/%D7%90%D7%94%D7%95%D7%91%D7%94_%D7%A2%D7%95%D7%96%D7%A8%D7%99.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%94%D7%95%D7%91%D7%94_%D7%A2%D7%95%D7%96%D7%A8%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אסתר עופרים",
+    "isBand": false,
+    "birthYear": 1941,
+    "location": "צפת",
+    "area": "הגליל העליון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Ofarim_Esther_66.jpg/250px-Ofarim_Esther_66.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A1%D7%AA%D7%A8_%D7%A2%D7%95%D7%A4%D7%A8%D7%99%D7%9D",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עליזה עזיקרי",
+    "isBand": false,
+    "birthYear": 1941,
+    "location": "בית אלפא",
+    "area": "",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/5/59/%D7%A2%D7%9C%D7%99%D7%96%D7%94_%D7%A2%D7%96%D7%99%D7%A7%D7%A8%D7%99.jpg/250px-%D7%A2%D7%9C%D7%99%D7%96%D7%94_%D7%A2%D7%96%D7%99%D7%A7%D7%A8%D7%99.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%9C%D7%99%D7%96%D7%94_%D7%A2%D7%96%D7%99%D7%A7%D7%A8%D7%99",
+    "bornElsewhere": "בקעת הירדן"
+  },
+  {
+    "name": "גלי עטרי",
+    "isBand": false,
+    "birthYear": 1953,
+    "location": "רחובות",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Gali_Atari.jpg/250px-Gali_Atari.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%D7%9C%D7%99_%D7%A2%D7%98%D7%A8%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עידן עמדי",
+    "isBand": false,
+    "birthYear": 1988,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/%D7%A2%D7%99%D7%93%D7%9F_%D7%A2%D7%9E%D7%93%D7%99%2C_%D7%A1%D7%9C%D7%99_%D7%91%D7%9F_%D7%90%D7%A8%D7%99%D7%94.jpg/250px-%D7%A2%D7%99%D7%93%D7%9F_%D7%A2%D7%9E%D7%93%D7%99%2C_%D7%A1%D7%9C%D7%99_%D7%91%D7%9F_%D7%90%D7%A8%D7%99%D7%94.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%99%D7%93%D7%9F_%D7%A2%D7%9E%D7%93%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ג'ו עמר",
+    "isBand": false,
+    "birthYear": 1930,
+    "location": "יד רמבם",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/he/d/d0/Jo_Amar.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%27%D7%95_%D7%A2%D7%9E%D7%A8",
+    "bornElsewhere": "מרוקו"
+  },
+  {
+    "name": "לירון עמרם",
+    "isBand": false,
+    "birthYear": 1988,
+    "location": "פתח תקווה",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Liron_Amram_88.jpg/250px-Liron_Amram_88.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%A8%D7%95%D7%9F_%D7%A2%D7%9E%D7%A8%D7%9D",
+    "bornElsewhere": null
+  },
+  {
+    "name": "חדוה עמרני",
+    "isBand": false,
+    "birthYear": 1944,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/No_free_image_-_woman-he.svg/150px-No_free_image_-_woman-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%97%D7%93%D7%95%D7%94_%D7%A2%D7%9E%D7%A8%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מושיק עפיה",
+    "isBand": false,
+    "birthYear": 1974,
+    "location": "חולון",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/%D7%9E%D7%95%D7%A9%D7%99%D7%A7.JPG/250px-%D7%9E%D7%95%D7%A9%D7%99%D7%A7.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A9%D7%99%D7%A7_%D7%A2%D7%A4%D7%99%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דודו פארוק",
+    "isBand": false,
+    "birthYear": 1996,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/%D7%93%D7%95%D7%93%D7%95_%D7%A4%D7%90%D7%A8%D7%95%D7%A7%2C_%D7%91%D7%91%D7%90%D7%A8%D7%91%D7%99_%D7%AA%D7%9C_%D7%90%D7%91%D7%99%D7%91_%28cropped%29.jpg/250px-%D7%93%D7%95%D7%93%D7%95_%D7%A4%D7%90%D7%A8%D7%95%D7%A7%2C_%D7%91%D7%91%D7%90%D7%A8%D7%91%D7%99_%D7%AA%D7%9C_%D7%90%D7%91%D7%99%D7%91_%28cropped%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%93%D7%95_%D7%A4%D7%90%D7%A8%D7%95%D7%A7",
+    "bornElsewhere": null
+  },
+  {
+    "name": "צביקה פיק",
+    "isBand": false,
+    "birthYear": 1949,
+    "location": "רמת גן",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Pick_por.jpg/250px-Pick_por.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A6%D7%91%D7%99%D7%A7%D7%94_%D7%A4%D7%99%D7%A7",
+    "bornElsewhere": "פולין"
+  },
+  {
+    "name": "פישי הגדול",
+    "isBand": false,
+    "birthYear": 1977,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Realfishi23d.jpg/250px-Realfishi23d.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A4%D7%99%D7%A9%D7%99_%D7%94%D7%92%D7%93%D7%95%D7%9C",
+    "bornElsewhere": null
+  },
+  {
+    "name": "פלד (ראפר)",
+    "isBand": false,
+    "birthYear": 1986,
+    "location": "מנחמיה",
+    "area": "בקעת הירדן",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Peled.jpg/250px-Peled.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A4%D7%9C%D7%93_(%D7%A8%D7%90%D7%A4%D7%A8)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ענבל פרלמוטר",
+    "isBand": false,
+    "birthYear": 1971,
+    "location": "רחובות",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/2/2a/%D7%A2%D7%A0%D7%91%D7%9C_%D7%A4%D7%A8%D7%9C%D7%9E%D7%95%D7%98%D7%A8.jpg/250px-%D7%A2%D7%A0%D7%91%D7%9C_%D7%A4%D7%A8%D7%9C%D7%9E%D7%95%D7%98%D7%A8.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%A0%D7%91%D7%9C_%D7%A4%D7%A8%D7%9C%D7%9E%D7%95%D7%98%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יהודה פוליקר",
+    "isBand": false,
+    "birthYear": 1950,
+    "location": "קריית חיים",
+    "area": "הקריות",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Yehuda_Poliker.jpg/250px-Yehuda_Poliker.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%94%D7%95%D7%93%D7%94_%D7%A4%D7%95%D7%9C%D7%99%D7%A7%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עוזי פוקס",
+    "isBand": false,
+    "birthYear": 1947,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Uzifux1.jpg/250px-Uzifux1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%95%D7%96%D7%99_%D7%A4%D7%95%D7%A7%D7%A1",
+    "bornElsewhere": "רומניה"
+  },
+  {
+    "name": "לירז צ'רכי",
+    "isBand": false,
+    "birthYear": 1978,
+    "location": "רמלה",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Israeli_actors_wife-and-husband_Liraz_Charhi_and_Tom_Avni_in_2021.jpg/250px-Israeli_actors_wife-and-husband_Liraz_Charhi_and_Tom_Avni_in_2021.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%A8%D7%96_%D7%A6%27%D7%A8%D7%9B%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "חיים צינוביץ'",
+    "isBand": false,
+    "birthYear": 1967,
+    "location": "ראשון לציון",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Zinnowitz.jpg/250px-Zinnowitz.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%97%D7%99%D7%99%D7%9D_%D7%A6%D7%99%D7%A0%D7%95%D7%91%D7%99%D7%A5%27",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מרגלית צנעני",
+    "isBand": false,
+    "birthYear": 1948,
+    "location": "נתניה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Margol_social_justice_Beersheba_2.jpg/250px-Margol_social_justice_Beersheba_2.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%A8%D7%92%D7%9C%D7%99%D7%AA_%D7%A6%D7%A0%D7%A2%D7%A0%D7%99",
+    "bornElsewhere": "תימן"
+  },
+  {
+    "name": "מושיקו מור",
+    "isBand": false,
+    "birthYear": 1990,
+    "location": "עפולה",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Moshikoid.jpg/250px-Moshikoid.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A9%D7%99%D7%A7%D7%95_%D7%9E%D7%95%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ברכה צפירה",
+    "isBand": false,
+    "birthYear": 1910,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Bracha_Tzfira.jpg/250px-Bracha_Tzfira.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%9B%D7%94_%D7%A6%D7%A4%D7%99%D7%A8%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רונה קינן",
+    "isBand": false,
+    "birthYear": 1979,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rona_Kenan2.jpg/250px-Rona_Kenan2.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%95%D7%A0%D7%94_%D7%A7%D7%99%D7%A0%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "איציק קלה",
+    "isBand": false,
+    "birthYear": 1953,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/%D7%90%D7%99%D7%A6%D7%99%D7%A7_%D7%A7%D7%9C%D7%94.JPG/250px-%D7%90%D7%99%D7%A6%D7%99%D7%A7_%D7%A7%D7%9C%D7%94.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%A6%D7%99%D7%A7_%D7%A7%D7%9C%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רמי קלינשטיין",
+    "isBand": false,
+    "birthYear": 1962,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Rami_Kleinstein.jpg/250px-Rami_Kleinstein.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%9E%D7%99_%D7%A7%D7%9C%D7%99%D7%A0%D7%A9%D7%98%D7%99%D7%99%D7%9F",
+    "bornElsewhere": "ארצות הברית"
+  },
+  {
+    "name": "יצחק קלפטר",
+    "isBand": false,
+    "birthYear": 1950,
+    "location": "חיפה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/%D7%99%D7%A6%D7%97%D7%A7_%D7%A7%D7%9C%D7%A4%D7%98%D7%A8.JPG/250px-%D7%99%D7%A6%D7%97%D7%A7_%D7%A7%D7%9C%D7%A4%D7%98%D7%A8.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%A6%D7%97%D7%A7_%D7%A7%D7%9C%D7%A4%D7%98%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שרון קנטור (מוזיקאית)",
+    "isBand": false,
+    "birthYear": 1971,
+    "location": "רמת השרון",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Sharon_Kantor.jpg/250px-Sharon_Kantor.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%A8%D7%95%D7%9F_%D7%A7%D7%A0%D7%98%D7%95%D7%A8_(%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%90%D7%99%D7%AA)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "קרולינה",
+    "isBand": false,
+    "birthYear": 1971,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/5/5e/CarolinaLogo.png/125px-CarolinaLogo.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%95%D7%9C%D7%99%D7%A0%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יהודית רביץ",
+    "isBand": false,
+    "birthYear": 1956,
+    "location": "באר שבע",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Yehudit_Ravitz_1997_cropped.jpg/250px-Yehudit_Ravitz_1997_cropped.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%94%D7%95%D7%93%D7%99%D7%AA_%D7%A8%D7%91%D7%99%D7%A5",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עמיר בניון",
+    "isBand": false,
+    "birthYear": 1975,
+    "location": "באר שבע",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Amir_Benayoun.JPG/330px-Amir_Benayoun.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%99%D7%A8_%D7%91%D7%A0%D7%99%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אסתר רדא",
+    "isBand": false,
+    "birthYear": 1985,
+    "location": "קריית ארבע",
+    "area": "יהודה ושומרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/%D7%90%D7%A1%D7%AA%D7%A8_%D7%A8%D7%93%D7%90.jpg/250px-%D7%90%D7%A1%D7%AA%D7%A8_%D7%A8%D7%93%D7%90.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A1%D7%AA%D7%A8_%D7%A8%D7%93%D7%90",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דני רובס",
+    "isBand": false,
+    "birthYear": 1957,
+    "location": "שובל",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Danny_Robas_1_%28cropped%29.jpg/250px-Danny_Robas_1_%28cropped%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%A0%D7%99_%D7%A8%D7%95%D7%91%D7%A1",
+    "bornElsewhere": null
+  },
+  {
+    "name": "הילה רוח",
+    "isBand": false,
+    "birthYear": 1985,
+    "location": "טבריה",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/%D7%94%D7%99%D7%9C%D7%94_%D7%A8%D7%95%D7%97_%D7%91%D7%94%D7%95%D7%A4%D7%A2%D7%94_%D7%91%D7%91%D7%90%D7%A8%D7%91%D7%99_%281595604864362%29.jpg/250px-%D7%94%D7%99%D7%9C%D7%94_%D7%A8%D7%95%D7%97_%D7%91%D7%94%D7%95%D7%A4%D7%A2%D7%94_%D7%91%D7%91%D7%90%D7%A8%D7%91%D7%99_%281595604864362%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%94%D7%99%D7%9C%D7%94_%D7%A8%D7%95%D7%97",
+    "bornElsewhere": null
+  },
+  {
+    "name": "פיטר רוט",
+    "isBand": false,
+    "birthYear": 1974,
+    "location": "בת ים",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Peter_roth.jpg/250px-Peter_roth.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A4%D7%99%D7%98%D7%A8_%D7%A8%D7%95%D7%98",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שרון רוטר",
+    "isBand": false,
+    "birthYear": 1977,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Sharon_roter.jpg/250px-Sharon_roter.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%A8%D7%95%D7%9F_%D7%A8%D7%95%D7%98%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רוחמה רז",
+    "isBand": false,
+    "birthYear": 1955,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Ruhama_Raz%2C_photographer_Ophir_Harel.jpg/250px-Ruhama_Raz%2C_photographer_Ophir_Harel.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%95%D7%97%D7%9E%D7%94_%D7%A8%D7%96",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יונתן רזאל",
+    "isBand": false,
+    "birthYear": 1973,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/1_Yonatan_Razel.jpg/250px-1_Yonatan_Razel.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A0%D7%AA%D7%9F_%D7%A8%D7%96%D7%90%D7%9C",
+    "bornElsewhere": "ארצות הברית"
+  },
+  {
+    "name": "ישי ריבו",
+    "isBand": false,
+    "birthYear": 1989,
+    "location": "תל ציון",
+    "area": "יהודה ושומרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Yishai_Ribu.jpg/250px-Yishai_Ribu.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%A9%D7%99_%D7%A8%D7%99%D7%91%D7%95",
+    "bornElsewhere": "צרפת"
+  },
+  {
+    "name": "ריטה",
+    "isBand": false,
+    "birthYear": 1962,
+    "location": "רמת השרון",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/RITA_gy_2015.jpg/250px-RITA_gy_2015.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%99%D7%98%D7%94",
+    "bornElsewhere": "איראן"
+  },
+  {
+    "name": "יוני רכטר",
+    "isBand": false,
+    "birthYear": 1951,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Yoni_Rechter_%28Zappa_Herzliya_2010%29.jpg/250px-Yoni_Rechter_%28Zappa_Herzliya_2010%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A0%D7%99_%D7%A8%D7%9B%D7%98%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שולי רנד",
+    "isBand": false,
+    "birthYear": 1962,
+    "location": "בני ברק",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Shuli_Rand.jpg/250px-Shuli_Rand.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%95%D7%9C%D7%99_%D7%A8%D7%A0%D7%93",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יובל רפאל",
+    "isBand": false,
+    "birthYear": 2000,
+    "location": "רעננה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/%D7%99%D7%95%D7%91%D7%9C_%D7%A8%D7%A4%D7%90%D7%9C_%E2%80%93_%D7%AA%D7%9E%D7%95%D7%A0%D7%AA_%D7%99%D7%97%D7%B4%D7%A6_%D7%94%D7%9B%D7%95%D7%9B%D7%91_%D7%94%D7%91%D7%90_%28cropped%29.jpeg/250px-%D7%99%D7%95%D7%91%D7%9C_%D7%A8%D7%A4%D7%90%D7%9C_%E2%80%93_%D7%AA%D7%9E%D7%95%D7%A0%D7%AA_%D7%99%D7%97%D7%B4%D7%A6_%D7%94%D7%9B%D7%95%D7%9B%D7%91_%D7%94%D7%91%D7%90_%28cropped%29.jpeg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%91%D7%9C_%D7%A8%D7%A4%D7%90%D7%9C",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נמרוד רשף",
+    "isBand": false,
+    "birthYear": 1972,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Nimrod_Reshef2.jpg/250px-Nimrod_Reshef2.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%9E%D7%A8%D7%95%D7%93_%D7%A8%D7%A9%D7%A3",
+    "bornElsewhere": null
+  },
+  {
+    "name": "סיון שביט",
+    "isBand": false,
+    "birthYear": 1967,
+    "location": "ניר עוז",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Sivan_shavit_profile.jpg/250px-Sivan_shavit_profile.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A1%D7%99%D7%95%D7%9F_%D7%A9%D7%91%D7%99%D7%98",
+    "bornElsewhere": null
+  },
+  {
+    "name": "לאה שבת",
+    "isBand": false,
+    "birthYear": 1957,
+    "location": "יהוד",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/%D7%9C%D7%90%D7%94_%D7%A9%D7%91%D7%AA_2019_%28cropped%29.jpg/330px-%D7%9C%D7%90%D7%94_%D7%A9%D7%91%D7%AA_2019_%28cropped%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9C%D7%90%D7%94_%D7%A9%D7%91%D7%AA",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שלומי שבת",
+    "isBand": false,
+    "birthYear": 1954,
+    "location": "יהוד",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Shlomi_Shabbat.jpg/250px-Shlomi_Shabbat.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%9C%D7%95%D7%9E%D7%99_%D7%A9%D7%91%D7%AA",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שורטי",
+    "isBand": false,
+    "birthYear": 1983,
+    "location": "בת ים",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Hila_Nisimov_aka_Shorty.jpg/250px-Hila_Nisimov_aka_Shorty.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%95%D7%A8%D7%98%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "גבי שושן",
+    "isBand": false,
+    "birthYear": 1950,
+    "location": "לוד",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/9/92/Gabi_Shoshan.jpg/250px-Gabi_Shoshan.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%D7%91%D7%99_%D7%A9%D7%95%D7%A9%D7%9F",
+    "bornElsewhere": "מרוקו"
+  },
+  {
+    "name": "אורית שחף",
+    "isBand": false,
+    "birthYear": 1971,
+    "location": "אילת",
+    "area": "דרום הנגב והערבה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/HaYehudim_-_Live_in_Redding_3_232650.jpg/250px-HaYehudim_-_Live_in_Redding_3_232650.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A8%D7%99%D7%AA_%D7%A9%D7%97%D7%A3",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אייל שכטר",
+    "isBand": false,
+    "birthYear": 1964,
+    "location": "קריית ביאליק",
+    "area": "הקריות",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/28/Eyal_Shehter_%28cropped%29.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%99%D7%9C_%D7%A9%D7%9B%D7%98%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רז שמואלי",
+    "isBand": false,
+    "birthYear": 1991,
+    "location": "בנימינה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Raz_Shmueli.jpg/250px-Raz_Shmueli.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%96_%D7%A9%D7%9E%D7%95%D7%90%D7%9C%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אסתר שמיר",
+    "isBand": false,
+    "birthYear": 1955,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Astar_shamir_live%283%29_g.jpg/250px-Astar_shamir_live%283%29_g.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A1%D7%AA%D7%A8_%D7%A9%D7%9E%D7%99%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נעמי שמר",
+    "isBand": false,
+    "birthYear": 1930,
+    "location": "קבוצת כנרת",
+    "area": "בקעת הירדן",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Naomi_Shemer_%28997009452362705171%29.jpg/250px-Naomi_Shemer_%28997009452362705171%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%A2%D7%9E%D7%99_%D7%A9%D7%9E%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שפיטה (זמרת)",
+    "isBand": false,
+    "birthYear": 1984,
+    "location": "כרמיאל",
+    "area": "הגליל העליון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Shefita_2020.jpg/250px-Shefita_2020.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%A4%D7%99%D7%98%D7%94_(%D7%96%D7%9E%D7%A8%D7%AA)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שקל (מוזיקאי)",
+    "isBand": false,
+    "birthYear": null,
+    "location": "חולון",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Male_no_free_image_yet-he.svg/250px-Male_no_free_image_yet-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%A7%D7%9C_(%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%90%D7%99)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שרה'לה שרון",
+    "isBand": false,
+    "birthYear": 1948,
+    "location": "אשדות יעקב איחוד",
+    "area": "בקעת הירדן",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/%D7%A9%D7%A8%D7%94%27%D7%9C%D7%94_%D7%A9%D7%A8%D7%95%D7%9F%2C_%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D_2019.jpg/250px-%D7%A9%D7%A8%D7%94%27%D7%9C%D7%94_%D7%A9%D7%A8%D7%95%D7%9F%2C_%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D_2019.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%A8%D7%94%27%D7%9C%D7%94_%D7%A9%D7%A8%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "בעז שרעבי",
+    "isBand": false,
+    "birthYear": 1947,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Boaz_Sharaabi_Pianofestival_2018.jpg/250px-Boaz_Sharaabi_Pianofestival_2018.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%91%D7%A2%D7%96_%D7%A9%D7%A8%D7%A2%D7%91%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "בן-אל תבורי",
+    "isBand": false,
+    "birthYear": 1991,
+    "location": "ראשון לציון",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Ben-El_Tavori.jpg/250px-Ben-El_Tavori.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%91%D7%9F-%D7%90%D7%9C_%D7%AA%D7%91%D7%95%D7%A8%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שימי תבורי",
+    "isBand": false,
+    "birthYear": 1953,
+    "location": "נס ציונה",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Shimi_Tavori_B%26W.jpg/250px-Shimi_Tavori_B%26W.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%99%D7%9E%D7%99_%D7%AA%D7%91%D7%95%D7%A8%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "גל תורן",
+    "isBand": false,
+    "birthYear": 1975,
+    "location": "מבשרת ציון",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/%D7%92%D7%9C_%D7%AA%D7%95%D7%A8%D7%9F.jpg/250px-%D7%92%D7%9C_%D7%AA%D7%95%D7%A8%D7%9F.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%D7%9C_%D7%AA%D7%95%D7%A8%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "סטטיק",
+    "isBand": false,
+    "birthYear": 1990,
+    "location": "חיפה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/1_Static.jpg/250px-1_Static.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A1%D7%98%D7%98%D7%99%D7%A7",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עטר מיינר",
+    "isBand": false,
+    "birthYear": 1991,
+    "location": "עמוקה",
+    "area": "הגליל העליון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/%D7%A2%D7%98%D7%A8_%D7%91%D7%90%D7%A8%D7%91%D7%99.jpg/250px-%D7%A2%D7%98%D7%A8_%D7%91%D7%90%D7%A8%D7%91%D7%99.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%98%D7%A8_%D7%9E%D7%99%D7%99%D7%A0%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דני סנדרסון",
+    "isBand": false,
+    "birthYear": 1950,
+    "location": "כפר בלום",
+    "area": "הגליל העליון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Danny_Sanderson.jpg/250px-Danny_Sanderson.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%A0%D7%99_%D7%A1%D7%A0%D7%93%D7%A8%D7%A1%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נתנאלה",
+    "isBand": false,
+    "birthYear": 1953,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Netanela.jpg/250px-Netanela.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%AA%D7%A0%D7%90%D7%9C%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אפרים שמיר",
+    "isBand": false,
+    "birthYear": 1951,
+    "location": "כפר שמריהו",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Ephraim_Shamir.jpg/250px-Ephraim_Shamir.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A4%D7%A8%D7%99%D7%9D_%D7%A9%D7%9E%D7%99%D7%A8",
+    "bornElsewhere": "רוסיה"
+  },
+  {
+    "name": "דני בסן",
+    "isBand": false,
+    "birthYear": 1955,
+    "location": "קריית גת",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/%D7%93%D7%A0%D7%99_%D7%91%D7%A1%D7%9F_2023.jpg/250px-%D7%93%D7%A0%D7%99_%D7%91%D7%A1%D7%9F_2023.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%A0%D7%99_%D7%91%D7%A1%D7%9F",
+    "bornElsewhere": "ברזיל"
+  },
+  {
+    "name": "יזהר אשדות",
+    "isBand": false,
+    "birthYear": 1958,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Izhar_Ashdot_01b.JPG/250px-Izhar_Ashdot_01b.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%96%D7%94%D7%A8_%D7%90%D7%A9%D7%93%D7%95%D7%AA",
+    "bornElsewhere": null
+  },
+  {
+    "name": "פנינה רוזנבלום",
+    "isBand": false,
+    "birthYear": 1954,
+    "location": "פתח תקווה",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Pnina_Rosenblum.jpg/250px-Pnina_Rosenblum.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A4%D7%A0%D7%99%D7%A0%D7%94_%D7%A8%D7%95%D7%96%D7%A0%D7%91%D7%9C%D7%95%D7%9D",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רביד פלוטניק",
+    "isBand": false,
+    "birthYear": 1988,
+    "location": "פתח תקווה",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Ravidplotnik3.jpeg/250px-Ravidplotnik3.jpeg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%91%D7%99%D7%93_%D7%A4%D7%9C%D7%95%D7%98%D7%A0%D7%99%D7%A7",
+    "bornElsewhere": null
+  },
+  {
+    "name": "טונה (ראפר)",
+    "isBand": false,
+    "birthYear": 1984,
+    "location": "פתח תקווה",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/%D7%90%D7%99%D7%AA%D7%99_%D7%96%D7%91%D7%95%D7%9C%D7%95%D7%9F_%D7%98%D7%95%D7%A0%D7%94.jpg/250px-%D7%90%D7%99%D7%AA%D7%99_%D7%96%D7%91%D7%95%D7%9C%D7%95%D7%9F_%D7%98%D7%95%D7%A0%D7%94.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%98%D7%95%D7%A0%D7%94_(%D7%A8%D7%90%D7%A4%D7%A8)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ג'ימבו ג'יי",
+    "isBand": false,
+    "birthYear": 1985,
+    "location": "רחובות",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/%D7%92%27%D7%99%D7%9E%D7%91%D7%95_%D7%92%27%D7%99%D7%99.jpg/250px-%D7%92%27%D7%99%D7%9E%D7%91%D7%95_%D7%92%27%D7%99%D7%99.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%27%D7%99%D7%9E%D7%91%D7%95_%D7%92%27%D7%99%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "פלד (ראפר)",
+    "isBand": false,
+    "birthYear": 1986,
+    "location": "מנחמיה",
+    "area": "בקעת הירדן",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Peled.jpg/250px-Peled.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A4%D7%9C%D7%93_(%D7%A8%D7%90%D7%A4%D7%A8)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יוסי אלפנט",
+    "isBand": false,
+    "birthYear": 1959,
+    "location": "רמת גן",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Male_no_free_image_yet-he.svg/250px-Male_no_free_image_yet-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99%20%D7%90%D7%9C%D7%A4%D7%A0%D7%98",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מאיר אריאל",
+    "isBand": false,
+    "birthYear": 1942,
+    "location": "משמרות",
+    "area": "עמק חפר",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Meir_Ariel.jpg/250px-Meir_Ariel.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%90%D7%99%D7%A8%20%D7%90%D7%A8%D7%99%D7%90%D7%9C",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אדי בטלר",
+    "isBand": false,
+    "birthYear": 1971,
+    "location": "דימונה",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Male_no_free_image_yet-he.svg/250px-Male_no_free_image_yet-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%93%D7%99%20%D7%91%D7%98%D7%9C%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מירי אלוני",
+    "isBand": false,
+    "birthYear": 1949,
+    "location": "גבעתיים",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Miri_Aloni_1.PNG/250px-Miri_Aloni_1.PNG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%A8%D7%99%20%D7%90%D7%9C%D7%95%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ערן צור",
+    "isBand": false,
+    "birthYear": 1965,
+    "location": "קריית ביאליק",
+    "area": "הקריות",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Eran-Zur.jpg/330px-Eran-Zur.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%A8%D7%9F%20%D7%A6%D7%95%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רבקה זהר",
+    "isBand": false,
+    "birthYear": 1948,
+    "location": "חיפה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Rivka_Zohar2.jpg/250px-Rivka_Zohar2.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%91%D7%A7%D7%94%20%D7%96%D7%94%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נתן גושן",
+    "isBand": false,
+    "birthYear": 1986,
+    "location": "לוד",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Nathan_Goshen.jpg/250px-Nathan_Goshen.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%AA%D7%9F%20%D7%92%D7%95%D7%A9%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נסרין קדרי",
+    "isBand": false,
+    "birthYear": 1986,
+    "location": "לוד",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Nasrin_Kadri.jpg/250px-Nasrin_Kadri.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%A1%D7%A8%D7%99%D7%9F%20%D7%A7%D7%93%D7%A8%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שמוליק קראוס",
+    "isBand": false,
+    "birthYear": 1935,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/8/8b/Shmulik_Kraus.jpg/250px-Shmulik_Kraus.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%9E%D7%95%D7%9C%D7%99%D7%A7%20%D7%A7%D7%A8%D7%90%D7%95%D7%A1",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נגה ארז",
+    "isBand": false,
+    "birthYear": 1989,
+    "location": "קיסריה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Noga_Erez.jpg/250px-Noga_Erez.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%92%D7%94%20%D7%90%D7%A8%D7%96",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רייסקינדר",
+    "isBand": false,
+    "birthYear": 1983,
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Ryskinder_by_David_Ole.jpg/250px-Ryskinder_by_David_Ole.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%99%D7%99%D7%A1%D7%A7%D7%99%D7%A0%D7%93%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "צ'ארלי מגירה",
+    "isBand": false,
+    "birthYear": 1972,
+    "location": "בית שאן",
+    "area": "בקעת הירדן",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Charlie_Megira_2000_photo_BOAZ_GOLDBERG.jpg/250px-Charlie_Megira_2000_photo_BOAZ_GOLDBERG.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A6%27%D7%A8%D7%9C%D7%99_%D7%9E%D7%92%D7%99%D7%A8%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מיקה קרני",
+    "isBand": false,
+    "birthYear": 1972,
+    "location": "רמת השופט",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Mika_Karni.jpg/250px-Mika_Karni.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%A7%D7%94%20%D7%A7%D7%A8%D7%A0%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ירמי קפלן",
+    "isBand": false,
+    "birthYear": 1961,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Yermi_Kaplan_social_justice_Beersheba.jpg/250px-Yermi_Kaplan_social_justice_Beersheba.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%20%D7%A7%D7%A4%D7%9C%D7%9F",
+    "bornElsewhere": "ארצות הברית"
+  },
+  {
+    "name": "אמיר דדון",
+    "isBand": false,
+    "birthYear": 1975,
+    "location": "באר שבע",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Amir_Dadon.png/250px-Amir_Dadon.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%9E%D7%99%D7%A8%20%D7%93%D7%93%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "גיא מזיג",
+    "isBand": false,
+    "birthYear": 1978,
+    "location": "לוד",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/%D7%92%D7%99%D7%90_%D7%9E%D7%96%D7%99%D7%92.jpg/250px-%D7%92%D7%99%D7%90_%D7%9E%D7%96%D7%99%D7%92.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%D7%99%D7%90%20%D7%9E%D7%96%D7%99%D7%92",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שרון חזיז",
+    "isBand": false,
+    "birthYear": 1969,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Sharon_Haziz.jpg/250px-Sharon_Haziz.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%A8%D7%95%D7%9F%20%D7%97%D7%96%D7%99%D7%96",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רונית שחר",
+    "isBand": false,
+    "birthYear": 1968,
+    "location": "קריית ביאליק",
+    "area": "הקריות",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/RonitShachar.jpg/250px-RonitShachar.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%95%D7%A0%D7%99%D7%AA%20%D7%A9%D7%97%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אביב גפן",
+    "isBand": false,
+    "birthYear": 1973,
+    "location": "רמת גן",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Aviv_Geffen_1.jpg/250px-Aviv_Geffen_1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%99%D7%91%20%D7%92%D7%A4%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אפרת גוש",
+    "isBand": false,
+    "birthYear": 1983,
+    "location": "הרצליה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Efrat_Gosh_2011.jpg/250px-Efrat_Gosh_2011.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A4%D7%A8%D7%AA%20%D7%92%D7%95%D7%A9",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יוני בלוך",
+    "isBand": false,
+    "birthYear": 1981,
+    "location": "באר שבע",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Yoni_Bloch_Israeli_singer.jpg/250px-Yoni_Bloch_Israeli_singer.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A0%D7%99%20%D7%91%D7%9C%D7%95%D7%9A",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עברי לידר",
+    "isBand": false,
+    "birthYear": 1974,
+    "location": "גבעת חיים איחוד",
+    "area": "עמק חפר",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Ivri_Lider_-_march_05%2C_2021.jpg/250px-Ivri_Lider_-_march_05%2C_2021.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%91%D7%A8%D7%99%20%D7%9C%D7%99%D7%93%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "קרן פלס",
+    "isBand": false,
+    "birthYear": 1979,
+    "location": "יבנאל",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Keren_Peles_1.jpg/250px-Keren_Peles_1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%9F%20%D7%A4%D7%9C%D7%A1",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דוד ד'אור",
+    "isBand": false,
+    "birthYear": 1965,
+    "location": "בת ים",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/David_D%27Or_1.jpg/250px-David_D%27Or_1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%93%20%D7%93%D7%90%D7%95%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אריק ברמן",
+    "isBand": false,
+    "birthYear": 1979,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Berman.jpg/250px-Berman.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%99%D7%A7%20%D7%91%D7%A8%D7%9E%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עילי בוטנר",
+    "isBand": false,
+    "birthYear": 1978,
+    "location": "עין כרמל",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Elai_Botner.JPG/250px-Elai_Botner.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%99%D7%9C%D7%99%20%D7%91%D7%95%D7%98%D7%A0%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "גלעד כהנא",
+    "isBand": false,
+    "birthYear": 1970,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/%D7%92%D7%9C%D7%A2%D7%93_%D7%9B%D7%94%D7%A0%D7%90_%28cropped%29.jpg/250px-%D7%92%D7%9C%D7%A2%D7%93_%D7%9B%D7%94%D7%A0%D7%90_%28cropped%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%D7%9C%D7%A2%D7%93%20%D7%9B%D7%94%D7%A0%D7%90",
+    "bornElsewhere": "מקסיקו"
+  },
+  {
+    "name": "עופר ניסים",
+    "isBand": false,
+    "birthYear": 1964,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Offer_Nissim_at_Tel_Aviv_Forever_TLV_venue_2.jpg/250px-Offer_Nissim_at_Tel_Aviv_Forever_TLV_venue_2.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%95%D7%A4%D7%A8%20%D7%A0%D7%99%D7%A1%D7%99%D7%9D",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דנה אינטרנשיונל",
+    "isBand": false,
+    "birthYear": 1969,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/PikiWiki_Israel_48024_Dana_International_in_Ramat_Gan_%28cropped%29.JPG/250px-PikiWiki_Israel_48024_Dana_International_in_Ramat_Gan_%28cropped%29.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%A0%D7%94%20%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%A9%D7%99%D7%95%D7%A0%D7%9C",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מירי מסיקה",
+    "isBand": false,
+    "birthYear": 1978,
+    "location": "הרצליה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Miri_Mesika.webp/250px-Miri_Mesika.webp.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%A8%D7%99%20%D7%9E%D7%A1%D7%99%D7%A7%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "חמי רודנר",
+    "isBand": false,
+    "birthYear": 1964,
+    "location": "גבעת ברנר",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Hemi_Rudner%2C_Eifo_HaYeled_2.jpg/250px-Hemi_Rudner%2C_Eifo_HaYeled_2.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%97%D7%9E%D7%99%20%D7%A8%D7%95%D7%93%D7%A0%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אבי אבורומי",
+    "isBand": false,
+    "birthYear": 1996,
+    "location": "אילת",
+    "area": "דרום הנגב והערבה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Avi_Aburomi_1.jpg/250px-Avi_Aburomi_1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%99_%D7%90%D7%91%D7%95%D7%A8%D7%95%D7%9E%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עדן דרסו",
+    "isBand": false,
+    "birthYear": 1998,
+    "location": "רחובות",
+    "area": "השפלה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Eden_Derso.jpg/250px-Eden_Derso.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%93%D7%9F_%D7%93%D7%A8%D7%A1%D7%95",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אביתר בנאי",
+    "isBand": false,
+    "birthYear": 1973,
+    "location": "באר שבע",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Eviatar_Banai2.jpg/250px-Eviatar_Banai2.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%99%D7%AA%D7%A8%20%D7%91%D7%A0%D7%90%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שירי מימון",
+    "isBand": false,
+    "birthYear": 1981,
+    "location": "חיפה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Shiri_Maimon.jpg/250px-Shiri_Maimon.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%99%D7%A8%D7%99%20%D7%9E%D7%99%D7%9E%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "מיכל אמדורסקי",
+    "isBand": false,
+    "birthYear": 1975,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/%D7%A9%D7%99%D7%A8%D7%9F_%D7%AA%D7%9E%D7%95%D7%A0%D7%95%D7%AA_%D7%A9%D7%9C_%D7%94%D7%A4%D7%9C%D7%90%D7%A4%D7%95%D7%9F_303.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%9B%D7%9C%20%D7%90%D7%9E%D7%93%D7%95%D7%A8%D7%A1%D7%A7%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דניאל סלומון",
+    "isBand": false,
+    "birthYear": 1973,
+    "location": "חיפה",
+    "area": "חיפה והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Danielsalomon.JPG/250px-Danielsalomon.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%A0%D7%99%D7%90%D7%9C%20%D7%A1%D7%9C%D7%95%D7%9E%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עידן רייכל",
+    "isBand": false,
+    "birthYear": 1977,
+    "location": "כפר סבא",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Idan_Raichel_4.jpg/250px-Idan_Raichel_4.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%99%D7%93%D7%9F%20%D7%A8%D7%99%D7%99%D7%9B%D7%9C",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נרקיס (זמרת)",
+    "isBand": false,
+    "birthYear": 1981,
+    "location": "אשקלון",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/%D7%A0%D7%A8%D7%A7%D7%99%D7%A1_2022.jpg/250px-%D7%A0%D7%A8%D7%A7%D7%99%D7%A1_2022.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%A8%D7%A7%D7%99%D7%A1%20(%D7%96%D7%9E%D7%A8%D7%AA)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "איה זהבי פייגלין",
+    "isBand": false,
+    "birthYear": 1987,
+    "location": "חדרה",
+    "area": "עמק חפר",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Aya_Zahavi_Feiglin.jpg/330px-Aya_Zahavi_Feiglin.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%94%20%D7%96%D7%94%D7%91%D7%99%20%D7%A4%D7%99%D7%99%D7%92%D7%9C%D7%99%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אושר כהן",
+    "isBand": false,
+    "birthYear": 1998,
+    "location": "קריית ביאליק",
+    "area": "הקריות",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/%D7%90%D7%95%D7%A9%D7%A8_%D7%9B%D7%94%D7%9F.jpg/250px-%D7%90%D7%95%D7%A9%D7%A8_%D7%9B%D7%94%D7%9F.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A9%D7%A8%20%D7%9B%D7%94%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נועה קירל",
+    "isBand": false,
+    "birthYear": 2001,
+    "location": "רעננה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/1_Noa_Kirel.jpg/250px-1_Noa_Kirel.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%95%D7%A2%D7%94%20%D7%A7%D7%99%D7%A8%D7%9C",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אודיה",
+    "isBand": false,
+    "birthYear": 2001,
+    "location": "בת ים",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Odeya.jpg/250px-Odeya.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%93%D7%99%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עלמה גוב",
+    "isBand": false,
+    "birthYear": 2002,
+    "location": "ערוגות",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/No_free_image_-_woman-he.svg/150px-No_free_image_-_woman-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%9C%D7%9E%D7%94%20%D7%92%D7%95%D7%91",
+    "bornElsewhere": null
+  },
+  {
+    "name": "גבע אלון",
+    "isBand": false,
+    "birthYear": 1979,
+    "location": "מעברות",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/e/e2/Gevaaaa.jpg/250px-Gevaaaa.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%D7%91%D7%A2%20%D7%90%D7%9C%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "תומר ישעיהו",
+    "isBand": false,
+    "birthYear": 1989,
+    "location": "רעננה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tomer_Yeshayahu_-_%D7%AA%D7%95%D7%9E%D7%A8_%D7%99%D7%A9%D7%A2%D7%99%D7%94%D7%95.jpg/250px-Tomer_Yeshayahu_-_%D7%AA%D7%95%D7%9E%D7%A8_%D7%99%D7%A9%D7%A2%D7%99%D7%94%D7%95.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%AA%D7%95%D7%9E%D7%A8%20%D7%99%D7%A9%D7%A2%D7%99%D7%94%D7%95",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נעם רותם",
+    "isBand": false,
+    "birthYear": 1974,
+    "location": "קריית חיים",
+    "area": "הקריות",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Noam_Rotem_In-D-Negev_2007.jpg/250px-Noam_Rotem_In-D-Negev_2007.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%95%D7%A2%D7%9D%20%D7%A8%D7%95%D7%AA%D7%9D",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שי צברי",
+    "isBand": false,
+    "birthYear": 1974,
+    "location": "בת ים",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Shaitsabari.jpg/250px-Shaitsabari.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%99%20%D7%A6%D7%91%D7%A8%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דודו טסה",
+    "isBand": false,
+    "birthYear": 1977,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Dudutasa2017.jpg/250px-Dudutasa2017.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%93%D7%95%20%D7%98%D7%A1%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שלומי סרנגה",
+    "isBand": false,
+    "birthYear": 1973,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Shlomi_Saranga%2C_Yom_Hatzmaut_2014_%281%29.JPG/250px-Shlomi_Saranga%2C_Yom_Hatzmaut_2014_%281%29.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%9C%D7%95%D7%9E%D7%99%20%D7%A1%D7%A8%D7%A0%D7%92%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דקלון",
+    "isBand": false,
+    "birthYear": 1944,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/%D7%93%D7%A7%D7%9C%D7%95%D7%9F_%D7%91%D7%94%D7%95%D7%A4%D7%A2%D7%94_%D7%97%D7%99%D7%94_%D7%91%D7%97%D7%95%D7%A3_%D7%90%D7%99%D7%9C%D7%AA.jpg/250px-%D7%93%D7%A7%D7%9C%D7%95%D7%9F_%D7%91%D7%94%D7%95%D7%A4%D7%A2%D7%94_%D7%97%D7%99%D7%94_%D7%91%D7%97%D7%95%D7%A3_%D7%90%D7%99%D7%9C%D7%AA.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%A7%D7%9C%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "חיים משה",
+    "isBand": false,
+    "birthYear": 1955,
+    "location": "רמת השרון",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Haim_Moshe.JPG/250px-Haim_Moshe.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%97%D7%99%D7%99%D7%9D%20%D7%9E%D7%A9%D7%94",
+    "bornElsewhere": null
+  },
+  {
+    "name": "נתי לוי",
+    "isBand": false,
+    "birthYear": 1969,
+    "location": "ראש העין",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Male_no_free_image_yet-he.svg/250px-Male_no_free_image_yet-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A0%D7%AA%D7%99%20%D7%9C%D7%95%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "רון שובל",
+    "isBand": false,
+    "birthYear": 1973,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Ron_Shoval_01.JPG/330px-Ron_Shoval_01.JPG",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A8%D7%95%D7%9F%20%D7%A9%D7%95%D7%91%D7%9C",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אלי לוזון",
+    "isBand": false,
+    "birthYear": 1966,
+    "location": "נתניה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Male_no_free_image_yet-he.svg/250px-Male_no_free_image_yet-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%99%20%D7%9C%D7%95%D7%96%D7%95%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ג'קי מקייטן",
+    "isBand": false,
+    "birthYear": 1955,
+    "location": "נתניה",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/%D7%92%27%D7%A7%D7%99_%D7%9E%D7%A7%D7%99%D7%99%D7%98%D7%9F.jpg/250px-%D7%92%27%D7%A7%D7%99_%D7%9E%D7%A7%D7%99%D7%99%D7%98%D7%9F.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92'%D7%A7%D7%99%20%D7%9E%D7%A7%D7%99%D7%99%D7%98%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שריף (זמר)",
+    "isBand": false,
+    "birthYear": 1979,
+    "location": "אילת",
+    "area": "דרום הנגב והערבה",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Sharif_Maik.jpg/250px-Sharif_Maik.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%A8%D7%99%D7%A3%20%D7%94%D7%99%D7%9C%D7%93%20%D7%94%D7%93%D7%A8%D7%95%D7%96%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "קובי פרץ",
+    "isBand": false,
+    "birthYear": 1975,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Kobi_perez_1.jpg/250px-Kobi_perez_1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%91%D7%99%20%D7%A4%D7%A8%D7%A5",
+    "bornElsewhere": null
+  },
+  {
+    "name": "משה פרץ",
+    "isBand": false,
+    "birthYear": 1983,
+    "location": "טבריה",
+    "area": "הגליל התחתון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Moshe_Peretz.jpg/250px-Moshe_Peretz.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9E%D7%A9%D7%94%20%D7%A4%D7%A8%D7%A5",
+    "bornElsewhere": null
+  },
+  {
+    "name": "סמיר שוקרי",
+    "isBand": false,
+    "birthYear": 1955,
+    "location": "עכו",
+    "area": "הגליל המערבי",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Male_no_free_image_yet-he.svg/250px-Male_no_free_image_yet-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A1%D7%9E%D7%99%D7%A8%20%D7%A9%D7%95%D7%A7%D7%A8%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שלומי שבן",
+    "isBand": false,
+    "birthYear": 1976,
+    "location": "תל אביב",
+    "area": "תל אביב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Shlomi_Shaban_106FM.jpg/250px-Shlomi_Shaban_106FM.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%9C%D7%95%D7%9E%D7%99%20%D7%A9%D7%91%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "פיני חדד",
+    "isBand": false,
+    "birthYear": 1966,
+    "location": "שער אפרים",
+    "area": "השרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Male_no_free_image_yet-he.svg/250px-Male_no_free_image_yet-he.svg.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A4%D7%99%D7%A0%D7%99%20%D7%97%D7%93%D7%93",
+    "bornElsewhere": null
+  },
+  {
+    "name": "יואב יצחק (זמר)",
+    "isBand": false,
+    "birthYear": 1958,
+    "location": "ראש העין",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Yoav_Itzhak_%28singer%29.jpg/250px-Yoav_Itzhak_%28singer%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%90%D7%91%20%D7%99%D7%A6%D7%97%D7%A7%20(%D7%96%D7%9E%D7%A8)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "עופר לוי",
+    "isBand": false,
+    "birthYear": 1964,
+    "location": "קריית אתא",
+    "area": "הקריות",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flickr_-_Government_Press_Office_%28GPO%29_-_A_performance_by_Ofer_Levy_at_the_memorial_service_held_for_PM_Yitzhak_Rabin.jpg/250px-Flickr_-_Government_Press_Office_%28GPO%29_-_A_performance_by_Ofer_Levy_at_the_memorial_service_held_for_PM_Yitzhak_Rabin.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%95%D7%A4%D7%A8%20%D7%9C%D7%95%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ליאור נרקיס",
+    "isBand": false,
+    "birthYear": 1976,
+    "location": "חולון",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Lior_Narkis.jpg/250px-Lior_Narkis.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%90%D7%95%D7%A8%20%D7%A0%D7%A8%D7%A7%D7%99%D7%A1",
+    "bornElsewhere": null
+  },
+  {
+    "name": "חנן בן ארי",
+    "isBand": false,
+    "birthYear": 1988,
+    "location": "קרני שומרון",
+    "area": "יהודה ושומרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Hanan_Ben_Ari.jpg/250px-Hanan_Ben_Ari.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%97%D7%A0%D7%9F%20%D7%91%D7%9F%20%D7%90%D7%A8%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שחר טבוך",
+    "isBand": false,
+    "birthYear": 1999,
+    "location": "רמת גן",
+    "area": "מרכז",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Shahar_Tavoch.png/250px-Shahar_Tavoch.png",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%97%D7%A8%20%D7%98%D7%91%D7%95%D7%9A",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אביב גדג'",
+    "isBand": false,
+    "birthYear": 1977,
+    "location": "תלמי אליהו",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/7/7d/LALA_TAL_AVIV.jpeg/250px-LALA_TAL_AVIV.jpeg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%99%D7%91%20%D7%92%D7%93%D7%92",
+    "bornElsewhere": null
+  },
+  {
+    "name": "גבריאל בלחסן",
+    "isBand": false,
+    "birthYear": 1976,
+    "location": "תלמי אליהו",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/%D7%92%D7%91%D7%A8%D7%99%D7%90%D7%9C_%D7%91%D7%9C%D7%97%D7%A1%D7%9F_2011.jpg/250px-%D7%92%D7%91%D7%A8%D7%99%D7%90%D7%9C_%D7%91%D7%9C%D7%97%D7%A1%D7%9F_2011.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%92%D7%91%D7%A8%D7%99%D7%90%D7%9C%20%D7%91%D7%9C%D7%97%D7%A1%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "ענבל ביבי",
+    "isBand": false,
+    "birthYear": 1997,
+    "location": "מיתר",
+    "area": "צפון הנגב",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Inbal_Bibi_1.jpg/250px-Inbal_Bibi_1.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A2%D7%A0%D7%91%D7%9C%20%D7%91%D7%99%D7%91%D7%99",
+    "bornElsewhere": null
+  },
+  {
+    "name": "חנן יובל",
+    "isBand": false,
+    "birthYear": 1946,
+    "location": "משמרות",
+    "area": "עמק חפר",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/2%D7%97%D7%A0%D7%9F_%D7%99%D7%95%D7%91%D7%9C.jpg/250px-2%D7%97%D7%A0%D7%9F_%D7%99%D7%95%D7%91%D7%9C.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%97%D7%A0%D7%9F_%D7%99%D7%95%D7%91%D7%9C",
+    "bornElsewhere": null
+  },
+  {
+    "name": "אנה זק",
+    "isBand": false,
+    "birthYear": 2001,
+    "location": "אשדוד",
+    "area": "מישור החוף",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Anna_Zak.jpg/250px-Anna_Zak.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%A0%D7%94%20%D7%96%D7%A7",
+    "bornElsewhere": "רוסיה"
+  },
+  {
+    "name": "בשאר מוראד",
+    "isBand": false,
+    "birthYear": 1993,
+    "location": "בית חנינא",
+    "area": "יהודה ושומרון",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Bashar_Murad_Performing_at_Palestine_Music_Expo_2019_in_Ramallah%2C_Palestine.jpg/250px-Bashar_Murad_Performing_at_Palestine_Music_Expo_2019_in_Ramallah%2C_Palestine.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%91%D7%A9%D7%90%D7%A8_%D7%9E%D7%95%D7%A8%D7%90%D7%93",
+    "bornElsewhere": null
+  },
+  {
+    "name": "תאמר נפאר",
+    "isBand": false,
+    "birthYear": 1979,
+    "location": "לוד",
+    "area": "השפלה",
+    "image": "https://www.zohar-agency.com/wp-content/uploads/1211.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%AA%D7%90%D7%9E%D7%A8_%D7%A0%D7%A4%D7%90%D7%A8",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דודא",
+    "isBand": false,
+    "birthYear": 1994,
+    "location": "אשדוד",
+    "area": "מישור החוף",
+    "image": "https://rel-pro.co.il/wp-content/uploads/2023/09/%D7%93%D7%95%D7%93%D7%90-%D7%A7%D7%A8%D7%93%D7%99%D7%98-%D7%A6%D7%9C%D7%9D-%D7%A0%D7%99%D7%A8-%D7%90%D7%9E%D7%99%D7%AA%D7%99.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%93%D7%90_(%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%90%D7%99)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "בן בלאקוול",
+    "isBand": false,
+    "birthYear": 1993,
+    "location": "דימונה",
+    "area": "צפון הנגב",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZshF4K7tiFPjv_LV25cxNYLL5LiRwqWZXwg&s",
+    "wiki": "",
+    "bornElsewhere": null
+  },
+  {
+    "name": "דן תורן",
+    "isBand": false,
+    "birthYear": 1960,
+    "location": "ראש הנקרה",
+    "area": "הגליל המערבי",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Dan_Toren_%28cropped%29.jpg/250px-Dan_Toren_%28cropped%29.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%93%D7%9F_%D7%AA%D7%95%D7%A8%D7%9F",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שי להב (מוזיקאי)",
+    "isBand": false,
+    "birthYear": 1968,
+    "location": "טבריה",
+    "area": "הגליל התחתון",
+    "image": "https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_533,w_758/656137",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%99_%D7%9C%D7%94%D7%91_(%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%90%D7%99)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "שמואל (זמר)",
+    "isBand": false,
+    "birthYear": 1996,
+    "location": "אפרת",
+    "area": "יהודה ושומרון",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpper3Q0_QsSnIBOGbE8RAWzq-HJqDzl-yUQ&s",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C_(%D7%96%D7%9E%D7%A8)",
+    "bornElsewhere": null
+  },
+  {
+    "name": "הדג נחש",
+    "isBand": true,
+    "yearRange": {
+      "first": 1971,
+      "last": 1977
+    },
+    "location": "ירושלים",
+    "area": "ירושלים והאזור",
+    "image": "https://upload.wikimedia.org/wikipedia/he/thumb/f/fa/HaDagNahash.jpg/330px-HaDagNahash.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%94%D7%93%D7%92_%D7%A0%D7%97%D7%A9"
+  },
+  {
+    "name": "אינפקציה",
+    "isBand": true,
+    "yearRange": {
+      "first": 1973,
+      "last": 1978
+    },
+    "location": "פתח תקווה",
+    "area": "מרכז",
+    "image": "https://www.bpm-music.com/wp-content/uploads/2014/12/Infek.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%A0%D7%A4%D7%A7%D7%A6%D7%99%D7%94_(%D7%9C%D7%94%D7%A7%D7%94)"
+  },
+  {
+    "name": "שבק ס",
+    "isBand": true,
+    "yearRange": {
+      "first": 1972,
+      "last": 1977
+    },
+    "location": "יבנה",
+    "area": "מישור החוף",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7CB7jYw8DZF71Z4o4StdocRy6X969TPaGtg&s",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A9%D7%91%22%D7%A7_%D7%A1%27"
+  },
+  {
+    "name": "Infected Mushroom",
+    "isBand": true,
+    "yearRange": {
+      "first": 1975,
+      "last": 1981
+    },
+    "location": "קריית ים",
+    "area": "הקריות",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/InfectedMushroom02.jpg/250px-InfectedMushroom02.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%A0%D7%A4%D7%A7%D7%98%D7%93_%D7%9E%D7%90%D7%A9%D7%A8%D7%95%D7%9D"
+  },
+  {
+    "name": "כנסיית השכל",
+    "isBand": true,
+    "yearRange": {
+      "first": 1970,
+      "last": 1980
+    },
+    "location": "שדרות",
+    "area": "צפון הנגב",
+    "image": "https: //blog.nli.org.il/wp-content/uploads/2024/09/church832.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%9B%D7%A0%D7%A1%D7%99%D7%99%D7%AA_%D7%94%D7%A9%D7%9B%D7%9C"
+  },
+  {
+    "name": "A-WA",
+    "isBand": true,
+    "yearRange": {
+      "first": 1989,
+      "last": 1983
+    },
+    "location": "שחרות",
+    "area": "דרום הנגב והערבה",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQkVhUy8Yp5KKWHqZq4sgRS33xQFstrz6boz8_sDwtVQk6MWckGiKy7lY-k4mKw7ytb6dddU1mTz_2Lp41iz0Q-mw",
+    "wiki": "https://he.wikipedia.org/wiki/A-WA"
+  },
+  {
+    "name": "קפה שחור חזק",
+    "isBand": true,
+    "yearRange": {
+      "first": 1990,
+      "last": 1991
+    },
+    "location": "נתניה",
+    "area": "השרון",
+    "image": "https://www.ynet.co.il/PicServer4/2015/09/24/6457140/64571316930100490491no.jpg",
+    "wiki": "https://he.wikipedia.org/wiki/%D7%A7%D7%A4%D7%94_%D7%A9%D7%97%D7%95%D7%A8_%D7%97%D7%96%D7%A7"
+  }
+]
