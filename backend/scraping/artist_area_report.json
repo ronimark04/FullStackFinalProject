@@ -1,0 +1,23 @@
+{
+  "totalArtists": 331,
+  "areaCounts": {
+    "Tel Aviv Area": 56,
+    "Sharon": 34,
+    "Jerusalem Area": 32,
+    "Shfela": 31,
+    "Coast": 29,
+    "Northern Negev": 27,
+    "Center": 26,
+    "Haifa Area": 18,
+    "Lower Galilee": 16,
+    "Krayot": 13,
+    "Hefer Valley": 12,
+    "Upper Galilee": 9,
+    "Western Galilee": 8,
+    "Southern Negev and Arava": 7,
+    "Jordan Valley": 7,
+    "Judea and Samaria": 6
+  },
+  "errorCount": 0,
+  "errors": []
+}
