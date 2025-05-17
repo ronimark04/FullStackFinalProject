@@ -1,17 +1,28 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
 
-const inputPath = path.join(__dirname, 'artists_merged_with_summaries.json');
+// Load main artist data and Spotify matches
+const baseArtists = JSON.parse(fs.readFileSync('./artists.json', 'utf-8'));
+const spotifyData = JSON.parse(fs.readFileSync('./spotify_artists_output.json', 'utf-8'));
 
-const artists = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
-
-const missingSummaryEng = artists.filter(artist =>
-    !artist.summary || !artist.summary.eng || artist.summary.eng.trim() === ''
+// Create a map for quick lookup by English name
+const spotifyMap = new Map(
+    spotifyData.map((artist) => [artist.nameEng.trim().toLowerCase(), artist])
 );
 
-console.log(`🧐 Found ${missingSummaryEng.length} artists with missing summary.eng:\n`);
+const merged = baseArtists.map((artist) => {
+    const key = artist.name.eng.trim().toLowerCase();
+    const match = spotifyMap.get(key);
 
-missingSummaryEng.forEach((artist, index) => {
-    const name = typeof artist.name === 'object' ? artist.name.heb : artist.name;
-    console.log(`${index + 1}. ${name}`);
+    if (match) {
+        artist.spotify = {
+            artistId: match.spotifyId,
+            embedUrl: match.artistEmbed,
+        };
+    }
+
+    return artist;
 });
+
+// Save merged result
+fs.writeFileSync('./artists_with_spotify.json', JSON.stringify(merged, null, 2));
+console.log('✅ Merged artist data saved to artists_with_spotify.json');
