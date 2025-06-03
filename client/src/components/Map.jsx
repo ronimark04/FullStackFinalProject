@@ -4,9 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import baseMap from '../assets/map/israel-map.png';
 import { mapPaths } from '../data/mapPaths';
 import { regionData } from '../data/regionData';
+import { useLanguage } from '@/context/languageContext';
 
 export default function Map() {
     const [hoveredRegion, setHoveredRegion] = useState(null);
+    const { language } = useLanguage();
     const navigate = useNavigate();
 
     return (
@@ -37,8 +39,8 @@ export default function Map() {
             <AnimatePresence>
                 {hoveredRegion && regionData[hoveredRegion]?.label?.heb && (
                     <motion.img
-                        key={`label-${hoveredRegion}`}
-                        src={regionData[hoveredRegion].label.heb}
+                        key={`label-${hoveredRegion}-${language}`}
+                        src={regionData[hoveredRegion].label[language]}
                         alt={`${hoveredRegion} label`}
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
