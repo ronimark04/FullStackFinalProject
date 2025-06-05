@@ -1,6 +1,5 @@
 import { Switch } from "@heroui/react";
 import { useLanguage } from "../context/languageContext";
-
 import enIcon from "../assets/en-icon.svg";
 import heIcon from "../assets/he-icon.svg";
 
@@ -32,3 +31,4 @@ export default function LanguageSwitch() {
 
     );
 }
+

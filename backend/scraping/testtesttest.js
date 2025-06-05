@@ -1,28 +1,23 @@
-import fs from 'fs';
+const fs = require("fs");
 
-// Load main artist data and Spotify matches
-const baseArtists = JSON.parse(fs.readFileSync('./artists.json', 'utf-8'));
-const spotifyData = JSON.parse(fs.readFileSync('./spotify_artists_output.json', 'utf-8'));
+// Load artists.json
+const artists = JSON.parse(fs.readFileSync("artists.json", "utf-8"));
 
-// Create a map for quick lookup by English name
-const spotifyMap = new Map(
-    spotifyData.map((artist) => [artist.nameEng.trim().toLowerCase(), artist])
-);
+// Transform image field
+const updated = artists.map(artist => {
+    const updatedArtist = { ...artist };
 
-const merged = baseArtists.map((artist) => {
-    const key = artist.name.eng.trim().toLowerCase();
-    const match = spotifyMap.get(key);
-
-    if (match) {
-        artist.spotify = {
-            artistId: match.spotifyId,
-            embedUrl: match.artistEmbed,
+    // Convert string image to object
+    if (typeof artist.image === "string") {
+        updatedArtist.image = {
+            url: artist.image,
+            alt: artist.name.eng || "artist"
         };
     }
 
-    return artist;
+    return updatedArtist;
 });
 
-// Save merged result
-fs.writeFileSync('./artists_with_spotify.json', JSON.stringify(merged, null, 2));
-console.log('✅ Merged artist data saved to artists_with_spotify.json');
+// Save the new file
+fs.writeFileSync("artists_with_images.json", JSON.stringify(updated, null, 2), "utf-8");
+console.log("✅ Created artists_with_images.json with updated image objects.");

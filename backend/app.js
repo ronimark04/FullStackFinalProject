@@ -9,8 +9,9 @@ const app = express();
 const router = require('./router/router');
 const corsMiddleware = require('./middlewares/cors');
 const morganLogger = require('./logger/morganLogger');
-const { seedCards, generateSeedUsers } = require("./seedData.js");
+// const { seedCards, generateSeedUsers } = require("./seedData.js");
 const User = require('./users/models/mongodb/User.js');
+const seedDatabase = require('./seed_data/seed');
 
 app.use(express.json());
 app.use(morganLogger);
@@ -26,8 +27,14 @@ app.use(router);
 
 app.listen(PORT, async () => {
     console.log(chalk.bgGreen(`Server is running on port ${PORT}`));
-    connectToDB();
-    const dbUsers = await User.find({});
+    try {
+        await connectToDB(); // Ensure DB connection before seeding
+        await seedDatabase(); // Seed areas and artists if needed
+    } catch (error) {
+        console.error(chalk.bgRed("Error during database setup:"), error);
+    }
+    // connectToDB();
+    // const dbUsers = await User.find({});
     // const dbCards = await Card.find({});
     // if (dbUsers.length === 0 && dbCards.length === 0) {
     //     seedDatabase();

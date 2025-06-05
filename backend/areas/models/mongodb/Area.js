@@ -7,8 +7,6 @@ const areaSchema = new mongoose.Schema({
         unique: true,
         trim: true,
         lowercase: true,
-        minlength: 2,
-        maxlength: 20
     }
 });
 
