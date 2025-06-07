@@ -2,87 +2,60 @@ const mongoose = require("mongoose");
 const { URL } = require("../../../helpers/mongodb/mongooseValidators");
 const { image } = require("../../../helpers/mongodb/image");
 
-// Reusable field structure for multilingual text
-const localizedString = {
-    heb: { type: String, required: true },
-    eng: { type: String, required: true }
-};
-
-const optionalLocalizedString = {
-    heb: { type: String, default: null },
-    eng: { type: String, default: null }
-};
-
 const artistSchema = new mongoose.Schema({
     name: {
-        type: localizedString,
+        type: String,
         required: true
+    },
+    birthYear: {
+        type: Number,
+        required: true,
+        validate: {
+            validator: function (v) {
+                return /^\d{4}$/.test(v); // exactly 4 digits
+            },
+            message: props => `${props.value} is not a valid 4-digit year!`
+        }
+    },
+    location: {
+        type: String,
+        required: true,
+        default: null
+    },
+    area: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Area',
+        default: null
+    },
+    image: image,
+    wiki: {
+        heb: { type: String, default: null },
+        eng: { type: String, default: null }
+    },
+    embedUrl: URL,
+    spotify: {
+        artistId: { type: String, required: true },
+        embedUrl: { type: String, required: true }
     },
     isBand: {
         type: Boolean,
         required: true
     },
-    birthYear: {
-        type: Number,
-        validate: {
-            validator: function (v) {
-                if (this.isBand) return v == null;
-                return /^\d{4}$/.test(v);
-            },
-            message: props => `${props.value} is not a valid 4-digit year!`
-        }
-    },
     yearRange: {
-        first: {
-            type: Number,
-            validate: {
-                validator: function (v) {
-                    if (!this.isBand) return v == null;
-                    return /^\d{4}$/.test(v);
-                },
-                message: props => `${props.value} is not a valid 4-digit year!`
-            }
-        },
-        last: {
-            type: Number,
-            default: null,
-            validate: {
-                validator: function (v) {
-                    if (!this.isBand || v == null) return true;
-                    return /^\d{4}$/.test(v);
-                },
-                message: props => `${props.value} is not a valid 4-digit year!`
-            }
-        }
-    },
-    location: {
-        type: localizedString,
-        required: true
-    },
-    area: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Area",
-        required: true
-    },
-    image: image,
-    wiki: {
-        type: optionalLocalizedString,
-        required: true
-    },
-    bornElsewhere: {
-        type: optionalLocalizedString,
-        default: null
-    },
-    summary: {
-        type: localizedString,
-        required: true
-    },
-    spotify: {
-        artistId: { type: String, required: true },
-        embedUrl: URL        // ✅ using imported schema snippet
+        first: { type: Number, default: null },
+        last: { type: Number, default: null }
     }
+}, { timestamps: true });
+
+artistSchema.pre("remove", async function (next) {
+    const ArtistVote = mongoose.model("ArtistVote");
+    const Comment = mongoose.model("Comment");
+
+    await ArtistVote.deleteMany({ artist: this._id });
+    await Comment.deleteMany({ artist: this._id });
+
+    next();
 });
 
 const Artist = mongoose.model("Artist", artistSchema);
-
 module.exports = Artist;

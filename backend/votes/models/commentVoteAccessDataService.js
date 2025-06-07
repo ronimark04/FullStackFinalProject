@@ -1,6 +1,14 @@
 const CommentVote = require('./mongodb/CommentVote');
+const Comment = require('../../comments/models/mongodb/Comment');
+const User = require('../../users/models/mongodb/User');
 
 const voteComment = async (commentId, userId, value) => {
+    const comment = await Comment.findById(commentId);
+    if (!comment) throw new Error("Comment not found");
+
+    const user = await User.findById(userId);
+    if (!user) throw new Error("User not found");
+
     const existing = await CommentVote.findOne({ comment: commentId, user: userId });
 
     if (existing) {
@@ -9,12 +17,14 @@ const voteComment = async (commentId, userId, value) => {
             return { message: "Vote removed" };
         } else {
             existing.value = value;
-            return await existing.save();
+            await existing.save();
+            return { message: "Vote updated", vote: existing };
         }
     }
 
     const vote = new CommentVote({ comment: commentId, user: userId, value });
-    return await vote.save();
+    await vote.save();
+    return { message: "Vote added", vote };
 };
 
 const getVotesByComment = async (commentId) => {
@@ -45,7 +55,6 @@ const getVotesByComment = async (commentId) => {
     return result;
 };
 
-
 const getVotesByUser = async (userId) => {
     const votes = await CommentVote.find({ user: userId }).select("comment value");
 
@@ -65,7 +74,6 @@ const getVotesByUser = async (userId) => {
 
     return result;
 };
-
 
 module.exports = {
     voteComment,

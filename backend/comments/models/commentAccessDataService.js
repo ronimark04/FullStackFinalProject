@@ -1,4 +1,6 @@
 const Comment = require('./mongodb/Comment');
+const Artist = require('../../artists/models/mongodb/Artist');
+const User = require('../../users/models/mongodb/User');
 
 const getAllComments = async () => {
     try {
@@ -21,6 +23,12 @@ const getCommentById = async (commentId) => {
 };
 
 const createComment = async (commentData) => {
+    const artist = await Artist.findById(commentData.artist);
+    if (!artist) throw new Error("Artist not found");
+
+    const user = await User.findById(commentData.author);
+    if (!user) throw new Error("Author not found");
+
     const comment = new Comment(commentData);
     return await comment.save();
 };

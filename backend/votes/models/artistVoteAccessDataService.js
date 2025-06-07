@@ -1,24 +1,30 @@
-require('../../users/models/mongodb/User');
-require('../../artists/models/mongodb/Artist');
 const ArtistVote = require('./mongodb/ArtistVote');
-
-
+const Artist = require('../../artists/models/mongodb/Artist');
+const User = require('../../users/models/mongodb/User');
 
 const voteArtist = async (artistId, userId, value) => {
+    const artist = await Artist.findById(artistId);
+    if (!artist) throw new Error("Artist not found");
+
+    const user = await User.findById(userId);
+    if (!user) throw new Error("User not found");
+
     const existing = await ArtistVote.findOne({ artist: artistId, user: userId });
 
     if (existing) {
         if (existing.value === value) {
-            await ArtistVote.findByIdAndDelete(existing._id); // toggle off
+            await ArtistVote.findByIdAndDelete(existing._id);
             return { message: "Vote removed" };
         } else {
-            existing.value = value; // change vote
-            return await existing.save();
+            existing.value = value;
+            await existing.save();
+            return { message: "Vote updated", vote: existing };
         }
     }
 
     const vote = new ArtistVote({ artist: artistId, user: userId, value });
-    return await vote.save();
+    await vote.save();
+    return { message: "Vote added", vote };
 };
 
 const getVotesByArtist = async (artistId) => {
@@ -49,7 +55,6 @@ const getVotesByArtist = async (artistId) => {
     return result;
 };
 
-
 const getVotesByUser = async (userId) => {
     const votes = await ArtistVote.find({ user: userId }).select("artist value");
 
@@ -69,7 +74,6 @@ const getVotesByUser = async (userId) => {
 
     return result;
 };
-
 
 module.exports = {
     voteArtist,
