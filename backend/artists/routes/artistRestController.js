@@ -1,5 +1,5 @@
 const express = require('express');
-const { getArtists, getArtist, createArtist, updateArtist, likeArtist, deleteArtist } = require('../models/artistAccessDataService');
+const { getArtists, getArtist, getArtistsByArea, createArtist, updateArtist, likeArtist, deleteArtist } = require('../models/artistAccessDataService');
 const auth = require('../../auth/authService');
 const { handleError } = require('../../utils/handleErrors');
 
@@ -13,6 +13,17 @@ router.get("/", async (req, res) => {
     }
     catch (err) {
         return handleError(res, err.status || 400, err.message);
+    }
+});
+
+// get artists by area
+router.get("/byArea/:areaId", async (req, res) => {
+    try {
+        const { areaId } = req.params;
+        let artists = await getArtistsByArea(areaId);
+        res.send(artists);
+    } catch (error) {
+        return handleError(res, error.status || 400, error.message);
     }
 });
 
@@ -87,6 +98,9 @@ router.delete("/:id", auth, async (req, res) => {
         if (!userInfo.isAdmin) {
             return handleError(res, 403, "Authorization Error: Non admin users cannot delete artists");
         }
+
+        await deleteArtist(id);
+        res.send({ message: "Artist deleted successfully" });
     }
     catch (err) {
         return handleError(res, 400, err.message);

@@ -10,6 +10,16 @@ const getArtists = async () => {
     }
 };
 
+const getArtistsByArea = async (areaId) => {
+    try {
+        let artists = await Artist.find({ area: areaId }).sort({ birthYear: 1 });
+        return artists;
+    }
+    catch (err) {
+        throw err;
+    }
+};
+
 const getArtist = async (artistId) => {
     try {
         let artist = await Artist.findById(artistId);
@@ -72,4 +82,12 @@ const deleteArtist = async (artistId) => {
     }
 };
 
-module.exports = { getArtists, getArtist, createArtist, updateArtist, likeArtist, deleteArtist };
+module.exports = {
+    getArtists,
+    getArtist,
+    getArtistsByArea,
+    createArtist,
+    updateArtist,
+    likeArtist,
+    deleteArtist
+};
