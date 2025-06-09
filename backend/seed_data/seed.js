@@ -32,23 +32,28 @@ async function seedDatabase() {
     const rawArtists = JSON.parse(fs.readFileSync(artistsPath, "utf-8"));
 
     // Replace area name string with corresponding ObjectId
+    let missingAreaCount = 0;
     const artistsToInsert = rawArtists.map(artist => {
-        const areaName = artist.area.toLowerCase();
+        const areaName = (artist.area || '').toLowerCase().trim();
         const areaId = areaMap.get(areaName);
 
         if (!areaId) {
-            throw new Error(`No area found for: ${artist.area}`);
+            console.warn(`⚠️  No area found for: '${artist.area}' (artist: ${artist.name.eng || artist.name.heb})`);
+            missingAreaCount++;
         }
 
         return {
             ...artist,
-            area: areaId
+            area: areaId || null
         };
     });
 
     // Seed artists
     const insertedArtists = await Artist.insertMany(artistsToInsert);
     console.log(`✅ Seeded ${insertedArtists.length} artists.`);
+    if (missingAreaCount > 0) {
+        console.log(`⚠️  ${missingAreaCount} artists had missing area references.`);
+    }
 }
 
 module.exports = seedDatabase;

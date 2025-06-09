@@ -26,8 +26,8 @@ const createComment = async (commentData) => {
     const artist = await Artist.findById(commentData.artist);
     if (!artist) throw new Error("Artist not found");
 
-    const user = await User.findById(commentData.author);
-    if (!user) throw new Error("Author not found");
+    const user = await User.findById(commentData.user);
+    if (!user) throw new Error("User not found");
 
     const comment = new Comment(commentData);
     return await comment.save();
@@ -38,7 +38,7 @@ const updateComment = async (commentId, updatedComment) => {
 };
 
 const deleteComment = async (commentId) => {
-    return await Comment.findByIdAndDelete(commentId);
+    return await Comment.findByIdAndUpdate(commentId, { deleted: true }, { new: true });
 };
 
 module.exports = {

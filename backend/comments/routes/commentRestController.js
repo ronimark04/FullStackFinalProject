@@ -87,7 +87,7 @@ router.put('/:id', auth, async (req, res) => {
             return handleError(res, 404, "Comment not found");
         }
 
-        if (existingComment.author.toString() !== userId.toString()) {
+        if (existingComment.user.toString() !== userId.toString()) {
             return handleError(res, 403, "Unauthorized: not the comment's author");
         }
 
@@ -109,7 +109,7 @@ router.delete('/:id', auth, async (req, res) => {
             return handleError(res, 404, "Comment not found");
         }
 
-        if (existingComment.author.toString() !== userId.toString() && !req.user.isAdmin) {
+        if (existingComment.user.toString() !== userId.toString() && !req.user.isAdmin) {
             return handleError(res, 403, "Unauthorized to delete this comment");
         }
 

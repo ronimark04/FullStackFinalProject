@@ -4,46 +4,95 @@ const { image } = require("../../../helpers/mongodb/image");
 
 const artistSchema = new mongoose.Schema({
     name: {
-        type: String,
-        required: true
+        heb: { type: String, required: true },
+        eng: { type: String, required: true }
     },
     birthYear: {
         type: Number,
-        required: true,
-        validate: {
-            validator: function (v) {
-                return /^\d{4}$/.test(v); // exactly 4 digits
+        default: null,
+        validate: [
+            {
+                validator: function (v) {
+                    // Only validate if isBand is false
+                    if (this.isBand === false) {
+                        return v !== null && /^\d{4}$/.test(v);
+                    }
+                    return true; // If isBand is true, skip validation
+                },
+                message: props => `${props.value} is not a valid 4-digit year!`
             },
-            message: props => `${props.value} is not a valid 4-digit year!`
-        }
+            {
+                validator: function (v) {
+                    // If isBand is false, birthYear is required
+                    if (this.isBand === false) {
+                        return v !== null;
+                    }
+                    return true;
+                },
+                message: "birthYear is required for solo artists."
+            }
+        ]
     },
     location: {
-        type: String,
-        required: true,
-        default: null
+        heb: { type: String, required: true },
+        eng: { type: String, required: true }
     },
     area: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Area',
         default: null
     },
-    image: image,
+    image: {
+        url: { type: String, required: true },
+        alt: { type: String, required: true }
+    },
     wiki: {
         heb: { type: String, default: null },
         eng: { type: String, default: null }
     },
     embedUrl: URL,
-    spotify: {
-        artistId: { type: String, required: true },
-        embedUrl: { type: String, required: true }
-    },
+    spotifyId: { type: String, required: true },
     isBand: {
         type: Boolean,
         required: true
     },
     yearRange: {
-        first: { type: Number, default: null },
-        last: { type: Number, default: null }
+        first: {
+            type: Number,
+            default: null,
+            validate: {
+                validator: function (v) {
+                    // If isBand is true, yearRange.first is required
+                    if (this.isBand === true) {
+                        return v !== null;
+                    }
+                    return true;
+                },
+                message: "yearRange.first is required for bands."
+            }
+        },
+        last: {
+            type: Number,
+            default: null,
+            validate: {
+                validator: function (v) {
+                    // If isBand is true, yearRange.last is required
+                    if (this.isBand === true) {
+                        return v !== null;
+                    }
+                    return true;
+                },
+                message: "yearRange.last is required for bands."
+            }
+        }
+    },
+    bornElsewhere: {
+        eng: { type: String, default: null },
+        heb: { type: String, default: null }
+    },
+    summary: {
+        heb: { type: String, default: null }, // might need to be required
+        eng: { type: String, default: null }
     }
 }, { timestamps: true });
 
