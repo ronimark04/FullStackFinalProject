@@ -5,17 +5,14 @@ import SiteNavbar from "./components/SiteNavbar";
 import AreaPage from "./components/AreaPage";
 
 function App() {
-
   return (
-    <>
-      <SiteNavbar>
-      </SiteNavbar>
+    <div className="min-h-screen" style={{ backgroundColor: '#fbc37e' }}>
+      <SiteNavbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:areaId" element={<AreaPage />} />
       </Routes>
-
-    </>
+    </div>
   )
 }
 
