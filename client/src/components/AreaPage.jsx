@@ -136,7 +136,7 @@ const AreaPage = () => {
             <h1 className="text-2xl font-bold mb-6">
                 {getLocalizedText(area?.name, language === 'heb' ? 'לא ידוע' : 'Unknown')} Artists
             </h1>
-            <div className="flex justify-center items-start gap-64 relative">
+            <div className="flex justify-center items-start gap-72 relative">
                 {/* Left column */}
                 <div className="flex flex-col relative">
                     {leftColumnArtists.map((artist, idx) => {
@@ -171,12 +171,44 @@ const AreaPage = () => {
                                             top: '50%',
                                             left: '50%',
                                             width: `${leftLineWidths[idx]}px`,
-                                            height: '10px',
+                                            height: '4px',
                                             background: '#a1130a',
                                             transform: 'translateY(-50%)',
                                         }}
                                     />
                                 )}
+                                <div
+                                    style={{
+                                        position: 'absolute',
+                                        top: '45%',
+                                        left: '105%',
+                                        marginLeft: '8px',
+                                        transform: 'translateY(-50%)',
+                                        color: "#ffab40",
+                                        fontWeight: 400,
+                                        fontSize: "1.5rem",
+                                        lineHeight: 1.1,
+                                        fontFamily: 'adobe-hebrew',
+                                        fontStyle: 'normal',
+                                        textShadow: `
+                                            1px 0 #b71c1c,
+                                            -1px 0 #b71c1c,
+                                            0 1px #b71c1c,
+                                            0 -1px #b71c1c,
+                                            0.7px 0.7px #b71c1c,
+                                            -0.7px -0.7px #b71c1c,
+                                            0.7px -0.7px #b71c1c,
+                                            -0.7px 0.7px #b71c1c,
+                                            0 0 8px rgba(183,28,28,0.5),
+                                            0 0 8px rgba(183,28,28,0.5)
+                                        `,
+                                        pointerEvents: 'none',
+                                        zIndex: 2,
+                                        whiteSpace: 'nowrap',
+                                    }}
+                                >
+                                    {yearDisplay}
+                                </div>
                                 <motion.div
                                     whileHover={{ scale: 1.08 }}
                                     whileTap={{ scale: 0.9 }}
@@ -190,8 +222,8 @@ const AreaPage = () => {
                                             lineHeight: 1,
                                             position: "absolute",
                                             top: "-40px",
-                                            left: 0,
-                                            right: 0,
+                                            left: "50%",
+                                            transform: "translateX(-50%)",
                                             textAlign: "center",
                                             zIndex: 10,
                                             pointerEvents: "none",
@@ -208,7 +240,8 @@ const AreaPage = () => {
                                                 -1px 1px #b71c1c,
                                                 0 0 8px rgba(183,28,28,0.5),
                                                 0 0 8px rgba(183,28,28,0.5)
-                                            `
+                                            `,
+                                            whiteSpace: 'nowrap',
                                         }}
                                     >
                                         {artistName}
@@ -245,7 +278,6 @@ const AreaPage = () => {
                                             `
                                         }}
                                     >
-                                        <div>{yearDisplay}</div>
                                         {showLocation && <div>{location}</div>}
                                     </span>
                                     {/* BornElsewhere (further below) */}
@@ -315,12 +347,44 @@ const AreaPage = () => {
                                             top: '50%',
                                             right: '50%',
                                             width: `${rightLineWidths[idx]}px`,
-                                            height: '10px',
+                                            height: '5px',
                                             background: '#a1130a',
                                             transform: 'translateY(-50%)',
                                         }}
                                     />
                                 )}
+                                <div
+                                    style={{
+                                        position: 'absolute',
+                                        top: '45%',
+                                        right: '105%',
+                                        marginRight: '8px',
+                                        transform: 'translateY(-50%)',
+                                        color: "#ffab40",
+                                        fontWeight: 400,
+                                        fontSize: "1.5rem",
+                                        lineHeight: 1.1,
+                                        fontFamily: 'adobe-hebrew',
+                                        fontStyle: 'normal',
+                                        textShadow: `
+                                            1px 0 #b71c1c,
+                                            -1px 0 #b71c1c,
+                                            0 1px #b71c1c,
+                                            0 -1px #b71c1c,
+                                            0.7px 0.7px #b71c1c,
+                                            -0.7px -0.7px #b71c1c,
+                                            0.7px -0.7px #b71c1c,
+                                            -0.7px 0.7px #b71c1c,
+                                            0 0 8px rgba(183,28,28,0.5),
+                                            0 0 8px rgba(183,28,28,0.5)
+                                        `,
+                                        pointerEvents: 'none',
+                                        zIndex: 2,
+                                        whiteSpace: 'nowrap',
+                                    }}
+                                >
+                                    {yearDisplay}
+                                </div>
                                 <motion.div
                                     whileHover={{ scale: 1.08 }}
                                     whileTap={{ scale: 0.9 }}
@@ -334,8 +398,8 @@ const AreaPage = () => {
                                             lineHeight: 1,
                                             position: "absolute",
                                             top: "-40px",
-                                            left: 0,
-                                            right: 0,
+                                            left: "50%",
+                                            transform: "translateX(-50%)",
                                             textAlign: "center",
                                             zIndex: 10,
                                             pointerEvents: "none",
@@ -352,7 +416,8 @@ const AreaPage = () => {
                                                 -1px 1px #b71c1c,
                                                 0 0 8px rgba(183,28,28,0.5),
                                                 0 0 8px rgba(183,28,28,0.5)
-                                            `
+                                            `,
+                                            whiteSpace: 'nowrap',
                                         }}
                                     >
                                         {artistName}
@@ -389,7 +454,6 @@ const AreaPage = () => {
                                             `
                                         }}
                                     >
-                                        <div>{yearDisplay}</div>
                                         {showLocation && <div>{location}</div>}
                                     </span>
                                     {/* BornElsewhere (further below) */}
@@ -434,7 +498,7 @@ const AreaPage = () => {
                         top: '-60px',
                         bottom: '-60px',
                         width: '16px',
-                        zIndex: 0,
+                        zIndex: 10,
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
