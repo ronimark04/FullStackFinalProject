@@ -2,6 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import { Avatar, Tooltip, Card, Spinner, Button } from "@heroui/react";
 import { useLanguage } from '@/context/languageContext';
+import { useAuth } from '@/context/authContext';
 import { motion } from "framer-motion";
 import ArtistActions from './ArtistActions';
 
@@ -13,6 +14,7 @@ const AreaPage = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const { language } = useLanguage();
+    const { user } = useAuth();
 
     // --- Dynamic line width logic ---
     // Refs for timeline and avatars
@@ -244,7 +246,12 @@ const AreaPage = () => {
                                     whileTap={{ scale: 0.9 }}
                                     className="flex flex-row items-center gap-2"
                                 >
-                                    <ArtistActions initialLikes={12} initialDislikes={6} initialComments={3} onComment={() => { }} />
+                                    <ArtistActions
+                                        artistId={artist._id}
+                                        initialComments={3}
+                                        isAuthenticated={!!user}
+                                        userId={user?._id}
+                                    />
                                     <div className="relative flex flex-col items-center cursor-pointer group">
                                         <span
                                             style={{
@@ -485,7 +492,12 @@ const AreaPage = () => {
                                             )}
                                         </span>
                                     </div>
-                                    <ArtistActions initialLikes={12} initialDislikes={6} initialComments={3} onComment={() => { }} />
+                                    <ArtistActions
+                                        artistId={artist._id}
+                                        initialComments={3}
+                                        isAuthenticated={!!user}
+                                        userId={user?._id}
+                                    />
                                 </motion.div>
                             </div>
                         );

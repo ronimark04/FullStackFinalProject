@@ -5,8 +5,12 @@ import {
   NavbarItem,
   Link,
   Button,
+  useDisclosure,
 } from "@heroui/react";
+import { useNavigate } from "react-router-dom";
 import LanguageSwitch from "./LanguageSwitch";
+import LoginModal from "./LoginModal";
+import { useAuth } from "../context/authContext";
 
 export const AcmeLogo = () => {
   return (
@@ -22,49 +26,73 @@ export const AcmeLogo = () => {
 };
 
 export default function SiteNavbar() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate();
+  const { logout, isAuthenticated } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
+
   return (
-    <Navbar shouldHideOnScroll className="w-full px-6">
-      {/* Left side: Logo */}
-      <NavbarContent justify="start">
-        <NavbarBrand>
-          <AcmeLogo />
-          <p className="font-bold text-inherit">ACME</p>
-        </NavbarBrand>
-      </NavbarContent>
+    <>
+      <Navbar shouldHideOnScroll className="w-full px-6">
+        {/* Left side: Logo */}
+        <NavbarContent justify="start">
+          <NavbarBrand>
+            <AcmeLogo />
+            <p className="font-bold text-inherit">ACME</p>
+          </NavbarBrand>
+        </NavbarContent>
 
-      {/* Center: Navigation links */}
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link aria-current="page" href="#">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
+        {/* Center: Navigation links */}
+        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+          <NavbarItem>
+            <Link color="foreground" href="#">
+              Features
+            </Link>
+          </NavbarItem>
+          <NavbarItem isActive>
+            <Link aria-current="page" href="#">
+              Customers
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link color="foreground" href="#">
+              Integrations
+            </Link>
+          </NavbarItem>
+        </NavbarContent>
 
-      {/* Right side: Language toggle and login/signup */}
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <LanguageSwitch />
-        </NavbarItem>
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
-    </Navbar>
+        {/* Right side: Language toggle and login/signup */}
+        <NavbarContent justify="end">
+          <NavbarItem className="hidden lg:flex">
+            <LanguageSwitch />
+          </NavbarItem>
+          {isAuthenticated ? (
+            <NavbarItem>
+              <Button color="danger" variant="flat" onPress={handleLogout}>
+                Logout
+              </Button>
+            </NavbarItem>
+          ) : (
+            <>
+              <NavbarItem className="hidden lg:flex">
+                <Button variant="light" onPress={onOpen}>
+                  Login
+                </Button>
+              </NavbarItem>
+              <NavbarItem>
+                <Button as={Link} color="primary" href="/signup" variant="flat">
+                  Sign Up
+                </Button>
+              </NavbarItem>
+            </>
+          )}
+        </NavbarContent>
+      </Navbar>
+      <LoginModal isOpen={isOpen} onClose={onClose} />
+    </>
   );
 }

@@ -13,13 +13,12 @@ const registerUser = async (newUser) => {
         newUser.password = await generatePassword(newUser.password);
         let user = new User(newUser);
         user = await user.save();
-        lessInfoUser = { email: user.email, name: user.name, _id: user._id };
+        const lessInfoUser = { email: user.email, name: user.name, _id: user._id };
         return lessInfoUser;
     } catch (error) {
         throw error;
     }
 };
-
 
 const getUser = async (userId) => {
     try {
@@ -39,19 +38,30 @@ const loginUser = async (email, password) => {
             error.status = 401;
             throw error;
         }
+
         const isPasswordCorrect = await comparePasswords(password, userFromDB.password);
         if (!isPasswordCorrect) {
             const error = new Error("Error: Password incorrect");
             error.status = 401;
             throw error;
         }
-        const token = await generateAuthToken(userFromDB);
-        return token;
+
+        const token = generateAuthToken(userFromDB);
+        return {
+            token,
+            user: {
+                _id: userFromDB._id,
+                email: userFromDB.email,
+                name: userFromDB.name,
+                isAdmin: userFromDB.isAdmin,
+                isBusiness: userFromDB.isBusiness
+            }
+        };
     }
     catch (err) {
         throw err;
     }
-}
+};
 
 const updateUser = async (userId, updatedUser) => {
     try {
