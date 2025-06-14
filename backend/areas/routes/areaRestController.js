@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAreas, getAreaWithArtists } = require('../models/areaAccessDataService');
+const { getAreas, getAreaWithArtists, getAreaWithArtistsByName } = require('../models/areaAccessDataService');
 const { handleError } = require('../../utils/handleErrors');
 
 // get all areas
@@ -15,16 +15,13 @@ router.get("/", async (req, res) => {
     }
 });
 
-// get area by id with its artists
-router.get("/:areaId", async (req, res) => {
+// get area by name (with hyphens)
+router.get('/area/:areaNameUrl', async (req, res) => {
     try {
-        const { areaId } = req.params;
-        console.log("Requested area ID:", areaId); // Debug log
-        const data = await getAreaWithArtists(areaId);
-        console.log("Found area data:", data); // Debug log
+        const { areaNameUrl } = req.params;
+        const data = await getAreaWithArtistsByName(areaNameUrl);
         res.status(200).send(data);
     } catch (error) {
-        console.error("Error fetching area:", error); // Debug log
         handleError(res, error.status || 500, error.message);
     }
 });

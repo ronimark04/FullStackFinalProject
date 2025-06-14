@@ -93,6 +93,16 @@ const artistSchema = new mongoose.Schema({
     summary: {
         heb: { type: String, default: null }, // might need to be required
         eng: { type: String, default: null }
+    },
+    rate: {
+        type: Number,
+        default: 3,
+        validate: {
+            validator: function (v) {
+                return v >= 1 && v <= 4;
+            },
+            message: "Rate must be between 1 and 4"
+        }
     }
 }, { timestamps: true });
 

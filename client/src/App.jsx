@@ -10,10 +10,12 @@ function App() {
       <SiteNavbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:areaId" element={<AreaPage />} />
+        <Route path="/area/:areaName" element={<AreaPage />} />
       </Routes>
     </div>
   )
 }
 
 export default App
+
+// TODO: delete comments and logs, go through api requests to find redundencies

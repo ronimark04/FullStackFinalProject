@@ -3,9 +3,10 @@ import { useEffect, useState, useRef } from 'react';
 import { Avatar, Tooltip, Card, Spinner, Button } from "@heroui/react";
 import { useLanguage } from '@/context/languageContext';
 import { motion } from "framer-motion";
+import ArtistActions from './ArtistActions';
 
 const AreaPage = () => {
-    const { areaId } = useParams();
+    const { areaName } = useParams();
     const navigate = useNavigate();
     const [artists, setArtists] = useState([]);
     const [area, setArea] = useState(null);
@@ -57,10 +58,10 @@ const AreaPage = () => {
                 setLoading(true);
                 setError(null);
 
-                const response = await fetch(`/areas/${areaId}`);
+                const response = await fetch(`/areas/area/${areaName}`);
                 if (!response.ok) {
                     if (response.status === 404) {
-                        throw new Error(`Area not found. Please check the ID and try again.`);
+                        throw new Error(`Area not found. Please check the name and try again.`);
                     }
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -76,7 +77,7 @@ const AreaPage = () => {
         };
 
         fetchData();
-    }, [areaId]);
+    }, [areaName]);
 
     if (loading) {
         return (
@@ -108,6 +109,29 @@ const AreaPage = () => {
         return textObj[language];
     };
 
+    // Helper to get avatar size based on rate
+    const getAvatarSize = (rate) => {
+        switch (rate) {
+            case 1: return 'w-52 h-52'; // 208px
+            case 2: return 'w-40 h-40'; // 160px
+            case 3: return 'w-36 h-36'; // 144px
+            case 4: return 'w-28 h-28'; // 112px
+            default: return 'w-52 h-52'; // Default to largest size
+        }
+    };
+
+    // Helper to normalize area name for comparison
+    const normalizeAreaName = (name) => {
+        if (!name) return '';
+        return name.toLowerCase().trim();
+    };
+
+    // Helper to check if area is Tel Aviv
+    const isTelAvivArea = (name) => {
+        const normalized = normalizeAreaName(name);
+        return normalized === 'tel aviv';
+    };
+
     // Helper to remove parentheses and their contents from a string
     function stripParentheses(str) {
         if (!str) return str;
@@ -131,6 +155,12 @@ const AreaPage = () => {
     const leftColumnArtists = sortedArtists.filter((_, i) => i % 2 === 0);
     const rightColumnArtists = sortedArtists.filter((_, i) => i % 2 === 1);
 
+    console.log('Area data:', area);
+    console.log('Area name:', area?.name);
+    console.log('Normalized area name:', normalizeAreaName(area?.name));
+    const showLocation = !isTelAvivArea(area?.name);
+    console.log('Show location:', showLocation);
+
     return (
         <div className="container mx-auto p-6">
             <h1 className="text-2xl font-bold mb-6">
@@ -148,7 +178,7 @@ const AreaPage = () => {
                         const yearDisplay = artist.yearRange
                             ? `${artist.yearRange.first} - ${artist.yearRange.last}`
                             : artist.birthYear;
-                        const showLocation = areaId !== 'area_11_telAviv';
+                        const showLocation = !isTelAvivArea(area?.name);
                         // Reverse: first avatar is right, second is left, etc.
                         const offset = 60; // px, adjust as needed
                         const isLeft = idx % 2 !== 0;
@@ -212,102 +242,88 @@ const AreaPage = () => {
                                 <motion.div
                                     whileHover={{ scale: 1.08 }}
                                     whileTap={{ scale: 0.9 }}
-                                    className="relative flex flex-col items-center cursor-pointer group"
+                                    className="flex flex-row items-center gap-2"
                                 >
-                                    <span
-                                        style={{
-                                            color: "#ffab40",
-                                            fontWeight: 400,
-                                            fontSize: "2.5rem",
-                                            lineHeight: 1,
-                                            position: "absolute",
-                                            top: "-40px",
-                                            left: "50%",
-                                            transform: "translateX(-50%)",
-                                            textAlign: "center",
-                                            zIndex: 10,
-                                            pointerEvents: "none",
-                                            fontFamily: 'adobe-hebrew',
-                                            fontStyle: 'normal',
-                                            textShadow: `
-                                                1.5px 0 #b71c1c,
-                                                -1.5px 0 #b71c1c,
-                                                0 1.5px #b71c1c,
-                                                0 -1.5px #b71c1c,
-                                                1px 1px #b71c1c,
-                                                -1px -1px #b71c1c,
-                                                1px -1px #b71c1c,
-                                                -1px 1px #b71c1c,
-                                                0 0 8px rgba(183,28,28,0.5),
-                                                0 0 8px rgba(183,28,28,0.5)
-                                            `,
-                                            whiteSpace: 'nowrap',
-                                        }}
-                                    >
-                                        {artistName}
-                                    </span>
-                                    <Avatar
-                                        src={artist.image?.url}
-                                        className="w-44 h-44 [&>img]:object-top"
-                                        fallback={fallbackInitial}
-                                        radius="lg"
-                                        isBordered
-                                        color="danger"
-                                    />
-                                    {/* Year and location (just below avatar) */}
-                                    <span
-                                        className="absolute left-0 right-0 bottom-0 z-10 text-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                                        style={{
-                                            color: "#ffab40",
-                                            fontWeight: 400,
-                                            fontSize: "1.5rem",
-                                            lineHeight: 1.1,
-                                            fontFamily: 'adobe-hebrew',
-                                            fontStyle: 'normal',
-                                            textShadow: `
-                                                1px 0 #b71c1c,
-                                                -1px 0 #b71c1c,
-                                                0 1px #b71c1c,
-                                                0 -1px #b71c1c,
-                                                0.7px 0.7px #b71c1c,
-                                                -0.7px -0.7px #b71c1c,
-                                                0.7px -0.7px #b71c1c,
-                                                -0.7px 0.7px #b71c1c,
-                                                0 0 8px rgba(183,28,28,0.5),
-                                                0 0 8px rgba(183,28,28,0.5)
-                                            `
-                                        }}
-                                    >
-                                        {showLocation && <div>{location}</div>}
-                                    </span>
-                                    {/* BornElsewhere (further below) */}
-                                    {bornElsewhere && (
+                                    <ArtistActions initialLikes={12} initialDislikes={6} initialComments={3} onComment={() => { }} />
+                                    <div className="relative flex flex-col items-center cursor-pointer group">
                                         <span
-                                            className="absolute left-0 right-0 z-10 text-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
                                             style={{
-                                                bottom: '-27px',
                                                 color: "#ffab40",
                                                 fontWeight: 400,
-                                                fontSize: "1.1rem",
+                                                fontSize: "2.5rem",
+                                                lineHeight: 1,
+                                                position: "absolute",
+                                                top: "-40px",
+                                                left: "50%",
+                                                transform: "translateX(-50%)",
+                                                textAlign: "center",
+                                                zIndex: 10,
+                                                pointerEvents: "none",
                                                 fontFamily: 'adobe-hebrew',
-                                                fontStyle: 'italic',
+                                                fontStyle: 'normal',
                                                 textShadow: `
-                                                    0.7px 0 #b71c1c,
-                                                    -0.7px 0 #b71c1c,
-                                                    0 0.5px #b71c1c,
-                                                    0 -0.5px #b71c1c,
-                                                    0.5px 0.5px #b71c1c,
-                                                    -0.5px -0.5px #b71c1c,
-                                                    0.5px -0.5px #b71c1c,
-                                                    -0.5px 0.5px #b71c1c,
+                                                    1.5px 0 #b71c1c,
+                                                    -1.5px 0 #b71c1c,
+                                                    0 1.5px #b71c1c,
+                                                    0 -1.5px #b71c1c,
+                                                    1px 1px #b71c1c,
+                                                    -1px -1px #b71c1c,
+                                                    1px -1px #b71c1c,
+                                                    -1px 1px #b71c1c,
+                                                    0 0 8px rgba(183,28,28,0.5),
+                                                    0 0 8px rgba(183,28,28,0.5)
+                                                `,
+                                                whiteSpace: 'nowrap',
+                                            }}
+                                        >
+                                            {artistName}
+                                        </span>
+                                        <Avatar
+                                            src={artist.image?.url}
+                                            className={`${getAvatarSize(artist.rate)} [&>img]:object-top`}
+                                            fallback={fallbackInitial}
+                                            radius="lg"
+                                            isBordered
+                                            color="danger"
+                                        />
+                                        {/* Year and location (just below avatar) */}
+                                        <span
+                                            className="absolute left-0 right-0 bottom-0 z-10 text-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                                            style={{
+                                                color: "#ffab40",
+                                                fontWeight: 400,
+                                                fontSize: "1.5rem",
+                                                lineHeight: 1.1,
+                                                fontFamily: 'adobe-hebrew',
+                                                fontStyle: 'normal',
+                                                textShadow: `
+                                                    1px 0 #b71c1c,
+                                                    -1px 0 #b71c1c,
+                                                    0 1px #b71c1c,
+                                                    0 -1px #b71c1c,
+                                                    0.7px 0.7px #b71c1c,
+                                                    -0.7px -0.7px #b71c1c,
+                                                    0.7px -0.7px #b71c1c,
+                                                    -0.7px 0.7px #b71c1c,
                                                     0 0 8px rgba(183,28,28,0.5),
                                                     0 0 8px rgba(183,28,28,0.5)
                                                 `
                                             }}
                                         >
-                                            {language === 'heb' ? `נולד/ה ב${bornElsewhere}` : `Born in ${bornElsewhere}`}
+                                            {showLocation && (
+                                                bornElsewhere ? (
+                                                    <>
+                                                        <div>{location}</div>
+                                                        <div style={{ fontSize: '1.1rem', fontStyle: 'italic' }}>
+                                                            {language === 'heb' ? `נולד/ה ב${bornElsewhere}` : `Born in ${bornElsewhere}`}
+                                                        </div>
+                                                    </>
+                                                ) : (
+                                                    <div>{location}</div>
+                                                )
+                                            )}
                                         </span>
-                                    )}
+                                    </div>
                                 </motion.div>
                             </div>
                         );
@@ -324,7 +340,7 @@ const AreaPage = () => {
                         const yearDisplay = artist.yearRange
                             ? `${artist.yearRange.first} - ${artist.yearRange.last}`
                             : artist.birthYear;
-                        const showLocation = areaId !== 'area_11_telAviv';
+                        const showLocation = !isTelAvivArea(area?.name);
                         // Reverse: first avatar is left, second is right, etc.
                         const offset = 60; // px, adjust as needed
                         const isRight = idx % 2 !== 0;
@@ -388,102 +404,88 @@ const AreaPage = () => {
                                 <motion.div
                                     whileHover={{ scale: 1.08 }}
                                     whileTap={{ scale: 0.9 }}
-                                    className="relative flex flex-col items-center cursor-pointer group"
+                                    className="flex flex-row items-center gap-2"
                                 >
-                                    <span
-                                        style={{
-                                            color: "#ffab40",
-                                            fontWeight: 400,
-                                            fontSize: "2.5rem",
-                                            lineHeight: 1,
-                                            position: "absolute",
-                                            top: "-40px",
-                                            left: "50%",
-                                            transform: "translateX(-50%)",
-                                            textAlign: "center",
-                                            zIndex: 10,
-                                            pointerEvents: "none",
-                                            fontFamily: 'adobe-hebrew',
-                                            fontStyle: 'normal',
-                                            textShadow: `
-                                                1.5px 0 #b71c1c,
-                                                -1.5px 0 #b71c1c,
-                                                0 1.5px #b71c1c,
-                                                0 -1.5px #b71c1c,
-                                                1px 1px #b71c1c,
-                                                -1px -1px #b71c1c,
-                                                1px -1px #b71c1c,
-                                                -1px 1px #b71c1c,
-                                                0 0 8px rgba(183,28,28,0.5),
-                                                0 0 8px rgba(183,28,28,0.5)
-                                            `,
-                                            whiteSpace: 'nowrap',
-                                        }}
-                                    >
-                                        {artistName}
-                                    </span>
-                                    <Avatar
-                                        src={artist.image?.url}
-                                        className="w-44 h-44 [&>img]:object-top"
-                                        fallback={fallbackInitial}
-                                        radius="lg"
-                                        isBordered
-                                        color="danger"
-                                    />
-                                    {/* Year and location (just below avatar) */}
-                                    <span
-                                        className="absolute left-0 right-0 bottom-0 z-10 text-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                                        style={{
-                                            color: "#ffab40",
-                                            fontWeight: 400,
-                                            fontSize: "1.5rem",
-                                            lineHeight: 1.1,
-                                            fontFamily: 'adobe-hebrew',
-                                            fontStyle: 'normal',
-                                            textShadow: `
-                                                1px 0 #b71c1c,
-                                                -1px 0 #b71c1c,
-                                                0 1px #b71c1c,
-                                                0 -1px #b71c1c,
-                                                0.7px 0.7px #b71c1c,
-                                                -0.7px -0.7px #b71c1c,
-                                                0.7px -0.7px #b71c1c,
-                                                -0.7px 0.7px #b71c1c,
-                                                0 0 8px rgba(183,28,28,0.5),
-                                                0 0 8px rgba(183,28,28,0.5)
-                                            `
-                                        }}
-                                    >
-                                        {showLocation && <div>{location}</div>}
-                                    </span>
-                                    {/* BornElsewhere (further below) */}
-                                    {bornElsewhere && (
+                                    <div className="relative flex flex-col items-center cursor-pointer group">
                                         <span
-                                            className="absolute left-0 right-0 z-10 text-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
                                             style={{
-                                                bottom: '-27px',
                                                 color: "#ffab40",
                                                 fontWeight: 400,
-                                                fontSize: "1.1rem",
+                                                fontSize: "2.5rem",
+                                                lineHeight: 1,
+                                                position: "absolute",
+                                                top: "-40px",
+                                                left: "50%",
+                                                transform: "translateX(-50%)",
+                                                textAlign: "center",
+                                                zIndex: 10,
+                                                pointerEvents: "none",
                                                 fontFamily: 'adobe-hebrew',
-                                                fontStyle: 'italic',
+                                                fontStyle: 'normal',
                                                 textShadow: `
-                                                    0.7px 0 #b71c1c,
-                                                    -0.7px 0 #b71c1c,
-                                                    0 0.5px #b71c1c,
-                                                    0 -0.5px #b71c1c,
-                                                    0.5px 0.5px #b71c1c,
-                                                    -0.5px -0.5px #b71c1c,
-                                                    0.5px -0.5px #b71c1c,
-                                                    -0.5px 0.5px #b71c1c,
+                                                    1.5px 0 #b71c1c,
+                                                    -1.5px 0 #b71c1c,
+                                                    0 1.5px #b71c1c,
+                                                    0 -1.5px #b71c1c,
+                                                    1px 1px #b71c1c,
+                                                    -1px -1px #b71c1c,
+                                                    1px -1px #b71c1c,
+                                                    -1px 1px #b71c1c,
+                                                    0 0 8px rgba(183,28,28,0.5),
+                                                    0 0 8px rgba(183,28,28,0.5)
+                                                `,
+                                                whiteSpace: 'nowrap',
+                                            }}
+                                        >
+                                            {artistName}
+                                        </span>
+                                        <Avatar
+                                            src={artist.image?.url}
+                                            className={`${getAvatarSize(artist.rate)} [&>img]:object-top`}
+                                            fallback={fallbackInitial}
+                                            radius="lg"
+                                            isBordered
+                                            color="danger"
+                                        />
+                                        {/* Year and location (just below avatar) */}
+                                        <span
+                                            className="absolute left-0 right-0 bottom-0 z-10 text-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                                            style={{
+                                                color: "#ffab40",
+                                                fontWeight: 400,
+                                                fontSize: "1.5rem",
+                                                lineHeight: 1.1,
+                                                fontFamily: 'adobe-hebrew',
+                                                fontStyle: 'normal',
+                                                textShadow: `
+                                                    1px 0 #b71c1c,
+                                                    -1px 0 #b71c1c,
+                                                    0 1px #b71c1c,
+                                                    0 -1px #b71c1c,
+                                                    0.7px 0.7px #b71c1c,
+                                                    -0.7px -0.7px #b71c1c,
+                                                    0.7px -0.7px #b71c1c,
+                                                    -0.7px 0.7px #b71c1c,
                                                     0 0 8px rgba(183,28,28,0.5),
                                                     0 0 8px rgba(183,28,28,0.5)
                                                 `
                                             }}
                                         >
-                                            {language === 'heb' ? `נולד/ה ב${bornElsewhere}` : `Born in ${bornElsewhere}`}
+                                            {showLocation && (
+                                                bornElsewhere ? (
+                                                    <>
+                                                        <div>{location}</div>
+                                                        <div style={{ fontSize: '1.1rem', fontStyle: 'italic' }}>
+                                                            {language === 'heb' ? `נולד/ה ב${bornElsewhere}` : `Born in ${bornElsewhere}`}
+                                                        </div>
+                                                    </>
+                                                ) : (
+                                                    <div>{location}</div>
+                                                )
+                                            )}
                                         </span>
-                                    )}
+                                    </div>
+                                    <ArtistActions initialLikes={12} initialDislikes={6} initialComments={3} onComment={() => { }} />
                                 </motion.div>
                             </div>
                         );
@@ -496,7 +498,7 @@ const AreaPage = () => {
                     style={{
                         transform: 'translateX(-50%)',
                         top: '-60px',
-                        bottom: '-60px',
+                        bottom: '0px',
                         width: '16px',
                         zIndex: 10,
                         display: 'flex',
