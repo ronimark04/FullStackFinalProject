@@ -4,6 +4,7 @@ import Home from './components/Home'
 import SiteNavbar from "./components/SiteNavbar";
 import AreaPage from "./components/AreaPage";
 import Signup from "./components/Signup";
+import ArtistPage from "./components/ArtistPage";
 import { AuthProvider } from "./context/authContext";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/area/:areaName" element={<AreaPage />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/artist/:artistId" element={<ArtistPage />} />
         </Routes>
       </div>
     </AuthProvider>

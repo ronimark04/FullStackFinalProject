@@ -46,11 +46,33 @@ const AreaPage = () => {
         setRightLineWidths(newRightWidths);
     };
 
+    // Effect for measuring lines after data is loaded
     useEffect(() => {
-        measureLineWidths();
-        window.addEventListener('resize', measureLineWidths);
-        return () => window.removeEventListener('resize', measureLineWidths);
-    }, [artists, area]);
+        if (!loading && artists.length > 0) {
+            // Wait for images to load and DOM to be fully rendered
+            const timer = setTimeout(() => {
+                measureLineWidths();
+            }, 250);
+            return () => clearTimeout(timer);
+        }
+    }, [loading, artists]);
+
+    // Separate effect for resize handling
+    useEffect(() => {
+        let resizeTimer;
+        const handleResize = () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                measureLineWidths();
+            }, 100);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            clearTimeout(resizeTimer);
+        };
+    }, []);
 
     // --- End dynamic line width logic ---
 
@@ -168,7 +190,7 @@ const AreaPage = () => {
             <h1 className="text-2xl font-bold mb-6">
                 {getLocalizedText(area?.name, language === 'heb' ? 'לא ידוע' : 'Unknown')} Artists
             </h1>
-            <div className="flex justify-center items-start gap-72 relative">
+            <div className="flex justify-center items-start gap-96 relative">
                 {/* Left column */}
                 <div className="flex flex-col relative">
                     {leftColumnArtists.map((artist, idx) => {
@@ -235,7 +257,7 @@ const AreaPage = () => {
                                             0 0 8px rgba(183,28,28,0.5)
                                         `,
                                         pointerEvents: 'none',
-                                        zIndex: 2,
+                                        zIndex: 11,
                                         whiteSpace: 'nowrap',
                                     }}
                                 >
@@ -402,7 +424,7 @@ const AreaPage = () => {
                                             0 0 8px rgba(183,28,28,0.5)
                                         `,
                                         pointerEvents: 'none',
-                                        zIndex: 2,
+                                        zIndex: 11,
                                         whiteSpace: 'nowrap',
                                     }}
                                 >

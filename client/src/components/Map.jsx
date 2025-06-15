@@ -7,32 +7,34 @@ import { regionData } from '../data/regionData';
 import { useLanguage } from '@/context/languageContext';
 import areasData from '../../../backend/seed_data/areas.json';
 
+const regionToPathMap = {
+    'area_01_upperGalilee': 'upper-galilee',
+    'area_02_westernGalilee': 'western-galilee',
+    'area_03_krayot': 'krayot',
+    'area_04_haifa': 'haifa-area',
+    'area_05_jordanValley': 'jordan-valley',
+    'area_06_lowerGalilee': 'lower-galilee',
+    'area_07_heferValley': 'hefer-valley',
+    'area_08_judeaAndSamaria': 'judea-and-samaria',
+    'area_09_sharon': 'sharon',
+    'area_10_center': 'center',
+    'area_11_telAviv': 'tel-aviv',
+    'area_12_shfela': 'shfela',
+    'area_13_coast': 'coast',
+    'area_14_jerusalem': 'jerusalem-area',
+    'area_15_northernNegev': 'northern-negev',
+    'area_16_arava': 'southern-negev-and-arava'
+};
+
 export default function Map() {
     const [hoveredRegion, setHoveredRegion] = useState(null);
     const { language } = useLanguage();
     const navigate = useNavigate();
 
     const getAreaPath = (regionId) => {
-        // Extract the area name from the regionId (e.g., "area_11_telAviv" -> "tel aviv")
-        const areaName = regionId.split('_').slice(2).join(' ')
-            .replace(/([A-Z])/g, ' $1') // Add space before capital letters
-            .toLowerCase()
-            .trim();
-        console.log('Extracted area name:', areaName);
-
-        // Find the matching area in areas.json
-        const area = areasData.find(a => {
-            const normalizedAreaName = a.name.toLowerCase();
-            const normalizedExtractedName = areaName.toLowerCase();
-            return normalizedAreaName === normalizedExtractedName;
-        });
-        console.log('Found area:', area);
-
-        if (area) {
-            // Convert the name to URL format (e.g., "tel aviv" -> "tel-aviv")
-            const path = `/area/${area.name.toLowerCase().replace(/\s+/g, '-')}`;
-            console.log('Generated path:', path);
-            return path;
+        const pathName = regionToPathMap[regionId];
+        if (pathName) {
+            return `/area/${pathName}`;
         }
         return null;
     };
