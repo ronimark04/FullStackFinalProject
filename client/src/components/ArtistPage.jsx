@@ -5,6 +5,7 @@ import DislikeIcon from '../assets/dislike-1387-svgrepo-com.svg?react';
 import { useAuth } from '@/context/authContext';
 import { useLanguage } from '@/context/languageContext';
 import CommentActions from './CommentActions';
+import ArtistActionsArtistPage from './ArtistActionsArtistPage';
 
 const ICON_COLOR = "#A15E0A";
 const ICON_HOVER_COLOR = "#C1873B";
@@ -232,7 +233,6 @@ const ArtistPage = () => {
     const { user } = useAuth();
     const { language } = useLanguage();
     const [artist, setArtist] = useState(null);
-    const [votes, setVotes] = useState({ upvotes: { count: 0 }, downvotes: { count: 0 } });
     const [comments, setComments] = useState([]);
     const [usersById, setUsersById] = useState({});
     const [loading, setLoading] = useState(true);
@@ -249,10 +249,6 @@ const ArtistPage = () => {
                 const artistRes = await fetch(`/artists/${artistId}`);
                 const artistData = await artistRes.json();
                 setArtist(artistData);
-                // Fetch votes
-                const votesRes = await fetch(`/artist-votes/artist/${artistId}`);
-                const votesData = await votesRes.json();
-                setVotes(votesData);
                 // Fetch comments
                 const commentsRes = await fetch(`/comments/artist/${artistId}`);
                 const commentsData = await commentsRes.json();
@@ -328,16 +324,7 @@ const ArtistPage = () => {
                             {getSummaryWithWiki(artist.summary?.[language], artist.wiki, language)}
                         </div>
                     </div>
-                    <div style={{ background: '#fff3e0', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%', display: 'flex', gap: 24, justifyContent: 'center', alignItems: 'center' }}>
-                        <div style={{ ...iconStyle, color: ICON_COLOR, background: '#ffe0b2', borderRadius: 12, minWidth: 80, justifyContent: 'center', fontWeight: 600, fontSize: 18 }}>
-                            <LikeIcon style={{ width: 28, height: 28, marginRight: 8 }} />
-                            <span style={{ color: '#a15e0a', fontWeight: 700 }}>{votes.upvotes?.count || 0}</span>
-                        </div>
-                        <div style={{ ...iconStyle, color: ICON_COLOR, background: '#ffe0b2', borderRadius: 12, minWidth: 80, justifyContent: 'center', fontWeight: 600, fontSize: 18 }}>
-                            <DislikeIcon style={{ width: 28, height: 28, marginRight: 8 }} />
-                            <span style={{ color: '#a15e0a', fontWeight: 700 }}>{votes.downvotes?.count || 0}</span>
-                        </div>
-                    </div>
+                    <ArtistActionsArtistPage artistId={artist._id} />
                 </div>
             </div>
             {/* Comments full width below */}

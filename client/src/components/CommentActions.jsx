@@ -146,7 +146,7 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
                 onMouseLeave={() => setHovered(null)}
             >
                 <span style={{ position: "absolute", fontWeight: 600, fontSize: 13, color: "#fff", left: 18, top: 18, transform: "translate(-50%, -50%)", pointerEvents: "none" }}>{likes}</span>
-                <LikeIcon style={{ width: 28, height: 28, display: 'block', margin: 'auto' }} />
+                <LikeIcon style={{ width: 24, height: 24, display: 'block', margin: 'auto' }} />
             </div>
             <div
                 style={iconStyle(disliked, hovered === 'dislike')}
@@ -155,16 +155,18 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
                 onMouseLeave={() => setHovered(null)}
             >
                 <span style={{ position: "absolute", fontWeight: 600, fontSize: 13, color: "#fff", left: 18, top: 18, transform: "translate(-50%, -50%)", pointerEvents: "none" }}>{dislikes}</span>
-                <DislikeIcon style={{ width: 28, height: 28, display: 'block', margin: 'auto' }} />
+                <DislikeIcon style={{ width: 24, height: 24, display: 'block', margin: 'auto' }} />
             </div>
-            <div
-                style={iconStyle(isReplying, hovered === 'reply')}
-                onClick={onReplyClick}
-                onMouseEnter={() => setHovered('reply')}
-                onMouseLeave={() => setHovered(null)}
-            >
-                <ReplyIcon style={{ width: 26, height: 26, display: 'block', margin: 'auto' }} />
-            </div>
+            {user && (
+                <div
+                    style={iconStyle(isReplying, hovered === 'reply')}
+                    onClick={onReplyClick}
+                    onMouseEnter={() => setHovered('reply')}
+                    onMouseLeave={() => setHovered(null)}
+                >
+                    <ReplyIcon style={{ width: 26, height: 26, display: 'block', margin: 'auto' }} />
+                </div>
+            )}
         </div>
     );
 } 
