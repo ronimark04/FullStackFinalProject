@@ -32,7 +32,6 @@ export default function SiteNavbar() {
 
   const handleLogout = () => {
     logout();
-    navigate('/');
   };
 
   return (
