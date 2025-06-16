@@ -6,8 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/context/authContext';
 import { Toast } from "@heroui/react";
 
-const ICON_COLOR = "#A15E0A";
-const ICON_HOVER_COLOR = "#C1873B";
+const ICON_COLOR = "#C1873B";
+const ICON_HOVER_COLOR = "#A15E0A";
+
 
 const iconStyle = (active, hover) => ({
     width: 40,
@@ -26,7 +27,8 @@ const iconStyle = (active, hover) => ({
 
 export default function ArtistActions({
     artistId,
-    onComment = () => { }
+    onComment = () => { },
+    column = 'right'
 }) {
     const [liked, setLiked] = useState(false);
     const [disliked, setDisliked] = useState(false);
@@ -43,35 +45,24 @@ export default function ArtistActions({
             try {
                 console.log('Fetching data for artist:', artistId);
 
-                // Fetch votes
                 const votesResponse = await fetch(`/artist-votes/artist/${artistId}`, {
-                    headers: {
-                        'x-auth-token': localStorage.getItem('token')
-                    }
+                    headers: { 'x-auth-token': localStorage.getItem('token') }
                 });
-                console.log('Votes response status:', votesResponse.status);
                 if (!votesResponse.ok) throw new Error('Failed to fetch votes');
                 const votesData = await votesResponse.json();
-                console.log('Votes data:', votesData);
                 setLikes(votesData.upvotes.count);
                 setDislikes(votesData.downvotes.count);
 
-                // Set liked/disliked based on current user's vote
                 if (user) {
                     setLiked(votesData.upvotes.users.includes(user._id));
                     setDisliked(votesData.downvotes.users.includes(user._id));
                 }
 
-                // Fetch comments
                 const commentsResponse = await fetch(`/comments/artist/${artistId}`, {
-                    headers: {
-                        'x-auth-token': localStorage.getItem('token')
-                    }
+                    headers: { 'x-auth-token': localStorage.getItem('token') }
                 });
-                console.log('Comments response status:', commentsResponse.status);
                 if (!commentsResponse.ok) throw new Error('Failed to fetch comments');
                 const commentsData = await commentsResponse.json();
-                console.log('Comments data:', commentsData);
                 setComments(commentsData.length);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -96,7 +87,6 @@ export default function ArtistActions({
 
         try {
             const voteUrl = `/artist-votes/${artistId}/${voteType}`;
-            console.log(`Making vote request to: ${voteUrl}`);
             const response = await fetch(voteUrl, {
                 method: 'POST',
                 headers: {
@@ -105,47 +95,18 @@ export default function ArtistActions({
                 },
             });
 
-            console.log('Vote response status:', response.status);
-            if (!response.ok) {
-                const errorText = await response.text();
-                console.error('Vote response error:', errorText);
-                throw new Error('Failed to vote');
-            }
+            if (!response.ok) throw new Error('Failed to vote');
 
-            const data = await response.json();
-            console.log('Vote response data:', data);
-
-            // Fetch updated vote counts
-            const votesUrl = `/artist-votes/artist/${artistId}`;
-            console.log(`Fetching updated votes from: ${votesUrl}`);
-            const votesResponse = await fetch(votesUrl, {
-                headers: {
-                    'x-auth-token': localStorage.getItem('token')
-                }
+            const votesResponse = await fetch(`/artist-votes/artist/${artistId}`, {
+                headers: { 'x-auth-token': localStorage.getItem('token') }
             });
-            console.log('Votes response status:', votesResponse.status);
-
-            if (!votesResponse.ok) {
-                const errorText = await votesResponse.text();
-                console.error('Votes response error:', errorText);
-                throw new Error('Failed to fetch updated votes');
-            }
+            if (!votesResponse.ok) throw new Error('Failed to fetch updated votes');
 
             const votesData = await votesResponse.json();
-            console.log('Updated votes data:', votesData);
-
-            // Update all vote-related state
             setLikes(votesData.upvotes.count);
             setDislikes(votesData.downvotes.count);
             setLiked(votesData.upvotes.users.includes(user._id));
             setDisliked(votesData.downvotes.users.includes(user._id));
-
-            console.log('Updated state:', {
-                likes: votesData.upvotes.count,
-                dislikes: votesData.downvotes.count,
-                liked: votesData.upvotes.users.includes(user._id),
-                disliked: votesData.downvotes.users.includes(user._id)
-            });
         } catch (error) {
             console.error('Error voting:', error);
             Toast.error({
@@ -156,9 +117,8 @@ export default function ArtistActions({
     };
 
     const handleCommentClick = () => {
-        // TODO: Replace with actual navigation when artist page is implemented
         console.log('Navigate to artist page for comments');
-        // navigate(`/artist/${artistId}`); // Uncomment when ready
+        navigate(`/artist/${artistId}`);
     };
 
     const actions = [
@@ -168,7 +128,9 @@ export default function ArtistActions({
             count: likes,
             onClick: () => handleVote('up'),
             active: liked,
-            countStyle: { left: "60%", top: "62%" }
+            countStyle: column === 'right'
+                ? { right: "-7px", top: "-6px" }
+                : { left: "-7px", top: "-6px" }
         },
         {
             key: "dislike",
@@ -176,7 +138,9 @@ export default function ArtistActions({
             count: dislikes,
             onClick: () => handleVote('down'),
             active: disliked,
-            countStyle: { left: "42%", top: "32%" }
+            countStyle: column === 'right'
+                ? { right: "-7px", top: "-6px" }
+                : { left: "-7px", top: "-6px" }
         },
         {
             key: "comment",
@@ -184,7 +148,9 @@ export default function ArtistActions({
             count: comments,
             onClick: handleCommentClick,
             active: false,
-            countStyle: { left: "50%", top: "26%" }
+            countStyle: column === 'right'
+                ? { right: "-7px", top: "-6px" }
+                : { left: "-7px", top: "-6px" }
         },
     ];
 
@@ -196,7 +162,6 @@ export default function ArtistActions({
                 alignItems: "center",
                 userSelect: "none"
             }}>
-                {/* Simple loading indicator */}
                 <div style={{ color: ICON_COLOR }}>...</div>
             </div>
         );
@@ -219,16 +184,20 @@ export default function ArtistActions({
                 >
                     <span style={{
                         position: "absolute",
+                        ...action.countStyle,
+                        backgroundColor: "rgba(255, 255, 255, 0.75)",
+                        color: ICON_COLOR,
+                        borderRadius: "12px",
+                        padding: "2px 6px",
+                        fontSize: "12px",
                         fontWeight: 600,
-                        fontSize: 13,
-                        color: "#fff",
-                        transform: "translate(-50%, -50%)",
-                        pointerEvents: "none",
-                        ...action.countStyle
-                    }}>{action.count}</span>
+                        boxShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
+                    }}>
+                        {action.count}
+                    </span>
                     {action.icon}
                 </div>
             ))}
         </div>
     );
-} 
+}

@@ -26,12 +26,15 @@ const iconStyle = {
 };
 
 function buildThreadedComments(comments) {
+    // Sort comments by newest first
+    const sortedComments = [...comments].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
     const map = {};
     const roots = [];
-    comments.forEach(c => {
+    sortedComments.forEach(c => {
         map[c._id] = { ...c, replies: [] };
     });
-    comments.forEach(c => {
+    sortedComments.forEach(c => {
         if (c.reply_to && map[c.reply_to]) {
             map[c.reply_to].replies.push(map[c._id]);
         } else {
@@ -240,6 +243,7 @@ const ArtistPage = () => {
     const [replyText, setReplyText] = useState('');
     const [editingCommentId, setEditingCommentId] = useState(null);
     const [editText, setEditText] = useState('');
+    const [newCommentText, setNewCommentText] = useState('');
 
     useEffect(() => {
         async function fetchData() {
@@ -330,6 +334,39 @@ const ArtistPage = () => {
             {/* Comments full width below */}
             <div style={{ maxWidth: '1400px', margin: '32px auto 0 auto', width: '100%' }}>
                 <div style={{ background: '#fffde7', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%' }}>
+                    <div style={{ marginBottom: 24 }}>
+                        <input
+                            type="text"
+                            value={newCommentText}
+                            onChange={e => setNewCommentText(e.target.value)}
+                            placeholder="Comment..."
+                            style={{ width: '70%', marginRight: 8, padding: '8px 12px', borderRadius: 4, border: '1px solid #ddd' }}
+                        />
+                        <button
+                            onClick={async () => {
+                                if (!newCommentText.trim()) return;
+                                const res = await fetch('/comments', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'x-auth-token': localStorage.getItem('token'),
+                                    },
+                                    body: JSON.stringify({
+                                        text: newCommentText,
+                                        artist: artistId,
+                                        user: user._id
+                                    }),
+                                });
+                                if (res.ok) {
+                                    setNewCommentText('');
+                                    refreshComments();
+                                }
+                            }}
+                            style={{ padding: '8px 16px', borderRadius: 4, border: 'none', background: '#A15E0A', color: 'white', cursor: 'pointer' }}
+                        >
+                            Submit
+                        </button>
+                    </div>
                     <ThreadedComments
                         comments={threadedComments}
                         usersById={usersById}

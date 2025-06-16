@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import { Avatar, Tooltip, Card, Spinner, Button } from "@heroui/react";
 import { useLanguage } from '@/context/languageContext';
@@ -229,6 +229,7 @@ const AreaPage = () => {
                                             background: '#a1130a',
                                             transform: 'translateY(-50%)',
                                         }}
+                                        className="shadow-[0_0_3px_0.5px_rgba(161,19,10,0.8)]"
                                     />
                                 )}
                                 <div
@@ -273,6 +274,7 @@ const AreaPage = () => {
                                         initialComments={3}
                                         isAuthenticated={!!user}
                                         userId={user?._id}
+                                        column="left"
                                     />
                                     <div className="relative flex flex-col items-center cursor-pointer group">
                                         <span
@@ -307,14 +309,18 @@ const AreaPage = () => {
                                         >
                                             {artistName}
                                         </span>
-                                        <Avatar
-                                            src={artist.image?.url}
-                                            className={`${getAvatarSize(artist.rate)} [&>img]:object-top`}
-                                            fallback={fallbackInitial}
-                                            radius="lg"
-                                            isBordered
-                                            color="danger"
-                                        />
+                                        <Link to={`/artist/${artist._id}`}>
+                                            <div className="shadow-[0_0_8px_0.5px_rgba(161,19,10,0.8)] rounded-2xl">
+                                                <Avatar
+                                                    src={artist.image?.url}
+                                                    className={`${getAvatarSize(artist.rate)} [&>img]:object-top`}
+                                                    fallback={fallbackInitial}
+                                                    radius="lg"
+                                                    isBordered
+                                                    color="danger"
+                                                />
+                                            </div>
+                                        </Link>
                                         {/* Year and location (just below avatar) */}
                                         <span
                                             className="absolute left-0 right-0 bottom-0 z-10 text-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
@@ -396,6 +402,7 @@ const AreaPage = () => {
                                             background: '#a1130a',
                                             transform: 'translateY(-50%)',
                                         }}
+                                        className="shadow-[0_0_3px_0.5px_rgba(161,19,10,0.8)]"
                                     />
                                 )}
                                 <div
@@ -468,14 +475,18 @@ const AreaPage = () => {
                                         >
                                             {artistName}
                                         </span>
-                                        <Avatar
-                                            src={artist.image?.url}
-                                            className={`${getAvatarSize(artist.rate)} [&>img]:object-top`}
-                                            fallback={fallbackInitial}
-                                            radius="lg"
-                                            isBordered
-                                            color="danger"
-                                        />
+                                        <Link to={`/artist/${artist._id}`}>
+                                            <div className="shadow-[0_0_8px_0.5px_rgba(161,19,10,0.8)] rounded-2xl">
+                                                <Avatar
+                                                    src={artist.image?.url}
+                                                    className={`${getAvatarSize(artist.rate)} [&>img]:object-top`}
+                                                    fallback={fallbackInitial}
+                                                    radius="lg"
+                                                    isBordered
+                                                    color="danger"
+                                                />
+                                            </div>
+                                        </Link>
                                         {/* Year and location (just below avatar) */}
                                         <span
                                             className="absolute left-0 right-0 bottom-0 z-10 text-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
@@ -519,6 +530,7 @@ const AreaPage = () => {
                                         initialComments={3}
                                         isAuthenticated={!!user}
                                         userId={user?._id}
+                                        column="right"
                                     />
                                 </motion.div>
                             </div>
@@ -550,6 +562,7 @@ const AreaPage = () => {
                             borderRadius: '50%',
                             marginBottom: '-12px', // overlap with line
                         }}
+                        className="shadow-[0_0_6px_0.5px_rgba(161,19,10,0.8)]"
                     />
                     {/* The vertical line */}
                     <div
@@ -559,6 +572,7 @@ const AreaPage = () => {
                             background: '#a1130a',
                             minHeight: '200px', // ensures line is visible even with few avatars
                         }}
+                        className="shadow-[0_0_4px_0.5px_rgba(161,19,10,0.8)]"
                     />
                     {/* Bottom circle */}
                     <div
@@ -569,6 +583,7 @@ const AreaPage = () => {
                             borderRadius: '50%',
                             marginTop: '-12px', // overlap with line
                         }}
+                        className="shadow-[0_0_6px_0.5px_rgba(161,19,10,0.8)]"
                     />
                 </div>
             </div>

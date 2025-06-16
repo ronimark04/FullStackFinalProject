@@ -4,12 +4,12 @@ import DislikeIcon from '../assets/dislike-1387-svgrepo-com.svg?react';
 import { useAuth } from '@/context/authContext';
 import { Toast } from "@heroui/react";
 
-const ICON_COLOR = "#A15E0A";
-const ICON_HOVER_COLOR = "#C1873B";
+const ICON_COLOR = "#C1873B";
+const ICON_HOVER_COLOR = "#A15E0A";
 
 const iconStyle = {
-    width: 40,
-    height: 40,
+    width: 48,
+    height: 48,
     background: "none",
     border: "none",
     color: ICON_COLOR,
@@ -28,6 +28,7 @@ export default function ArtistActionsArtistPage({ artistId }) {
     const [likes, setLikes] = useState(0);
     const [dislikes, setDislikes] = useState(0);
     const [loading, setLoading] = useState(true);
+    const [hovered, setHovered] = useState(null);
     const { user } = useAuth();
 
     useEffect(() => {
@@ -114,45 +115,63 @@ export default function ArtistActionsArtistPage({ artistId }) {
 
     if (loading) {
         return (
-            <div style={{ background: '#fff3e0', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%', display: 'flex', gap: 24, justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ width: '100%', minHeight: '88px', display: 'flex', gap: 24, justifyContent: 'center', alignItems: 'center' }}>
                 <div style={{ color: ICON_COLOR }}>Loading...</div>
             </div>
         );
     }
 
     return (
-        <div style={{ background: '#fff3e0', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%', display: 'flex', gap: 24, justifyContent: 'center', alignItems: 'center' }}>
+        <div style={{ width: '100%', minHeight: '65px', display: 'flex', gap: 48, justifyContent: 'center', alignItems: 'center' }}>
             <div
                 style={{
                     ...iconStyle,
-                    color: liked ? ICON_HOVER_COLOR : ICON_COLOR,
-                    background: '#ffe0b2',
-                    borderRadius: 12,
-                    minWidth: 80,
-                    justifyContent: 'center',
-                    fontWeight: 600,
-                    fontSize: 18
+                    color: liked || hovered === 'like' ? ICON_HOVER_COLOR : ICON_COLOR,
                 }}
                 onClick={() => handleVote('up')}
+                onMouseEnter={() => setHovered('like')}
+                onMouseLeave={() => setHovered(null)}
             >
-                <LikeIcon style={{ width: 28, height: 28, marginRight: 8 }} />
-                <span style={{ color: '#a15e0a', fontWeight: 700 }}>{likes}</span>
+                <span style={{
+                    position: "absolute",
+                    right: "-8px",
+                    top: "-8px",
+                    backgroundColor: "rgba(255, 255, 255, 0.75)",
+                    color: ICON_COLOR,
+                    borderRadius: "14px",
+                    padding: "3px 8px",
+                    fontSize: "16px",
+                    fontWeight: 600,
+                    boxShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
+                }}>
+                    {likes}
+                </span>
+                <LikeIcon style={{ width: 48, height: 48 }} />
             </div>
             <div
                 style={{
                     ...iconStyle,
-                    color: disliked ? ICON_HOVER_COLOR : ICON_COLOR,
-                    background: '#ffe0b2',
-                    borderRadius: 12,
-                    minWidth: 80,
-                    justifyContent: 'center',
-                    fontWeight: 600,
-                    fontSize: 18
+                    color: disliked || hovered === 'dislike' ? ICON_HOVER_COLOR : ICON_COLOR,
                 }}
                 onClick={() => handleVote('down')}
+                onMouseEnter={() => setHovered('dislike')}
+                onMouseLeave={() => setHovered(null)}
             >
-                <DislikeIcon style={{ width: 28, height: 28, marginRight: 8 }} />
-                <span style={{ color: '#a15e0a', fontWeight: 700 }}>{dislikes}</span>
+                <span style={{
+                    position: "absolute",
+                    right: "-8px",
+                    top: "-8px",
+                    backgroundColor: "rgba(255, 255, 255, 0.75)",
+                    color: ICON_COLOR,
+                    borderRadius: "14px",
+                    padding: "3px 8px",
+                    fontSize: "16px",
+                    fontWeight: 600,
+                    boxShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
+                }}>
+                    {dislikes}
+                </span>
+                <DislikeIcon style={{ width: 48, height: 48 }} />
             </div>
         </div>
     );
