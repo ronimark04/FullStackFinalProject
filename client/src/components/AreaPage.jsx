@@ -144,6 +144,17 @@ const AreaPage = () => {
         }
     };
 
+    // Helper to get avatar pixel size based on rate
+    const getAvatarPixelSize = (rate) => {
+        switch (rate) {
+            case 1: return 208;
+            case 2: return 160;
+            case 3: return 144;
+            case 4: return 112;
+            default: return 208;
+        }
+    };
+
     // Helper to normalize area name for comparison
     const normalizeAreaName = (name) => {
         if (!name) return '';
@@ -264,19 +275,34 @@ const AreaPage = () => {
                                 >
                                     {yearDisplay}
                                 </div>
-                                <motion.div
-                                    whileHover={{ scale: 1.08 }}
-                                    whileTap={{ scale: 0.9 }}
-                                    className="flex flex-row items-center gap-2"
-                                >
-                                    <ArtistActions
-                                        artistId={artist._id}
-                                        initialComments={3}
-                                        isAuthenticated={!!user}
-                                        userId={user?._id}
-                                        column="left"
-                                    />
-                                    <div className="relative flex flex-col items-center cursor-pointer group">
+                                <div className="relative flex items-center justify-center w-full h-full">
+                                    {/* ArtistActions absolutely positioned to the left */}
+                                    {(() => {
+                                        const avatarPx = getAvatarPixelSize(artist.rate);
+                                        return (
+                                            <div style={{
+                                                position: 'absolute',
+                                                left: `calc(50% - ${avatarPx / 2 + 55}px)`,
+                                                top: '50%',
+                                                transform: 'translateY(-50%)',
+                                                zIndex: 20,
+                                            }}>
+                                                <ArtistActions
+                                                    artistId={artist._id}
+                                                    initialComments={3}
+                                                    isAuthenticated={!!user}
+                                                    userId={user?._id}
+                                                    column="left"
+                                                />
+                                            </div>
+                                        );
+                                    })()}
+                                    {/* Avatar centered */}
+                                    <motion.div
+                                        whileHover={{ scale: 1.08 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        className="relative flex flex-col items-center cursor-pointer group"
+                                    >
                                         <span
                                             style={{
                                                 color: "#ffab40",
@@ -358,8 +384,8 @@ const AreaPage = () => {
                                                 )
                                             )}
                                         </span>
-                                    </div>
-                                </motion.div>
+                                    </motion.div>
+                                </div>
                             </div>
                         );
                     })}
@@ -437,12 +463,34 @@ const AreaPage = () => {
                                 >
                                     {yearDisplay}
                                 </div>
-                                <motion.div
-                                    whileHover={{ scale: 1.08 }}
-                                    whileTap={{ scale: 0.9 }}
-                                    className="flex flex-row items-center gap-2"
-                                >
-                                    <div className="relative flex flex-col items-center cursor-pointer group">
+                                <div className="relative flex items-center justify-center w-full h-full">
+                                    {/* ArtistActions absolutely positioned to the right */}
+                                    {(() => {
+                                        const avatarPx = getAvatarPixelSize(artist.rate);
+                                        return (
+                                            <div style={{
+                                                position: 'absolute',
+                                                right: `calc(50% - ${avatarPx / 2 + 55}px)`,
+                                                top: '50%',
+                                                transform: 'translateY(-50%)',
+                                                zIndex: 20,
+                                            }}>
+                                                <ArtistActions
+                                                    artistId={artist._id}
+                                                    initialComments={3}
+                                                    isAuthenticated={!!user}
+                                                    userId={user?._id}
+                                                    column="right"
+                                                />
+                                            </div>
+                                        );
+                                    })()}
+                                    {/* Avatar centered */}
+                                    <motion.div
+                                        whileHover={{ scale: 1.08 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        className="relative flex flex-col items-center cursor-pointer group"
+                                    >
                                         <span
                                             style={{
                                                 color: "#ffab40",
@@ -524,15 +572,8 @@ const AreaPage = () => {
                                                 )
                                             )}
                                         </span>
-                                    </div>
-                                    <ArtistActions
-                                        artistId={artist._id}
-                                        initialComments={3}
-                                        isAuthenticated={!!user}
-                                        userId={user?._id}
-                                        column="right"
-                                    />
-                                </motion.div>
+                                    </motion.div>
+                                </div>
                             </div>
                         );
                     })}

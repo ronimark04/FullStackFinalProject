@@ -5,10 +5,10 @@ import CommentIcon from '../assets/comment-5-svgrepo-com.svg?react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/context/authContext';
 import { Toast } from "@heroui/react";
+import { motion } from "framer-motion";
 
 const ICON_COLOR = "#C1873B";
 const ICON_HOVER_COLOR = "#A15E0A";
-
 
 const iconStyle = (active, hover) => ({
     width: 40,
@@ -22,7 +22,8 @@ const iconStyle = (active, hover) => ({
     margin: "10px 0",
     cursor: "pointer",
     position: "relative",
-    transition: "color 0.15s"
+    transition: "color 0.15s",
+    opacity: 0.85
 });
 
 export default function ArtistActions({
@@ -175,28 +176,33 @@ export default function ArtistActions({
             userSelect: "none"
         }}>
             {actions.map((action) => (
-                <div
+                <motion.div
                     key={action.key}
-                    style={iconStyle(action.active, hovered === action.key)}
-                    onClick={action.onClick}
-                    onMouseEnter={() => setHovered(action.key)}
-                    onMouseLeave={() => setHovered(null)}
+                    whileHover={{ scale: 1.08 }}
+                    whileTap={{ scale: 0.9 }}
                 >
-                    <span style={{
-                        position: "absolute",
-                        ...action.countStyle,
-                        backgroundColor: "rgba(255, 255, 255, 0.75)",
-                        color: ICON_COLOR,
-                        borderRadius: "12px",
-                        padding: "2px 6px",
-                        fontSize: "12px",
-                        fontWeight: 600,
-                        boxShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
-                    }}>
-                        {action.count}
-                    </span>
-                    {action.icon}
-                </div>
+                    <div
+                        style={iconStyle(action.active, hovered === action.key)}
+                        onClick={action.onClick}
+                        onMouseEnter={() => setHovered(action.key)}
+                        onMouseLeave={() => setHovered(null)}
+                    >
+                        <span style={{
+                            position: "absolute",
+                            ...action.countStyle,
+                            backgroundColor: "rgba(255, 255, 255, 0.8)",
+                            color: ICON_COLOR,
+                            borderRadius: "12px",
+                            padding: "2px 6px",
+                            fontSize: "12px",
+                            fontWeight: 600,
+                            boxShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
+                        }}>
+                            {action.count}
+                        </span>
+                        {action.icon}
+                    </div>
+                </motion.div>
             ))}
         </div>
     );
