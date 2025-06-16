@@ -3,6 +3,7 @@ import LikeIcon from '../assets/like-1385-svgrepo-com.svg?react';
 import DislikeIcon from '../assets/dislike-1387-svgrepo-com.svg?react';
 import { useAuth } from '@/context/authContext';
 import { Toast } from "@heroui/react";
+import { motion } from "framer-motion";
 
 const ICON_COLOR = "#C1873B";
 const ICON_HOVER_COLOR = "#A15E0A";
@@ -123,56 +124,66 @@ export default function ArtistActionsArtistPage({ artistId }) {
 
     return (
         <div style={{ width: '100%', minHeight: '65px', display: 'flex', gap: 48, justifyContent: 'center', alignItems: 'center' }}>
-            <div
-                style={{
-                    ...iconStyle,
-                    color: liked || hovered === 'like' ? ICON_HOVER_COLOR : ICON_COLOR,
-                }}
-                onClick={() => handleVote('up')}
-                onMouseEnter={() => setHovered('like')}
-                onMouseLeave={() => setHovered(null)}
+            <motion.div
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.9 }}
             >
-                <span style={{
-                    position: "absolute",
-                    right: "-8px",
-                    top: "-8px",
-                    backgroundColor: "rgba(255, 255, 255, 0.75)",
-                    color: ICON_COLOR,
-                    borderRadius: "14px",
-                    padding: "3px 8px",
-                    fontSize: "16px",
-                    fontWeight: 600,
-                    boxShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
-                }}>
-                    {likes}
-                </span>
-                <LikeIcon style={{ width: 48, height: 48 }} />
-            </div>
-            <div
-                style={{
-                    ...iconStyle,
-                    color: disliked || hovered === 'dislike' ? ICON_HOVER_COLOR : ICON_COLOR,
-                }}
-                onClick={() => handleVote('down')}
-                onMouseEnter={() => setHovered('dislike')}
-                onMouseLeave={() => setHovered(null)}
+                <div
+                    style={{
+                        ...iconStyle,
+                        color: liked || hovered === 'like' ? ICON_HOVER_COLOR : ICON_COLOR,
+                    }}
+                    onClick={() => handleVote('up')}
+                    onMouseEnter={() => setHovered('like')}
+                    onMouseLeave={() => setHovered(null)}
+                >
+                    <span style={{
+                        position: "absolute",
+                        right: "-8px",
+                        top: "-8px",
+                        backgroundColor: "rgba(255, 255, 255, 0.75)",
+                        color: ICON_COLOR,
+                        borderRadius: "14px",
+                        padding: "3px 8px",
+                        fontSize: "16px",
+                        fontWeight: 600,
+                        boxShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
+                    }}>
+                        {likes}
+                    </span>
+                    <LikeIcon style={{ width: 48, height: 48 }} />
+                </div>
+            </motion.div>
+            <motion.div
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.9 }}
             >
-                <span style={{
-                    position: "absolute",
-                    right: "-8px",
-                    top: "-8px",
-                    backgroundColor: "rgba(255, 255, 255, 0.75)",
-                    color: ICON_COLOR,
-                    borderRadius: "14px",
-                    padding: "3px 8px",
-                    fontSize: "16px",
-                    fontWeight: 600,
-                    boxShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
-                }}>
-                    {dislikes}
-                </span>
-                <DislikeIcon style={{ width: 48, height: 48 }} />
-            </div>
+                <div
+                    style={{
+                        ...iconStyle,
+                        color: disliked || hovered === 'dislike' ? ICON_HOVER_COLOR : ICON_COLOR,
+                    }}
+                    onClick={() => handleVote('down')}
+                    onMouseEnter={() => setHovered('dislike')}
+                    onMouseLeave={() => setHovered(null)}
+                >
+                    <span style={{
+                        position: "absolute",
+                        right: "-8px",
+                        top: "-8px",
+                        backgroundColor: "rgba(255, 255, 255, 0.75)",
+                        color: ICON_COLOR,
+                        borderRadius: "14px",
+                        padding: "3px 8px",
+                        fontSize: "16px",
+                        fontWeight: 600,
+                        boxShadow: "0 1px 4px rgba(0, 0, 0, 0.2)"
+                    }}>
+                        {dislikes}
+                    </span>
+                    <DislikeIcon style={{ width: 48, height: 48 }} />
+                </div>
+            </motion.div>
         </div>
     );
 } 

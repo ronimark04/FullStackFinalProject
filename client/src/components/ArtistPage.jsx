@@ -6,9 +6,18 @@ import { useAuth } from '@/context/authContext';
 import { useLanguage } from '@/context/languageContext';
 import CommentActions from './CommentActions';
 import ArtistActionsArtistPage from './ArtistActionsArtistPage';
+import CommentInput from './CommentInput';
 
 const ICON_COLOR = "#A15E0A";
 const ICON_HOVER_COLOR = "#C1873B";
+
+// Helper function to detect if text is mainly Hebrew
+function isMainlyHebrew(text) {
+    if (!text) return false;
+    const hebrewPattern = /[\u0590-\u05FF]/g;
+    const hebrewChars = (text.match(hebrewPattern) || []).length;
+    return hebrewChars > text.length * 0.5;
+}
 
 const iconStyle = {
     width: 40,
@@ -24,6 +33,14 @@ const iconStyle = {
     position: "relative",
     transition: "color 0.15s"
 };
+
+const COMMENT_BACKGROUNDS = [
+    '#fffef5',  // Original color
+    '#fff8e1',  // Slightly warmer
+    '#fff3e0',  // Warmer still
+    '#ffecb3',  // Light amber
+    '#ffe0b2'   // Light orange
+];
 
 function buildThreadedComments(comments) {
     // Sort comments by newest first
@@ -44,7 +61,7 @@ function buildThreadedComments(comments) {
     return roots;
 }
 
-function ThreadedComments({ comments, usersById, replyingToCommentId, setReplyingToCommentId, replyText, setReplyText, refreshComments, artistId, editingCommentId, setEditingCommentId, editText, setEditText }) {
+function ThreadedComments({ comments, usersById, replyingToCommentId, setReplyingToCommentId, replyText, setReplyText, refreshComments, artistId, editingCommentId, setEditingCommentId, editText, setEditText, depth = 0 }) {
     return (
         <div>
             {comments.map(comment => (
@@ -62,6 +79,7 @@ function ThreadedComments({ comments, usersById, replyingToCommentId, setReplyin
                     setEditingCommentId={setEditingCommentId}
                     editText={editText}
                     setEditText={setEditText}
+                    depth={depth}
                 />
             ))}
         </div>
@@ -74,6 +92,9 @@ function CommentThread({ comment, usersById, depth = 0, replyingToCommentId, set
     const isEditing = editingCommentId === comment._id;
     const { user: currentUser } = useAuth();
     const isAuthor = currentUser && currentUser._id === comment.user;
+
+    // Get background color based on depth
+    const bgColor = COMMENT_BACKGROUNDS[depth % COMMENT_BACKGROUNDS.length];
 
     const handleEdit = async () => {
         if (!editText.trim()) return;
@@ -108,25 +129,59 @@ function CommentThread({ comment, usersById, depth = 0, replyingToCommentId, set
     };
 
     return (
-        <div style={{ marginLeft: depth * 24, marginTop: 12, borderLeft: depth ? '2px solid #ffe0b2' : undefined, paddingLeft: 8 }}>
-            <div style={{ fontWeight: 600 }}>{user.username || 'Unknown User'} <span style={{ color: '#888', fontWeight: 400, fontSize: 12 }}>{new Date(comment.createdAt).toLocaleString()}</span></div>
+        <div style={{
+            marginLeft: depth * 4,
+            marginTop: 16,
+            borderLeft: depth ? '2px solid #ffe0b2' : undefined,
+            paddingLeft: 16,
+            background: bgColor,
+            borderRadius: 12,
+            boxShadow: '0 2px 6px rgba(0,0,0,0.04)',
+            padding: '16px',
+            transition: 'box-shadow 0.2s',
+            position: 'relative'
+        }}>
+            <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 4 }}>
+                <span style={{ color: '#5D4037' }}>{user.username || 'Unknown User'}</span>
+                <span style={{ color: '#999', fontWeight: 400, fontSize: 12, marginLeft: 8 }}>{new Date(comment.createdAt).toLocaleString()}</span>
+            </div>
             {isEditing ? (
-                <div style={{ margin: '4px 0' }}>
+                <div style={{ margin: '12px 0', display: 'flex', alignItems: 'center' }}>
                     <input
                         type="text"
                         value={editText}
                         onChange={e => setEditText(e.target.value)}
-                        style={{ width: '70%', marginRight: 8 }}
+                        dir={isMainlyHebrew(editText) ? 'rtl' : 'ltr'}
+                        style={{
+                            width: '70%',
+                            padding: '8px 12px',
+                            borderRadius: 8,
+                            border: '1px solid #ccc',
+                            fontSize: 14,
+                            marginRight: 8,
+                            outline: 'none',
+                            boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+                        }}
                     />
                     <button
                         onClick={handleEdit}
-                        style={{ padding: '4px 12px' }}
+                        style={{
+                            padding: '8px 16px',
+                            borderRadius: 8,
+                            background: '#A15E0A',
+                            color: 'white',
+                            border: 'none',
+                            cursor: 'pointer',
+                            transition: 'background 0.2s'
+                        }}
+                        onMouseOver={e => e.currentTarget.style.background = '#C1873B'}
+                        onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}
                     >
                         Submit
                     </button>
                 </div>
             ) : (
-                <div style={{ margin: '4px 0' }}>
+                <div style={{ margin: '8px 0', lineHeight: 1.5, fontSize: 14, color: '#333' }} dir={isMainlyHebrew(comment.text) ? 'rtl' : 'ltr'}>
                     {comment.deleted ? (
                         <span style={{ color: '#888', fontStyle: 'italic' }}>[Deleted]</span>
                     ) : (
@@ -155,13 +210,32 @@ function CommentThread({ comment, usersById, depth = 0, replyingToCommentId, set
                 </div>
             )}
             {isReplying && !comment.deleted && (
-                <div style={{ marginTop: 8 }}>
-                    <input
-                        type="text"
+                <div style={{ marginTop: 8, display: 'flex', alignItems: 'flex-start' }}>
+                    <CommentInput
                         value={replyText}
                         onChange={e => setReplyText(e.target.value)}
+                        onSubmit={async () => {
+                            if (!replyText.trim()) return;
+                            const res = await fetch('/comments', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'x-auth-token': localStorage.getItem('token'),
+                                },
+                                body: JSON.stringify({
+                                    text: replyText,
+                                    artist: artistId,
+                                    reply_to: comment._id,
+                                }),
+                            });
+                            if (res.ok) {
+                                setReplyText('');
+                                setReplyingToCommentId(null);
+                                if (refreshComments) refreshComments();
+                            }
+                        }}
                         placeholder="Write your reply..."
-                        style={{ width: '70%', marginRight: 8 }}
+                        dir={isMainlyHebrew(replyText) ? 'rtl' : 'ltr'}
                     />
                     <button
                         onClick={async () => {
@@ -184,7 +258,18 @@ function CommentThread({ comment, usersById, depth = 0, replyingToCommentId, set
                                 if (refreshComments) refreshComments();
                             }
                         }}
-                        style={{ padding: '4px 12px' }}
+                        style={{
+                            padding: '8px 16px',
+                            borderRadius: 8,
+                            background: '#A15E0A',
+                            color: 'white',
+                            border: 'none',
+                            cursor: 'pointer',
+                            transition: 'background 0.2s',
+                            alignSelf: 'flex-start'
+                        }}
+                        onMouseOver={e => e.currentTarget.style.background = '#C1873B'}
+                        onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}
                     >
                         Submit
                     </button>
@@ -204,6 +289,7 @@ function CommentThread({ comment, usersById, depth = 0, replyingToCommentId, set
                     setEditingCommentId={setEditingCommentId}
                     editText={editText}
                     setEditText={setEditText}
+                    depth={depth + 1}
                 />
             )}
         </div>
@@ -334,13 +420,31 @@ const ArtistPage = () => {
             {/* Comments full width below */}
             <div style={{ maxWidth: '1400px', margin: '32px auto 0 auto', width: '100%' }}>
                 <div style={{ background: '#fffde7', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%' }}>
-                    <div style={{ marginBottom: 24 }}>
-                        <input
-                            type="text"
+                    <div style={{ marginBottom: 24, display: 'flex', alignItems: 'flex-start' }}>
+                        <CommentInput
                             value={newCommentText}
                             onChange={e => setNewCommentText(e.target.value)}
-                            placeholder="Comment..."
-                            style={{ width: '70%', marginRight: 8, padding: '8px 12px', borderRadius: 4, border: '1px solid #ddd' }}
+                            onSubmit={async () => {
+                                if (!newCommentText.trim()) return;
+                                const res = await fetch('/comments', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'x-auth-token': localStorage.getItem('token'),
+                                    },
+                                    body: JSON.stringify({
+                                        text: newCommentText,
+                                        artist: artistId,
+                                        user: user._id
+                                    }),
+                                });
+                                if (res.ok) {
+                                    setNewCommentText('');
+                                    refreshComments();
+                                }
+                            }}
+                            placeholder="Write a comment..."
+                            dir={isMainlyHebrew(newCommentText) ? 'rtl' : 'ltr'}
                         />
                         <button
                             onClick={async () => {
@@ -362,7 +466,18 @@ const ArtistPage = () => {
                                     refreshComments();
                                 }
                             }}
-                            style={{ padding: '8px 16px', borderRadius: 4, border: 'none', background: '#A15E0A', color: 'white', cursor: 'pointer' }}
+                            style={{
+                                padding: '10px 20px',
+                                borderRadius: 8,
+                                background: '#A15E0A',
+                                color: '#fff',
+                                border: 'none',
+                                cursor: 'pointer',
+                                transition: 'background 0.2s',
+                                alignSelf: 'flex-start'
+                            }}
+                            onMouseOver={e => e.currentTarget.style.background = '#C1873B'}
+                            onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}
                         >
                             Submit
                         </button>

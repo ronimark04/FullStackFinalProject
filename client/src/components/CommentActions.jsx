@@ -6,6 +6,7 @@ import EditIcon from '../assets/edit-svgrepo-com.svg?react';
 import DeleteIcon from '../assets/delete-svgrepo-com.svg?react';
 import { useAuth } from '@/context/authContext';
 import { Toast } from "@heroui/react";
+import { motion } from "framer-motion";
 
 const ICON_COLOR = "#A15E0A";
 const ICON_HOVER_COLOR = "#C1873B";
@@ -13,14 +14,16 @@ const ICON_HOVER_COLOR = "#C1873B";
 const iconStyle = (active, hover) => ({
     width: 32,
     height: 32,
-    background: "none",
-    border: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    margin: "0 8px",
-    cursor: "pointer",
-    position: "relative"
+    background: 'transparent',
+    border: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: '0 6px',
+    cursor: 'pointer',
+    position: 'relative',
+    transition: 'transform 0.2s ease',
+    transform: hover ? 'scale(1.1)' : 'scale(1)'
 });
 
 export default function CommentActions({ commentId, onReplyClick, isReplying, onEditClick, onDeleteClick, isAuthor }) {
@@ -118,78 +121,103 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
     if (loading) return <div style={{ height: 32 }} />;
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: 0 }}>
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: 4 }}>
             {isAuthor && (
                 <>
-                    <div
-                        onClick={onEditClick}
-                        style={iconStyle(false, hovered === 'edit')}
-                        onMouseEnter={() => setHovered('edit')}
-                        onMouseLeave={() => setHovered(null)}
-                        title="Edit comment"
+                    <motion.div
+                        whileHover={{ scale: 1.08 }}
+                        whileTap={{ scale: 0.9 }}
                     >
-                        <div style={{ color: hovered === 'edit' ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
-                            <EditIcon style={{ width: 20, height: 20, position: 'relative', left: '6px' }} />
+                        <div
+                            onClick={onEditClick}
+                            style={iconStyle(false, hovered === 'edit')}
+                            onMouseEnter={() => setHovered('edit')}
+                            onMouseLeave={() => setHovered(null)}
+                            title="Edit comment"
+                        >
+                            <div style={{ color: hovered === 'edit' ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
+                                <EditIcon style={{ width: 20, height: 20, position: 'relative', left: '6px' }} />
+                            </div>
                         </div>
-                    </div>
-                    <div
-                        onClick={onDeleteClick}
-                        style={iconStyle(false, hovered === 'delete')}
-                        onMouseEnter={() => setHovered('delete')}
-                        onMouseLeave={() => setHovered(null)}
-                        title="Delete comment"
+                    </motion.div>
+                    <motion.div
+                        whileHover={{ scale: 1.08 }}
+                        whileTap={{ scale: 0.9 }}
                     >
-                        <div style={{ color: hovered === 'delete' ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
-                            <DeleteIcon style={{ width: 20, height: 20 }} />
+                        <div
+                            onClick={onDeleteClick}
+                            style={iconStyle(false, hovered === 'delete')}
+                            onMouseEnter={() => setHovered('delete')}
+                            onMouseLeave={() => setHovered(null)}
+                            title="Delete comment"
+                        >
+                            <div style={{ color: hovered === 'delete' ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
+                                <DeleteIcon style={{ width: 20, height: 20 }} />
+                            </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </>
             )}
-            <div
-                style={iconStyle(liked, hovered === 'like')}
-                onClick={() => handleVote('up')}
-                onMouseEnter={() => setHovered('like')}
-                onMouseLeave={() => setHovered(null)}
+            <motion.div
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.9 }}
             >
-                <span style={{
-                    fontWeight: 600,
-                    fontSize: 13,
-                    color: hovered === 'like' ? ICON_COLOR : liked ? ICON_COLOR : ICON_HOVER_COLOR,
-                    marginRight: 4,
-                    transition: "color 0.15s"
-                }}>{likes}</span>
-                <div style={{ color: hovered === 'like' ? ICON_COLOR : liked ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
-                    <UpArrowIcon style={{ width: 24, height: 24, display: 'block' }} />
-                </div>
-            </div>
-            <div
-                style={iconStyle(disliked, hovered === 'dislike')}
-                onClick={() => handleVote('down')}
-                onMouseEnter={() => setHovered('dislike')}
-                onMouseLeave={() => setHovered(null)}
-            >
-                <span style={{
-                    fontWeight: 600,
-                    fontSize: 13,
-                    color: hovered === 'dislike' ? ICON_COLOR : disliked ? ICON_COLOR : ICON_HOVER_COLOR,
-                    marginRight: 4,
-                    transition: "color 0.15s"
-                }}>{dislikes}</span>
-                <div style={{ color: hovered === 'dislike' ? ICON_COLOR : disliked ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
-                    <DownArrowIcon style={{ width: 24, height: 24, display: 'block' }} />
-                </div>
-            </div>
-            {user && (
                 <div
-                    style={iconStyle(isReplying, hovered === 'reply')}
-                    onClick={onReplyClick}
-                    onMouseEnter={() => setHovered('reply')}
+                    style={iconStyle(liked, hovered === 'like')}
+                    onClick={() => handleVote('up')}
+                    onMouseEnter={() => setHovered('like')}
                     onMouseLeave={() => setHovered(null)}
                 >
-                    <div style={{ color: hovered === 'reply' ? ICON_COLOR : isReplying ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
-                        <ReplyIcon style={{ width: 22, height: 22, display: 'block' }} />
+                    <span style={{
+                        fontWeight: 600,
+                        fontSize: 13,
+                        color: hovered === 'like' ? ICON_COLOR : liked ? ICON_COLOR : ICON_HOVER_COLOR,
+                        marginRight: 4,
+                        transition: "color 0.15s"
+                    }}>{likes}</span>
+                    <div style={{ color: hovered === 'like' ? ICON_COLOR : liked ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
+                        <UpArrowIcon style={{ width: 24, height: 24, display: 'block' }} />
                     </div>
                 </div>
+            </motion.div>
+            <motion.div
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.9 }}
+            >
+                <div
+                    style={iconStyle(disliked, hovered === 'dislike')}
+                    onClick={() => handleVote('down')}
+                    onMouseEnter={() => setHovered('dislike')}
+                    onMouseLeave={() => setHovered(null)}
+                >
+                    <span style={{
+                        fontWeight: 600,
+                        fontSize: 13,
+                        color: hovered === 'dislike' ? ICON_COLOR : disliked ? ICON_COLOR : ICON_HOVER_COLOR,
+                        marginRight: 4,
+                        transition: "color 0.15s"
+                    }}>{dislikes}</span>
+                    <div style={{ color: hovered === 'dislike' ? ICON_COLOR : disliked ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
+                        <DownArrowIcon style={{ width: 24, height: 24, display: 'block' }} />
+                    </div>
+                </div>
+            </motion.div>
+            {user && (
+                <motion.div
+                    whileHover={{ scale: 1.08 }}
+                    whileTap={{ scale: 0.9 }}
+                >
+                    <div
+                        style={iconStyle(isReplying, hovered === 'reply')}
+                        onClick={onReplyClick}
+                        onMouseEnter={() => setHovered('reply')}
+                        onMouseLeave={() => setHovered(null)}
+                    >
+                        <div style={{ color: hovered === 'reply' ? ICON_COLOR : isReplying ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
+                            <ReplyIcon style={{ width: 22, height: 22, display: 'block' }} />
+                        </div>
+                    </div>
+                </motion.div>
             )}
         </div>
     );
