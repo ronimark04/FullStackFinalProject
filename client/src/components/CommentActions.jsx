@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import LikeIcon from '../assets/like-1385-svgrepo-com.svg?react';
-import DislikeIcon from '../assets/dislike-1387-svgrepo-com.svg?react';
+import UpArrowIcon from '../assets/up-arrow-svgrepo-com.svg?react';
+import DownArrowIcon from '../assets/down-arrow-svgrepo-com.svg?react';
 import ReplyIcon from '../assets/reply-svgrepo-com.svg?react';
 import EditIcon from '../assets/edit-svgrepo-com.svg?react';
 import DeleteIcon from '../assets/delete-svgrepo-com.svg?react';
@@ -15,14 +15,12 @@ const iconStyle = (active, hover) => ({
     height: 32,
     background: "none",
     border: "none",
-    color: hover ? ICON_HOVER_COLOR : active ? ICON_HOVER_COLOR : ICON_COLOR,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     margin: "0 8px",
     cursor: "pointer",
-    position: "relative",
-    transition: "color 0.15s"
+    position: "relative"
 });
 
 export default function CommentActions({ commentId, onReplyClick, isReplying, onEditClick, onDeleteClick, isAuthor }) {
@@ -120,23 +118,31 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
     if (loading) return <div style={{ height: 32 }} />;
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: 8 }}>
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: 0 }}>
             {isAuthor && (
                 <>
-                    <button
+                    <div
                         onClick={onEditClick}
-                        style={iconStyle(false, false)}
+                        style={iconStyle(false, hovered === 'edit')}
+                        onMouseEnter={() => setHovered('edit')}
+                        onMouseLeave={() => setHovered(null)}
                         title="Edit comment"
                     >
-                        <EditIcon style={{ width: 20, height: 20 }} />
-                    </button>
-                    <button
+                        <div style={{ color: hovered === 'edit' ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
+                            <EditIcon style={{ width: 20, height: 20, position: 'relative', left: '6px' }} />
+                        </div>
+                    </div>
+                    <div
                         onClick={onDeleteClick}
-                        style={iconStyle(false, false)}
+                        style={iconStyle(false, hovered === 'delete')}
+                        onMouseEnter={() => setHovered('delete')}
+                        onMouseLeave={() => setHovered(null)}
                         title="Delete comment"
                     >
-                        <DeleteIcon style={{ width: 20, height: 20 }} />
-                    </button>
+                        <div style={{ color: hovered === 'delete' ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
+                            <DeleteIcon style={{ width: 20, height: 20 }} />
+                        </div>
+                    </div>
                 </>
             )}
             <div
@@ -145,8 +151,16 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
                 onMouseEnter={() => setHovered('like')}
                 onMouseLeave={() => setHovered(null)}
             >
-                <span style={{ position: "absolute", fontWeight: 600, fontSize: 13, color: "#fff", left: 18, top: 18, transform: "translate(-50%, -50%)", pointerEvents: "none" }}>{likes}</span>
-                <LikeIcon style={{ width: 24, height: 24, display: 'block', margin: 'auto' }} />
+                <span style={{
+                    fontWeight: 600,
+                    fontSize: 13,
+                    color: hovered === 'like' ? ICON_COLOR : liked ? ICON_COLOR : ICON_HOVER_COLOR,
+                    marginRight: 4,
+                    transition: "color 0.15s"
+                }}>{likes}</span>
+                <div style={{ color: hovered === 'like' ? ICON_COLOR : liked ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
+                    <UpArrowIcon style={{ width: 24, height: 24, display: 'block' }} />
+                </div>
             </div>
             <div
                 style={iconStyle(disliked, hovered === 'dislike')}
@@ -154,8 +168,16 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
                 onMouseEnter={() => setHovered('dislike')}
                 onMouseLeave={() => setHovered(null)}
             >
-                <span style={{ position: "absolute", fontWeight: 600, fontSize: 13, color: "#fff", left: 18, top: 18, transform: "translate(-50%, -50%)", pointerEvents: "none" }}>{dislikes}</span>
-                <DislikeIcon style={{ width: 24, height: 24, display: 'block', margin: 'auto' }} />
+                <span style={{
+                    fontWeight: 600,
+                    fontSize: 13,
+                    color: hovered === 'dislike' ? ICON_COLOR : disliked ? ICON_COLOR : ICON_HOVER_COLOR,
+                    marginRight: 4,
+                    transition: "color 0.15s"
+                }}>{dislikes}</span>
+                <div style={{ color: hovered === 'dislike' ? ICON_COLOR : disliked ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
+                    <DownArrowIcon style={{ width: 24, height: 24, display: 'block' }} />
+                </div>
             </div>
             {user && (
                 <div
@@ -164,7 +186,9 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
                     onMouseEnter={() => setHovered('reply')}
                     onMouseLeave={() => setHovered(null)}
                 >
-                    <ReplyIcon style={{ width: 26, height: 26, display: 'block', margin: 'auto' }} />
+                    <div style={{ color: hovered === 'reply' ? ICON_COLOR : isReplying ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
+                        <ReplyIcon style={{ width: 22, height: 22, display: 'block' }} />
+                    </div>
                 </div>
             )}
         </div>
