@@ -165,7 +165,6 @@ const ProfilePage = () => {
             <div
                 key={comment._id}
                 style={{
-                    background: COMMENT_BACKGROUNDS[0],
                     borderRadius: 12,
                     padding: '16px',
                     boxShadow: '0 2px 6px rgba(0,0,0,0.04)',
@@ -263,18 +262,20 @@ const ProfilePage = () => {
     const isOwnProfile = currentUser && currentUser._id === userId;
 
     return (
-        <div style={{ background: '#ffe0b2', minHeight: '100vh', padding: '24px 4vw' }}>
+        <div style={{ minHeight: '100vh', padding: '24px 4vw' }}>
             {/* User name headline */}
             <div style={{ maxWidth: '1400px', margin: '0 auto 32px auto', width: '100%' }}>
                 <h1 style={{
-                    fontSize: '2.5rem',
+                    fontSize: '3rem',
                     color: '#5D4037',
-                    textAlign: 'left',
+                    textAlign: 'center',
+                    marginTop: '18px',
                     marginBottom: '32px',
                     fontFamily: 'adobe-hebrew',
+                    textShadow: '0 0 12px #FFF8EF',
                     direction: language === 'heb' ? 'rtl' : 'ltr'
                 }}>
-                    {profileUser.username}'s Profile
+                    {profileUser.username}
                 </h1>
             </div>
 
@@ -288,8 +289,10 @@ const ProfilePage = () => {
                 }}>
                     <h2 style={{
                         color: '#5D4037',
-                        fontSize: '1.5rem',
-                        marginBottom: '16px',
+                        fontSize: '2.6rem',
+                        fontFamily: 'adobe-hebrew',
+                        textShadow: '0 0 12px #FFF8EF',
+                        marginBottom: '48px',
                         direction: language === 'heb' ? 'rtl' : 'ltr'
                     }}>
                         {language === 'heb' ? 'לייקים' : 'Likes'}
@@ -297,7 +300,7 @@ const ProfilePage = () => {
                     <div style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
-                        gap: '16px',
+                        gap: '1px',
                         direction: language === 'heb' ? 'rtl' : 'ltr'
                     }}>
                         {likedArtists.map(artist => (
@@ -328,7 +331,8 @@ const ProfilePage = () => {
                                     </div>
                                     <span style={{
                                         color: '#5D4037',
-                                        fontSize: '0.9rem',
+                                        fontSize: '1.1rem',
+                                        // fontWeight: 'bold',
                                         textAlign: 'center',
                                         direction: language === 'heb' ? 'rtl' : 'ltr'
                                     }}>
@@ -351,8 +355,10 @@ const ProfilePage = () => {
                 }}>
                     <h2 style={{
                         color: '#5D4037',
-                        fontSize: '1.5rem',
-                        marginBottom: '16px',
+                        fontSize: '2.5rem',
+                        fontFamily: 'adobe-hebrew',
+                        marginBottom: '50px',
+                        textShadow: '0 0 12px #FFF8EF',
                         direction: language === 'heb' ? 'rtl' : 'ltr'
                     }}>
                         {language === 'heb' ? 'דיסלייקים' : 'Dislikes'}
@@ -360,7 +366,7 @@ const ProfilePage = () => {
                     <div style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
-                        gap: '16px',
+                        gap: '1px',
                         direction: language === 'heb' ? 'rtl' : 'ltr'
                     }}>
                         {dislikedArtists.map(artist => (
@@ -391,7 +397,8 @@ const ProfilePage = () => {
                                     </div>
                                     <span style={{
                                         color: '#5D4037',
-                                        fontSize: '0.9rem',
+                                        fontSize: '1.1rem',
+                                        // fontWeight: 'bold',
                                         textAlign: 'center',
                                         direction: language === 'heb' ? 'rtl' : 'ltr'
                                     }}>
@@ -426,14 +433,15 @@ const ProfilePage = () => {
                 }}>
                     <h2 style={{
                         color: '#5D4037',
-                        fontSize: '1.5rem',
+                        fontSize: '2rem',
+                        // fontWeight: 'bold',
                         marginBottom: '16px',
                         direction: language === 'heb' ? 'rtl' : 'ltr'
                     }}>
                         {language === 'heb' ? 'תגובות' : 'Comments'}
                     </h2>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        {comments.map(comment => renderComment(comment, isOwnProfile))}
+                        {comments.filter(comment => !comment.deleted).map(comment => renderComment(comment, isOwnProfile))}
                     </div>
                 </div>
 
@@ -449,14 +457,15 @@ const ProfilePage = () => {
                 }}>
                     <h2 style={{
                         color: '#5D4037',
-                        fontSize: '1.5rem',
+                        fontSize: '2rem',
+                        // fontWeight: 'bold',
                         marginBottom: '16px',
                         direction: language === 'heb' ? 'rtl' : 'ltr'
                     }}>
                         {language === 'heb' ? 'תגובות שאהבתי' : 'Liked Comments'}
                     </h2>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        {likedComments.map(comment => renderComment(comment, false))}
+                        {likedComments.filter(comment => !comment.deleted).map(comment => renderComment(comment, false))}
                     </div>
                 </div>
 
@@ -472,14 +481,15 @@ const ProfilePage = () => {
                 }}>
                     <h2 style={{
                         color: '#5D4037',
-                        fontSize: '1.5rem',
+                        fontSize: '2rem',
+                        // fontWeight: 'bold',
                         marginBottom: '16px',
                         direction: language === 'heb' ? 'rtl' : 'ltr'
                     }}>
                         {language === 'heb' ? 'תגובות שלא אהבתי' : 'Disliked Comments'}
                     </h2>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        {dislikedComments.map(comment => renderComment(comment, false))}
+                        {dislikedComments.filter(comment => !comment.deleted).map(comment => renderComment(comment, false))}
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ import { AuthProvider } from "./context/authContext";
 function App() {
   return (
     <AuthProvider>
-      <div className="min-h-screen" style={{ backgroundColor: '#fbc37e' }}>
+      <div className="min-h-screen">
         <SiteNavbar />
         <Routes>
           <Route path="/" element={<Home />} />
