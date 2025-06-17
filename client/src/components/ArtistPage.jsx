@@ -134,6 +134,7 @@ function CommentThread({ comment, usersById, depth = 0, replyingToCommentId, set
             marginTop: 16,
             borderLeft: depth ? '2px solid #ffe0b2' : undefined,
             paddingLeft: 16,
+            background: bgColor,
             borderRadius: 12,
             boxShadow: '0 2px 6px rgba(0,0,0,0.04)',
             padding: '16px',
@@ -359,7 +360,7 @@ const ArtistPage = () => {
                 <div style={{ flex: 1, maxWidth: '600px', minWidth: 0, display: 'flex', alignItems: 'stretch' }}>
                     {artist.spotifyId && (
                         <iframe
-                            style={{ borderRadius: '12px', width: '100%', height: '100%', border: 'none', boxShadow: '0 2px 8px #0001', minHeight: 200 }}
+                            style={{ borderRadius: '12px', width: '100%', height: '100%', border: 'none', background: '#fff3e0', boxShadow: '0 2px 8px #0001', minHeight: 200 }}
                             src={`https://open.spotify.com/embed/artist/${artist.spotifyId}`}
                             frameBorder="0"
                             allowFullScreen=""
@@ -371,7 +372,7 @@ const ArtistPage = () => {
                 </div>
                 {/* Right: summary (top), actions (bottom) */}
                 <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 24, justifyContent: 'flex-start' }}>
-                    <div style={{ borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%', minHeight: 270 }}>
+                    <div style={{ background: '#fff3e0', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%', minHeight: 270 }}>
                         <div style={{ color: '#5d4037', fontSize: 18 }}
                             dir={language === 'heb' ? 'rtl' : 'ltr'}>
                             {getSummaryWithWiki(artist.summary?.[language], artist.wiki, language)}

@@ -165,6 +165,7 @@ const ProfilePage = () => {
             <div
                 key={comment._id}
                 style={{
+                    background: COMMENT_BACKGROUNDS[0],
                     borderRadius: 12,
                     padding: '16px',
                     boxShadow: '0 2px 6px rgba(0,0,0,0.04)',
