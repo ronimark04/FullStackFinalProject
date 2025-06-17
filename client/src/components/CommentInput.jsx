@@ -40,32 +40,54 @@ export default function CommentInput({ value, onChange, onSubmit, placeholder, d
     };
 
     return (
-        <textarea
-            ref={textareaRef}
-            value={value}
-            onChange={onChange}
-            onKeyDown={handleKeyDown}
-            placeholder={placeholder}
-            dir={dir}
-            rows={1}
-            style={{
-                width: '70%',
-                padding: '10px 14px',
-                borderRadius: 8,
-                border: '1px solid #ccc',
-                fontSize: 14,
-                outline: 'none',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-                marginRight: 12,
-                transition: 'border-color 0.2s',
-                resize: 'none',
-                overflowY: rows >= MAX_ROWS ? 'auto' : 'hidden',
-                minHeight: `${LINE_HEIGHT}px`,
-                maxHeight: `${MAX_ROWS * LINE_HEIGHT}px`,
-                lineHeight: `${LINE_HEIGHT}px`
-            }}
-            onMouseOver={e => e.target.style.borderColor = '#A15E0A'}
-            onMouseOut={e => e.target.style.borderColor = '#ccc'}
-        />
+        <div style={{ position: 'relative', width: '100%' }}>
+            <textarea
+                ref={textareaRef}
+                value={value}
+                onChange={onChange}
+                onKeyDown={handleKeyDown}
+                placeholder={placeholder}
+                dir={dir}
+                rows={1}
+                style={{
+                    width: '100%',
+                    padding: '10px 14px',
+                    paddingBottom: '40px', // Make room for the submit button
+                    borderRadius: 8,
+                    border: '1px solid #ccc',
+                    fontSize: 14,
+                    outline: 'none',
+                    boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                    transition: 'border-color 0.2s',
+                    resize: 'none',
+                    overflowY: rows >= MAX_ROWS ? 'auto' : 'hidden',
+                    minHeight: `${LINE_HEIGHT}px`,
+                    maxHeight: `${MAX_ROWS * LINE_HEIGHT}px`,
+                    lineHeight: `${LINE_HEIGHT}px`
+                }}
+                onMouseOver={e => e.target.style.borderColor = '#A15E0A'}
+                onMouseOut={e => e.target.style.borderColor = '#ccc'}
+            />
+            <button
+                onClick={onSubmit}
+                style={{
+                    position: 'absolute',
+                    bottom: '8px',
+                    right: '8px',
+                    padding: '4px 8px',
+                    background: 'none',
+                    color: '#A15E0A',
+                    border: 'none',
+                    cursor: 'pointer',
+                    transition: 'color 0.2s',
+                    fontSize: '16px',
+                    fontWeight: 400
+                }}
+                onMouseOver={e => e.currentTarget.style.color = '#C1873B'}
+                onMouseOut={e => e.currentTarget.style.color = '#A15E0A'}
+            >
+                Submit
+            </button>
+        </div>
     );
 } 

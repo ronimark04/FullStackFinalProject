@@ -26,7 +26,7 @@ const iconStyle = (active, hover) => ({
     transform: hover ? 'scale(1.1)' : 'scale(1)'
 });
 
-export default function CommentActions({ commentId, onReplyClick, isReplying, onEditClick, onDeleteClick, isAuthor }) {
+export default function CommentActions({ commentId, onReplyClick, isReplying, onEditClick, onDeleteClick, isAuthor, showReplyButton = true }) {
     const { user } = useAuth();
     const [liked, setLiked] = useState(false);
     const [disliked, setDisliked] = useState(false);
@@ -202,7 +202,7 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
                     </div>
                 </div>
             </motion.div>
-            {user && (
+            {user && showReplyButton && (
                 <motion.div
                     whileHover={{ scale: 1.08 }}
                     whileTap={{ scale: 0.9 }}

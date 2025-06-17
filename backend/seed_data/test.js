@@ -1,33 +1,50 @@
 const fs = require('fs');
 const path = require('path');
+const connectToDB = require('../DB/dbService');
+const Artist = require('../artists/models/mongodb/Artist');
 
-const areasPath = path.join(__dirname, 'areas.json');
-const artistsPath = path.join(__dirname, 'artists.json');
+const updateArtistImages = async () => {
+    try {
+        // Connect to database
+        await connectToDB();
 
-const areas = JSON.parse(fs.readFileSync(areasPath, 'utf8'));
-const artists = JSON.parse(fs.readFileSync(artistsPath, 'utf8'));
+        // Read artists.json
+        const artistsJsonPath = path.join(__dirname, '../seed_data/artists.json');
+        const artistsJson = JSON.parse(fs.readFileSync(artistsJsonPath, 'utf8'));
 
-// Build a set of normalized area names
-const areaSet = new Set(
-    areas.map(a => (a.name || '').toLowerCase().trim())
-);
+        // Get all artists from database
+        const dbArtists = await Artist.find();
 
-let missing = [];
-
-artists.forEach((artist, idx) => {
-    const areaName = (artist.area || '').toLowerCase().trim();
-    if (!areaSet.has(areaName)) {
-        missing.push({
-            index: idx,
-            name: artist.name,
-            area: artist.area
+        // Create a map of artists by name for quick lookup
+        const artistsByName = {};
+        artistsJson.forEach(artist => {
+            const key = `${artist.name.eng}-${artist.name.heb}`;
+            artistsByName[key] = artist;
         });
-    }
-});
 
-console.log(`Artists with area not found in areas.json: ${missing.length}`);
-missing.forEach(a => {
-    console.log(
-        `Index: ${a.index}, Name: ${JSON.stringify(a.name)}, Area: '${a.area}'`
-    );
-});
+        // Update images where they differ
+        let updatedCount = 0;
+        for (const dbArtist of dbArtists) {
+            const key = `${dbArtist.name.eng}-${dbArtist.name.heb}`;
+            const jsonArtist = artistsByName[key];
+
+            if (jsonArtist && jsonArtist.image.url !== dbArtist.image.url) {
+                console.log(`Updating image for ${dbArtist.name.eng}:`);
+                console.log(`Old URL: ${dbArtist.image.url}`);
+                console.log(`New URL: ${jsonArtist.image.url}`);
+
+                dbArtist.image.url = jsonArtist.image.url;
+                await dbArtist.save();
+                updatedCount++;
+            }
+        }
+
+        console.log(`\nUpdate complete. Updated ${updatedCount} artists.`);
+        process.exit(0);
+    } catch (error) {
+        console.error('Error updating artist images:', error);
+        process.exit(1);
+    }
+};
+
+updateArtistImages();

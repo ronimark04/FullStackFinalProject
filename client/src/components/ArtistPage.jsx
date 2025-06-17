@@ -237,42 +237,6 @@ function CommentThread({ comment, usersById, depth = 0, replyingToCommentId, set
                         placeholder="Write your reply..."
                         dir={isMainlyHebrew(replyText) ? 'rtl' : 'ltr'}
                     />
-                    <button
-                        onClick={async () => {
-                            if (!replyText.trim()) return;
-                            const res = await fetch('/comments', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'x-auth-token': localStorage.getItem('token'),
-                                },
-                                body: JSON.stringify({
-                                    text: replyText,
-                                    artist: artistId,
-                                    reply_to: comment._id,
-                                }),
-                            });
-                            if (res.ok) {
-                                setReplyText('');
-                                setReplyingToCommentId(null);
-                                if (refreshComments) refreshComments();
-                            }
-                        }}
-                        style={{
-                            padding: '8px 16px',
-                            borderRadius: 8,
-                            background: '#A15E0A',
-                            color: 'white',
-                            border: 'none',
-                            cursor: 'pointer',
-                            transition: 'background 0.2s',
-                            alignSelf: 'flex-start'
-                        }}
-                        onMouseOver={e => e.currentTarget.style.background = '#C1873B'}
-                        onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}
-                    >
-                        Submit
-                    </button>
                 </div>
             )}
             {comment.replies && comment.replies.length > 0 && (
@@ -419,7 +383,7 @@ const ArtistPage = () => {
             </div>
             {/* Comments full width below */}
             <div style={{ maxWidth: '1400px', margin: '32px auto 0 auto', width: '100%' }}>
-                <div style={{ background: '#fffde7', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%' }}>
+                <div style={{ background: 'transparent', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%' }}>
                     <div style={{ marginBottom: 24, display: 'flex', alignItems: 'flex-start' }}>
                         <CommentInput
                             value={newCommentText}
@@ -446,41 +410,6 @@ const ArtistPage = () => {
                             placeholder="Write a comment..."
                             dir={isMainlyHebrew(newCommentText) ? 'rtl' : 'ltr'}
                         />
-                        <button
-                            onClick={async () => {
-                                if (!newCommentText.trim()) return;
-                                const res = await fetch('/comments', {
-                                    method: 'POST',
-                                    headers: {
-                                        'Content-Type': 'application/json',
-                                        'x-auth-token': localStorage.getItem('token'),
-                                    },
-                                    body: JSON.stringify({
-                                        text: newCommentText,
-                                        artist: artistId,
-                                        user: user._id
-                                    }),
-                                });
-                                if (res.ok) {
-                                    setNewCommentText('');
-                                    refreshComments();
-                                }
-                            }}
-                            style={{
-                                padding: '10px 20px',
-                                borderRadius: 8,
-                                background: '#A15E0A',
-                                color: '#fff',
-                                border: 'none',
-                                cursor: 'pointer',
-                                transition: 'background 0.2s',
-                                alignSelf: 'flex-start'
-                            }}
-                            onMouseOver={e => e.currentTarget.style.background = '#C1873B'}
-                            onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}
-                        >
-                            Submit
-                        </button>
                     </div>
                     <ThreadedComments
                         comments={threadedComments}

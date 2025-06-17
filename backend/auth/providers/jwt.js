@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 require('dotenv').config();
 
 const JWT_SECRET = process.env.JWT_SECRET;
-const TOKEN_EXPIRY = '24h';
+const TOKEN_EXPIRY = '365d';
 
 const generateAuthToken = (user) => {
     const payload = {

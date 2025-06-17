@@ -197,10 +197,7 @@ const AreaPage = () => {
     console.log('Show location:', showLocation);
 
     return (
-        <div className="container mx-auto p-6">
-            <h1 className="text-2xl font-bold mb-6">
-                {getLocalizedText(area?.name, language === 'heb' ? 'לא ידוע' : 'Unknown')} Artists
-            </h1>
+        <div className="container mx-auto p-6 pt-36 pb-24">
             <div className="flex justify-center items-start gap-96 relative">
                 {/* Left column */}
                 <div className="flex flex-col relative">
@@ -331,6 +328,7 @@ const AreaPage = () => {
                                                     0 0 8px rgba(183,28,28,0.5)
                                                 `,
                                                 whiteSpace: 'nowrap',
+                                                direction: language === 'heb' ? 'rtl' : 'ltr'
                                             }}
                                         >
                                             {artistName}
@@ -368,19 +366,24 @@ const AreaPage = () => {
                                                     -0.7px 0.7px #b71c1c,
                                                     0 0 8px rgba(183,28,28,0.5),
                                                     0 0 8px rgba(183,28,28,0.5)
-                                                `
+                                                `,
+                                                direction: language === 'heb' ? 'rtl' : 'ltr'
                                             }}
                                         >
                                             {showLocation && (
                                                 bornElsewhere ? (
                                                     <>
-                                                        <div>{location}</div>
-                                                        <div style={{ fontSize: '1.1rem', fontStyle: 'italic' }}>
+                                                        <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{location}</div>
+                                                        <div style={{
+                                                            fontSize: '1.1rem',
+                                                            fontStyle: 'italic',
+                                                            direction: language === 'heb' ? 'rtl' : 'ltr'
+                                                        }}>
                                                             {language === 'heb' ? `נולד/ה ב${bornElsewhere}` : `Born in ${bornElsewhere}`}
                                                         </div>
                                                     </>
                                                 ) : (
-                                                    <div>{location}</div>
+                                                    <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{location}</div>
                                                 )
                                             )}
                                         </span>
@@ -391,7 +394,7 @@ const AreaPage = () => {
                     })}
                 </div>
                 {/* Right column */}
-                <div className="flex flex-col relative mt-24">
+                <div className="flex flex-col relative mt-28">
                     {rightColumnArtists.map((artist, idx) => {
                         const artistNameRaw = getLocalizedText(artist.name, language === 'heb' ? 'לא ידוע' : 'Unknown');
                         const artistName = stripParentheses(artistNameRaw);
@@ -424,7 +427,7 @@ const AreaPage = () => {
                                             top: '50%',
                                             right: '50%',
                                             width: `${rightLineWidths[idx]}px`,
-                                            height: '5px',
+                                            height: '4px',
                                             background: '#a1130a',
                                             transform: 'translateY(-50%)',
                                         }}
@@ -519,6 +522,7 @@ const AreaPage = () => {
                                                     0 0 8px rgba(183,28,28,0.5)
                                                 `,
                                                 whiteSpace: 'nowrap',
+                                                direction: language === 'heb' ? 'rtl' : 'ltr'
                                             }}
                                         >
                                             {artistName}
@@ -556,19 +560,24 @@ const AreaPage = () => {
                                                     -0.7px 0.7px #b71c1c,
                                                     0 0 8px rgba(183,28,28,0.5),
                                                     0 0 8px rgba(183,28,28,0.5)
-                                                `
+                                                `,
+                                                direction: language === 'heb' ? 'rtl' : 'ltr'
                                             }}
                                         >
                                             {showLocation && (
                                                 bornElsewhere ? (
                                                     <>
-                                                        <div>{location}</div>
-                                                        <div style={{ fontSize: '1.1rem', fontStyle: 'italic' }}>
+                                                        <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{location}</div>
+                                                        <div style={{
+                                                            fontSize: '1.1rem',
+                                                            fontStyle: 'italic',
+                                                            direction: language === 'heb' ? 'rtl' : 'ltr'
+                                                        }}>
                                                             {language === 'heb' ? `נולד/ה ב${bornElsewhere}` : `Born in ${bornElsewhere}`}
                                                         </div>
                                                     </>
                                                 ) : (
-                                                    <div>{location}</div>
+                                                    <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{location}</div>
                                                 )
                                             )}
                                         </span>
