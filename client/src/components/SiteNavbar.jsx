@@ -52,6 +52,12 @@ function isMainlyHebrew(text) {
   return hebrewChars > text.length * 0.5;
 }
 
+// Helper to remove parentheses and their contents from a string
+function stripParentheses(str) {
+  if (!str) return str;
+  return str.replace(/\s*\([^)]*\)/g, '').trim();
+}
+
 export default function SiteNavbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
@@ -210,7 +216,7 @@ export default function SiteNavbar() {
                       className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-zinc-700 cursor-pointer border-b border-gray-100 dark:border-gray-700 last:border-b-0"
                     >
                       <div className="font-light">
-                        {artist.name.heb} / {artist.name.eng}
+                        {stripParentheses(artist.name.heb)} / {stripParentheses(artist.name.eng)}
                       </div>
                     </div>
                   ))}
