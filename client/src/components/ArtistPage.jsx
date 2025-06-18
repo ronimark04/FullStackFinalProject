@@ -372,7 +372,7 @@ const ArtistPage = () => {
                 </div>
                 {/* Right: summary (top), actions (bottom) */}
                 <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 24, justifyContent: 'flex-start' }}>
-                    <div style={{ background: '#fff3e0', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%', minHeight: 270 }}>
+                    <div style={{ background: '#fff3e0', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%', minHeight: 270, opacity: 0.85 }}>
                         <div style={{ color: '#5d4037', fontSize: 18 }}
                             dir={language === 'heb' ? 'rtl' : 'ltr'}>
                             {getSummaryWithWiki(artist.summary?.[language], artist.wiki, language)}

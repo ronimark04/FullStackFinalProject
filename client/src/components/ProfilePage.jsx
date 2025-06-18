@@ -5,6 +5,8 @@ import { useLanguage } from '@/context/languageContext';
 import CommentActions from './CommentActions';
 import { motion } from 'framer-motion';
 import { Avatar } from "@heroui/react";
+import LikeIcon from '../assets/like-1385-svgrepo-com.svg?react';
+import DislikeIcon from '../assets/dislike-1387-svgrepo-com.svg?react';
 
 // Helper function to detect if text is mainly Hebrew
 function isMainlyHebrew(text) {
@@ -271,35 +273,82 @@ const ProfilePage = () => {
                     color: '#5D4037',
                     textAlign: 'center',
                     marginTop: '18px',
-                    marginBottom: '32px',
+                    // marginBottom: '16px',
                     fontFamily: 'adobe-hebrew',
                     textShadow: '0 0 12px #FFF8EF',
                     direction: language === 'heb' ? 'rtl' : 'ltr'
                 }}>
                     {profileUser.username}
                 </h1>
+
+                {/* User stats */}
+                <div style={{
+                    textAlign: 'center',
+                    fontSize: '1.1rem',
+                    marginTop: '-10px',
+                    direction: language === 'heb' ? 'rtl' : 'ltr'
+                }}>
+                    <span style={{
+                        color: '#5D4037',
+                        textShadow: '0 0 8px #FFF8EF',
+                        marginRight: language === 'heb' ? '0' : '16px',
+                        marginLeft: language === 'heb' ? '16px' : '0'
+                    }}>
+                        {likedArtists.length} {language === 'heb' ? 'לייקים' : 'likes'}
+                    </span>
+                    <span style={{
+                        color: '#5D4037',
+                        textShadow: '0 0 8px #FFF8EF',
+                        marginRight: language === 'heb' ? '0' : '16px',
+                        marginLeft: language === 'heb' ? '16px' : '0'
+                    }}>
+                        {dislikedArtists.length} {language === 'heb' ? 'דיסלייקים' : 'dislikes'}
+                    </span>
+                    <span style={{
+                        color: '#5D4037',
+                        textShadow: '0 0 8px #FFF8EF',
+                        marginRight: language === 'heb' ? '0' : '16px',
+                        marginLeft: language === 'heb' ? '16px' : '0'
+                    }}>
+                        {comments.filter(comment => !comment.deleted).length} {language === 'heb' ? 'תגובות' : 'comments'}
+                    </span>
+                    <span style={{
+                        color: '#5D4037',
+                        textShadow: '0 0 8px #FFF8EF'
+                    }}>
+                        {language === 'heb' ? 'הצטרף' : 'joined'} {new Date(profileUser.createdAt).toLocaleDateString(language === 'heb' ? 'he-IL' : 'en-US', {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric'
+                        })}
+                    </span>
+                </div>
             </div>
 
             {/* Likes section */}
-            <div style={{ maxWidth: '1400px', margin: '0 auto 32px auto', width: '100%' }}>
+            <div style={{ maxWidth: '1400px', margin: '0 auto -12px auto', width: '100%' }}>
                 <div style={{
                     background: 'transparent',
                     borderRadius: 16,
                     padding: 24,
                     width: '100%'
                 }}>
-                    <h2 style={{
-                        color: '#5D4037',
-                        fontSize: '2.6rem',
-                        fontFamily: 'adobe-hebrew',
-                        textShadow: '0 0 12px #FFF8EF',
-                        marginBottom: '48px',
-                        direction: language === 'heb' ? 'rtl' : 'ltr'
+                    <div style={{
+                        textAlign: language === 'heb' ? 'right' : 'left',
                     }}>
-                        {language === 'heb' ? 'לייקים' : 'Likes'}
-                    </h2>
+                        <LikeIcon style={{
+                            width: '3rem',
+                            height: '3rem',
+                            color: '#5D4037',
+                            filter: 'drop-shadow(0 0 12px #FFF8EF)',
+                            marginBottom: '32px',
+                            display: 'inline-block',
+                        }} />
+                    </div>
                     <div style={{
                         display: 'grid',
+                        marginLeft: language === 'heb' ? '0' : '16px',
+                        marginRight: language === 'heb' ? '16px' : '0',
                         gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
                         gap: '1px',
                         direction: language === 'heb' ? 'rtl' : 'ltr'
@@ -333,7 +382,7 @@ const ProfilePage = () => {
                                     <span style={{
                                         color: '#5D4037',
                                         fontSize: '1.1rem',
-                                        // fontWeight: 'bold',
+                                        textShadow: '0 0 12px #FFF8EF',
                                         textAlign: 'center',
                                         direction: language === 'heb' ? 'rtl' : 'ltr'
                                     }}>
@@ -354,18 +403,22 @@ const ProfilePage = () => {
                     padding: 24,
                     width: '100%'
                 }}>
-                    <h2 style={{
-                        color: '#5D4037',
-                        fontSize: '2.5rem',
-                        fontFamily: 'adobe-hebrew',
-                        marginBottom: '50px',
-                        textShadow: '0 0 12px #FFF8EF',
-                        direction: language === 'heb' ? 'rtl' : 'ltr'
+                    <div style={{
+                        textAlign: language === 'heb' ? 'right' : 'left',
                     }}>
-                        {language === 'heb' ? 'דיסלייקים' : 'Dislikes'}
-                    </h2>
+                        <DislikeIcon style={{
+                            width: '3rem',
+                            height: '3rem',
+                            color: '#5D4037',
+                            filter: 'drop-shadow(0 0 12px #FFF8EF)',
+                            marginBottom: '28px',
+                            display: 'inline-block',
+                        }} />
+                    </div>
                     <div style={{
                         display: 'grid',
+                        marginLeft: language === 'heb' ? '0' : '16px',
+                        marginRight: language === 'heb' ? '16px' : '0',
                         gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
                         gap: '1px',
                         direction: language === 'heb' ? 'rtl' : 'ltr'
@@ -399,7 +452,6 @@ const ProfilePage = () => {
                                     <span style={{
                                         color: '#5D4037',
                                         fontSize: '1.1rem',
-                                        // fontWeight: 'bold',
                                         textAlign: 'center',
                                         direction: language === 'heb' ? 'rtl' : 'ltr'
                                     }}>
@@ -420,7 +472,8 @@ const ProfilePage = () => {
                 display: 'flex',
                 gap: '24px',
                 alignItems: 'flex-start',
-                flexDirection: language === 'eng' ? 'row' : 'row-reverse'
+                flexDirection: language === 'eng' ? 'row' : 'row-reverse',
+                opacity: 0.85
             }}>
                 {/* User's Comments section */}
                 <div style={{
@@ -454,7 +507,8 @@ const ProfilePage = () => {
                     boxShadow: '0 2px 8px #0001',
                     padding: 24,
                     width: '33.33%',
-                    height: 'fit-content'
+                    height: 'fit-content',
+                    opacity: 0.85
                 }}>
                     <h2 style={{
                         color: '#5D4037',
@@ -478,7 +532,8 @@ const ProfilePage = () => {
                     boxShadow: '0 2px 8px #0001',
                     padding: 24,
                     width: '33.33%',
-                    height: 'fit-content'
+                    height: 'fit-content',
+                    opacity: 0.85
                 }}>
                     <h2 style={{
                         color: '#5D4037',
