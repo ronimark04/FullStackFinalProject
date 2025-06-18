@@ -6,17 +6,12 @@ const loginValidation = (user) => {
             .ruleset.pattern(
                 /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
             )
-            .rule({ message: 'Must be a valid email address' })
+            .rule({ message: 'Please enter a valid email address' })
             .required(),
 
         password: Joi.string()
-            .ruleset.regex(
-                /((?=.*\d{1})(?=.*[A-Z]{1})(?=.*[a-z]{1})(?=.*[!@#$%^&*-]{1}).{7,20})/
-            )
-            .rule({
-                message:
-                    'Must be at least 8 characters long and contain an uppercase letter, a lowercase letter, a number and one of the following characters !@#$%^&*-',
-            })
+            .min(1)
+            .rule({ message: 'Password is required' })
             .required(),
     });
     return schema.validate(user);

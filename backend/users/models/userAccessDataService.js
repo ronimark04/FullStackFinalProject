@@ -6,7 +6,7 @@ const registerUser = async (newUser) => {
     try {
         const existingUser = await User.findOne({ email: newUser.email });
         if (existingUser) {
-            const error = new Error("Error: User already exists, please login");
+            const error = new Error("An account with this email already exists. Please log in instead.");
             error.status = 400;
             throw error;
         }
@@ -34,14 +34,14 @@ const loginUser = async (email, password) => {
     try {
         const userFromDB = await User.findOne({ email: email });
         if (!userFromDB) {
-            const error = new Error("Error: User not found. Please register");
+            const error = new Error("Email not found. Please check your email or sign up for a new account.");
             error.status = 401;
             throw error;
         }
 
         const isPasswordCorrect = await comparePasswords(password, userFromDB.password);
         if (!isPasswordCorrect) {
-            const error = new Error("Error: Password incorrect");
+            const error = new Error("Incorrect password. Please try again.");
             error.status = 401;
             throw error;
         }

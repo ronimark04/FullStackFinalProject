@@ -37,8 +37,18 @@ export const AuthProvider = ({ children }) => {
             });
 
             if (!response.ok) {
-                const error = await response.json();
-                throw new Error(error.message || 'Login failed');
+                const contentType = response.headers.get('content-type');
+                let errorMessage = 'Login failed';
+
+                if (contentType && contentType.includes('application/json')) {
+                    const error = await response.json();
+                    errorMessage = error.message || 'Login failed';
+                } else {
+                    const text = await response.text();
+                    errorMessage = text || 'Login failed';
+                }
+
+                throw new Error(errorMessage);
             }
 
             const data = await response.json();

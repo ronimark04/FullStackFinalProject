@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import {
     Modal,
     ModalContent,
@@ -16,6 +17,8 @@ export default function LoginModal({ isOpen, onClose }) {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const { login } = useAuth();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -23,6 +26,11 @@ export default function LoginModal({ isOpen, onClose }) {
         try {
             await login(email, password);
             onClose();
+
+            // If user was on signup page, navigate to home
+            if (location.pathname === '/signup') {
+                navigate('/');
+            }
         } catch (err) {
             setError(err.message);
         }

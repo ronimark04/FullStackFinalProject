@@ -69,7 +69,7 @@ export default function SiteNavbar() {
   };
 
   const profileText = language === "heb" ? "הפרופיל שלי" : "My Profile";
-  const searchPlaceholder = language === "heb" ? "חפש אמן/ית..." : "Search Artists...";
+  const searchPlaceholder = language === "heb" ? "חפש אמן/ית..." : "Find Artists...";
   const logoutText = language === "heb" ? "התנתקות" : "Logout";
   const loginText = language === "heb" ? "התחברות" : "Login";
   const signupText = language === "heb" ? "הרשמה" : "Sign Up";
@@ -161,7 +161,7 @@ export default function SiteNavbar() {
             </Link>
             {isAuthenticated && user && (
               <Link href={`/user/${user._id}`}
-                className="font-medium text-red-700 hover:text-red-600"
+                className="font-normal text-red-700 hover:text-red-600"
               >
                 {profileText}
               </Link>
