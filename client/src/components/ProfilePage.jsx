@@ -316,7 +316,7 @@ const ProfilePage = () => {
                         color: '#5D4037',
                         textShadow: '0 0 8px #FFF8EF'
                     }}>
-                        {language === 'heb' ? 'הצטרף' : 'joined'} {new Date(profileUser.createdAt).toLocaleDateString(language === 'heb' ? 'he-IL' : 'en-US', {
+                        {language === 'heb' ? 'הצטרף ב-' : 'joined'} {new Date(profileUser.createdAt).toLocaleDateString(language === 'heb' ? 'he-IL' : 'en-US', {
                             year: 'numeric',
                             month: 'short',
                             day: 'numeric'

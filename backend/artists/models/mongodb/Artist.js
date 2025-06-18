@@ -90,6 +90,20 @@ const artistSchema = new mongoose.Schema({
         eng: { type: String, default: null },
         heb: { type: String, default: null }
     },
+    gender: {
+        type: String,
+        enum: ['m', 'f'],
+        validate: {
+            validator: function (v) {
+                // Gender is required when bornElsewhere is not null
+                if (this.bornElsewhere && (this.bornElsewhere.eng || this.bornElsewhere.heb)) {
+                    return v !== null && v !== undefined;
+                }
+                return true; // If bornElsewhere is null, gender is optional
+            },
+            message: "Gender is required when bornElsewhere is provided."
+        }
+    },
     summary: {
         heb: { type: String, default: null }, // might need to be required
         eng: { type: String, default: null }
