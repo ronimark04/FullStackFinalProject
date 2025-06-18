@@ -17,11 +17,11 @@ function isMainlyHebrew(text) {
 }
 
 const COMMENT_BACKGROUNDS = [
-    '#fffef5',  // Original color
-    '#fff8e1',  // Slightly warmer
-    '#fff3e0',  // Warmer still
-    '#ffecb3',  // Light amber
-    '#ffe0b2'   // Light orange
+    '#fffef5',
+    '#fff8e1',
+    '#fff3e0',
+    '#ffecb3',
+    '#ffe0b2'
 ];
 
 const ProfilePage = () => {
@@ -334,7 +334,7 @@ const ProfilePage = () => {
                     width: '100%'
                 }}>
                     <div style={{
-                        textAlign: language === 'heb' ? 'right' : 'left',
+                        textAlign: 'left',
                     }}>
                         <LikeIcon style={{
                             width: '3rem',
@@ -347,11 +347,11 @@ const ProfilePage = () => {
                     </div>
                     <div style={{
                         display: 'grid',
-                        marginLeft: language === 'heb' ? '0' : '16px',
-                        marginRight: language === 'heb' ? '16px' : '0',
+                        marginLeft: '16px',
+                        marginRight: '0',
                         gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
                         gap: '1px',
-                        direction: language === 'heb' ? 'rtl' : 'ltr'
+                        direction: 'ltr'
                     }}>
                         {likedArtists.map(artist => (
                             <Link
@@ -384,7 +384,12 @@ const ProfilePage = () => {
                                         fontSize: '1.1rem',
                                         textShadow: '0 0 12px #FFF8EF',
                                         textAlign: 'center',
-                                        direction: language === 'heb' ? 'rtl' : 'ltr'
+                                        direction: language === 'heb' ? 'rtl' : 'ltr',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                        whiteSpace: 'nowrap',
+                                        maxWidth: '100px',
+                                        display: 'block'
                                     }}>
                                         {artist.name[language]}
                                     </span>
@@ -404,7 +409,7 @@ const ProfilePage = () => {
                     width: '100%'
                 }}>
                     <div style={{
-                        textAlign: language === 'heb' ? 'right' : 'left',
+                        textAlign: 'left',
                     }}>
                         <DislikeIcon style={{
                             width: '3rem',
@@ -417,11 +422,11 @@ const ProfilePage = () => {
                     </div>
                     <div style={{
                         display: 'grid',
-                        marginLeft: language === 'heb' ? '0' : '16px',
-                        marginRight: language === 'heb' ? '16px' : '0',
+                        marginLeft: '16px',
+                        marginRight: '0',
                         gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
                         gap: '1px',
-                        direction: language === 'heb' ? 'rtl' : 'ltr'
+                        direction: 'ltr'
                     }}>
                         {dislikedArtists.map(artist => (
                             <Link
@@ -452,8 +457,14 @@ const ProfilePage = () => {
                                     <span style={{
                                         color: '#5D4037',
                                         fontSize: '1.1rem',
+                                        textShadow: '0 0 12px #FFF8EF',
                                         textAlign: 'center',
-                                        direction: language === 'heb' ? 'rtl' : 'ltr'
+                                        direction: language === 'heb' ? 'rtl' : 'ltr',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                        whiteSpace: 'nowrap',
+                                        maxWidth: '100px',
+                                        display: 'block'
                                     }}>
                                         {artist.name[language]}
                                     </span>

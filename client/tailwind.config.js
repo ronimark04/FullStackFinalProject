@@ -13,6 +13,7 @@ export default {
     extend: {
       colors: {
         danger: '#a1130a',
+        warning: '#fdbb3d',
       },
     },
   },

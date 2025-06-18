@@ -1,5 +1,5 @@
 const express = require('express');
-const { getArtists, getArtist, getArtistsByArea, createArtist, updateArtist, likeArtist, deleteArtist } = require('../models/artistAccessDataService');
+const { getArtists, getArtist, getArtistsByArea, createArtist, updateArtist, likeArtist, deleteArtist, searchArtistsByName } = require('../models/artistAccessDataService');
 const auth = require('../../auth/authService');
 const { handleError } = require('../../utils/handleErrors');
 
@@ -73,19 +73,6 @@ router.put("/:id", auth, async (req, res) => {
         return handleError(res, 400, err.message);
     }
 });
-
-// // like/unlike a card
-// router.patch("/:id", auth, async (req, res) => {
-//     try {
-//         let { id } = req.params;
-//         let userId = req.user._id;
-//         let card = await likeCard(id, userId);
-//         res.send(card);
-//     }
-//     catch (err) {
-//         return handleError(res, 400, err.message);
-//     }
-// });
 
 // delete artist
 router.delete("/:id", auth, async (req, res) => {
