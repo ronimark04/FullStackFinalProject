@@ -196,19 +196,6 @@ const AreaPage = () => {
     const showLocation = !isTelAvivArea(area?.name);
     console.log('Show location:', showLocation);
 
-    // Helper to get the correct Hebrew gender form
-    const getHebrewGenderText = (gender, bornElsewhere) => {
-        if (!bornElsewhere) return '';
-        if (gender === 'm') {
-            return `נולד ב${bornElsewhere}`;
-        } else if (gender === 'f') {
-            return `נולדה ב${bornElsewhere}`;
-        } else {
-            // Fallback to the original form if gender is not set
-            return `נולד/ה ב${bornElsewhere}`;
-        }
-    };
-
     return (
         <div className="container mx-auto p-6 pt-36 pb-24">
             <div className="flex justify-center items-start gap-96 relative">
@@ -392,7 +379,11 @@ const AreaPage = () => {
                                                             fontStyle: 'italic',
                                                             direction: language === 'heb' ? 'rtl' : 'ltr'
                                                         }}>
-                                                            {language === 'heb' ? getHebrewGenderText(artist.gender, bornElsewhere) : `Born in ${bornElsewhere}`}
+                                                            {language === 'heb' ?
+                                                                (artist.gender === 'm' ? `נולד ב${bornElsewhere}` :
+                                                                    artist.gender === 'f' ? `נולדה ב${bornElsewhere}` :
+                                                                        `נולד/ה ב${bornElsewhere}`)
+                                                                : `Born in ${bornElsewhere}`}
                                                         </div>
                                                     </>
                                                 ) : (
@@ -586,7 +577,11 @@ const AreaPage = () => {
                                                             fontStyle: 'italic',
                                                             direction: language === 'heb' ? 'rtl' : 'ltr'
                                                         }}>
-                                                            {language === 'heb' ? getHebrewGenderText(artist.gender, bornElsewhere) : `Born in ${bornElsewhere}`}
+                                                            {language === 'heb' ?
+                                                                (artist.gender === 'm' ? `נולד ב${bornElsewhere}` :
+                                                                    artist.gender === 'f' ? `נולדה ב${bornElsewhere}` :
+                                                                        `נולד/ה ב${bornElsewhere}`)
+                                                                : `Born in ${bornElsewhere}`}
                                                         </div>
                                                     </>
                                                 ) : (

@@ -116,7 +116,8 @@
     "birthYear": 1960,
     "yearRange": null,
     "spotifyId": "25Xq0Jh3ROf8hPMba1DV2f",
-    "rate": 3
+    "rate": 3,
+    "gender": "f"
   },
   {
     "name": {
@@ -177,7 +178,8 @@
     "birthYear": 1993,
     "yearRange": null,
     "spotifyId": "1IAEef07H0fd9aA8aUHUlL",
-    "rate": 1
+    "rate": 1,
+    "gender": "m"
   },
   {
     "name": {
@@ -267,7 +269,8 @@
     "birthYear": 1950,
     "yearRange": null,
     "spotifyId": "7oXPj4DkjAxME8ExDAfwJP",
-    "rate": 1
+    "rate": 1,
+    "gender": "m"
   },
   {
     "name": {
@@ -560,7 +563,8 @@
     "birthYear": 1955,
     "yearRange": null,
     "spotifyId": "3IF20nS3xzinWeuc1PZHW7",
-    "rate": 1
+    "rate": 1,
+    "gender": "f"
   },
   {
     "name": {
@@ -592,7 +596,8 @@
     "birthYear": 1946,
     "yearRange": null,
     "spotifyId": "5UbgVjyCkpIMOzQuOI4DOW",
-    "rate": 1
+    "rate": 1,
+    "gender": "f"
   },
   {
     "name": {
@@ -1929,7 +1934,8 @@
     "birthYear": 1946,
     "yearRange": null,
     "spotifyId": "46Zoyg3iQOtzKg6Kw7bOvQ",
-    "rate": 2
+    "rate": 2,
+    "gender": "f"
   },
   {
     "name": {
@@ -2077,7 +2083,8 @@
     "birthYear": 1963,
     "yearRange": null,
     "spotifyId": "2BXgz17FVSKfMin4uJDtYM",
-    "rate": 1
+    "rate": 1,
+    "gender": "m"
   },
   {
     "name": {
@@ -2254,7 +2261,8 @@
     "birthYear": 1923,
     "yearRange": null,
     "spotifyId": "74d511JBN1RXijrUZtCqlq",
-    "rate": 1
+    "rate": 1,
+    "gender": "f"
   },
   {
     "name": {
@@ -2344,7 +2352,8 @@
     "birthYear": 1984,
     "yearRange": null,
     "spotifyId": "7hD6dkjWHapWVwkI6bjDFo",
-    "rate": 1
+    "rate": 1,
+    "gender": "m"
   },
   {
     "name": {
@@ -2666,7 +2675,8 @@
     "birthYear": 1970,
     "yearRange": null,
     "spotifyId": "54jZWpivOTllo1afYNSx5U",
-    "rate": 4
+    "rate": 4,
+    "gender": "f"
   },
   {
     "name": {
@@ -2698,7 +2708,8 @@
     "birthYear": 1972,
     "yearRange": null,
     "spotifyId": "2tkkTH2ypDbb40swErU2w6",
-    "rate": 2
+    "rate": 2,
+    "gender": "f"
   },
   {
     "name": {
@@ -3049,7 +3060,8 @@
     "birthYear": 1948,
     "yearRange": null,
     "spotifyId": "5619Da7j5ucsGsFKjVCNXe",
-    "rate": 2
+    "rate": 2,
+    "gender": "m"
   },
   {
     "name": {
@@ -3255,7 +3267,8 @@
     "birthYear": 1951,
     "yearRange": null,
     "spotifyId": "0urEonXMEzc3F5BX7PXTuk",
-    "rate": 2
+    "rate": 2,
+    "gender": "m"
   },
   {
     "name": {
@@ -3606,7 +3619,8 @@
     "birthYear": 1940,
     "yearRange": null,
     "spotifyId": "3DIj29SkCNATEBFrX4FNOA",
-    "rate": 2
+    "rate": 2,
+    "gender": "f"
   },
   {
     "name": {
@@ -3667,7 +3681,8 @@
     "birthYear": 1927,
     "yearRange": null,
     "spotifyId": "0Upqi9ESPwxVOGFQ287ors",
-    "rate": 1
+    "rate": 1,
+    "gender": "m"
   },
   {
     "name": {
@@ -4105,7 +4120,8 @@
     "birthYear": 1953,
     "yearRange": null,
     "spotifyId": "5Y60ANuxrG9yKpoigf1k53",
-    "rate": 3
+    "rate": 3,
+    "gender": "f"
   },
   {
     "name": {
@@ -4398,7 +4414,8 @@
     "birthYear": 1987,
     "yearRange": null,
     "spotifyId": "4ejLVLFQUlsBRYVMcfpzNp",
-    "rate": 2
+    "rate": 2,
+    "gender": "f"
   },
   {
     "name": {
@@ -4691,7 +4708,8 @@
     "birthYear": 1940,
     "yearRange": null,
     "spotifyId": "6nSwMSz1vsa5qaCjHsEd96",
-    "rate": 1
+    "rate": 1,
+    "gender": "m"
   },
   {
     "name": {
@@ -4781,7 +4799,8 @@
     "birthYear": 1957,
     "yearRange": null,
     "spotifyId": "2wp6i8BxLF3UrF1J3LY4WC",
-    "rate": 1
+    "rate": 1,
+    "gender": "m"
   },
   {
     "name": {
@@ -5103,7 +5122,8 @@
     "birthYear": 1930,
     "yearRange": null,
     "spotifyId": "6xGyeb0n4RPdh66uPOazkZ",
-    "rate": 2
+    "rate": 2,
+    "gender": "m"
   },
   {
     "name": {
@@ -5251,7 +5271,8 @@
     "birthYear": 1949,
     "yearRange": null,
     "spotifyId": "7hMpCrQFkZm9Sy1S9ZwBFe",
-    "rate": 1
+    "rate": 1,
+    "gender": "m"
   },
   {
     "name": {
@@ -5399,7 +5420,8 @@
     "birthYear": 1947,
     "yearRange": null,
     "spotifyId": "1CZYU3ICz9HMAzhqXaFQs8",
-    "rate": 4
+    "rate": 4,
+    "gender": "m"
   },
   {
     "name": {
@@ -5489,7 +5511,8 @@
     "birthYear": 1948,
     "yearRange": null,
     "spotifyId": "2l6M7GaS9x3rZOX6nDX3CM",
-    "rate": 1
+    "rate": 1,
+    "gender": "f"
   },
   {
     "name": {
@@ -5637,7 +5660,8 @@
     "birthYear": 1962,
     "yearRange": null,
     "spotifyId": "0qrJgevjXorpFIC1pV0Lmj",
-    "rate": 1
+    "rate": 1,
+    "gender": "m"
   },
   {
     "name": {
@@ -5988,7 +6012,8 @@
     "birthYear": 1973,
     "yearRange": null,
     "spotifyId": "4Xw4xAhE5l6mEHFjbZCWmp",
-    "rate": 2
+    "rate": 2,
+    "gender": "m"
   },
   {
     "name": {
@@ -6020,7 +6045,8 @@
     "birthYear": 1989,
     "yearRange": null,
     "spotifyId": "3VTm1513t2LL1mSKzzyQuj",
-    "rate": 2
+    "rate": 2,
+    "gender": "m"
   },
   {
     "name": {
@@ -6052,7 +6078,8 @@
     "birthYear": 1962,
     "yearRange": null,
     "spotifyId": "5pHxqQIoEFTV7nyZPHZtOE?si=-wem1jdmRz6KJIzipBPJ-Q",
-    "rate": 1
+    "rate": 1,
+    "gender": "f"
   },
   {
     "name": {
@@ -6316,7 +6343,8 @@
     "birthYear": 1950,
     "yearRange": null,
     "spotifyId": "4a3KEEoj4GfGBiPioDLxAV",
-    "rate": 2
+    "rate": 2,
+    "gender": "m"
   },
   {
     "name": {
@@ -6841,7 +6869,8 @@
     "birthYear": 1951,
     "yearRange": null,
     "spotifyId": "7rRHn1FKvY3Mz0gE7V0cJ4",
-    "rate": 1
+    "rate": 1,
+    "gender": "m"
   },
   {
     "name": {
@@ -6873,7 +6902,8 @@
     "birthYear": 1955,
     "yearRange": null,
     "spotifyId": "0UDuXc5ptq4d12AmShY0Tq",
-    "rate": 2
+    "rate": 2,
+    "gender": "m"
   },
   {
     "name": {
@@ -7427,7 +7457,8 @@
     "birthYear": 1961,
     "yearRange": null,
     "spotifyId": "25ZH0jN81G9atpfjSHvy3q",
-    "rate": 2
+    "rate": 2,
+    "gender": "m"
   },
   {
     "name": {
@@ -7807,7 +7838,8 @@
     "birthYear": 1970,
     "yearRange": null,
     "spotifyId": "4hF3Jg1HZqfV8e5xvbgPvm",
-    "rate": 3
+    "rate": 3,
+    "gender": "m"
   },
   {
     "name": {
@@ -9144,7 +9176,8 @@
     "birthYear": 2001,
     "yearRange": null,
     "spotifyId": "3lVXtKsFTJM8ecY8gqdoCo",
-    "rate": 2
+    "rate": 2,
+    "gender": "f"
   },
   {
     "name": {
