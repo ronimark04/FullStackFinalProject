@@ -152,6 +152,31 @@ export default function SiteNavbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Add this function to handle random artist navigation
+  const handleRandomArtist = async () => {
+    let artists = allArtists;
+    if (artists.length === 0 && !loadingArtists) {
+      setLoadingArtists(true);
+      try {
+        const response = await fetch('/artists');
+        if (response.ok) {
+          artists = await response.json();
+          setAllArtists(artists);
+        }
+      } catch (error) {
+        console.error('Error fetching artists:', error);
+        setLoadingArtists(false);
+        return;
+      }
+      setLoadingArtists(false);
+    }
+    if (artists.length > 0) {
+      const randomIndex = Math.floor(Math.random() * artists.length);
+      const randomArtist = artists[randomIndex];
+      navigate(`/artist/${randomArtist._id}`);
+    }
+  };
+
   return (
     <>
       <Navbar
@@ -181,6 +206,15 @@ export default function SiteNavbar() {
 
           {/* Right: Search, Language Switch, and Auth */}
           <div className="flex items-center gap-2">
+            {/* Random Artist Button */}
+            <Button
+              variant="flat"
+              className="mr-2 hidden sm:inline-flex bg-yellow-300 hover:bg-yellow-400 text-yellow-900 font-normal shadow-sm focus:ring-2 focus:ring-yellow-300 focus:outline-none"
+              onPress={handleRandomArtist}
+              isLoading={loadingArtists}
+            >
+              {language === "heb" ? "אמן רנדומלי" : "Random Artist"}
+            </Button>
             {/* Search Bar with Dropdown */}
             <div className="relative">
               <Input

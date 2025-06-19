@@ -104,9 +104,9 @@ function Contact() {
     const labelStyle = language === 'heb' ? { ...labelBaseStyle, textAlign: 'right', direction: 'rtl' } : labelBaseStyle;
 
     return (
-        <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: 40 }}>
+        <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <form onSubmit={handleSubmit} style={formContainerStyle}>
-                <h2 style={{ color: '#A15E0A', marginBottom: 12, fontWeight: 700, fontSize: 24, textAlign: language === 'heb' ? 'right' : 'left', direction: language === 'heb' ? 'rtl' : 'ltr' }}>
+                <h2 style={{ color: '#A15E0A', marginBottom: 12, fontWeight: 500, fontSize: 24, textAlign: language === 'heb' ? 'right' : 'left', direction: language === 'heb' ? 'rtl' : 'ltr' }}>
                     {translations.contactUs[language]}
                 </h2>
                 <label style={labelStyle} htmlFor="name">{translations.name[language]}</label>
