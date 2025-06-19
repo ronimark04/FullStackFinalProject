@@ -166,11 +166,16 @@ export default function SiteNavbar() {
               <img src={homeIcon} alt="Home" style={{ height: 36, width: 36 }} />
             </Link>
             {isAuthenticated && user && (
-              <Link href={`/user/${user._id}`}
-                className="font-normal text-red-700 hover:text-red-600"
-              >
-                {profileText}
-              </Link>
+              <>
+                <Link href={`/user/${user._id}`}
+                  className="font-normal text-red-700 hover:text-red-600"
+                >
+                  {profileText}
+                </Link>
+                <Link href="/contact" className="font-normal text-red-700 hover:text-red-600">
+                  {language === "heb" ? "צור קשר" : "Contact"}
+                </Link>
+              </>
             )}
           </div>
 

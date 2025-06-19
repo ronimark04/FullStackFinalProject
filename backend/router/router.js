@@ -6,6 +6,7 @@ const commentRouterController = require("../comments/routes/commentRestControlle
 const areaRouterController = require("../areas/routes/areaRestController");
 const artistVoteRouterController = require("../votes/routes/artistVoteRestController");
 const commentVoteRouterController = require("../votes/routes/commentVoteRestController");
+const contactRestController = require('../contact/routes/contactRestController');
 
 const { handleError } = require('../utils/handleErrors');
 
@@ -15,6 +16,7 @@ router.use("/comments", commentRouterController);
 router.use("/areas", areaRouterController);
 router.use("/artist-votes", artistVoteRouterController);
 router.use("/comment-votes", commentVoteRouterController);
+router.use('/contact', contactRestController);
 
 
 router.use((req, res) => {
