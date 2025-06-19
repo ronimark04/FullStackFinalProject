@@ -16,6 +16,13 @@ function isMainlyHebrew(text) {
     return hebrewChars > text.length * 0.5;
 }
 
+// Helper function to trim parentheses from artist names
+function trimParentheses(name) {
+    if (!name) return name;
+    // Remove content within parentheses (including the parentheses themselves)
+    return name.replace(/\s*\([^)]*\)/g, '').trim();
+}
+
 const COMMENT_BACKGROUNDS = [
     '#fffef5',
     '#fff8e1',
@@ -391,7 +398,7 @@ const ProfilePage = () => {
                                         maxWidth: '100px',
                                         display: 'block'
                                     }}>
-                                        {artist.name[language]}
+                                        {trimParentheses(artist.name[language])}
                                     </span>
                                 </motion.div>
                             </Link>
@@ -466,7 +473,7 @@ const ProfilePage = () => {
                                         maxWidth: '100px',
                                         display: 'block'
                                     }}>
-                                        {artist.name[language]}
+                                        {trimParentheses(artist.name[language])}
                                     </span>
                                 </motion.div>
                             </Link>

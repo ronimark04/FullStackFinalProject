@@ -41,7 +41,7 @@ export default function Map() {
 
     return (
         <div className="flex justify-center items-center min-h-[calc(100vh-64px)]">
-            <div style={{ position: 'relative', width: '600px' }}>
+            <div style={{ position: 'relative', width: '100%', maxWidth: '600px', minWidth: '400px' }}>
                 <img src={baseMap} alt="Map of Israel" style={{ width: '100%' }} />
 
                 <AnimatePresence>
