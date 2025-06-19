@@ -10,6 +10,7 @@ function isMainlyHebrew(text) {
 
 const formContainerStyle = {
     background: '#fff8e1',
+    opacity: 0.85,
     borderRadius: 16,
     boxShadow: '0 2px 8px rgba(0,0,0,0.07)',
     padding: 32,
