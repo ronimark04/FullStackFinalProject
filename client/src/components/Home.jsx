@@ -70,8 +70,8 @@ function Home() {
                     </div>
                 </div>
                 {/* Contact div */}
-                <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'flex-end', minHeight: '120px', position: 'relative' }}>
-                    <div style={{ width: '230px', position: 'relative' }}>
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'flex-end', minHeight: '120px', position: 'relative', bottom: '70px' }}>
+                    <div style={{ width: '300px', position: 'relative' }}>
                         <img
                             src={language === 'heb' ? contact1Heb : contact1Eng}
                             alt="Contact background"
@@ -169,9 +169,12 @@ function Home() {
         <div style={{ display: 'flex', flexDirection: 'row', width: '100vw', minHeight: '100vh' }}>
             {/* Left container */}
             <div style={{
-                flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative'
+                flex: 1, display: 'flex', alignItems: 'end', justifyContent: 'center', position: 'relative'
             }}>
-                <div style={{ width: '230px', display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', bottom: '-210px', left: '0' }}>
+                <div style={{
+                    width: '300px', display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative',
+                    bottom: '100px', left: '0'
+                }}>
                     <img
                         src={language === 'heb' ? contact1Heb : contact1Eng}
                         alt="Contact background"
