@@ -45,6 +45,12 @@ const ProfilePage = () => {
     const [loading, setLoading] = useState(true);
     const [editingCommentId, setEditingCommentId] = useState(null);
     const [editText, setEditText] = useState('');
+    const [showCount, setShowCount] = useState({
+        comments: 3,
+        liked: 3,
+        disliked: 3
+    });
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
     useEffect(() => {
         async function fetchData() {
@@ -127,6 +133,14 @@ const ProfilePage = () => {
         }
         if (userId) fetchData();
     }, [userId]);
+
+    useEffect(() => {
+        function handleResize() {
+            setIsMobile(window.innerWidth < 768);
+        }
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const handleEdit = async (commentId) => {
         if (!editText.trim()) return;
@@ -264,6 +278,12 @@ const ProfilePage = () => {
                 )}
             </div>
         );
+    };
+
+    // Helper to get visible comments based on section and isMobile
+    const getVisibleComments = (commentsArr, section) => {
+        if (!isMobile) return commentsArr.filter(comment => !comment.deleted);
+        return commentsArr.filter(comment => !comment.deleted).slice(0, showCount[section]);
     };
 
     if (loading) return <div style={{ padding: 40, textAlign: 'center' }}>Loading...</div>;
@@ -482,17 +502,19 @@ const ProfilePage = () => {
                 </div>
             </div>
 
-            {/* Comments and Liked Comments sections side by side */}
-            <div style={{
-                maxWidth: '1400px',
-                margin: '0 auto',
-                width: '100%',
-                display: 'flex',
-                gap: '24px',
-                alignItems: 'flex-start',
-                flexDirection: language === 'eng' ? 'row' : 'row-reverse',
-                opacity: 0.85
-            }}>
+            {/* Comments and Liked Comments sections side by side or stacked */}
+            <div
+                style={{
+                    maxWidth: '1400px',
+                    margin: '0 auto',
+                    width: '100%',
+                    display: 'flex',
+                    gap: '24px',
+                    alignItems: 'flex-start',
+                    flexDirection: isMobile ? 'column' : (language === 'eng' ? 'row' : 'row-reverse'),
+                    opacity: 0.85
+                }}
+            >
                 {/* User's Comments section */}
                 <div style={{
                     flex: 1,
@@ -500,21 +522,42 @@ const ProfilePage = () => {
                     borderRadius: 16,
                     boxShadow: '0 2px 8px #0001',
                     padding: 24,
-                    width: '33.33%',
-                    height: 'fit-content'
+                    width: isMobile ? '100%' : '33.33%',
+                    height: 'fit-content',
+                    marginBottom: isMobile ? 16 : 0
                 }}>
                     <h2 style={{
                         color: '#5D4037',
                         fontSize: '2rem',
-                        // fontWeight: 'bold',
                         marginBottom: '16px',
                         direction: language === 'heb' ? 'rtl' : 'ltr'
                     }}>
                         {language === 'heb' ? 'תגובות' : 'Comments'}
                     </h2>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        {comments.filter(comment => !comment.deleted).map(comment => renderComment(comment, isOwnProfile))}
+                        {getVisibleComments(comments, 'comments').map(comment => renderComment(comment, isOwnProfile))}
                     </div>
+                    {isMobile && comments.filter(comment => !comment.deleted).length > showCount.comments && (
+                        <div style={{ display: 'flex', justifyContent: language === 'heb' ? 'flex-end' : 'flex-start' }}>
+                            <button
+                                style={{
+                                    marginTop: 12,
+                                    padding: '8px 16px',
+                                    borderRadius: 8,
+                                    background: '#A15E0A',
+                                    color: 'white',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    width: 'fit-content'
+                                }}
+                                onClick={() => setShowCount(sc => ({ ...sc, comments: sc.comments + 3 }))}
+                                onMouseOver={e => e.currentTarget.style.background = '#C1873B'}
+                                onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}
+                            >
+                                {language === 'heb' ? 'טען עוד' : 'Load more'}
+                            </button>
+                        </div>
+                    )}
                 </div>
 
                 {/* Liked Comments section */}
@@ -524,22 +567,43 @@ const ProfilePage = () => {
                     borderRadius: 16,
                     boxShadow: '0 2px 8px #0001',
                     padding: 24,
-                    width: '33.33%',
+                    width: isMobile ? '100%' : '33.33%',
                     height: 'fit-content',
-                    opacity: 0.85
+                    opacity: 0.85,
+                    marginBottom: isMobile ? 16 : 0
                 }}>
                     <h2 style={{
                         color: '#5D4037',
                         fontSize: '2rem',
-                        // fontWeight: 'bold',
                         marginBottom: '16px',
                         direction: language === 'heb' ? 'rtl' : 'ltr'
                     }}>
                         {language === 'heb' ? 'תגובות שאהבתי' : 'Liked Comments'}
                     </h2>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        {likedComments.filter(comment => !comment.deleted).map(comment => renderComment(comment, false))}
+                        {getVisibleComments(likedComments, 'liked').map(comment => renderComment(comment, false))}
                     </div>
+                    {isMobile && likedComments.filter(comment => !comment.deleted).length > showCount.liked && (
+                        <div style={{ display: 'flex', justifyContent: language === 'heb' ? 'flex-end' : 'flex-start' }}>
+                            <button
+                                style={{
+                                    marginTop: 12,
+                                    padding: '8px 16px',
+                                    borderRadius: 8,
+                                    background: '#A15E0A',
+                                    color: 'white',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    width: 'fit-content'
+                                }}
+                                onClick={() => setShowCount(sc => ({ ...sc, liked: sc.liked + 3 }))}
+                                onMouseOver={e => e.currentTarget.style.background = '#C1873B'}
+                                onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}
+                            >
+                                {language === 'heb' ? 'טען עוד' : 'Load more'}
+                            </button>
+                        </div>
+                    )}
                 </div>
 
                 {/* Disliked Comments section */}
@@ -549,22 +613,42 @@ const ProfilePage = () => {
                     borderRadius: 16,
                     boxShadow: '0 2px 8px #0001',
                     padding: 24,
-                    width: '33.33%',
+                    width: isMobile ? '100%' : '33.33%',
                     height: 'fit-content',
                     opacity: 0.85
                 }}>
                     <h2 style={{
                         color: '#5D4037',
                         fontSize: '2rem',
-                        // fontWeight: 'bold',
                         marginBottom: '16px',
                         direction: language === 'heb' ? 'rtl' : 'ltr'
                     }}>
                         {language === 'heb' ? 'תגובות שלא אהבתי' : 'Disliked Comments'}
                     </h2>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        {dislikedComments.filter(comment => !comment.deleted).map(comment => renderComment(comment, false))}
+                        {getVisibleComments(dislikedComments, 'disliked').map(comment => renderComment(comment, false))}
                     </div>
+                    {isMobile && dislikedComments.filter(comment => !comment.deleted).length > showCount.disliked && (
+                        <div style={{ display: 'flex', justifyContent: language === 'heb' ? 'flex-end' : 'flex-start' }}>
+                            <button
+                                style={{
+                                    marginTop: 12,
+                                    padding: '8px 16px',
+                                    borderRadius: 8,
+                                    background: '#A15E0A',
+                                    color: 'white',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    width: 'fit-content'
+                                }}
+                                onClick={() => setShowCount(sc => ({ ...sc, disliked: sc.disliked + 3 }))}
+                                onMouseOver={e => e.currentTarget.style.background = '#C1873B'}
+                                onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}
+                            >
+                                {language === 'heb' ? 'טען עוד' : 'Load more'}
+                            </button>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

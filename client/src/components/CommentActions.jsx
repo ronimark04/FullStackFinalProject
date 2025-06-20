@@ -19,7 +19,7 @@ const iconStyle = (active, hover) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: '0 6px',
+    margin: '0 -1px',
     cursor: 'pointer',
     position: 'relative',
     transition: 'transform 0.2s ease',
@@ -172,7 +172,7 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
                         fontWeight: 600,
                         fontSize: 13,
                         color: hovered === 'like' ? ICON_COLOR : liked ? ICON_COLOR : ICON_HOVER_COLOR,
-                        marginRight: 4,
+                        marginRight: 2,
                         transition: "color 0.15s"
                     }}>{likes}</span>
                     <div style={{ color: hovered === 'like' ? ICON_COLOR : liked ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>
@@ -194,7 +194,8 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
                         fontWeight: 600,
                         fontSize: 13,
                         color: hovered === 'dislike' ? ICON_COLOR : disliked ? ICON_COLOR : ICON_HOVER_COLOR,
-                        marginRight: 4,
+                        marginRight: 1,
+                        marginLeft: 3,
                         transition: "color 0.15s"
                     }}>{dislikes}</span>
                     <div style={{ color: hovered === 'dislike' ? ICON_COLOR : disliked ? ICON_COLOR : ICON_HOVER_COLOR, transition: "color 0.15s" }}>

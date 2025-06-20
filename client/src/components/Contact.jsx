@@ -106,7 +106,7 @@ function Contact() {
     return (
         <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <form onSubmit={handleSubmit} style={formContainerStyle}>
-                <h2 style={{ color: '#A15E0A', marginBottom: 12, fontWeight: 500, fontSize: 24, textAlign: language === 'heb' ? 'right' : 'left', direction: language === 'heb' ? 'rtl' : 'ltr' }}>
+                <h2 style={{ color: '#A15E0A', marginBottom: 12, fontWeight: 500, fontSize: 24, textAlign: 'center' }}>
                     {translations.contactUs[language]}
                 </h2>
                 <label style={labelStyle} htmlFor="name">{translations.name[language]}</label>

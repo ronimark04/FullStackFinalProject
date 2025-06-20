@@ -272,17 +272,15 @@ export default function SiteNavbar() {
             {/* Desktop links (hidden on mobile) */}
             <div className="hidden md:flex items-center gap-4">
               {isAuthenticated && user && (
-                <>
-                  <Link href={`/user/${user._id}`}
-                    className="font-normal text-red-700 hover:text-red-600"
-                  >
-                    {profileText}
-                  </Link>
-                  <Link href="/contact" className="font-normal text-red-700 hover:text-red-600">
-                    {language === "heb" ? "צור קשר" : "Contact"}
-                  </Link>
-                </>
+                <Link href={`/user/${user._id}`}
+                  className="font-normal text-red-700 hover:text-red-600"
+                >
+                  {profileText}
+                </Link>
               )}
+              <Link href="/contact" className="font-normal text-red-700 hover:text-red-600">
+                {language === "heb" ? "צור קשר" : "Contact"}
+              </Link>
             </div>
           </div>
 
