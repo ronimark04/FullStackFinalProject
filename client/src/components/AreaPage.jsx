@@ -5,6 +5,26 @@ import { useLanguage } from '@/context/languageContext';
 import { useAuth } from '@/context/authContext';
 import { motion } from "framer-motion";
 import ArtistActions from './ArtistActions';
+import { areaTitleImages } from '../data/regionData';
+
+const areaTitleMap = {
+    'upper-galilee': { heb: 'hebUpperGalileeAreaTitle', eng: 'engUpperGalileeAreaTitle' },
+    'western-galilee': { heb: 'hebWesternGalileeAreaTitle', eng: 'engWesternGalileeAreaTitle' },
+    'krayot': { heb: 'hebKrayotAreaTitle', eng: 'engKrayotAreaTitle' },
+    'haifa-area': { heb: 'hebHaifaAreaTitle', eng: 'engHaifaAreaTitle' },
+    'jordan-valley': { heb: 'hebJordanValleyAreaTitle', eng: 'engJordanValleyAreaTitle' },
+    'lower-galilee': { heb: 'hebLowerGalileeAreaTitle', eng: 'engLowerGalileeAreaTitle' },
+    'hefer-valley': { heb: 'hebHeferValleyAreaTitle', eng: 'engHeferValleyAreaTitle' },
+    'judea-and-samaria': { heb: 'hebJudeaAndSamariaAreaTitle', eng: 'engJudeaAndSamariaAreaTitle' },
+    'sharon': { heb: 'hebSharonAreaTitle', eng: 'engSharonAreaTitle' },
+    'center': { heb: 'hebCenterAreaTitle', eng: 'engCenterAreaTitle' },
+    'tel-aviv': { heb: 'hebTelAvivAreaTitle', eng: 'engTelAvivAreaTitle' },
+    'shfela': { heb: 'hebShfelaAreaTitle', eng: 'engShfelaAreaTitle' },
+    'coast': { heb: 'hebCoastAreaTitle', eng: 'engCoastAreaTitle' },
+    'jerusalem-area': { heb: 'hebJerusalemAreaTitle', eng: 'engJerusalemAreaTitle' },
+    'northern-negev': { heb: 'hebNorthernNegevAreaTitle', eng: 'engNorthernNegevAreaTitle' },
+    'southern-negev-and-arava': { heb: 'hebAravaAreaTitle', eng: 'engAravaAreaTitle' }
+};
 
 const AreaPage = () => {
     const { areaName } = useParams();
@@ -283,8 +303,47 @@ const AreaPage = () => {
     const showLocation = !isTelAvivArea(area?.name);
     console.log('Show location:', showLocation);
 
+    // Get the area title image based on current URL and language
+    const getAreaTitleImage = () => {
+        if (!areaName) return null;
+
+        // Find the matching area path in the map
+        const titleImageVars = areaTitleMap[areaName];
+
+        if (!titleImageVars) {
+            console.warn(`No title image found for area: ${areaName}`);
+            return null;
+        }
+
+        // Get the variable name based on language
+        const imageVarName = titleImageVars[language] || titleImageVars.eng; // fallback to English
+
+        // Access the actual image from areaTitleImages
+        return areaTitleImages[imageVarName];
+    };
+
+    const areaTitleImage = getAreaTitleImage();
+
+    // Determine max height based on area
+    const getAreaTitleMaxHeight = () => {
+        const largerImageAreas = ['southern-negev-and-arava', 'haifa-area', 'jerusalem-area'];
+        return largerImageAreas.includes(areaName) ? 'max-h-40' : 'max-h-24';
+    };
+
     return (
-        <div className="container mx-auto p-6 pt-36 pb-24">
+        <div className="container mx-auto p-6 pt-16 pb-24">
+            {/* Area Title Image */}
+            {areaTitleImage && (
+                <div className="flex justify-center mb-28">
+                    <img
+                        src={areaTitleImage}
+                        alt={`${area?.name || 'Area'} Title`}
+                        className={`max-w-full h-auto object-contain ${getAreaTitleMaxHeight()}`}
+                        style={{ filter: 'drop-shadow(0 4px 4px rgba(250, 206, 124, 0.83))' }}
+                    />
+                </div>
+            )}
+
             <div className={`flex justify-center items-start relative ${isMobile ? 'gap-48' : 'gap-96'}`}>
                 {/* Left column */}
                 <div className="flex flex-col relative">

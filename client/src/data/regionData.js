@@ -49,6 +49,39 @@ import engWesternGalileeLabel from "../assets/map/titles/engWesternGalilee.png";
 import engJordanValleyLabel from "../assets/map/titles/engJordanValley.png";
 import engKrayotLabel from "../assets/map/titles/engKrayot.png";
 
+import hebAravaAreaTitle from "../assets/area_titles/area_titles_heb_arava.png";
+import hebCenterAreaTitle from "../assets/area_titles/area_titles_heb_center.png";
+import hebCoastAreaTitle from "../assets/area_titles/area_titles_heb_coast.png";
+import hebHaifaAreaTitle from "../assets/area_titles/area_titles_heb_haifa.png";
+import hebHeferValleyAreaTitle from "../assets/area_titles/area_titles_heb_heferValley.png";
+import hebJerusalemAreaTitle from "../assets/area_titles/area_titles_heb_jerusalem.png";
+import hebJudeaAndSamariaAreaTitle from "../assets/area_titles/area_titles_heb_judeaAndSamaria.png";
+import hebJordanValleyAreaTitle from "../assets/area_titles/area_titles_heb_jordanValley.png";
+import hebKrayotAreaTitle from "../assets/area_titles/area_titles_heb_krayot.png";
+import hebLowerGalileeAreaTitle from "../assets/area_titles/area_titles_heb_lowerGalilee.png";
+import hebNorthernNegevAreaTitle from "../assets/area_titles/area_titles_heb_northernNegev.png";
+import hebSharonAreaTitle from "../assets/area_titles/area_titles_heb_sharon.png";
+import hebShfelaAreaTitle from "../assets/area_titles/area_titles_heb_shfela.png";
+import hebTelAvivAreaTitle from "../assets/area_titles/area_titles_heb_telAviv.png";
+import hebUpperGalileeAreaTitle from "../assets/area_titles/area_titles_heb_upperGalilee.png";
+import hebWesternGalileeAreaTitle from "../assets/area_titles/area_titles_heb_westernGalilee.png";
+
+import engAravaAreaTitle from "../assets/area_titles/area_titles_eng_arava.png";
+import engCenterAreaTitle from "../assets/area_titles/area_titles_eng_center.png";
+import engCoastAreaTitle from "../assets/area_titles/area_titles_eng_coast.png";
+import engHaifaAreaTitle from "../assets/area_titles/area_titles_eng_haifa.png";
+import engHeferValleyAreaTitle from "../assets/area_titles/area_titles_eng_heferValley.png";
+import engJerusalemAreaTitle from "../assets/area_titles/area_titles_eng_jerusalem.png";
+import engJudeaAndSamariaAreaTitle from "../assets/area_titles/area_titles_eng_judeaAndSamaria.png";
+import engJordanValleyAreaTitle from "../assets/area_titles/area_titles_eng_jordanValley.png";
+import engKrayotAreaTitle from "../assets/area_titles/area_titles_eng_krayot.png";
+import engLowerGalileeAreaTitle from "../assets/area_titles/area_titles_eng_lowerGalilee.png";
+import engNorthernNegevAreaTitle from "../assets/area_titles/area_titles_eng_northernNegev.png";
+import engSharonAreaTitle from "../assets/area_titles/area_titles_eng_sharon.png";
+import engShfelaAreaTitle from "../assets/area_titles/area_titles_eng_shfela.png";
+import engTelAvivAreaTitle from "../assets/area_titles/area_titles_eng_telAviv.png";
+import engUpperGalileeAreaTitle from "../assets/area_titles/area_titles_eng_upperGalilee.png";
+import engWesternGalileeAreaTitle from "../assets/area_titles/area_titles_eng_westernGalilee.png";
 
 export const regionData = {
     area_01_upperGalilee: {
@@ -131,6 +164,41 @@ export const regionData = {
         label: { heb: hebAravaLabel, eng: engAravaLabel },
         path: '/area_16_arava'
     }
+};
+
+export const areaTitleImages = {
+    hebAravaAreaTitle,
+    hebCenterAreaTitle,
+    hebCoastAreaTitle,
+    hebHaifaAreaTitle,
+    hebHeferValleyAreaTitle,
+    hebJerusalemAreaTitle,
+    hebJudeaAndSamariaAreaTitle,
+    hebJordanValleyAreaTitle,
+    hebKrayotAreaTitle,
+    hebLowerGalileeAreaTitle,
+    hebNorthernNegevAreaTitle,
+    hebSharonAreaTitle,
+    hebShfelaAreaTitle,
+    hebTelAvivAreaTitle,
+    hebUpperGalileeAreaTitle,
+    hebWesternGalileeAreaTitle,
+    engAravaAreaTitle,
+    engCenterAreaTitle,
+    engCoastAreaTitle,
+    engHaifaAreaTitle,
+    engHeferValleyAreaTitle,
+    engJerusalemAreaTitle,
+    engJudeaAndSamariaAreaTitle,
+    engJordanValleyAreaTitle,
+    engKrayotAreaTitle,
+    engLowerGalileeAreaTitle,
+    engNorthernNegevAreaTitle,
+    engSharonAreaTitle,
+    engShfelaAreaTitle,
+    engTelAvivAreaTitle,
+    engUpperGalileeAreaTitle,
+    engWesternGalileeAreaTitle
 };
 
 
