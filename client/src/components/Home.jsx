@@ -39,8 +39,7 @@ function Home() {
                                 width: 'auto',
                                 position: 'relative',
                                 top: '10px',
-                                left: '-20px',
-                                zIndex: 1000,
+                                zIndex: 2,
                                 pointerEvents: 'none'
                             }}
                         />
@@ -55,7 +54,7 @@ function Home() {
                                 position: 'relative',
                                 top: '10px',
                                 left: '10px',
-                                zIndex: 1000,
+                                zIndex: 2,
                                 pointerEvents: 'none'
                             }}
                         />
@@ -141,7 +140,7 @@ function Home() {
                                 position: 'relative',
                                 top: '70px',
                                 left: '15px',
-                                zIndex: 1000,
+                                zIndex: 2,
                                 pointerEvents: 'none'
                             }}
                         />
@@ -155,7 +154,7 @@ function Home() {
                                 position: 'relative',
                                 top: '70px',
                                 left: '10px',
-                                zIndex: 1000,
+                                zIndex: 2,
                                 pointerEvents: 'none'
                             }}
                         />
@@ -216,7 +215,7 @@ function Home() {
                             position: 'relative',
                             top: '70px',
                             left: '-20px',
-                            zIndex: 1000,
+                            zIndex: 2,
                             pointerEvents: 'none'
                         }}
                     />
@@ -230,7 +229,7 @@ function Home() {
                             position: 'relative',
                             top: '70px',
                             left: '-50px',
-                            zIndex: 1000,
+                            zIndex: 2,
                             pointerEvents: 'none'
                         }}
                     />

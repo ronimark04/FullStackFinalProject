@@ -15,6 +15,7 @@ import { useAuth } from "../context/authContext";
 import { useLanguage } from "../context/languageContext";
 import { useState, useRef, useEffect } from "react";
 import homeIcon from "../assets/home-icon.png";
+import burgerMenuIcon from "../assets/burger-menu.png";
 
 const SearchIcon = ({ size = 24, strokeWidth = 1.5, width, height, ...props }) => (
   <svg
@@ -69,6 +70,8 @@ export default function SiteNavbar() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [loadingArtists, setLoadingArtists] = useState(false);
   const dropdownRef = useRef(null);
+  const [burgerOpen, setBurgerOpen] = useState(false);
+  const burgerRef = useRef(null);
 
   const handleLogout = () => {
     logout();
@@ -152,6 +155,17 @@ export default function SiteNavbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Hide burger dropdown on outside click
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (burgerRef.current && !burgerRef.current.contains(event.target)) {
+        setBurgerOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   // Add this function to handle random artist navigation
   const handleRandomArtist = async () => {
     let artists = allArtists;
@@ -187,29 +201,97 @@ export default function SiteNavbar() {
         <div className="flex w-full items-center justify-between">
           {/* Left: Home logo and Profile */}
           <div className="flex items-center gap-4">
+            {/* Burger icon for mobile */}
+            <div className="md:hidden relative" ref={burgerRef}
+              onMouseEnter={() => setBurgerOpen(true)}
+              onMouseLeave={() => setBurgerOpen(false)}>
+              <img
+                src={burgerMenuIcon}
+                alt="Menu"
+                className="h-8 w-8 cursor-pointer"
+              />
+              {burgerOpen && (
+                <div className="absolute -left-6 mt-1 w-44 bg-white dark:bg-zinc-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-[9999] flex flex-col py-2" dir={language === 'heb' ? 'rtl' : 'ltr'}>
+                  {isAuthenticated && user && (
+                    <Link
+                      href={`/user/${user._id}`}
+                      className="px-4 py-2 font-normal text-red-700 hover:text-red-600 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded"
+                    >
+                      {profileText}
+                    </Link>
+                  )}
+                  {isAuthenticated && (
+                    <Link
+                      href="/contact"
+                      className="px-4 py-2 font-normal text-red-700 hover:text-red-600 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded"
+                    >
+                      {language === "heb" ? "צור קשר" : "Contact"}
+                    </Link>
+                  )}
+                  {!isAuthenticated && (
+                    <>
+                      <Button
+                        color="danger"
+                        variant="light"
+                        onPress={() => {
+                          onOpen();
+                        }}
+                        className="w-full justify-start px-4 py-2 font-normal text-red-700 hover:text-red-600 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded bg-transparent"
+                      >
+                        {loginText}
+                      </Button>
+                      <Button
+                        as={Link}
+                        color="primary"
+                        href="/signup"
+                        variant="flat"
+                        className="w-full justify-start px-4 py-2 font-normal text-blue-700 hover:text-blue-600 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded bg-transparent"
+                      >
+                        {signupText}
+                      </Button>
+                    </>
+                  )}
+                  {isAuthenticated && (
+                    <Button
+                      color="danger"
+                      variant="flat"
+                      onPress={() => {
+                        handleLogout();
+                      }}
+                      className="w-full justify-start px-4 py-2 font-normal text-red-700 hover:text-red-600 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded bg-transparent"
+                    >
+                      {logoutText}
+                    </Button>
+                  )}
+                </div>
+              )}
+            </div>
             <Link href="/">
               <img src={homeIcon} alt="Home" style={{ height: 36, width: 36 }} />
             </Link>
-            {isAuthenticated && user && (
-              <>
-                <Link href={`/user/${user._id}`}
-                  className="font-normal text-red-700 hover:text-red-600"
-                >
-                  {profileText}
-                </Link>
-                <Link href="/contact" className="font-normal text-red-700 hover:text-red-600">
-                  {language === "heb" ? "צור קשר" : "Contact"}
-                </Link>
-              </>
-            )}
+            {/* Desktop links (hidden on mobile) */}
+            <div className="hidden md:flex items-center gap-4">
+              {isAuthenticated && user && (
+                <>
+                  <Link href={`/user/${user._id}`}
+                    className="font-normal text-red-700 hover:text-red-600"
+                  >
+                    {profileText}
+                  </Link>
+                  <Link href="/contact" className="font-normal text-red-700 hover:text-red-600">
+                    {language === "heb" ? "צור קשר" : "Contact"}
+                  </Link>
+                </>
+              )}
+            </div>
           </div>
 
           {/* Right: Search, Language Switch, and Auth */}
           <div className="flex items-center gap-2">
-            {/* Random Artist Button */}
+            {/* Random Artist Button - always visible */}
             <Button
               variant="flat"
-              className="mr-2 hidden sm:inline-flex bg-yellow-300 hover:bg-yellow-400 text-yellow-900 font-normal shadow-sm focus:ring-2 focus:ring-yellow-300 focus:outline-none"
+              className="mr-2 ml-2 bg-yellow-300 hover:bg-yellow-400 text-yellow-900 font-normal shadow-sm focus:ring-2 focus:ring-yellow-300 focus:outline-none px-2 py-1 text-xs h-8 md:px-4 md:py-2 md:text-base md:h-10"
               onPress={handleRandomArtist}
               isLoading={loadingArtists}
             >
@@ -265,13 +347,14 @@ export default function SiteNavbar() {
 
             <LanguageSwitch />
 
-            {isAuthenticated ? (
-              <Button color="danger" variant="flat" onPress={handleLogout}>
-                {logoutText}
-              </Button>
-            ) : (
-              <>
-                <div className="hidden lg:flex">
+            {/* Desktop Auth Buttons (hidden on mobile) */}
+            <div className="hidden md:flex items-center gap-2">
+              {isAuthenticated ? (
+                <Button color="danger" variant="flat" onPress={handleLogout}>
+                  {logoutText}
+                </Button>
+              ) : (
+                <>
                   <Button
                     color="danger"
                     variant="light"
@@ -280,14 +363,12 @@ export default function SiteNavbar() {
                   >
                     {loginText}
                   </Button>
-                </div>
-                <div className="hidden lg:flex">
                   <Button as={Link} color="primary" href="/signup" variant="flat">
                     {signupText}
                   </Button>
-                </div>
-              </>
-            )}
+                </>
+              )}
+            </div>
           </div>
         </div>
       </Navbar>
