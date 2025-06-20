@@ -69,7 +69,7 @@ function Home() {
                     </div>
                 </div>
                 {/* Contact div */}
-                <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'flex-end', minHeight: '120px', position: 'relative', bottom: '70px' }}>
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'flex-end', minHeight: '120px', position: 'relative' }}>
                     <div style={{ width: '300px', position: 'relative' }}>
                         <img
                             src={language === 'heb' ? contact1Heb : contact1Eng}
@@ -136,7 +136,7 @@ function Home() {
                             src={logoEng}
                             alt="HaMekomon"
                             style={{
-                                width: '500px', // smaller than full screen
+                                width: '500px',
                                 position: 'relative',
                                 top: '70px',
                                 left: '15px',
@@ -150,7 +150,7 @@ function Home() {
                             src={logoHeb}
                             alt="המקומון"
                             style={{
-                                width: '400px', // smaller than full screen
+                                width: '400px',
                                 position: 'relative',
                                 top: '70px',
                                 left: '10px',

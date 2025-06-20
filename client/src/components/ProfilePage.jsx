@@ -377,7 +377,8 @@ const ProfilePage = () => {
                         marginLeft: '16px',
                         marginRight: '0',
                         gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
-                        gap: '1px',
+                        rowGap: '24px',
+                        columnGap: '1px',
                         direction: 'ltr'
                     }}>
                         {likedArtists.map(artist => (
@@ -452,7 +453,8 @@ const ProfilePage = () => {
                         marginLeft: '16px',
                         marginRight: '0',
                         gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
-                        gap: '1px',
+                        rowGap: '24px',
+                        columnGap: '1px',
                         direction: 'ltr'
                     }}>
                         {dislikedArtists.map(artist => (

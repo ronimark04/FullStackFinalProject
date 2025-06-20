@@ -374,6 +374,13 @@ const ArtistPage = () => {
                     .artistpage-title {
                         font-size: 2rem !important;
                     }
+                    .artistpage-summary {
+                        order: 2 !important;
+                    }
+                    .artistpage-actions {
+                        order: 1 !important;
+                        margin-top: -25px !important;
+                    }
                 }
             `}</style>
             <div style={{ minHeight: '100vh', padding: '24px 4vw' }}>
@@ -411,16 +418,18 @@ const ArtistPage = () => {
                             dir={language === 'heb' ? 'rtl' : 'ltr'}
                         >
                             <span style={{ color: '#5d4037' }}>{removeParentheses(artist.name?.[language])}</span>
-                            <span style={{ color: '#8d6e63' }}>{` — `}</span>
-                            <span style={{ color: '#8d6e63' }}>{artist.location?.[language]}</span>
+                            <span style={{ color: '#A88376' }}>{` — `}</span>
+                            <span style={{ color: '#A88376' }}>{artist.location?.[language]}</span>
                         </div>
-                        <div style={{ background: '#fff3e0', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%', minHeight: 270, opacity: 0.85 }}>
+                        <div className="artistpage-summary" style={{ background: '#fff3e0', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%', minHeight: 270, opacity: 0.85 }}>
                             <div style={{ color: '#5d4037', fontSize: 18 }}
                                 dir={language === 'heb' ? 'rtl' : 'ltr'}>
                                 {getSummaryWithWiki(artist.summary?.[language], artist.wiki, language)}
                             </div>
                         </div>
-                        <ArtistActionsArtistPage artistId={artist._id} />
+                        <div className="artistpage-actions">
+                            <ArtistActionsArtistPage artistId={artist._id} />
+                        </div>
                     </div>
                 </div>
                 {/* Comments full width below */}
