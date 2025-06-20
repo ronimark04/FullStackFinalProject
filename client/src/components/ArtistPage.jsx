@@ -19,6 +19,13 @@ function isMainlyHebrew(text) {
     return hebrewChars > text.length * 0.5;
 }
 
+// Helper function to remove parentheses content (both English and Hebrew parentheses)
+function removeParentheses(text) {
+    if (!text) return text;
+    // Remove content in English parentheses () and Hebrew parentheses ()
+    return text.replace(/\([^)]*\)/g, '').replace(/\([^)]*\)/g, '').trim();
+}
+
 const iconStyle = {
     width: 40,
     height: 40,
@@ -353,81 +360,117 @@ const ArtistPage = () => {
     if (!artist) return <div style={{ padding: 40, textAlign: 'center' }}>Artist not found.</div>;
 
     return (
-        <div style={{ minHeight: '100vh', padding: '24px 4vw' }}>
-            {/* Top row: Spotify embed (left), summary+actions (right) */}
-            <div style={{ display: 'flex', gap: 32, alignItems: 'stretch', maxWidth: '1400px', margin: '0 auto', height: 'auto', minHeight: 0 }}>
-                {/* Left: Spotify Embed */}
-                <div style={{ flex: 1, maxWidth: '600px', minWidth: 0, display: 'flex', alignItems: 'stretch' }}>
-                    {artist.spotifyId && (
-                        <iframe
-                            style={{ borderRadius: '12px', width: '100%', height: '100%', border: 'none', background: '#fff3e0', boxShadow: '0 2px 8px #0001', minHeight: 200 }}
-                            src={`https://open.spotify.com/embed/artist/${artist.spotifyId}`}
-                            frameBorder="0"
-                            allowFullScreen=""
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            loading="lazy"
-                            title="Spotify Artist Embed"
-                        ></iframe>
-                    )}
-                </div>
-                {/* Right: summary (top), actions (bottom) */}
-                <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 24, justifyContent: 'flex-start' }}>
-                    <div style={{ background: '#fff3e0', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%', minHeight: 270, opacity: 0.85 }}>
-                        <div style={{ color: '#5d4037', fontSize: 18 }}
-                            dir={language === 'heb' ? 'rtl' : 'ltr'}>
-                            {getSummaryWithWiki(artist.summary?.[language], artist.wiki, language)}
-                        </div>
+        <>
+            <style>{`
+                @media (max-width: 768px) {
+                    .artistpage-flex-row {
+                        flex-direction: column !important;
+                        gap: 0 !important;
+                    }
+                    .artistpage-spotify {
+                        max-width: 100% !important;
+                        margin-bottom: 24px;
+                    }
+                    .artistpage-title {
+                        font-size: 2rem !important;
+                    }
+                }
+            `}</style>
+            <div style={{ minHeight: '100vh', padding: '24px 4vw' }}>
+                {/* Top row: Spotify embed (left), summary+actions (right) */}
+                <div className="artistpage-flex-row" style={{ display: 'flex', gap: 32, alignItems: 'stretch', maxWidth: '1400px', margin: '0 auto', height: 'auto', minHeight: 0 }}>
+                    {/* Left: Spotify Embed */}
+                    <div className="artistpage-spotify" style={{ flex: 1, maxWidth: '600px', minWidth: 0, display: 'flex', alignItems: 'stretch' }}>
+                        {artist.spotifyId && (
+                            <iframe
+                                style={{ borderRadius: '12px', width: '100%', height: '100%', border: 'none', background: '#fff3e0', boxShadow: '0 2px 8px #0001', minHeight: 360 }}
+                                src={`https://open.spotify.com/embed/artist/${artist.spotifyId}`}
+                                frameBorder="0"
+                                allowFullScreen=""
+                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                loading="lazy"
+                                title="Spotify Artist Embed"
+                            ></iframe>
+                        )}
                     </div>
-                    <ArtistActionsArtistPage artistId={artist._id} />
+                    {/* Right: title (top), summary (center), actions (bottom) */}
+                    <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 24, justifyContent: 'flex-start' }}>
+                        {/* Title div added here */}
+                        <div className="artistpage-title" style={{
+                            fontSize: '2.5rem',
+                            fontWeight: 700,
+                            color: '#5d4037',
+                            marginBottom: 16,
+                            textAlign: 'center',
+                            direction: language === 'heb' ? 'rtl' : 'ltr',
+                            letterSpacing: '0.02em',
+                            lineHeight: 1.1,
+                            textShadow: '0 2px 8px #fff8ef',
+                            wordBreak: 'break-word',
+                        }}
+                            dir={language === 'heb' ? 'rtl' : 'ltr'}
+                        >
+                            <span style={{ color: '#5d4037' }}>{removeParentheses(artist.name?.[language])}</span>
+                            <span style={{ color: '#8d6e63' }}>{` — `}</span>
+                            <span style={{ color: '#8d6e63' }}>{artist.location?.[language]}</span>
+                        </div>
+                        <div style={{ background: '#fff3e0', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%', minHeight: 270, opacity: 0.85 }}>
+                            <div style={{ color: '#5d4037', fontSize: 18 }}
+                                dir={language === 'heb' ? 'rtl' : 'ltr'}>
+                                {getSummaryWithWiki(artist.summary?.[language], artist.wiki, language)}
+                            </div>
+                        </div>
+                        <ArtistActionsArtistPage artistId={artist._id} />
+                    </div>
                 </div>
-            </div>
-            {/* Comments full width below */}
-            <div style={{ maxWidth: '1400px', margin: '32px auto 0 auto', width: '100%' }}>
-                <div style={{ background: 'transparent', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%' }}>
-                    <div style={{ marginBottom: 24, display: 'flex', alignItems: 'flex-start' }}>
-                        <CommentInput
-                            value={newCommentText}
-                            onChange={e => setNewCommentText(e.target.value)}
-                            onSubmit={async () => {
-                                if (!newCommentText.trim()) return;
-                                const res = await fetch('/comments', {
-                                    method: 'POST',
-                                    headers: {
-                                        'Content-Type': 'application/json',
-                                        'x-auth-token': localStorage.getItem('token'),
-                                    },
-                                    body: JSON.stringify({
-                                        text: newCommentText,
-                                        artist: artistId,
-                                        user: user._id
-                                    }),
-                                });
-                                if (res.ok) {
-                                    setNewCommentText('');
-                                    refreshComments();
-                                }
-                            }}
-                            placeholder="Write a comment..."
-                            dir={isMainlyHebrew(newCommentText) ? 'rtl' : 'ltr'}
+                {/* Comments full width below */}
+                <div style={{ maxWidth: '1400px', margin: '32px auto 0 auto', width: '100%' }}>
+                    <div style={{ background: 'transparent', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%' }}>
+                        <div style={{ marginBottom: 24, display: 'flex', alignItems: 'flex-start' }}>
+                            <CommentInput
+                                value={newCommentText}
+                                onChange={e => setNewCommentText(e.target.value)}
+                                onSubmit={async () => {
+                                    if (!newCommentText.trim()) return;
+                                    const res = await fetch('/comments', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                            'x-auth-token': localStorage.getItem('token'),
+                                        },
+                                        body: JSON.stringify({
+                                            text: newCommentText,
+                                            artist: artistId,
+                                            user: user._id
+                                        }),
+                                    });
+                                    if (res.ok) {
+                                        setNewCommentText('');
+                                        refreshComments();
+                                    }
+                                }}
+                                placeholder="Write a comment..."
+                                dir={isMainlyHebrew(newCommentText) ? 'rtl' : 'ltr'}
+                            />
+                        </div>
+                        <ThreadedComments
+                            comments={threadedComments}
+                            usersById={usersById}
+                            replyingToCommentId={replyingToCommentId}
+                            setReplyingToCommentId={setReplyingToCommentId}
+                            replyText={replyText}
+                            setReplyText={setReplyText}
+                            refreshComments={refreshComments}
+                            artistId={artist?._id}
+                            editingCommentId={editingCommentId}
+                            setEditingCommentId={setEditingCommentId}
+                            editText={editText}
+                            setEditText={setEditText}
                         />
                     </div>
-                    <ThreadedComments
-                        comments={threadedComments}
-                        usersById={usersById}
-                        replyingToCommentId={replyingToCommentId}
-                        setReplyingToCommentId={setReplyingToCommentId}
-                        replyText={replyText}
-                        setReplyText={setReplyText}
-                        refreshComments={refreshComments}
-                        artistId={artist?._id}
-                        editingCommentId={editingCommentId}
-                        setEditingCommentId={setEditingCommentId}
-                        editText={editText}
-                        setEditText={setEditText}
-                    />
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
