@@ -4,16 +4,26 @@ const { generatePassword, comparePasswords } = require('../helpers/bcrypt');
 
 const registerUser = async (newUser) => {
     try {
-        const existingUser = await User.findOne({ email: newUser.email });
-        if (existingUser) {
+        // Check for existing email
+        const existingUserByEmail = await User.findOne({ email: newUser.email });
+        if (existingUserByEmail) {
             const error = new Error("An account with this email already exists. Please log in instead.");
             error.status = 400;
             throw error;
         }
+
+        // Check for existing username
+        const existingUserByUsername = await User.findOne({ username: newUser.username });
+        if (existingUserByUsername) {
+            const error = new Error("This username is already taken. Please choose a different username.");
+            error.status = 400;
+            throw error;
+        }
+
         newUser.password = await generatePassword(newUser.password);
         let user = new User(newUser);
         user = await user.save();
-        const lessInfoUser = { email: user.email, name: user.name, _id: user._id };
+        const lessInfoUser = { email: user.email, username: user.username, _id: user._id };
         return lessInfoUser;
     } catch (error) {
         throw error;

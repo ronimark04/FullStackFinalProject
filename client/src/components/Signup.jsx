@@ -30,6 +30,17 @@ const translations = {
     signup: { heb: 'הרשמה', eng: 'Sign Up' },
     passwordsNoMatch: { heb: 'הסיסמאות אינן תואמות', eng: 'Passwords do not match' },
     registrationFailed: { heb: 'ההרשמה נכשלה. נסה שוב.', eng: 'Registration failed. Please try again.' },
+    usernameInvalid: {
+        heb: 'שם המשתמש חייב להתחיל באות באנגלית ויכול להכיל רק אותיות באנגלית, מספרים וקווים תחתונים (3-16 תווים)',
+        eng: 'Username must start with a letter and can only contain English letters, numbers, and underscores (3-16 characters)'
+    },
+    usernameTooShort: { heb: 'שם המשתמש חייב להיות לפחות 3 תווים', eng: 'Username must be at least 3 characters long' },
+    usernameTooLong: { heb: 'שם המשתמש לא יכול להיות יותר מ-16 תווים', eng: 'Username cannot be more than 16 characters long' },
+    usernameTaken: { heb: 'שם המשתמש הזה כבר תפוס. אנא בחר שם משתמש אחר.', eng: 'This username is already taken. Please choose a different username.' },
+    passwordRequirements: {
+        heb: 'הסיסמה חייבת להיות באורך 8 תווים לפחות, לכלול אות גדולה, אות קטנה, מספר ותו מיוחד (!@#$%^&*-)',
+        eng: 'Password must be at least 8 characters long and contain an uppercase letter, a lowercase letter, a number, and one special character (!@#$%^&*-)',
+    },
 };
 
 // Add styles from Contact.jsx
@@ -83,25 +94,83 @@ export default function Signup() {
         confirmPassword: '',
     });
     const [error, setError] = useState('');
+    const [usernameError, setUsernameError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const { register } = useAuth();
     const navigate = useNavigate();
     const { language } = useLanguage();
+
+    // Username validation function
+    const validateUsername = (username) => {
+        if (username.length < 3) {
+            return translations.usernameTooShort[language];
+        }
+        if (username.length > 16) {
+            return translations.usernameTooLong[language];
+        }
+        if (!/^[a-zA-Z][a-zA-Z0-9_]*$/.test(username)) {
+            return translations.usernameInvalid[language];
+        }
+        return null;
+    };
+
+    // Password validation function
+    const validatePassword = (password) => {
+        // At least 8 characters, one uppercase, one lowercase, one number, one special character
+        const regex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*-]).{8,20}$/;
+        if (!regex.test(password)) {
+            return translations.passwordRequirements[language];
+        }
+        return null;
+    };
 
     const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
         });
+
+        if (e.target.name === 'username') {
+            setUsernameError('');
+        }
+        // Clear password error when user starts typing
+        if (e.target.name === 'password' || e.target.name === 'confirmPassword') {
+            setPasswordError('');
+        }
+    };
+
+    const handleUsernameBlur = () => {
+        if (formData.username) {
+            const error = validateUsername(formData.username);
+            setUsernameError(error || '');
+        }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
+        setPasswordError('');
         setIsLoading(true);
 
+        // Username validation (errors appear at the top)
+        const usernameValidationError = validateUsername(formData.username);
+        if (usernameValidationError) {
+            setError(usernameValidationError);
+            setIsLoading(false);
+            return;
+        }
+
+        // Password validation (errors appear below the password fields)
+        const passwordValidationError = validatePassword(formData.password);
+        if (passwordValidationError) {
+            setPasswordError(passwordValidationError);
+            setIsLoading(false);
+            return;
+        }
+
         if (formData.password !== formData.confirmPassword) {
-            setError(translations.passwordsNoMatch[language]);
+            setPasswordError(translations.passwordsNoMatch[language]);
             setIsLoading(false);
             return;
         }
@@ -113,10 +182,15 @@ export default function Signup() {
                 password: formData.password,
             });
 
-            // Redirect to home page after successful registration
             navigate('/');
         } catch (err) {
-            setError(err.message || translations.registrationFailed[language]);
+            if (err.message && err.message.includes('username is already taken')) {
+                setError(translations.usernameTaken[language]);
+            } else if (err.message && (err.message.includes('password') || err.message.includes('fails to match the required pattern'))) {
+                setPasswordError(translations.passwordRequirements[language]);
+            } else {
+                setError(err.message || translations.registrationFailed[language]);
+            }
         } finally {
             setIsLoading(false);
         }
@@ -146,10 +220,20 @@ export default function Signup() {
                     type="text"
                     value={formData.username}
                     onChange={handleChange}
-                    style={{ ...inputStyle, direction: isMainlyHebrew(formData.username) ? 'rtl' : 'ltr', textAlign: isMainlyHebrew(formData.username) ? 'right' : 'left' }}
+                    onBlur={handleUsernameBlur}
+                    placeholder={language === 'heb' ? 'לדוגמה: john_doe123' : 'e.g., john_doe123'}
+                    style={{
+                        ...inputStyle,
+                        direction: isMainlyHebrew(formData.username) ? 'rtl' : 'ltr',
+                        textAlign: isMainlyHebrew(formData.username) ? 'right' : 'left',
+                        border: usernameError ? '1px solid #ef4444' : '1px solid #ccc'
+                    }}
                     required
                     disabled={isLoading}
                 />
+                {usernameError && (
+                    <div style={{ color: 'red', marginBottom: 12, fontWeight: 500, direction: dir, textAlign }}>{usernameError}</div>
+                )}
                 <label style={labelStyle} htmlFor="email">{translations.email[language]}</label>
                 <input
                     id="email"
@@ -183,6 +267,9 @@ export default function Signup() {
                     required
                     disabled={isLoading}
                 />
+                {passwordError && (
+                    <div style={{ color: 'red', marginTop: 4, marginBottom: 12, fontWeight: 500, direction: dir, textAlign }}>{passwordError}</div>
+                )}
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 18 }}>
                     <button
                         type="button"

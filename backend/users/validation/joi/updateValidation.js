@@ -4,7 +4,9 @@ const updateValidation = (user) => {
     const schema = Joi.object({
         username: Joi.string()
             .min(3)
-            .max(15)
+            .max(16)
+            .pattern(/^[a-zA-Z][a-zA-Z0-9_]*$/)
+            .rule({ message: 'Username must start with a letter and can only contain English letters, numbers, and underscores (3-16 characters)' })
             .required(),
         email: Joi.string()
             .ruleset.pattern(
