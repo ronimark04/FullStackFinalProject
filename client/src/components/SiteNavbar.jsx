@@ -79,6 +79,7 @@ export default function SiteNavbar() {
   };
 
   const profileText = language === "heb" ? "הפרופיל שלי" : "My Profile";
+  const adminPanelText = language === "heb" ? "פאנל מנהל" : "Admin Panel";
   const searchPlaceholder = language === "heb" ? "חפש אמן/ית..." : "Find Artists...";
   const logoutText = language === "heb" ? "התנתקות" : "Logout";
   const loginText = language === "heb" ? "התחברות" : "Login";
@@ -257,6 +258,14 @@ export default function SiteNavbar() {
                       {profileText}
                     </Link>
                   )}
+                  {isAuthenticated && user && user.isAdmin && (
+                    <Link
+                      href="/admin"
+                      className="px-4 py-2 font-normal text-red-700 hover:text-red-600 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded"
+                    >
+                      {adminPanelText}
+                    </Link>
+                  )}
                   {isAuthenticated && (
                     <Link
                       href="/contact"
@@ -313,6 +322,11 @@ export default function SiteNavbar() {
                   className="font-normal text-red-700 hover:text-red-600"
                 >
                   {profileText}
+                </Link>
+              )}
+              {isAuthenticated && user && user.isAdmin && (
+                <Link href="/admin" className="font-normal text-red-700 hover:text-red-600">
+                  {adminPanelText}
                 </Link>
               )}
               <Link href="/contact" className="font-normal text-red-700 hover:text-red-600">

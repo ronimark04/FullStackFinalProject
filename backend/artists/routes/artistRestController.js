@@ -59,14 +59,12 @@ router.put("/:id", auth, async (req, res) => {
         const userInfo = req.user;
         const newArtist = req.body;
         const { id } = req.params;
-        const originalArtist = await getArtist(id);
-        // const userId = originalArtist.user_id.toString();
 
         if (!userInfo.isAdmin) {
             return handleError(res, 403, "Authorization Error: Non admin users cannot edit artists");
         }
 
-        let artist = await updateArtist(id, artist);
+        let artist = await updateArtist(id, newArtist);
         res.send(artist);
     }
     catch (err) {
@@ -78,12 +76,29 @@ router.put("/:id", auth, async (req, res) => {
 router.delete("/:id", auth, async (req, res) => {
     try {
         let { id } = req.params;
+        const { password } = req.body;
         const userInfo = req.user;
-        const originalArtist = await getArtist(id);
-        // const userId = originalCard.user_id.toString();
 
         if (!userInfo.isAdmin) {
             return handleError(res, 403, "Authorization Error: Non admin users cannot delete artists");
+        }
+
+        if (!password) {
+            return handleError(res, 400, "Password confirmation is required to delete an artist");
+        }
+
+        // Verify admin password
+        const User = require('../../users/models/mongodb/User');
+        const { comparePasswords } = require('../../users/helpers/bcrypt');
+
+        const adminUser = await User.findById(userInfo._id);
+        if (!adminUser) {
+            return handleError(res, 404, "Admin user not found");
+        }
+
+        const isPasswordCorrect = await comparePasswords(password, adminUser.password);
+        if (!isPasswordCorrect) {
+            return handleError(res, 401, "Incorrect password");
         }
 
         await deleteArtist(id);

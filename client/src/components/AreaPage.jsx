@@ -504,48 +504,58 @@ const AreaPage = () => {
                                                             textAlign: 'center'
                                                         }}
                                                     >
-                                                        {showLocation && (
-                                                            artist.isBand ? (
-                                                                bornElsewhere ? (
-                                                                    <>
+                                                        {artist.isBand ? (
+                                                            bornElsewhere ? (
+                                                                <>
+                                                                    {showLocation && (
                                                                         <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{location}</div>
-                                                                        <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{yearDisplay}</div>
-                                                                        <div style={{
-                                                                            fontSize: getBornElsewhereFontSize(artist.rate),
-                                                                            fontStyle: 'italic',
-                                                                            direction: language === 'heb' ? 'rtl' : 'ltr'
-                                                                        }}>
-                                                                            {language === 'heb' ?
-                                                                                (artist.gender === 'm' ? `נולד ב${bornElsewhere}` :
-                                                                                    artist.gender === 'f' ? `נולדה ב${bornElsewhere}` :
-                                                                                        `נולד/ה ב${bornElsewhere}`)
-                                                                                : `Born in ${bornElsewhere}`}
-                                                                        </div>
-                                                                    </>
-                                                                ) : (
-                                                                    <>
-                                                                        <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{location}</div>
-                                                                        <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{yearDisplay}</div>
-                                                                    </>
-                                                                )
+                                                                    )}
+                                                                    <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{yearDisplay}</div>
+                                                                    <div style={{
+                                                                        fontSize: getBornElsewhereFontSize(artist.rate),
+                                                                        fontStyle: 'italic',
+                                                                        direction: language === 'heb' ? 'rtl' : 'ltr'
+                                                                    }}>
+                                                                        {language === 'heb' ?
+                                                                            (artist.gender === 'm' ? `נולד ב${bornElsewhere}` :
+                                                                                artist.gender === 'f' ? `נולדה ב${bornElsewhere}` :
+                                                                                    `נולד/ה ב${bornElsewhere}`)
+                                                                            : `Born in ${bornElsewhere}`}
+                                                                    </div>
+                                                                </>
                                                             ) : (
-                                                                bornElsewhere ? (
-                                                                    <>
+                                                                <>
+                                                                    {showLocation && (
+                                                                        <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{location}</div>
+                                                                    )}
+                                                                    <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{yearDisplay}</div>
+                                                                </>
+                                                            )
+                                                        ) : (
+                                                            bornElsewhere ? (
+                                                                <>
+                                                                    {showLocation ? (
                                                                         <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{location} — {yearDisplay}</div>
-                                                                        <div style={{
-                                                                            fontSize: getBornElsewhereFontSize(artist.rate),
-                                                                            fontStyle: 'italic',
-                                                                            direction: language === 'heb' ? 'rtl' : 'ltr'
-                                                                        }}>
-                                                                            {language === 'heb' ?
-                                                                                (artist.gender === 'm' ? `נולד ב${bornElsewhere}` :
-                                                                                    artist.gender === 'f' ? `נולדה ב${bornElsewhere}` :
-                                                                                        `נולד/ה ב${bornElsewhere}`)
-                                                                                : `Born in ${bornElsewhere}`}
-                                                                        </div>
-                                                                    </>
-                                                                ) : (
+                                                                    ) : (
+                                                                        <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{yearDisplay}</div>
+                                                                    )}
+                                                                    <div style={{
+                                                                        fontSize: getBornElsewhereFontSize(artist.rate),
+                                                                        fontStyle: 'italic',
+                                                                        direction: language === 'heb' ? 'rtl' : 'ltr'
+                                                                    }}>
+                                                                        {language === 'heb' ?
+                                                                            (artist.gender === 'm' ? `נולד ב${bornElsewhere}` :
+                                                                                artist.gender === 'f' ? `נולדה ב${bornElsewhere}` :
+                                                                                    `נולד/ה ב${bornElsewhere}`)
+                                                                            : `Born in ${bornElsewhere}`}
+                                                                    </div>
+                                                                </>
+                                                            ) : (
+                                                                showLocation ? (
                                                                     <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{location} — {yearDisplay}</div>
+                                                                ) : (
+                                                                    <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{yearDisplay}</div>
                                                                 )
                                                             )
                                                         )}
@@ -718,48 +728,58 @@ const AreaPage = () => {
                                                             textAlign: 'center'
                                                         }}
                                                     >
-                                                        {showLocation && (
-                                                            artist.isBand ? (
-                                                                bornElsewhere ? (
-                                                                    <>
+                                                        {artist.isBand ? (
+                                                            bornElsewhere ? (
+                                                                <>
+                                                                    {showLocation && (
                                                                         <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{location}</div>
-                                                                        <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{yearDisplay}</div>
-                                                                        <div style={{
-                                                                            fontSize: getBornElsewhereFontSize(artist.rate),
-                                                                            fontStyle: 'italic',
-                                                                            direction: language === 'heb' ? 'rtl' : 'ltr'
-                                                                        }}>
-                                                                            {language === 'heb' ?
-                                                                                (artist.gender === 'm' ? `נולד ב${bornElsewhere}` :
-                                                                                    artist.gender === 'f' ? `נולדה ב${bornElsewhere}` :
-                                                                                        `נולד/ה ב${bornElsewhere}`)
-                                                                                : `Born in ${bornElsewhere}`}
-                                                                        </div>
-                                                                    </>
-                                                                ) : (
-                                                                    <>
-                                                                        <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{location}</div>
-                                                                        <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{yearDisplay}</div>
-                                                                    </>
-                                                                )
+                                                                    )}
+                                                                    <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{yearDisplay}</div>
+                                                                    <div style={{
+                                                                        fontSize: getBornElsewhereFontSize(artist.rate),
+                                                                        fontStyle: 'italic',
+                                                                        direction: language === 'heb' ? 'rtl' : 'ltr'
+                                                                    }}>
+                                                                        {language === 'heb' ?
+                                                                            (artist.gender === 'm' ? `נולד ב${bornElsewhere}` :
+                                                                                artist.gender === 'f' ? `נולדה ב${bornElsewhere}` :
+                                                                                    `נולד/ה ב${bornElsewhere}`)
+                                                                            : `Born in ${bornElsewhere}`}
+                                                                    </div>
+                                                                </>
                                                             ) : (
-                                                                bornElsewhere ? (
-                                                                    <>
+                                                                <>
+                                                                    {showLocation && (
+                                                                        <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{location}</div>
+                                                                    )}
+                                                                    <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{yearDisplay}</div>
+                                                                </>
+                                                            )
+                                                        ) : (
+                                                            bornElsewhere ? (
+                                                                <>
+                                                                    {showLocation ? (
                                                                         <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{location} — {yearDisplay}</div>
-                                                                        <div style={{
-                                                                            fontSize: getBornElsewhereFontSize(artist.rate),
-                                                                            fontStyle: 'italic',
-                                                                            direction: language === 'heb' ? 'rtl' : 'ltr'
-                                                                        }}>
-                                                                            {language === 'heb' ?
-                                                                                (artist.gender === 'm' ? `נולד ב${bornElsewhere}` :
-                                                                                    artist.gender === 'f' ? `נולדה ב${bornElsewhere}` :
-                                                                                        `נולד/ה ב${bornElsewhere}`)
-                                                                                : `Born in ${bornElsewhere}`}
-                                                                        </div>
-                                                                    </>
-                                                                ) : (
+                                                                    ) : (
+                                                                        <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{yearDisplay}</div>
+                                                                    )}
+                                                                    <div style={{
+                                                                        fontSize: getBornElsewhereFontSize(artist.rate),
+                                                                        fontStyle: 'italic',
+                                                                        direction: language === 'heb' ? 'rtl' : 'ltr'
+                                                                    }}>
+                                                                        {language === 'heb' ?
+                                                                            (artist.gender === 'm' ? `נולד ב${bornElsewhere}` :
+                                                                                artist.gender === 'f' ? `נולדה ב${bornElsewhere}` :
+                                                                                    `נולד/ה ב${bornElsewhere}`)
+                                                                            : `Born in ${bornElsewhere}`}
+                                                                    </div>
+                                                                </>
+                                                            ) : (
+                                                                showLocation ? (
                                                                     <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{location} — {yearDisplay}</div>
+                                                                ) : (
+                                                                    <div style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>{yearDisplay}</div>
                                                                 )
                                                             )
                                                         )}

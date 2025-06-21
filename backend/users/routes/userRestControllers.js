@@ -72,9 +72,26 @@ router.put("/:id", auth, async (req, res) => {
         const { id } = req.params;
         const updatedUser = req.body;
         const userInfo = req.user;
-        if (id !== userInfo._id) {
+
+        // Check if user is updating their own profile or if admin is updating someone else
+        if (id !== userInfo._id && !userInfo.isAdmin) {
             return handleError(res, 403, "Authorization Error: Only the verified user can edit their profile");
         }
+
+        // If admin is updating another user, only allow isAdmin field changes
+        if (id !== userInfo._id && userInfo.isAdmin) {
+            const allowedFields = ['isAdmin'];
+            const hasUnauthorizedFields = Object.keys(updatedUser).some(key => !allowedFields.includes(key));
+            if (hasUnauthorizedFields) {
+                return handleError(res, 403, "Authorization Error: Admins can only update admin status of other users");
+            }
+        }
+
+        // If regular user is updating their own profile, don't allow isAdmin changes
+        if (id === userInfo._id && !userInfo.isAdmin && updatedUser.hasOwnProperty('isAdmin')) {
+            return handleError(res, 403, "Authorization Error: Users cannot change their own admin status");
+        }
+
         const valErrorMessage = validateUpdate(updatedUser);
         if (valErrorMessage !== "") {
             return handleError(res, 400, "Validation Error: " + valErrorMessage);

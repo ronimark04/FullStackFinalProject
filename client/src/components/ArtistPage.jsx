@@ -7,6 +7,7 @@ import { useLanguage } from '@/context/languageContext';
 import CommentActions from './CommentActions';
 import ArtistActionsArtistPage from './ArtistActionsArtistPage';
 import CommentInput from './CommentInput';
+import UpdateArtistModal from './UpdateArtistModal';
 
 const ICON_COLOR = "#A15E0A";
 const ICON_HOVER_COLOR = "#C1873B";
@@ -301,6 +302,8 @@ const ArtistPage = () => {
     const [editingCommentId, setEditingCommentId] = useState(null);
     const [editText, setEditText] = useState('');
     const [newCommentText, setNewCommentText] = useState('');
+    const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
+    const [areas, setAreas] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
@@ -334,6 +337,20 @@ const ArtistPage = () => {
         if (artistId) fetchData();
     }, [artistId]);
 
+    // Fetch areas for the update modal
+    useEffect(() => {
+        async function fetchAreas() {
+            try {
+                const areasRes = await fetch('/areas');
+                const areasData = await areasRes.json();
+                setAreas(areasData);
+            } catch (error) {
+                console.error('Error fetching areas:', error);
+            }
+        }
+        fetchAreas();
+    }, []);
+
     const threadedComments = useMemo(() => buildThreadedComments(comments), [comments]);
 
     // Add a function to refresh comments
@@ -354,6 +371,17 @@ const ArtistPage = () => {
             } catch { }
         }));
         setUsersById(usersMap);
+    };
+
+    // Function to refresh artist data after update
+    const refreshArtist = async () => {
+        try {
+            const artistRes = await fetch(`/artists/${artistId}`);
+            const artistData = await artistRes.json();
+            setArtist(artistData);
+        } catch (error) {
+            console.error('Error refreshing artist:', error);
+        }
     };
 
     if (loading) return <div style={{ padding: 40, textAlign: 'center' }}>Loading...</div>;
@@ -384,6 +412,36 @@ const ArtistPage = () => {
                 }
             `}</style>
             <div style={{ minHeight: '100vh', padding: '24px 4vw' }}>
+                {/* Admin Edit Button */}
+                {user?.isAdmin && (
+                    <div style={{
+                        maxWidth: '1400px',
+                        margin: '0 auto 24px auto',
+                        display: 'flex',
+                        justifyContent: 'center'
+                    }}>
+                        <button
+                            onClick={() => setIsUpdateModalOpen(true)}
+                            style={{
+                                padding: '12px 24px',
+                                borderRadius: '8px',
+                                background: '#A15E0A',
+                                color: 'white',
+                                border: 'none',
+                                cursor: 'pointer',
+                                fontSize: '16px',
+                                fontWeight: '400',
+                                transition: 'background 0.2s',
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                            }}
+                            onMouseOver={e => e.currentTarget.style.background = '#C1873B'}
+                            onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}
+                        >
+                            {language === 'heb' ? 'ערוך אמן' : 'Edit Artist'}
+                        </button>
+                    </div>
+                )}
+
                 {/* Top row: Spotify embed (left), summary+actions (right) */}
                 <div className="artistpage-flex-row" style={{ display: 'flex', gap: 32, alignItems: 'stretch', maxWidth: '1400px', margin: '0 auto', height: 'auto', minHeight: 0 }}>
                     {/* Left: Spotify Embed */}
@@ -479,6 +537,18 @@ const ArtistPage = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Update Artist Modal */}
+            <UpdateArtistModal
+                artist={artist}
+                isOpen={isUpdateModalOpen}
+                onClose={() => setIsUpdateModalOpen(false)}
+                onSuccess={() => {
+                    setIsUpdateModalOpen(false);
+                    refreshArtist();
+                }}
+                areas={areas}
+            />
         </>
     );
 };

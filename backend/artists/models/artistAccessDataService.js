@@ -2,7 +2,7 @@ const Artist = require('./mongodb/Artist');
 
 const getArtists = async () => {
     try {
-        let artists = await Artist.find();
+        let artists = await Artist.find().populate('area');
         return artists;
     }
     catch (err) {
@@ -12,7 +12,7 @@ const getArtists = async () => {
 
 const getArtistsByArea = async (areaId) => {
     try {
-        let artists = await Artist.find({ area: areaId }).sort({ birthYear: 1 });
+        let artists = await Artist.find({ area: areaId }).populate('area').sort({ birthYear: 1 });
         return artists;
     }
     catch (err) {
@@ -22,7 +22,7 @@ const getArtistsByArea = async (areaId) => {
 
 const getArtist = async (artistId) => {
     try {
-        let artist = await Artist.findById(artistId);
+        let artist = await Artist.findById(artistId).populate('area');
         return artist;
     }
     catch (err) {

@@ -6,6 +6,7 @@ import AreaPage from "./components/AreaPage";
 import Signup from "./components/Signup";
 import ArtistPage from "./components/ArtistPage";
 import ProfilePage from "./components/ProfilePage";
+import AdminPanel from "./components/AdminPanel";
 import { AuthProvider } from "./context/authContext";
 import Contact from "./components/Contact";
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/artist/:artistId" element={<ArtistPage />} />
           <Route path="/user/:userId" element={<ProfilePage />} />
+          <Route path="/admin" element={<AdminPanel />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>

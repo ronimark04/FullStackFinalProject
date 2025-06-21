@@ -8,7 +8,6 @@ const generateAuthToken = (user) => {
     const payload = {
         _id: user._id,
         isAdmin: user.isAdmin,
-        isBusiness: user.isBusiness
     };
     const token = jwt.sign(payload, JWT_SECRET, { expiresIn: TOKEN_EXPIRY });
     return token;
