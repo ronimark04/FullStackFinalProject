@@ -5,8 +5,9 @@ import ReplyIcon from '../assets/reply-svgrepo-com.svg?react';
 import EditIcon from '../assets/edit-svgrepo-com.svg?react';
 import DeleteIcon from '../assets/delete-svgrepo-com.svg?react';
 import { useAuth } from '@/context/authContext';
-import { Toast } from "@heroui/react";
+import { addToast, Button } from "@heroui/react";
 import { motion } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
 
 const ICON_COLOR = "#A15E0A";
 const ICON_HOVER_COLOR = "#C1873B";
@@ -35,6 +36,7 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
     const [hovered, setHovered] = useState(null);
     const [loading, setLoading] = useState(true);
     const [userVote, setUserVote] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchVotes = async () => {
@@ -79,9 +81,20 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
 
     const handleVote = async (voteType) => {
         if (!user) {
-            Toast.error({
-                title: "Authentication Required",
-                description: "Log in or sign up to like/dislike comments"
+            addToast({
+                description: "Sign up or log in to like and dislike",
+                color: "danger",
+                timeout: 3000,
+                endContent: (
+                    <Button
+                        size="sm"
+                        variant="flat"
+                        color="danger"
+                        onPress={() => navigate('/signup')}
+                    >
+                        Sign Up
+                    </Button>
+                )
             });
             return;
         }
@@ -111,9 +124,10 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
                 setUserVote(vote?.vote_type || null);
             }
         } catch (e) {
-            Toast.error({
-                title: "Error",
-                description: "Failed to vote. Please try again."
+            addToast({
+                description: "Failed to vote. Please try again.",
+                color: "danger",
+                timeout: 3000
             });
         }
     };

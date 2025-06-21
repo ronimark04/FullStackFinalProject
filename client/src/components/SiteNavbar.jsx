@@ -69,6 +69,7 @@ export default function SiteNavbar() {
   const [filteredArtists, setFilteredArtists] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const [loadingArtists, setLoadingArtists] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
   const dropdownRef = useRef(null);
   const [burgerOpen, setBurgerOpen] = useState(false);
   const burgerRef = useRef(null);
@@ -108,6 +109,7 @@ export default function SiteNavbar() {
     if (!searchValue) {
       setFilteredArtists(allArtists);
       setShowDropdown(false); // Hide dropdown when no input
+      setSelectedIndex(-1); // Reset selected index
       return;
     }
     const query = searchValue.toLowerCase();
@@ -118,13 +120,48 @@ export default function SiteNavbar() {
     );
     setFilteredArtists(filtered);
     setShowDropdown(true); // Show dropdown when there's input
+    setSelectedIndex(-1); // Reset selected index when filtering
   }, [searchValue, allArtists]);
 
   // Handle artist selection
   const handleSelectArtist = (artistId) => {
     setShowDropdown(false);
     setSearchValue("");
+    setSelectedIndex(-1);
     navigate(`/artist/${artistId}`);
+  };
+
+  // Handle keyboard navigation
+  const handleKeyDown = (e) => {
+    if (!showDropdown || filteredArtists.length === 0) return;
+
+    switch (e.key) {
+      case "ArrowDown":
+        e.preventDefault();
+        setSelectedIndex(prev =>
+          prev < filteredArtists.length - 1 ? prev + 1 : 0
+        );
+        break;
+      case "ArrowUp":
+        e.preventDefault();
+        setSelectedIndex(prev =>
+          prev > 0 ? prev - 1 : filteredArtists.length - 1
+        );
+        break;
+      case "Enter":
+        e.preventDefault();
+        if (selectedIndex >= 0 && selectedIndex < filteredArtists.length) {
+          handleSelectArtist(filteredArtists[selectedIndex]._id);
+        } else if (filteredArtists.length > 0) {
+          // If no item is selected, select the first one
+          handleSelectArtist(filteredArtists[0]._id);
+        }
+        break;
+      case "Escape":
+        setShowDropdown(false);
+        setSelectedIndex(-1);
+        break;
+    }
   };
 
   // Handle search (Enter key or search icon click)
@@ -313,12 +350,7 @@ export default function SiteNavbar() {
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
                 onFocus={handleSearchFocus}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    e.preventDefault();
-                    handleSearch();
-                  }
-                }}
+                onKeyDown={handleKeyDown}
                 dir={language === 'heb' ? 'rtl' : 'ltr'}
               />
 
@@ -328,11 +360,12 @@ export default function SiteNavbar() {
                   ref={dropdownRef}
                   className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-zinc-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto"
                 >
-                  {filteredArtists.map((artist) => (
+                  {filteredArtists.map((artist, index) => (
                     <div
                       key={artist._id}
                       onClick={() => handleSelectArtist(artist._id)}
-                      className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-zinc-700 cursor-pointer border-b border-gray-100 dark:border-gray-700 last:border-b-0"
+                      className={`px-4 py-2 hover:bg-gray-100 dark:hover:bg-zinc-700 cursor-pointer border-b border-gray-100 dark:border-gray-700 last:border-b-0 ${index === selectedIndex ? 'bg-gray-100 dark:bg-zinc-700' : ''
+                        }`}
                     >
                       <div className="font-light">
                         {stripParentheses(artist.name.heb)} / {stripParentheses(artist.name.eng)}

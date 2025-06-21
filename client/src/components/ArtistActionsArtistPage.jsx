@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import LikeIcon from '../assets/like-1385-svgrepo-com.svg?react';
 import DislikeIcon from '../assets/dislike-1387-svgrepo-com.svg?react';
 import { useAuth } from '@/context/authContext';
-import { Toast } from "@heroui/react";
+import { addToast, Button } from "@heroui/react";
 import { motion } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
 
 const ICON_COLOR = "#C1873B";
 const ICON_HOVER_COLOR = "#A15E0A";
@@ -31,6 +32,7 @@ export default function ArtistActionsArtistPage({ artistId }) {
     const [loading, setLoading] = useState(true);
     const [hovered, setHovered] = useState(null);
     const { user } = useAuth();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -65,9 +67,20 @@ export default function ArtistActionsArtistPage({ artistId }) {
 
     const handleVote = async (voteType) => {
         if (!user) {
-            Toast.error({
-                title: "Authentication Required",
-                description: "Log in or sign up to like/dislike artists"
+            addToast({
+                description: "Sign up or log in to like and dislike",
+                color: "danger",
+                timeout: 3000,
+                endContent: (
+                    <Button
+                        size="sm"
+                        variant="flat"
+                        color="danger"
+                        onPress={() => navigate('/signup')}
+                    >
+                        Sign Up
+                    </Button>
+                )
             });
             return;
         }
@@ -107,9 +120,10 @@ export default function ArtistActionsArtistPage({ artistId }) {
             setDisliked(votesData.downvotes.users.includes(user._id));
         } catch (error) {
             console.error('Error voting:', error);
-            Toast.error({
-                title: "Error",
-                description: "Failed to vote. Please try again."
+            addToast({
+                description: "Failed to vote. Please try again.",
+                color: "danger",
+                timeout: 3000
             });
         }
     };

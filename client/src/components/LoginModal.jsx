@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
     Modal,
@@ -19,6 +19,16 @@ export default function LoginModal({ isOpen, onClose }) {
     const { login } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
+
+    // Clear form fields when modal opens or closes
+    useEffect(() => {
+        if (isOpen) {
+            // Clear fields when modal opens
+            setEmail('');
+            setPassword('');
+            setError('');
+        }
+    }, [isOpen]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { addToast } from "@heroui/react";
 
 const AuthContext = createContext();
 
@@ -56,6 +57,14 @@ export const AuthProvider = ({ children }) => {
             setUser(data.user);
             localStorage.setItem('token', data.token);
             localStorage.setItem('user', JSON.stringify(data.user));
+
+            // Show success toast
+            addToast({
+                description: "Successfully logged in!",
+                color: "success",
+                timeout: 3000
+            });
+
             return true;
         } catch (error) {
             console.error('Login error:', error);
@@ -119,6 +128,13 @@ export const AuthProvider = ({ children }) => {
         setUser(null);
         localStorage.removeItem('token');
         localStorage.removeItem('user');
+
+        // Show success toast
+        addToast({
+            description: "Successfully logged out!",
+            color: "success",
+            timeout: 3000
+        });
     };
 
     const value = {
