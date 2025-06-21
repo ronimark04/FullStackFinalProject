@@ -82,23 +82,6 @@ const updateUser = async (userId, updatedUser) => {
     }
 }
 
-// const patchBusinessStatus = async (userId) => {
-//     try {
-//         const user = await User.findById(userId);
-//         if (!user) {
-//             throw new Error("User not found");
-//         }
-//         const updatedUser = await User.findByIdAndUpdate(
-//             userId,
-//             { $set: { isBusiness: !user.isBusiness } },
-//             { new: true, runValidators: true }
-//         );
-//         return updatedUser;
-//     } catch (err) {
-//         throw err;
-//     }
-// };
-
 const getUsers = async () => {
     try {
         let users = User.find();
@@ -119,4 +102,32 @@ const deleteUser = async (userId) => {
     }
 }
 
-module.exports = { registerUser, getUser, loginUser, updateUser, getUsers, deleteUser };
+const changePassword = async (userId, currentPassword, newPassword) => {
+    try {
+        const user = await User.findById(userId);
+        if (!user) {
+            const error = new Error("User not found");
+            error.status = 404;
+            throw error;
+        }
+
+        // Verify current password
+        const isCurrentPasswordCorrect = await comparePasswords(currentPassword, user.password);
+        if (!isCurrentPasswordCorrect) {
+            const error = new Error("Current password is incorrect");
+            error.status = 401;
+            throw error;
+        }
+
+        // Hash new password and update
+        const hashedNewPassword = await generatePassword(newPassword);
+        user.password = hashedNewPassword;
+        await user.save();
+
+        return { message: "Password updated successfully" };
+    } catch (err) {
+        throw err;
+    }
+}
+
+module.exports = { registerUser, getUser, loginUser, updateUser, getUsers, deleteUser, changePassword };

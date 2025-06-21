@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { useAuth } from '@/context/authContext';
 import { useLanguage } from '@/context/languageContext';
 import CommentActions from './CommentActions';
+import ChangePasswordModal from './ChangePasswordModal';
+import DeleteAccountModal from './DeleteAccountModal';
 import { motion } from 'framer-motion';
 import { Avatar } from "@heroui/react";
 import LikeIcon from '../assets/like-1385-svgrepo-com.svg?react';
@@ -51,6 +53,8 @@ const ProfilePage = () => {
         disliked: 3
     });
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
+    const [showDeleteAccountModal, setShowDeleteAccountModal] = useState(false);
 
     useEffect(() => {
         async function fetchData() {
@@ -291,6 +295,11 @@ const ProfilePage = () => {
 
     const isOwnProfile = currentUser && currentUser._id === userId;
 
+    const handlePasswordChangeSuccess = () => {
+        // You could show a success message here if needed
+        console.log('Password changed successfully');
+    };
+
     return (
         <div style={{ minHeight: '100vh', padding: '24px 4vw' }}>
             {/* User name headline */}
@@ -350,6 +359,50 @@ const ProfilePage = () => {
                         })}
                     </span>
                 </div>
+
+                {/* Action buttons for own profile */}
+                {isOwnProfile && (
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        gap: '16px',
+                        marginTop: '24px',
+                        flexDirection: 'row'
+                    }}>
+                        <button
+                            onClick={() => setShowChangePasswordModal(true)}
+                            style={{
+                                padding: '10px 20px',
+                                borderRadius: 8,
+                                background: '#A15E0A',
+                                color: 'white',
+                                border: 'none',
+                                cursor: 'pointer',
+                                fontSize: '0.9rem'
+                            }}
+                            onMouseOver={e => e.currentTarget.style.background = '#C1873B'}
+                            onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}
+                        >
+                            {language === 'heb' ? 'שינוי סיסמא' : 'Change Password'}
+                        </button>
+                        <button
+                            onClick={() => setShowDeleteAccountModal(true)}
+                            style={{
+                                padding: '10px 20px',
+                                borderRadius: 8,
+                                background: '#d32f2f',
+                                color: 'white',
+                                border: 'none',
+                                cursor: 'pointer',
+                                fontSize: '0.9rem'
+                            }}
+                            onMouseOver={e => e.currentTarget.style.background = '#f44336'}
+                            onMouseOut={e => e.currentTarget.style.background = '#d32f2f'}
+                        >
+                            {language === 'heb' ? 'מחיקת חשבון' : 'Delete Account'}
+                        </button>
+                    </div>
+                )}
             </div>
 
             {/* Likes section */}
@@ -653,6 +706,17 @@ const ProfilePage = () => {
                     )}
                 </div>
             </div>
+
+            {/* Modals */}
+            <ChangePasswordModal
+                isOpen={showChangePasswordModal}
+                onClose={() => setShowChangePasswordModal(false)}
+                onSuccess={handlePasswordChangeSuccess}
+            />
+            <DeleteAccountModal
+                isOpen={showDeleteAccountModal}
+                onClose={() => setShowDeleteAccountModal(false)}
+            />
         </div>
     );
 };

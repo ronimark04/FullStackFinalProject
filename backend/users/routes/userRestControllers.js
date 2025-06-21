@@ -1,11 +1,13 @@
 const auth = require('../../auth/authService');
 const { handleError } = require('../../utils/handleErrors');
-const { registerUser, getUser, loginUser, updateUser, getUsers, deleteUser } = require('../models/userAccessDataService');
+const { registerUser, getUser, loginUser, updateUser, getUsers, deleteUser, changePassword } = require('../models/userAccessDataService');
 const express = require('express');
 const validateLogin = require('../validation/joi/loginValidation');
 const validateRegistration = require('../validation/joi/registerValidation');
 const validateUpdate = require('../validation/joi/updateValidation');
 const { normalizeUser } = require('../helpers/normalize');
+const { comparePasswords } = require('../helpers/bcrypt');
+const User = require('../models/mongodb/User');
 const router = express.Router();
 
 // register
@@ -65,7 +67,6 @@ router.get("/:id", async (req, res) => {
 });
 
 // update user
-//TODO: determine who can update what and how they would do that (user himself can change password, admin can change anything)
 router.put("/:id", auth, async (req, res) => {
     try {
         const { id } = req.params;
@@ -87,21 +88,67 @@ router.put("/:id", auth, async (req, res) => {
     }
 })
 
-// delete user
+// change password
+router.put("/:id/change-password", auth, async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { currentPassword, newPassword } = req.body;
+        const userInfo = req.user;
+
+        if (id !== userInfo._id) {
+            return handleError(res, 403, "Authorization Error: Only the verified user can change their password");
+        }
+
+        if (!currentPassword || !newPassword) {
+            return handleError(res, 400, "Current password and new password are required");
+        }
+
+        // Password validation (same as registration validation)
+        const passwordRegex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*-]).{8,20}$/;
+        if (!passwordRegex.test(newPassword)) {
+            return handleError(res, 400, "Password must be at least 8 characters long and contain an uppercase letter, a lowercase letter, a number, and one special character (!@#$%^&*-)");
+        }
+
+        const result = await changePassword(id, currentPassword, newPassword);
+        res.send(result);
+    } catch (error) {
+        handleError(res, error.status || 400, error.message);
+    }
+});
+
+// delete user with password confirmation
 router.delete("/:id", auth, async (req, res) => {
     try {
         const { id } = req.params;
+        const { password } = req.body;
         const userInfo = req.user;
+
         if (id !== userInfo._id && !userInfo.isAdmin) {
             return handleError(res, 403, "Authorization Error: Only an admin or the verified user can delete their profile");
         }
+
+        // If it's the user's own profile, require password confirmation
+        if (id === userInfo._id && !userInfo.isAdmin) {
+            if (!password) {
+                return handleError(res, 400, "Password confirmation is required to delete your account");
+            }
+
+            const user = await User.findById(id);
+            if (!user) {
+                return handleError(res, 404, "User not found");
+            }
+
+            const isPasswordCorrect = await comparePasswords(password, user.password);
+            if (!isPasswordCorrect) {
+                return handleError(res, 401, "Incorrect password");
+            }
+        }
+
         const user = await deleteUser(id);
         res.send(user);
+    } catch (error) {
+        return handleError(res, error.status || 400, error.message);
     }
-    catch (err) {
-        return handleError(res, 400, err.message);
-    }
-
-})
+});
 
 module.exports = router;

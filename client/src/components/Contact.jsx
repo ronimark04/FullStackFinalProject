@@ -138,7 +138,11 @@ function Contact() {
                     style={{ ...textareaStyle, direction: isMainlyHebrew(form.message) ? 'rtl' : 'ltr', textAlign: isMainlyHebrew(form.message) ? 'right' : 'left' }}
                     required
                 />
-                <button type="submit" style={buttonStyle} disabled={loading} onMouseOver={e => e.currentTarget.style.background = '#C1873B'} onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}>
+                <button type="submit" style={{
+                    ...buttonStyle,
+                    direction: language === 'heb' ? 'rtl' : 'ltr',
+                    textAlign: 'center'
+                }} disabled={loading} onMouseOver={e => e.currentTarget.style.background = '#C1873B'} onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}>
                     {loading ? translations.sending[language] : translations.send[language]}
                 </button>
                 {status && (
