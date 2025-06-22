@@ -27,7 +27,7 @@ const iconStyle = (active, hover) => ({
     transform: hover ? 'scale(1.1)' : 'scale(1)'
 });
 
-export default function CommentActions({ commentId, onReplyClick, isReplying, onEditClick, onDeleteClick, isAuthor, showReplyButton = true }) {
+export default function CommentActions({ commentId, onReplyClick, isReplying, onEditClick, onDeleteClick, isAuthor, showReplyButton = true, onVoteChange }) {
     const { user } = useAuth();
     const [liked, setLiked] = useState(false);
     const [disliked, setDisliked] = useState(false);
@@ -69,8 +69,17 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
                 const res = await fetch(`/comment-votes/user/${user._id}`);
                 if (res.ok) {
                     const votes = await res.json();
-                    const vote = votes.find(v => v.comment.toString() === commentId);
-                    setUserVote(vote?.vote_type || null);
+                    // Check if user has voted on this comment
+                    const hasUpvoted = votes.upvotes.includes(commentId);
+                    const hasDownvoted = votes.downvotes.includes(commentId);
+
+                    if (hasUpvoted) {
+                        setUserVote('up');
+                    } else if (hasDownvoted) {
+                        setUserVote('down');
+                    } else {
+                        setUserVote(null);
+                    }
                 }
             } catch (error) {
                 console.error('Error fetching user vote:', error);
@@ -108,6 +117,7 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
                 },
             });
             if (!response.ok) throw new Error('Failed to vote');
+
             // Refetch votes after voting
             const res = await fetch(`/comment-votes/comment/${commentId}`);
             if (!res.ok) throw new Error('Failed to fetch updated votes');
@@ -116,12 +126,26 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
             setDislikes(data.downvotes.count);
             setLiked(data.upvotes.users.includes(user._id));
             setDisliked(data.downvotes.users.includes(user._id));
+
             // Refresh user vote
             const userVotesRes = await fetch(`/comment-votes/user/${user._id}`);
             if (userVotesRes.ok) {
                 const votes = await userVotesRes.json();
-                const vote = votes.find(v => v.comment.toString() === commentId);
-                setUserVote(vote?.vote_type || null);
+                const hasUpvoted = votes.upvotes.includes(commentId);
+                const hasDownvoted = votes.downvotes.includes(commentId);
+
+                if (hasUpvoted) {
+                    setUserVote('up');
+                } else if (hasDownvoted) {
+                    setUserVote('down');
+                } else {
+                    setUserVote(null);
+                }
+            }
+
+            // Notify parent component about vote change
+            if (onVoteChange) {
+                onVoteChange(commentId, voteType);
             }
         } catch (e) {
             addToast({

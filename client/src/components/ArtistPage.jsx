@@ -69,7 +69,7 @@ function buildThreadedComments(comments) {
     return roots;
 }
 
-function ThreadedComments({ comments, usersById, replyingToCommentId, setReplyingToCommentId, replyText, setReplyText, refreshComments, artistId, editingCommentId, setEditingCommentId, editText, setEditText, depth = 0 }) {
+function ThreadedComments({ comments, usersById, replyingToCommentId, setReplyingToCommentId, replyText, setReplyText, refreshComments, artistId, editingCommentId, setEditingCommentId, editText, setEditText, depth = 0, handleVoteChange }) {
     return (
         <div>
             {comments.map(comment => (
@@ -88,13 +88,14 @@ function ThreadedComments({ comments, usersById, replyingToCommentId, setReplyin
                     editText={editText}
                     setEditText={setEditText}
                     depth={depth}
+                    handleVoteChange={handleVoteChange}
                 />
             ))}
         </div>
     );
 }
 
-function CommentThread({ comment, usersById, depth = 0, replyingToCommentId, setReplyingToCommentId, replyText, setReplyText, refreshComments, artistId, editingCommentId, setEditingCommentId, editText, setEditText }) {
+function CommentThread({ comment, usersById, depth = 0, replyingToCommentId, setReplyingToCommentId, replyText, setReplyText, refreshComments, artistId, editingCommentId, setEditingCommentId, editText, setEditText, handleVoteChange }) {
     const user = usersById[comment.user] || {};
     const isReplying = replyingToCommentId === comment._id;
     const isEditing = editingCommentId === comment._id;
@@ -214,6 +215,7 @@ function CommentThread({ comment, usersById, depth = 0, replyingToCommentId, set
                         }}
                         onDeleteClick={handleDelete}
                         isAuthor={isAuthor}
+                        onVoteChange={handleVoteChange}
                     />
                 </div>
             )}
@@ -262,6 +264,7 @@ function CommentThread({ comment, usersById, depth = 0, replyingToCommentId, set
                     editText={editText}
                     setEditText={setEditText}
                     depth={depth + 1}
+                    handleVoteChange={handleVoteChange}
                 />
             )}
         </div>
@@ -382,6 +385,12 @@ const ArtistPage = () => {
         } catch (error) {
             console.error('Error refreshing artist:', error);
         }
+    };
+
+    // Function to handle vote changes and refresh comments
+    const handleVoteChange = async (commentId, voteType) => {
+        // Refresh comments to update vote counts
+        await refreshComments();
     };
 
     if (loading) return <div style={{ padding: 40, textAlign: 'center' }}>Loading...</div>;
@@ -533,6 +542,7 @@ const ArtistPage = () => {
                             setEditingCommentId={setEditingCommentId}
                             editText={editText}
                             setEditText={setEditText}
+                            handleVoteChange={handleVoteChange}
                         />
                     </div>
                 </div>

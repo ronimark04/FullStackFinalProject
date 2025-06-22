@@ -184,6 +184,32 @@ const ProfilePage = () => {
         }
     };
 
+    const handleVoteChange = async (commentId, voteType) => {
+        // Refresh the liked and disliked comments sections
+        try {
+            const commentVotesRes = await fetch(`/comment-votes/user/${userId}`);
+            const commentVotesData = await commentVotesRes.json();
+
+            // Fetch liked comments
+            const likedCommentsPromises = commentVotesData.upvotes.map(async (commentId) => {
+                const res = await fetch(`/comments/${commentId}`);
+                return res.json();
+            });
+            const likedCommentsData = await Promise.all(likedCommentsPromises);
+            setLikedComments(likedCommentsData);
+
+            // Fetch disliked comments
+            const dislikedCommentsPromises = commentVotesData.downvotes.map(async (commentId) => {
+                const res = await fetch(`/comments/${commentId}`);
+                return res.json();
+            });
+            const dislikedCommentsData = await Promise.all(dislikedCommentsPromises);
+            setDislikedComments(dislikedCommentsData);
+        } catch (error) {
+            console.error('Error refreshing comments after vote change:', error);
+        }
+    };
+
     const renderComment = (comment, isAuthor = false) => {
         const isEditing = editingCommentId === comment._id;
         const replyToComment = comment.reply_to ? replyToComments[comment.reply_to] : null;
@@ -277,6 +303,7 @@ const ProfilePage = () => {
                             onDeleteClick={() => handleDelete(comment._id)}
                             isAuthor={isAuthor}
                             showReplyButton={false}
+                            onVoteChange={handleVoteChange}
                         />
                     </div>
                 )}
