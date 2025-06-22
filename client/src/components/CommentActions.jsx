@@ -38,6 +38,9 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
     const [userVote, setUserVote] = useState(null);
     const navigate = useNavigate();
 
+    // Check if user can edit/delete (author or admin)
+    const canEditDelete = isAuthor || (user && user.isAdmin);
+
     useEffect(() => {
         const fetchVotes = async () => {
             try {
@@ -160,7 +163,7 @@ export default function CommentActions({ commentId, onReplyClick, isReplying, on
 
     return (
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: 4 }}>
-            {isAuthor && (
+            {canEditDelete && (
                 <>
                     <motion.div
                         whileHover={{ scale: 1.08 }}

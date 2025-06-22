@@ -80,16 +80,16 @@ const DeleteUserModal = ({ user, isOpen, onClose, onSuccess }) => {
 
     return (
         <Modal isOpen={isOpen} onClose={handleClose}>
-            <ModalContent>
-                <ModalHeader>
+            <ModalContent style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>
+                <ModalHeader style={{ textAlign: language === 'heb' ? 'right' : 'left' }}>
                     {translations.deleteUser[language]}
                 </ModalHeader>
                 <ModalBody>
-                    <div className="space-y-4">
-                        <div className="text-base">
+                    <div className="space-y-4" style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>
+                        <div className="text-base" style={{ textAlign: language === 'heb' ? 'right' : 'left' }}>
                             {translations.confirmDelete[language]} <strong>{user?.username}</strong>?
                         </div>
-                        <div className="text-sm text-gray-600">
+                        <div className="text-sm text-gray-600" style={{ textAlign: language === 'heb' ? 'right' : 'left' }}>
                             {translations.passwordRequired[language]}
                         </div>
                         <Input
@@ -102,10 +102,11 @@ const DeleteUserModal = ({ user, isOpen, onClose, onSuccess }) => {
                                     handleDelete();
                                 }
                             }}
+                            style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}
                         />
                     </div>
                 </ModalBody>
-                <ModalFooter>
+                <ModalFooter style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>
                     <Button variant="bordered" onPress={handleClose}>
                         {translations.cancel[language]}
                     </Button>

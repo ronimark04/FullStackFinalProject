@@ -5,8 +5,9 @@ import { useLanguage } from '@/context/languageContext';
 import CommentActions from './CommentActions';
 import ChangePasswordModal from './ChangePasswordModal';
 import DeleteAccountModal from './DeleteAccountModal';
+import DeleteUserModal from './DeleteUserModal';
 import { motion } from 'framer-motion';
-import { Avatar } from "@heroui/react";
+import { Avatar, Spinner } from "@heroui/react";
 import LikeIcon from '../assets/like-1385-svgrepo-com.svg?react';
 import DislikeIcon from '../assets/dislike-1387-svgrepo-com.svg?react';
 
@@ -55,6 +56,7 @@ const ProfilePage = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
     const [showDeleteAccountModal, setShowDeleteAccountModal] = useState(false);
+    const [showDeleteUserModal, setShowDeleteUserModal] = useState(false);
 
     useEffect(() => {
         async function fetchData() {
@@ -317,14 +319,20 @@ const ProfilePage = () => {
         return commentsArr.filter(comment => !comment.deleted).slice(0, showCount[section]);
     };
 
-    if (loading) return <div style={{ padding: 40, textAlign: 'center' }}>Loading...</div>;
+    if (loading) return <div style={{ padding: 40, textAlign: 'center' }}><Spinner color="danger" size="lg" /></div>;
     if (!profileUser) return <div style={{ padding: 40, textAlign: 'center' }}>User not found.</div>;
 
     const isOwnProfile = currentUser && currentUser._id === userId;
+    const canDeleteUser = isOwnProfile || (currentUser && currentUser.isAdmin);
 
     const handlePasswordChangeSuccess = () => {
         // You could show a success message here if needed
         console.log('Password changed successfully');
+    };
+
+    const handleDeleteUserSuccess = () => {
+        // Redirect to home page or show success message
+        window.location.href = '/';
     };
 
     return (
@@ -387,8 +395,8 @@ const ProfilePage = () => {
                     </span>
                 </div>
 
-                {/* Action buttons for own profile */}
-                {isOwnProfile && (
+                {/* Action buttons for own profile or admin */}
+                {canDeleteUser && (
                     <div style={{
                         display: 'flex',
                         justifyContent: 'center',
@@ -396,24 +404,32 @@ const ProfilePage = () => {
                         marginTop: '24px',
                         flexDirection: 'row'
                     }}>
+                        {isOwnProfile && (
+                            <button
+                                onClick={() => setShowChangePasswordModal(true)}
+                                style={{
+                                    padding: '10px 20px',
+                                    borderRadius: 8,
+                                    background: '#A15E0A',
+                                    color: 'white',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    fontSize: '0.9rem'
+                                }}
+                                onMouseOver={e => e.currentTarget.style.background = '#C1873B'}
+                                onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}
+                            >
+                                {language === 'heb' ? 'שינוי סיסמא' : 'Change Password'}
+                            </button>
+                        )}
                         <button
-                            onClick={() => setShowChangePasswordModal(true)}
-                            style={{
-                                padding: '10px 20px',
-                                borderRadius: 8,
-                                background: '#A15E0A',
-                                color: 'white',
-                                border: 'none',
-                                cursor: 'pointer',
-                                fontSize: '0.9rem'
+                            onClick={() => {
+                                if (isOwnProfile) {
+                                    setShowDeleteAccountModal(true);
+                                } else {
+                                    setShowDeleteUserModal(true);
+                                }
                             }}
-                            onMouseOver={e => e.currentTarget.style.background = '#C1873B'}
-                            onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}
-                        >
-                            {language === 'heb' ? 'שינוי סיסמא' : 'Change Password'}
-                        </button>
-                        <button
-                            onClick={() => setShowDeleteAccountModal(true)}
                             style={{
                                 padding: '10px 20px',
                                 borderRadius: 8,
@@ -426,7 +442,10 @@ const ProfilePage = () => {
                             onMouseOver={e => e.currentTarget.style.background = '#f44336'}
                             onMouseOut={e => e.currentTarget.style.background = '#d32f2f'}
                         >
-                            {language === 'heb' ? 'מחיקת חשבון' : 'Delete Account'}
+                            {isOwnProfile
+                                ? (language === 'heb' ? 'מחיקת חשבון' : 'Delete Account')
+                                : (language === 'heb' ? 'מחק משתמש' : 'Delete User')
+                            }
                         </button>
                     </div>
                 )}
@@ -743,6 +762,12 @@ const ProfilePage = () => {
             <DeleteAccountModal
                 isOpen={showDeleteAccountModal}
                 onClose={() => setShowDeleteAccountModal(false)}
+            />
+            <DeleteUserModal
+                user={profileUser}
+                isOpen={showDeleteUserModal}
+                onClose={() => setShowDeleteUserModal(false)}
+                onSuccess={handleDeleteUserSuccess}
             />
         </div>
     );

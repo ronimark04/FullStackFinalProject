@@ -30,7 +30,8 @@ import {
     Select,
     SelectItem,
     Divider,
-    Link
+    Link,
+    Spinner
 } from "@heroui/react";
 import { useAuth } from '../context/authContext';
 import { useLanguage } from '../context/languageContext';
@@ -352,7 +353,9 @@ const AdminPanel = () => {
 
                             {/* Users Table */}
                             {loadingUsers ? (
-                                <div className="text-center py-8">{translations.loading[language]}</div>
+                                <div className="text-center py-8">
+                                    <Spinner color="danger" size="lg" />
+                                </div>
                             ) : (
                                 <>
                                     <Table aria-label="Users table" dir={language === 'heb' ? 'rtl' : 'ltr'}>
@@ -399,7 +402,7 @@ const AdminPanel = () => {
 
                                     {/* Pagination */}
                                     <div className="flex justify-between items-center mt-4">
-                                        <span>
+                                        <span style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>
                                             {paginatedUsers.length} {translations.of[language]} {filteredUsers.length}
                                         </span>
                                         <Pagination
@@ -461,7 +464,9 @@ const AdminPanel = () => {
 
                             {/* Artists Table */}
                             {loadingArtists ? (
-                                <div className="text-center py-8">{translations.loading[language]}</div>
+                                <div className="text-center py-8">
+                                    <Spinner color="danger" size="lg" />
+                                </div>
                             ) : (
                                 <div className="flex justify-center">
                                     <div className="w-1/2">
@@ -527,7 +532,7 @@ const AdminPanel = () => {
 
                             {/* Pagination */}
                             <div className="flex justify-between items-center mt-4">
-                                <span>
+                                <span style={{ direction: language === 'heb' ? 'rtl' : 'ltr' }}>
                                     {paginatedArtists.length} {translations.of[language]} {filteredArtists.length}
                                 </span>
                                 <Pagination

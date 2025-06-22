@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import LikeIcon from '../assets/like-1385-svgrepo-com.svg?react';
 import DislikeIcon from '../assets/dislike-1387-svgrepo-com.svg?react';
 import { useAuth } from '@/context/authContext';
@@ -8,6 +8,8 @@ import CommentActions from './CommentActions';
 import ArtistActionsArtistPage from './ArtistActionsArtistPage';
 import CommentInput from './CommentInput';
 import UpdateArtistModal from './UpdateArtistModal';
+import DeleteArtistModal from './DeleteArtistModal';
+import { Spinner } from '@heroui/react';
 
 const ICON_COLOR = "#A15E0A";
 const ICON_HOVER_COLOR = "#C1873B";
@@ -151,7 +153,18 @@ function CommentThread({ comment, usersById, depth = 0, replyingToCommentId, set
             position: 'relative'
         }}>
             <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 4 }}>
-                <span style={{ color: '#5D4037' }}>{user.username || 'Unknown User'}</span>
+                <Link
+                    to={`/user/${comment.user}`}
+                    style={{
+                        color: '#5D4037',
+                        textDecoration: 'none',
+                        transition: 'color 0.2s'
+                    }}
+                    onMouseOver={e => e.currentTarget.style.color = '#A15E0A'}
+                    onMouseOut={e => e.currentTarget.style.color = '#5D4037'}
+                >
+                    {user.username || 'Deleted User'}
+                </Link>
                 <span style={{ color: '#999', fontWeight: 400, fontSize: 12, marginLeft: 8 }}>{new Date(comment.createdAt).toLocaleString()}</span>
             </div>
             {isEditing ? (
@@ -306,6 +319,7 @@ const ArtistPage = () => {
     const [editText, setEditText] = useState('');
     const [newCommentText, setNewCommentText] = useState('');
     const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [areas, setAreas] = useState([]);
 
     useEffect(() => {
@@ -393,7 +407,7 @@ const ArtistPage = () => {
         await refreshComments();
     };
 
-    if (loading) return <div style={{ padding: 40, textAlign: 'center' }}>Loading...</div>;
+    if (loading) return <div style={{ padding: 40, textAlign: 'center' }}><Spinner color="danger" size="lg" /></div>;
     if (!artist) return <div style={{ padding: 40, textAlign: 'center' }}>Artist not found.</div>;
 
     return (
@@ -427,7 +441,8 @@ const ArtistPage = () => {
                         maxWidth: '1400px',
                         margin: '0 auto 24px auto',
                         display: 'flex',
-                        justifyContent: 'center'
+                        justifyContent: 'center',
+                        gap: '16px'
                     }}>
                         <button
                             onClick={() => setIsUpdateModalOpen(true)}
@@ -447,6 +462,25 @@ const ArtistPage = () => {
                             onMouseOut={e => e.currentTarget.style.background = '#A15E0A'}
                         >
                             {language === 'heb' ? 'ערוך אמן' : 'Edit Artist'}
+                        </button>
+                        <button
+                            onClick={() => setIsDeleteModalOpen(true)}
+                            style={{
+                                padding: '12px 24px',
+                                borderRadius: '8px',
+                                background: '#dc3545',
+                                color: 'white',
+                                border: 'none',
+                                cursor: 'pointer',
+                                fontSize: '16px',
+                                fontWeight: '400',
+                                transition: 'background 0.2s',
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                            }}
+                            onMouseOver={e => e.currentTarget.style.background = '#c82333'}
+                            onMouseOut={e => e.currentTarget.style.background = '#dc3545'}
+                        >
+                            {language === 'heb' ? 'מחק אמן' : 'Delete Artist'}
                         </button>
                     </div>
                 )}
@@ -558,6 +592,18 @@ const ArtistPage = () => {
                     refreshArtist();
                 }}
                 areas={areas}
+            />
+
+            {/* Delete Artist Modal */}
+            <DeleteArtistModal
+                artist={artist}
+                isOpen={isDeleteModalOpen}
+                onClose={() => setIsDeleteModalOpen(false)}
+                onSuccess={() => {
+                    setIsDeleteModalOpen(false);
+                    // Redirect to home page after successful deletion
+                    window.location.href = '/';
+                }}
             />
         </>
     );

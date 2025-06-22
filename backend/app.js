@@ -1,6 +1,4 @@
-
 const express = require('express');
-// const Card = require('./cards/models/mongodb/Card');
 const PORT = process.env.PORT || 8181;
 const connectToDB = require('./DB/dbService');
 const chalk = require('chalk');
@@ -9,10 +7,11 @@ const app = express();
 const router = require('./router/router');
 const corsMiddleware = require('./middlewares/cors');
 const morganLogger = require('./logger/morganLogger');
-// const { seedCards, generateSeedUsers } = require("./seedData.js");
 const User = require('./users/models/mongodb/User.js');
 const seedDatabase = require('./seed_data/seed');
 const seedUsersAndComments = require('./seed_data/seedAiData');
+const { generateVotes } = require('./seed_data/seedVotesAdvanced');
+const { seedAdminUser } = require('./seed_data/seedAdminUser');
 
 app.use(express.json());
 app.use(morganLogger);
@@ -26,6 +25,8 @@ app.listen(PORT, async () => {
         await connectToDB(); // Ensure DB connection before seeding
         await seedDatabase(); // Seed areas and artists
         await seedUsersAndComments(); // Seed AI generated users and comments
+        await generateVotes(); // Generate votes
+        await seedAdminUser(); // Seed admin user
     } catch (error) {
         console.error(chalk.bgRed("Error during database setup:"), error);
     }

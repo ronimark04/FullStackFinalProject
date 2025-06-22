@@ -87,7 +87,7 @@ router.put('/:id', auth, async (req, res) => {
             return handleError(res, 404, "Comment not found");
         }
 
-        if (existingComment.user.toString() !== userId.toString()) {
+        if (existingComment.user.toString() !== userId.toString() && !req.user.isAdmin) {
             return handleError(res, 403, "Unauthorized: not the comment's author");
         }
 

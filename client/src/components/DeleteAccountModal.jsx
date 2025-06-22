@@ -141,7 +141,8 @@ const DeleteAccountModal = ({ isOpen, onClose }) => {
                     <div style={{
                         display: 'flex',
                         gap: 12,
-                        justifyContent: 'center'
+                        justifyContent: 'center',
+                        flexDirection: language === 'heb' ? 'row-reverse' : 'row'
                     }}>
                         <button
                             type="button"
