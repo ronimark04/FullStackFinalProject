@@ -5,6 +5,12 @@ const User = require("../users/models/mongodb/User");
 const Comment = require("../comments/models/mongodb/Comment");
 const Artist = require("../artists/models/mongodb/Artist");
 
+// Helper function to strip parentheses and their contents from artist names
+function stripParentheses(name) {
+    if (!name) return name;
+    return name.replace(/\s*\([^)]*\)/g, '').trim();
+}
+
 async function seedUsersAndComments() {
     try {
         // Check if users already exist
@@ -35,33 +41,43 @@ async function seedUsersAndComments() {
             insertedUsers.map(user => [user.username, user._id])
         );
 
-        // Create a map of artist names to ObjectIds
+        // Create a map of artist names to ObjectIds (with parentheses stripped)
         const artists = await Artist.find({});
         const artistMap = new Map();
         artists.forEach(artist => {
-            // Handle both English and Hebrew names
+            // Handle both English and Hebrew names, stripping parentheses
             if (artist.name && artist.name.eng) {
-                artistMap.set(artist.name.eng.toLowerCase(), artist._id);
+                const cleanName = stripParentheses(artist.name.eng);
+                artistMap.set(cleanName.toLowerCase(), artist._id);
             }
             if (artist.name && artist.name.heb) {
-                artistMap.set(artist.name.heb.toLowerCase(), artist._id);
+                const cleanName = stripParentheses(artist.name.heb);
+                artistMap.set(cleanName.toLowerCase(), artist._id);
             }
         });
 
         // Load comments from comments1.json
         const comments1Path = path.join(__dirname, "comments1.json");
         const comments1Data = JSON.parse(fs.readFileSync(comments1Path, "utf-8"));
-
-        // TODO: Add more comment files here as they are created
-        // const comments2Path = path.join(__dirname, "comments2.json");
-        // const comments2Data = JSON.parse(fs.readFileSync(comments2Path, "utf-8"));
-        // const comments3Path = path.join(__dirname, "comments3.json");
-        // const comments3Data = JSON.parse(fs.readFileSync(comments3Path, "utf-8"));
-        // etc...
+        const comments2Path = path.join(__dirname, "comments2.json");
+        const comments2Data = JSON.parse(fs.readFileSync(comments2Path, "utf-8"));
+        const comments3Path = path.join(__dirname, "comments3.json");
+        const comments3Data = JSON.parse(fs.readFileSync(comments3Path, "utf-8"));
+        const comments4Path = path.join(__dirname, "comments4.json");
+        const comments4Data = JSON.parse(fs.readFileSync(comments4Path, "utf-8"));
+        const comments5Path = path.join(__dirname, "comments5.json");
+        const comments5Data = JSON.parse(fs.readFileSync(comments5Path, "utf-8"));
+        const comments6Path = path.join(__dirname, "comments6.json");
+        const comments6Data = JSON.parse(fs.readFileSync(comments6Path, "utf-8"));
+        const comments7Path = path.join(__dirname, "comments7.json");
+        const comments7Data = JSON.parse(fs.readFileSync(comments7Path, "utf-8"));
+        const comments8Path = path.join(__dirname, "comments8.json");
+        const comments8Data = JSON.parse(fs.readFileSync(comments8Path, "utf-8"));
+        const comments9Path = path.join(__dirname, "comments9.json");
+        const comments9Data = JSON.parse(fs.readFileSync(comments9Path, "utf-8"));
 
         // Combine all comment data
-        let allComments = [...comments1Data];
-        // allComments = [...allComments, ...comments2Data, ...comments3Data, etc...];
+        let allComments = [...comments1Data, ...comments2Data, ...comments3Data, ...comments4Data, ...comments5Data, ...comments6Data, ...comments7Data, ...comments8Data, ...comments9Data];
 
         // Group comments by thread_id and sort by thread_position
         const threadGroups = new Map();
@@ -90,7 +106,9 @@ async function seedUsersAndComments() {
                 const username = commentData.user_username;
                 const artistName = commentData.artist_name;
                 const userId = userMap.get(username);
-                const artistId = artistMap.get(artistName.toLowerCase());
+                // Strip parentheses from artist name when looking up
+                const cleanArtistName = stripParentheses(artistName);
+                const artistId = artistMap.get(cleanArtistName.toLowerCase());
 
                 if (!userId) {
                     console.warn(`⚠️  No user found for username: '${username}'`);
@@ -98,7 +116,7 @@ async function seedUsersAndComments() {
                 }
 
                 if (!artistId) {
-                    console.warn(`⚠️  No artist found for: '${artistName}'`);
+                    console.warn(`⚠️  No artist found for: '${artistName}' (cleaned: '${cleanArtistName}')`);
                     continue;
                 }
 
