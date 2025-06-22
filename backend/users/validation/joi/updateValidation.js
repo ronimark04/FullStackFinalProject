@@ -27,10 +27,23 @@ const updateValidation = (user) => {
     return schema.validate(user);
 };
 
+const adminStatusValidation = (user) => {
+    const schema = Joi.object({
+        isAdmin: Joi.boolean().required(),
+    });
+    return schema.validate(user);
+};
+
 const validateUpdate = (user) => {
     const { error } = updateValidation(user);
     if (error) return error.details[0].message;
     return "";
 };
 
-module.exports = validateUpdate;
+const validateAdminStatusUpdate = (user) => {
+    const { error } = adminStatusValidation(user);
+    if (error) return error.details[0].message;
+    return "";
+};
+
+module.exports = { validateUpdate, validateAdminStatusUpdate };

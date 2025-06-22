@@ -4,7 +4,7 @@ const { registerUser, getUser, loginUser, updateUser, getUsers, deleteUser, chan
 const express = require('express');
 const validateLogin = require('../validation/joi/loginValidation');
 const validateRegistration = require('../validation/joi/registerValidation');
-const validateUpdate = require('../validation/joi/updateValidation');
+const { validateUpdate, validateAdminStatusUpdate } = require('../validation/joi/updateValidation');
 const { normalizeUser } = require('../helpers/normalize');
 const { comparePasswords } = require('../helpers/bcrypt');
 const User = require('../models/mongodb/User');
@@ -85,6 +85,18 @@ router.put("/:id", auth, async (req, res) => {
             if (hasUnauthorizedFields) {
                 return handleError(res, 403, "Authorization Error: Admins can only update admin status of other users");
             }
+
+            // Use admin status validation for admin updates
+            const valErrorMessage = validateAdminStatusUpdate(updatedUser);
+            if (valErrorMessage !== "") {
+                return handleError(res, 400, "Validation Error: " + valErrorMessage);
+            }
+        } else {
+            // Use full validation for other updates
+            const valErrorMessage = validateUpdate(updatedUser);
+            if (valErrorMessage !== "") {
+                return handleError(res, 400, "Validation Error: " + valErrorMessage);
+            }
         }
 
         // If regular user is updating their own profile, don't allow isAdmin changes
@@ -92,10 +104,6 @@ router.put("/:id", auth, async (req, res) => {
             return handleError(res, 403, "Authorization Error: Users cannot change their own admin status");
         }
 
-        const valErrorMessage = validateUpdate(updatedUser);
-        if (valErrorMessage !== "") {
-            return handleError(res, 400, "Validation Error: " + valErrorMessage);
-        }
         let user = await normalizeUser(updatedUser);
         user = await updateUser(id, updatedUser);
         res.send(user);

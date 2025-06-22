@@ -222,7 +222,7 @@ const AdminPanel = () => {
     };
 
     // Handle user admin status toggle
-    const handleToggleAdmin = async (userId, currentAdminStatus) => {
+    const handleToggleAdmin = async (userId, newAdminStatus) => {
         try {
             const response = await fetch(`/users/${userId}`, {
                 method: 'PUT',
@@ -230,7 +230,7 @@ const AdminPanel = () => {
                     'Content-Type': 'application/json',
                     'x-auth-token': localStorage.getItem('token')
                 },
-                body: JSON.stringify({ isAdmin: !currentAdminStatus })
+                body: JSON.stringify({ isAdmin: newAdminStatus })
             });
 
             if (response.ok) {
@@ -275,7 +275,7 @@ const AdminPanel = () => {
     }
 
     return (
-        <div className="container mx-auto p-6 max-w-7xl">
+        <div className="container mx-auto p-6 max-w-7xl min-h-screen">
             <Card className="w-full">
                 <CardHeader className={`flex gap-3 ${language === 'heb' ? 'justify-end' : 'justify-start'}`}>
                     <div className="flex flex-col">
@@ -307,7 +307,7 @@ const AdminPanel = () => {
                     {currentView === 'users' && (
                         <div>
                             {/* Filters and Search */}
-                            <div className="flex flex-wrap gap-4 mb-6">
+                            <div className={`flex flex-wrap gap-4 mb-6 ${language === 'heb' ? 'justify-end' : 'justify-start'}`}>
                                 <Dropdown>
                                     <DropdownTrigger>
                                         <Button variant="bordered">
@@ -317,8 +317,8 @@ const AdminPanel = () => {
                                         </Button>
                                     </DropdownTrigger>
                                     <DropdownMenu
-                                        selectedKeys={[userFilter]}
-                                        onSelectionChange={(keys) => setUserFilter(Array.from(keys)[0])}
+                                        onAction={(key) => setUserFilter(key)}
+                                        dir={language === 'heb' ? 'rtl' : 'ltr'}
                                     >
                                         <DropdownItem key="all">{translations.viewAll[language]}</DropdownItem>
                                         <DropdownItem key="admins">{translations.admins[language]}</DropdownItem>
@@ -333,8 +333,8 @@ const AdminPanel = () => {
                                         </Button>
                                     </DropdownTrigger>
                                     <DropdownMenu
-                                        selectedKeys={[userSortBy]}
-                                        onSelectionChange={(keys) => setUserSortBy(Array.from(keys)[0])}
+                                        onAction={(key) => setUserSortBy(key)}
+                                        dir={language === 'heb' ? 'rtl' : 'ltr'}
                                     >
                                         <DropdownItem key="name">{translations.sortByName[language]}</DropdownItem>
                                         <DropdownItem key="dateJoined">{translations.sortByDate[language]}</DropdownItem>
@@ -346,6 +346,7 @@ const AdminPanel = () => {
                                     value={userSearch}
                                     onChange={(e) => setUserSearch(e.target.value)}
                                     className="max-w-xs"
+                                    dir={language === 'heb' ? 'rtl' : 'ltr'}
                                 />
                             </div>
 
@@ -354,7 +355,7 @@ const AdminPanel = () => {
                                 <div className="text-center py-8">{translations.loading[language]}</div>
                             ) : (
                                 <>
-                                    <Table aria-label="Users table">
+                                    <Table aria-label="Users table" dir={language === 'heb' ? 'rtl' : 'ltr'}>
                                         <TableHeader>
                                             <TableColumn>{translations.username[language]}</TableColumn>
                                             <TableColumn>{translations.dateJoined[language]}</TableColumn>
@@ -371,7 +372,7 @@ const AdminPanel = () => {
                                                     <TableCell>
                                                         <Checkbox
                                                             isSelected={user.isAdmin}
-                                                            onValueChange={() => handleToggleAdmin(user._id, user.isAdmin)}
+                                                            onValueChange={(checked) => handleToggleAdmin(user._id, checked)}
                                                         />
                                                     </TableCell>
                                                     <TableCell>
