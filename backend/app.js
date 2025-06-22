@@ -19,12 +19,6 @@ app.use(corsMiddleware);
 
 app.use(router);
 
-// async function seedDatabase() {
-//     const seedUsers = await generateSeedUsers();
-//     await User.insertMany(seedUsers);
-//     await Card.insertMany(seedCards);
-// }
-
 app.listen(PORT, async () => {
     console.log(chalk.bgGreen(`Server is running on port ${PORT}`));
     try {
@@ -33,12 +27,5 @@ app.listen(PORT, async () => {
     } catch (error) {
         console.error(chalk.bgRed("Error during database setup:"), error);
     }
-    // connectToDB();
-    // const dbUsers = await User.find({});
-    // const dbCards = await Card.find({});
-    // if (dbUsers.length === 0 && dbCards.length === 0) {
-    //     seedDatabase();
-    // }
-});
 
-//TODO: uninstall unnecessary libraries, seed data
+});

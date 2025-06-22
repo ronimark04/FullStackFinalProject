@@ -30,5 +30,3 @@ function App() {
 }
 
 export default App
-
-// TODO: delete comments and logs, go through api requests to find redundencies
