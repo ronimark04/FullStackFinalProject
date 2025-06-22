@@ -226,7 +226,7 @@ const AddArtistModal = ({ isOpen, onClose, onSuccess, areas }) => {
     return (
         <Modal isOpen={isOpen} onClose={handleClose} size="4xl" scrollBehavior="inside">
             <ModalContent>
-                <ModalHeader className={language === 'heb' ? 'text-right' : 'text-left'}>
+                <ModalHeader className={language === 'heb' ? 'justify-end' : 'justify-start'}>
                     {translations.addArtist[language]}
                 </ModalHeader>
                 <ModalBody>

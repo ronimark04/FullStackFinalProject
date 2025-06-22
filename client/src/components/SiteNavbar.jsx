@@ -14,7 +14,7 @@ import LoginModal from "./LoginModal";
 import { useAuth } from "../context/authContext";
 import { useLanguage } from "../context/languageContext";
 import { useState, useRef, useEffect } from "react";
-import homeIcon from "../assets/home-icon.png";
+import homeIcon from "../assets/home-icon-text.png";
 import burgerMenuIcon from "../assets/burger-menu.png";
 
 const SearchIcon = ({ size = 24, strokeWidth = 1.5, width, height, ...props }) => (
@@ -313,7 +313,7 @@ export default function SiteNavbar() {
               )}
             </div>
             <Link href="/">
-              <img src={homeIcon} alt="Home" style={{ height: 36, width: 36 }} />
+              <img src={homeIcon} alt="Home" style={{ width: 36 }} />
             </Link>
             {/* Desktop links (hidden on mobile) */}
             <div className="hidden md:flex items-center gap-4">
@@ -340,7 +340,7 @@ export default function SiteNavbar() {
             {/* Random Artist Button - always visible */}
             <Button
               variant="flat"
-              className="mr-2 ml-2 bg-yellow-300 hover:bg-yellow-400 text-yellow-900 font-normal shadow-sm focus:ring-2 focus:ring-yellow-300 focus:outline-none px-2 py-1 text-xs h-8 md:px-4 md:py-2 md:text-base md:h-10"
+              className="mr-2 ml-2 bg-gradient-to-r from-yellow-200 to-yellow-300 hover:from-yellow-300 hover:to-yellow-400 text-yellow-900 font-normal shadow-sm focus:ring-2 focus:ring-yellow-300 focus:outline-none px-2 py-1 text-xs h-8 md:px-4 md:py-2 md:text-base md:h-10"
               onPress={handleRandomArtist}
               isLoading={loadingArtists}
             >
