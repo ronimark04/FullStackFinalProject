@@ -57,6 +57,7 @@ const ProfilePage = () => {
     const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
     const [showDeleteAccountModal, setShowDeleteAccountModal] = useState(false);
     const [showDeleteUserModal, setShowDeleteUserModal] = useState(false);
+    const [artistNamesById, setArtistNamesById] = useState({});
 
     useEffect(() => {
         async function fetchData() {
@@ -269,10 +270,32 @@ const ProfilePage = () => {
         }
     };
 
+    // Fetch artist names for comments if not already loaded
+    useEffect(() => {
+        // Collect all unique artist IDs from all comments
+        const allComments = [...comments, ...likedComments, ...dislikedComments];
+        const artistIds = Array.from(new Set(allComments.map(c => c.artist).filter(Boolean)));
+        // Filter out already loaded artist names
+        const missingIds = artistIds.filter(id => !artistNamesById[id]);
+        if (missingIds.length > 0) {
+            Promise.all(missingIds.map(id => fetch(`/artists/${id}`).then(res => res.json()))).then(artists => {
+                const newNames = {};
+                artists.forEach(artist => {
+                    if (artist && artist._id) {
+                        newNames[artist._id] = artist.name?.[language] || artist.name?.eng || 'Artist';
+                    }
+                });
+                setArtistNamesById(prev => ({ ...prev, ...newNames }));
+            });
+        }
+        // eslint-disable-next-line
+    }, [comments, likedComments, dislikedComments, language]);
+
     const renderComment = (comment, isAuthor = false) => {
         const isEditing = editingCommentId === comment._id;
         const replyToComment = comment.reply_to ? replyToComments[comment.reply_to] : null;
-
+        const artistId = comment.artist;
+        const artistName = artistNamesById[artistId] || (language === 'heb' ? 'אמן' : 'Artist');
         return (
             <div
                 key={comment._id}
@@ -284,6 +307,19 @@ const ProfilePage = () => {
                     position: 'relative'
                 }}
             >
+                {/* Artist line link */}
+                <div style={{
+                    color: '#666',
+                    fontSize: '0.9rem',
+                    marginBottom: '8px',
+                    direction: language === 'heb' ? 'rtl' : 'ltr',
+                    fontStyle: 'italic'
+                }}>
+                    <Link to={artistId ? `/artist/${artistId}` : '#'} style={{ color: '#666', textDecoration: 'none', fontStyle: 'italic' }}>
+                        {language === 'heb' ? `על ${artistName}` : `On ${artistName}`}
+                    </Link>
+                </div>
+                {/* Reply to line, if present */}
                 {replyToComment && (
                     <div style={{
                         color: '#666',

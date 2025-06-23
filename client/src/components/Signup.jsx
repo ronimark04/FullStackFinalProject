@@ -224,8 +224,8 @@ export default function Signup() {
                     placeholder={language === 'heb' ? 'לדוגמה: john_doe123' : 'e.g., john_doe123'}
                     style={{
                         ...inputStyle,
-                        direction: isMainlyHebrew(formData.username) ? 'rtl' : 'ltr',
-                        textAlign: isMainlyHebrew(formData.username) ? 'right' : 'left',
+                        direction: 'ltr',
+                        textAlign: 'left',
                         border: usernameError ? '1px solid #ef4444' : '1px solid #ccc'
                     }}
                     required
@@ -241,7 +241,7 @@ export default function Signup() {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    style={{ ...inputStyle, direction: dir, textAlign }}
+                    style={{ ...inputStyle, direction: 'ltr', textAlign: 'left' }}
                     required
                     disabled={isLoading}
                 />
@@ -252,7 +252,7 @@ export default function Signup() {
                     type="password"
                     value={formData.password}
                     onChange={handleChange}
-                    style={{ ...inputStyle, direction: dir, textAlign }}
+                    style={{ ...inputStyle, direction: 'ltr', textAlign: 'left' }}
                     required
                     disabled={isLoading}
                 />
@@ -263,7 +263,7 @@ export default function Signup() {
                     type="password"
                     value={formData.confirmPassword}
                     onChange={handleChange}
-                    style={{ ...inputStyle, direction: dir, textAlign }}
+                    style={{ ...inputStyle, direction: 'ltr', textAlign: 'left' }}
                     required
                     disabled={isLoading}
                 />
