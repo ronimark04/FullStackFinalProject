@@ -36,7 +36,7 @@ router.get("/comment/:commentId", async (req, res) => {
     }
 });
 
-// Get all comment votes by user
+// Get all comment votes by user for ProfilePage
 router.get("/user/:userId", async (req, res) => {
     try {
         const votes = await getVotesByUser(req.params.userId);

@@ -62,9 +62,8 @@ const loginUser = async (email, password) => {
             user: {
                 _id: userFromDB._id,
                 email: userFromDB.email,
-                name: userFromDB.name,
-                isAdmin: userFromDB.isAdmin,
-                isBusiness: userFromDB.isBusiness
+                username: userFromDB.username,
+                isAdmin: userFromDB.isAdmin
             }
         };
     }

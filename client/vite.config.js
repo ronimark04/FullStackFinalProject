@@ -6,7 +6,6 @@ import svgr from 'vite-plugin-svgr'
 const backendPort = process.env.VITE_BACKEND_PORT || '8181';
 const backendTarget = `http://localhost:${backendPort}`;
 
-// https://vitejs.dev/config/
 export default defineConfig({
     plugins: [react(), svgr()],
     resolve: {

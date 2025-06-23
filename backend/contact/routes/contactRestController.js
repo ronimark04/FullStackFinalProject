@@ -7,14 +7,14 @@ const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
 router.post('/', async (req, res) => {
     const { name, email, message } = req.body;
 
-    // Validate input (add more as needed)
+    // Validate input
     if (!name || !email || !message) {
         return res.status(400).json({ error: 'All fields are required.' });
     }
 
     // Configure your SMTP transporter
     const transporter = nodemailer.createTransport({
-        service: 'gmail', // or your email provider
+        service: 'gmail',
         auth: {
             user: 'roni.mark@gmail.com',
             pass: GMAIL_APP_PASSWORD,
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
 
     const mailOptions = {
         from: email,
-        to: 'roni.mark@gmail.com', // Your email
+        to: 'roni.mark@gmail.com',
         subject: `Contact Form Submission from ${name}`,
         text: message,
     };

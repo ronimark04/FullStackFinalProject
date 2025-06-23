@@ -103,7 +103,6 @@ const AddArtistModal = ({ isOpen, onClose, onSuccess, areas }) => {
             return;
         }
 
-        // Check if gender is required when bornElsewhere is selected
         if ((formData.bornElsewhere.eng || formData.bornElsewhere.heb) && !formData.gender) {
             addToast({
                 description: language === 'heb' ? 'נדרש מין כאשר נולד במקום אחר' : 'Gender is required when born elsewhere',
@@ -115,7 +114,6 @@ const AddArtistModal = ({ isOpen, onClose, onSuccess, areas }) => {
 
         setLoading(true);
         try {
-            // Prepare data for submission
             const submitData = {
                 ...formData,
                 image: {

@@ -35,7 +35,7 @@ router.get("/artist/:artistId", async (req, res) => {
     }
 });
 
-// Get all artist votes by a user (for profile page)
+// Get all artist votes by a user for ProfilePage
 router.get("/user/:userId", async (req, res) => {
     try {
         const votes = await getVotesByUser(req.params.userId);

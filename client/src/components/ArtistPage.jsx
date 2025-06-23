@@ -9,7 +9,7 @@ import ArtistActionsArtistPage from './ArtistActionsArtistPage';
 import CommentInput from './CommentInput';
 import UpdateArtistModal from './UpdateArtistModal';
 import DeleteArtistModal from './DeleteArtistModal';
-import { Spinner } from '@heroui/react';
+import { Spinner, addToast, Button } from '@heroui/react';
 
 const ICON_COLOR = "#A15E0A";
 const ICON_HOVER_COLOR = "#C1873B";
@@ -127,16 +127,32 @@ function CommentThread({ comment, usersById, depth = 0, replyingToCommentId, set
     };
 
     const handleDelete = async () => {
-        if (!window.confirm('Are you sure you want to delete this comment?')) return;
-        const res = await fetch(`/comments/${comment._id}`, {
-            method: 'DELETE',
-            headers: {
-                'x-auth-token': localStorage.getItem('token'),
-            },
+        addToast({
+            description: "Are you sure you want to delete this comment?",
+            color: "warning",
+            timeout: 5000,
+            endContent: (
+                <Button
+                    size="sm"
+                    variant="flat"
+                    color="danger"
+                    onPress={async () => {
+                        // Proceed with deletion
+                        const res = await fetch(`/comments/${comment._id}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'x-auth-token': localStorage.getItem('token'),
+                            },
+                        });
+                        if (res.ok) {
+                            if (refreshComments) refreshComments();
+                        }
+                    }}
+                >
+                    Confirm
+                </Button>
+            )
         });
-        if (res.ok) {
-            if (refreshComments) refreshComments();
-        }
     };
 
     return (

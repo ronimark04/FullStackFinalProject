@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
+// delete user votes when user is deleted
 userSchema.pre("remove", async function (next) {
     const ArtistVote = mongoose.model("ArtistVote");
     const CommentVote = mongoose.model("CommentVote");

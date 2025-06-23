@@ -18,7 +18,7 @@ const commentVoteSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-commentVoteSchema.index({ user: 1, comment: 1 }, { unique: true });
+commentVoteSchema.index({ user: 1, comment: 1 }, { unique: true }); // user can only vote once on a comment
 
 const CommentVote = mongoose.model("CommentVote", commentVoteSchema);
 

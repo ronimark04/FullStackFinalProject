@@ -20,7 +20,7 @@ const artistVoteSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-artistVoteSchema.index({ user: 1, artist: 1 }, { unique: true }); // prevent multiple votes
+artistVoteSchema.index({ user: 1, artist: 1 }, { unique: true }); // user can only vote once on an artist
 
 const ArtistVote = mongoose.model("ArtistVote", artistVoteSchema);
 

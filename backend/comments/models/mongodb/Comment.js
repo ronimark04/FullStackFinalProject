@@ -31,6 +31,7 @@ const commentSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
+// delete comment votes when comment is deleted
 commentSchema.pre("remove", async function (next) {
     const CommentVote = mongoose.model("CommentVote");
     await CommentVote.deleteMany({ comment: this._id });

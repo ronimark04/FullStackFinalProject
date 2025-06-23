@@ -1,4 +1,3 @@
-const connectToAtlasDB = require("./mongodb/connectToAtlas");
 const connectToLocalDB = require("./mongodb/connectToMongoLocally");
 const config = require("config");
 
@@ -8,9 +7,9 @@ const connectToDB = async () => {
     if (ENVIRONMENT === "development") {
         await connectToLocalDB();
     }
-    if (ENVIRONMENT === "production") {
-        await connectToAtlasDB();
-    }
+    // if (ENVIRONMENT === "production") {
+    //     await connectToAtlasDB();
+    // }
 };
 
 module.exports = connectToDB;

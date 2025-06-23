@@ -16,6 +16,7 @@ import { useLanguage } from "../context/languageContext";
 import { useState, useRef, useEffect } from "react";
 import homeIcon from "../assets/home-icon-text.png";
 import burgerMenuIcon from "../assets/burger-menu.png";
+import { motion } from 'framer-motion';
 
 const SearchIcon = ({ size = 24, strokeWidth = 1.5, width, height, ...props }) => (
   <svg
@@ -338,14 +339,23 @@ export default function SiteNavbar() {
           {/* Right: Search, Language Switch, and Auth */}
           <div className="flex items-center gap-2">
             {/* Random Artist Button - always visible */}
-            <Button
-              variant="flat"
-              className="mr-2 ml-2 bg-gradient-to-r from-yellow-200 to-yellow-300 hover:from-yellow-300 hover:to-yellow-400 text-yellow-900 font-normal shadow-sm focus:ring-2 focus:ring-yellow-300 focus:outline-none px-2 py-1 text-xs h-8 md:px-4 md:py-2 md:text-base md:h-10"
-              onPress={handleRandomArtist}
-              isLoading={loadingArtists}
+            <motion.div
+              initial={{ background: 'linear-gradient(to right,rgb(247, 240, 171),rgb(255, 228, 121))' }}
+              whileHover={{ background: 'linear-gradient(to right, #FDE68A, #FDE047)' }}
+              transition={{ duration: 0.3 }}
+              style={{ borderRadius: '0.5rem', width: 'fit-content' }}
+              className="mr-2 ml-2"
             >
-              {language === "heb" ? "אמן רנדומלי" : "Random Artist"}
-            </Button>
+              <Button
+                variant="flat"
+                className="text-yellow-900 font-normal shadow-sm focus:ring-2 focus:ring-yellow-300 focus:outline-none px-2 py-1 text-xs h-8 md:px-4 md:py-2 md:text-base md:h-10"
+                onPress={handleRandomArtist}
+                isLoading={loadingArtists}
+                style={{ background: 'transparent' }}
+              >
+                {language === "heb" ? "אמן רנדומלי" : "Random Artist"}
+              </Button>
+            </motion.div>
             {/* Search Bar with Dropdown */}
             <div className="relative">
               <Input

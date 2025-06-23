@@ -103,13 +103,15 @@ router.put("/:id", auth, async (req, res) => {
         if (id === userInfo._id && !userInfo.isAdmin && updatedUser.hasOwnProperty('isAdmin')) {
             return handleError(res, 403, "Authorization Error: Users cannot change their own admin status");
         }
-
-        let user = await normalizeUser(updatedUser);
-        user = await updateUser(id, updatedUser);
+        let user = await updateUser(id, updatedUser);
+        if (!user) {
+            return handleError(res, 404, "User not found");
+        }
         res.send(user);
     }
     catch (err) {
-        return handleError(res, 400, err.message);
+        const status = err.status || (err.message && err.message.startsWith('Validation') ? 400 : 500);
+        return handleError(res, status, err.message);
     }
 })
 

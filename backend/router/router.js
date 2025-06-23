@@ -16,7 +16,7 @@ router.use("/comments", commentRouterController);
 router.use("/areas", areaRouterController);
 router.use("/artist-votes", artistVoteRouterController);
 router.use("/comment-votes", commentVoteRouterController);
-router.use('/contact', contactRestController);
+router.use("/contact", contactRestController);
 
 
 router.use((req, res) => {

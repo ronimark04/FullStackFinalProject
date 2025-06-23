@@ -137,8 +137,7 @@ const ChangePasswordModal = ({ isOpen, onClose, onSuccess }) => {
                         <label style={{
                             display: 'block',
                             marginBottom: 8,
-                            color: '#5D4037',
-                            fontWeight: 'bold'
+                            color: '#5D4037'
                         }}>
                             {language === 'heb' ? 'סיסמה נוכחית' : 'Current Password'}
                         </label>
@@ -163,8 +162,7 @@ const ChangePasswordModal = ({ isOpen, onClose, onSuccess }) => {
                         <label style={{
                             display: 'block',
                             marginBottom: 8,
-                            color: '#5D4037',
-                            fontWeight: 'bold'
+                            color: '#5D4037'
                         }}>
                             {language === 'heb' ? 'סיסמה חדשה' : 'New Password'}
                         </label>
@@ -189,8 +187,7 @@ const ChangePasswordModal = ({ isOpen, onClose, onSuccess }) => {
                         <label style={{
                             display: 'block',
                             marginBottom: 8,
-                            color: '#5D4037',
-                            fontWeight: 'bold'
+                            color: '#5D4037'
                         }}>
                             {language === 'heb' ? 'אימות סיסמה חדשה' : 'Confirm New Password'}
                         </label>

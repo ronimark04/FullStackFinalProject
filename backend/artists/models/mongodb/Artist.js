@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const { URL } = require("../../../helpers/mongodb/mongooseValidators");
-const { image } = require("../../../helpers/mongodb/image");
 
 const artistSchema = new mongoose.Schema({
     name: {
@@ -17,9 +16,9 @@ const artistSchema = new mongoose.Schema({
                     if (this.isBand === false) {
                         return v !== null && /^\d{4}$/.test(v);
                     }
-                    return true; // If isBand is true, skip validation
+                    return true;
                 },
-                message: props => `${props.value} is not a valid 4-digit year!`
+                message: props => `${props.value} is not a valid 4-digit year!` //if isBand is false, birthYear is required
             },
             {
                 validator: function (v) {
@@ -95,7 +94,7 @@ const artistSchema = new mongoose.Schema({
         enum: ['m', 'f'],
         validate: {
             validator: function (v) {
-                // Gender is required when bornElsewhere is not null
+                // Gender is required when bornElsewhere is not null for hebrew gendered text reasons
                 if (this.bornElsewhere && (this.bornElsewhere.eng || this.bornElsewhere.heb)) {
                     return v !== null && v !== undefined;
                 }
@@ -105,10 +104,11 @@ const artistSchema = new mongoose.Schema({
         }
     },
     summary: {
-        heb: { type: String, default: null }, // might need to be required
+        heb: { type: String, default: null },
         eng: { type: String, default: null }
     },
     rate: {
+        // Rate will determine the size of the artist avatar in AreaPage
         type: Number,
         default: 3,
         validate: {

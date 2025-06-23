@@ -1,4 +1,3 @@
-// const { normalizeField } = require("../../utils/normalizeField");
 
 const normalizeUser = async (user) => {
     return {

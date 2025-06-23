@@ -7,7 +7,7 @@ import ChangePasswordModal from './ChangePasswordModal';
 import DeleteAccountModal from './DeleteAccountModal';
 import DeleteUserModal from './DeleteUserModal';
 import { motion } from 'framer-motion';
-import { Avatar, Spinner } from "@heroui/react";
+import { Avatar, Spinner, addToast, Button } from "@heroui/react";
 import LikeIcon from '../assets/like-1385-svgrepo-com.svg?react';
 import DislikeIcon from '../assets/dislike-1387-svgrepo-com.svg?react';
 
@@ -171,19 +171,35 @@ const ProfilePage = () => {
     };
 
     const handleDelete = async (commentId) => {
-        if (!window.confirm('Are you sure you want to delete this comment?')) return;
-        const res = await fetch(`/comments/${commentId}`, {
-            method: 'DELETE',
-            headers: {
-                'x-auth-token': localStorage.getItem('token'),
-            },
+        addToast({
+            description: "Are you sure you want to delete this comment?",
+            color: "warning",
+            timeout: 5000,
+            endContent: (
+                <Button
+                    size="sm"
+                    variant="flat"
+                    color="danger"
+                    onPress={async () => {
+                        // Proceed with deletion
+                        const res = await fetch(`/comments/${commentId}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'x-auth-token': localStorage.getItem('token'),
+                            },
+                        });
+                        if (res.ok) {
+                            // Refresh comments
+                            const commentsRes = await fetch(`/comments/user/${userId}`);
+                            const commentsData = await commentsRes.json();
+                            setComments(commentsData);
+                        }
+                    }}
+                >
+                    Confirm
+                </Button>
+            )
         });
-        if (res.ok) {
-            // Refresh comments
-            const commentsRes = await fetch(`/comments/user/${userId}`);
-            const commentsData = await commentsRes.json();
-            setComments(commentsData);
-        }
     };
 
     const handleVoteChange = async (commentId, voteType) => {
@@ -326,12 +342,14 @@ const ProfilePage = () => {
     const canDeleteUser = isOwnProfile || (currentUser && currentUser.isAdmin);
 
     const handlePasswordChangeSuccess = () => {
-        // You could show a success message here if needed
-        console.log('Password changed successfully');
+        addToast({
+            description: "Password changed successfully!",
+            color: "success",
+            timeout: 3000
+        });
     };
 
     const handleDeleteUserSuccess = () => {
-        // Redirect to home page or show success message
         window.location.href = '/';
     };
 
@@ -344,7 +362,6 @@ const ProfilePage = () => {
                     color: '#5D4037',
                     textAlign: 'center',
                     marginTop: '18px',
-                    // marginBottom: '16px',
                     fontFamily: 'adobe-hebrew',
                     textShadow: '0 0 12px #FFF8EF',
                     direction: language === 'heb' ? 'rtl' : 'ltr'

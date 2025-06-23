@@ -53,8 +53,8 @@ const AdminPanel = () => {
         }
     }, [user, navigate]);
 
-    // View state
-    const [currentView, setCurrentView] = useState('users'); // 'users' or 'artists'
+    // View state 'users' or 'artists'
+    const [currentView, setCurrentView] = useState('users');
 
     // Users state
     const [users, setUsers] = useState([]);

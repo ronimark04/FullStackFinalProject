@@ -22,10 +22,10 @@ app.use(router);
 app.listen(PORT, async () => {
     console.log(chalk.bgGreen(`Server is running on port ${PORT}`));
     try {
-        await connectToDB(); // Ensure DB connection before seeding
-        await seedDatabase(); // Seed areas and artists
+        await connectToDB();
+        await seedDatabase(); // Seed basic app data (areas and artists)
         await seedUsersAndComments(); // Seed AI generated users and comments
-        await generateVotes(); // Generate votes
+        await generateVotes(); // Generate votes for artists and comments
         await seedAdminUser(); // Seed admin user
     } catch (error) {
         console.error(chalk.bgRed("Error during database setup:"), error);

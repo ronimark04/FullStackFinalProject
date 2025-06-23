@@ -7,6 +7,7 @@ import { regionData } from '../data/regionData';
 import { useLanguage } from '@/context/languageContext';
 import areasData from '../../../backend/seed_data/areas.json';
 
+// Map paths to area names
 const regionToPathMap = {
     'area_01_upperGalilee': 'upper-galilee',
     'area_02_westernGalilee': 'western-galilee',
@@ -89,7 +90,7 @@ export default function Map() {
 
                 <svg
                     viewBox="0 0 2502.6667 3088"
-                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns="http://www.w3.org/2000/svg" // SVG namespace
                     style={{
                         position: 'absolute',
                         top: 0,
