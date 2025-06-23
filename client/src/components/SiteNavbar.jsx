@@ -230,6 +230,26 @@ export default function SiteNavbar() {
     }
   };
 
+  useEffect(() => {
+    const handleArtistListUpdated = async () => {
+      setLoadingArtists(true);
+      try {
+        const response = await fetch('/artists');
+        if (response.ok) {
+          const artists = await response.json();
+          setAllArtists(artists);
+          setFilteredArtists(artists);
+        }
+      } catch (error) {
+        console.error('Error fetching artists:', error);
+      } finally {
+        setLoadingArtists(false);
+      }
+    };
+    window.addEventListener('artistListUpdated', handleArtistListUpdated);
+    return () => window.removeEventListener('artistListUpdated', handleArtistListUpdated);
+  }, []);
+
   return (
     <>
       <Navbar

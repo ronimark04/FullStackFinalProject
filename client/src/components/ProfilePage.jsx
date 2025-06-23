@@ -294,7 +294,8 @@ const ProfilePage = () => {
                         lineHeight: 1.5,
                         fontSize: 14,
                         color: '#333',
-                        direction: isMainlyHebrew(comment.text) ? 'rtl' : 'ltr'
+                        direction: isMainlyHebrew(comment.text) ? 'rtl' : 'ltr',
+                        whiteSpace: 'pre-line'
                     }}>
                         {comment.deleted ? (
                             <span style={{ color: '#888', fontStyle: 'italic' }}>[Deleted]</span>

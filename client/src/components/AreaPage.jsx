@@ -353,9 +353,12 @@ const AreaPage = () => {
                         const fallbackInitial = artistName.charAt(0) || (language === 'heb' ? 'ל' : 'U');
                         const location = getLocalizedText(artist.location, language === 'heb' ? 'לא ידוע' : 'Unknown');
                         const bornElsewhere = getLocalizedText(artist.bornElsewhere);
-                        const yearDisplay = artist.yearRange
-                            ? `${artist.yearRange.first} - ${artist.yearRange.last}`
-                            : artist.birthYear;
+                        let yearDisplay = '';
+                        if (artist.isBand && artist.yearRange && artist.yearRange.first && artist.yearRange.last) {
+                            yearDisplay = `${artist.yearRange.first} - ${artist.yearRange.last}`;
+                        } else if (!artist.isBand && artist.birthYear) {
+                            yearDisplay = artist.birthYear;
+                        }
                         const showLocation = !isTelAvivArea(area?.name);
                         // Reverse: first avatar is right, second is left, etc.
                         const offset = isMobile ? 30 : 60; // px, smaller on mobile
@@ -577,9 +580,12 @@ const AreaPage = () => {
                         const fallbackInitial = artistName.charAt(0) || (language === 'heb' ? 'ל' : 'U');
                         const location = getLocalizedText(artist.location, language === 'heb' ? 'לא ידוע' : 'Unknown');
                         const bornElsewhere = getLocalizedText(artist.bornElsewhere);
-                        const yearDisplay = artist.yearRange
-                            ? `${artist.yearRange.first} - ${artist.yearRange.last}`
-                            : artist.birthYear;
+                        let yearDisplay = '';
+                        if (artist.isBand && artist.yearRange && artist.yearRange.first && artist.yearRange.last) {
+                            yearDisplay = `${artist.yearRange.first} - ${artist.yearRange.last}`;
+                        } else if (!artist.isBand && artist.birthYear) {
+                            yearDisplay = artist.birthYear;
+                        }
                         const showLocation = !isTelAvivArea(area?.name);
                         // Reverse: first avatar is left, second is right, etc.
                         const offset = isMobile ? 30 : 60; // px, smaller on mobile

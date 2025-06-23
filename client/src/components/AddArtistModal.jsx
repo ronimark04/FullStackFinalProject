@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Modal,
     ModalContent,
@@ -37,6 +37,18 @@ const AddArtistModal = ({ isOpen, onClose, onSuccess, areas }) => {
         spotifyId: '',
         rate: 3
     });
+
+    // Add effect to clear bornElsewhere and gender if isBand is checked
+    useEffect(() => {
+        if (formData.isBand) {
+            if (bornElsewhereChecked) setBornElsewhereChecked(false);
+            setFormData(prev => ({
+                ...prev,
+                bornElsewhere: { eng: '', heb: '' },
+                gender: ''
+            }));
+        }
+    }, [formData.isBand]);
 
     const handleInputChange = (field, value) => {
         if (field.includes('.')) {
@@ -138,6 +150,12 @@ const AddArtistModal = ({ isOpen, onClose, onSuccess, areas }) => {
                 submitData.rate = parseInt(formData.rate);
             }
 
+            // Remove gender and bornElsewhere if not relevant
+            if (!formData.bornElsewhere.eng && !formData.bornElsewhere.heb) {
+                delete submitData.gender;
+                delete submitData.bornElsewhere;
+            }
+
             const response = await fetch('/artists', {
                 method: 'POST',
                 headers: {
@@ -153,6 +171,7 @@ const AddArtistModal = ({ isOpen, onClose, onSuccess, areas }) => {
                     color: "success",
                     timeout: 3000
                 });
+                window.dispatchEvent(new Event('artistListUpdated'));
                 onSuccess();
             } else {
                 const error = await response.json();
@@ -334,17 +353,20 @@ const AddArtistModal = ({ isOpen, onClose, onSuccess, areas }) => {
                             <Checkbox
                                 isSelected={bornElsewhereChecked}
                                 onValueChange={(checked) => {
-                                    setBornElsewhereChecked(checked);
-                                    if (!checked) {
-                                        handleInputChange('bornElsewhere', { eng: '', heb: '' });
-                                        handleInputChange('gender', ''); // Clear gender when unchecking bornElsewhere
+                                    if (!formData.isBand) {
+                                        setBornElsewhereChecked(checked);
+                                        if (!checked) {
+                                            handleInputChange('bornElsewhere', { eng: '', heb: '' });
+                                            handleInputChange('gender', '');
+                                        }
                                     }
                                 }}
                                 dir={language === 'heb' ? 'rtl' : 'ltr'}
+                                disabled={formData.isBand}
                             >
                                 {translations.bornElsewhere[language]}
                             </Checkbox>
-                            {bornElsewhereChecked && (
+                            {bornElsewhereChecked && !formData.isBand && (
                                 <>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <Input
@@ -353,6 +375,7 @@ const AddArtistModal = ({ isOpen, onClose, onSuccess, areas }) => {
                                             onChange={(e) => handleInputChange('bornElsewhere.heb', e.target.value)}
                                             dir="rtl"
                                             className="text-right"
+                                            disabled={formData.isBand}
                                         />
                                         <Input
                                             label={`${translations.bornElsewhereText[language]} (English)`}
@@ -360,6 +383,7 @@ const AddArtistModal = ({ isOpen, onClose, onSuccess, areas }) => {
                                             onChange={(e) => handleInputChange('bornElsewhere.eng', e.target.value)}
                                             dir="ltr"
                                             className="text-left"
+                                            disabled={formData.isBand}
                                         />
                                     </div>
                                     <RadioGroup
@@ -369,6 +393,7 @@ const AddArtistModal = ({ isOpen, onClose, onSuccess, areas }) => {
                                         orientation="horizontal"
                                         isRequired
                                         dir={language === 'heb' ? 'rtl' : 'ltr'}
+                                        disabled={formData.isBand}
                                     >
                                         <Radio value="m">{translations.male[language]}</Radio>
                                         <Radio value="f">{translations.female[language]}</Radio>

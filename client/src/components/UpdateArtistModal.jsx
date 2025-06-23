@@ -81,6 +81,18 @@ const UpdateArtistModal = ({ artist, isOpen, onClose, onSuccess, areas }) => {
         }
     }, [artist]);
 
+    // Add effect to clear bornElsewhere and gender if isBand is checked
+    useEffect(() => {
+        if (formData.isBand) {
+            if (bornElsewhereChecked) setBornElsewhereChecked(false);
+            setFormData(prev => ({
+                ...prev,
+                bornElsewhere: { eng: '', heb: '' },
+                gender: ''
+            }));
+        }
+    }, [formData.isBand]);
+
     const handleInputChange = (field, value) => {
         if (field.includes('.')) {
             const [parent, child] = field.split('.');
@@ -394,17 +406,20 @@ const UpdateArtistModal = ({ artist, isOpen, onClose, onSuccess, areas }) => {
                             <Checkbox
                                 isSelected={bornElsewhereChecked}
                                 onValueChange={(checked) => {
-                                    setBornElsewhereChecked(checked);
-                                    if (!checked) {
-                                        handleInputChange('bornElsewhere', { eng: '', heb: '' });
-                                        handleInputChange('gender', ''); // Clear gender when unchecking bornElsewhere
+                                    if (!formData.isBand) {
+                                        setBornElsewhereChecked(checked);
+                                        if (!checked) {
+                                            handleInputChange('bornElsewhere', { eng: '', heb: '' });
+                                            handleInputChange('gender', '');
+                                        }
                                     }
                                 }}
                                 dir={language === 'heb' ? 'rtl' : 'ltr'}
+                                disabled={formData.isBand}
                             >
                                 {translations.bornElsewhere[language]}
                             </Checkbox>
-                            {bornElsewhereChecked && (
+                            {bornElsewhereChecked && !formData.isBand && (
                                 <>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <Input
@@ -413,6 +428,7 @@ const UpdateArtistModal = ({ artist, isOpen, onClose, onSuccess, areas }) => {
                                             onChange={(e) => handleInputChange('bornElsewhere.heb', e.target.value)}
                                             dir="rtl"
                                             className="text-right"
+                                            disabled={formData.isBand}
                                         />
                                         <Input
                                             label={`${translations.bornElsewhereText[language]} (English)`}
@@ -420,6 +436,7 @@ const UpdateArtistModal = ({ artist, isOpen, onClose, onSuccess, areas }) => {
                                             onChange={(e) => handleInputChange('bornElsewhere.eng', e.target.value)}
                                             dir="ltr"
                                             className="text-left"
+                                            disabled={formData.isBand}
                                         />
                                     </div>
                                     <RadioGroup
@@ -429,6 +446,7 @@ const UpdateArtistModal = ({ artist, isOpen, onClose, onSuccess, areas }) => {
                                         orientation="horizontal"
                                         isRequired
                                         dir={language === 'heb' ? 'rtl' : 'ltr'}
+                                        disabled={formData.isBand}
                                     >
                                         <Radio value="m">{translations.male[language]}</Radio>
                                         <Radio value="f">{translations.female[language]}</Radio>

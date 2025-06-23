@@ -219,7 +219,7 @@ function CommentThread({ comment, usersById, depth = 0, replyingToCommentId, set
                     </button>
                 </div>
             ) : (
-                <div style={{ margin: '8px 0', lineHeight: 1.5, fontSize: 14, color: '#333' }} dir={isMainlyHebrew(comment.text) ? 'rtl' : 'ltr'}>
+                <div style={{ margin: '8px 0', lineHeight: 1.5, fontSize: 14, color: '#333', whiteSpace: 'pre-line' }} dir={isMainlyHebrew(comment.text) ? 'rtl' : 'ltr'}>
                     {comment.deleted ? (
                         <span style={{ color: '#888', fontStyle: 'italic' }}>[Deleted]</span>
                     ) : (
