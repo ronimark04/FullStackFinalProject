@@ -153,7 +153,8 @@ const ChangePasswordModal = ({ isOpen, onClose, onSuccess }) => {
                                 border: '1px solid #ccc',
                                 fontSize: 14,
                                 outline: 'none',
-                                boxSizing: 'border-box'
+                                boxSizing: 'border-box',
+                                direction: 'ltr'
                             }}
                         />
                     </div>
@@ -178,7 +179,8 @@ const ChangePasswordModal = ({ isOpen, onClose, onSuccess }) => {
                                 border: '1px solid #ccc',
                                 fontSize: 14,
                                 outline: 'none',
-                                boxSizing: 'border-box'
+                                boxSizing: 'border-box',
+                                direction: 'ltr'
                             }}
                         />
                     </div>
@@ -203,7 +205,8 @@ const ChangePasswordModal = ({ isOpen, onClose, onSuccess }) => {
                                 border: '1px solid #ccc',
                                 fontSize: 14,
                                 outline: 'none',
-                                boxSizing: 'border-box'
+                                boxSizing: 'border-box',
+                                direction: 'ltr'
                             }}
                         />
                     </div>

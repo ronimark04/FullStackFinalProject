@@ -58,6 +58,7 @@ const ProfilePage = () => {
     const [showDeleteAccountModal, setShowDeleteAccountModal] = useState(false);
     const [showDeleteUserModal, setShowDeleteUserModal] = useState(false);
     const [artistNamesById, setArtistNamesById] = useState({});
+    const [artistNamesByIdEng, setArtistNamesByIdEng] = useState({});
 
     useEffect(() => {
         async function fetchData() {
@@ -272,30 +273,33 @@ const ProfilePage = () => {
 
     // Fetch artist names for comments if not already loaded
     useEffect(() => {
-        // Collect all unique artist IDs from all comments
         const allComments = [...comments, ...likedComments, ...dislikedComments];
         const artistIds = Array.from(new Set(allComments.map(c => c.artist).filter(Boolean)));
-        // Filter out already loaded artist names
-        const missingIds = artistIds.filter(id => !artistNamesById[id]);
+        const missingIds = artistIds.filter(id => !artistNamesById[id] || !artistNamesByIdEng[id]);
         if (missingIds.length > 0) {
             Promise.all(missingIds.map(id => fetch(`/artists/${id}`).then(res => res.json()))).then(artists => {
                 const newNames = {};
+                const newNamesEng = {};
                 artists.forEach(artist => {
                     if (artist && artist._id) {
-                        newNames[artist._id] = artist.name?.[language] || artist.name?.eng || 'Artist';
+                        newNames[artist._id] = artist.name?.heb || 'אמן';
+                        newNamesEng[artist._id] = artist.name?.eng || 'Artist';
                     }
                 });
                 setArtistNamesById(prev => ({ ...prev, ...newNames }));
+                setArtistNamesByIdEng(prev => ({ ...prev, ...newNamesEng }));
             });
         }
         // eslint-disable-next-line
-    }, [comments, likedComments, dislikedComments, language]);
+    }, [comments, likedComments, dislikedComments]);
 
     const renderComment = (comment, isAuthor = false) => {
         const isEditing = editingCommentId === comment._id;
         const replyToComment = comment.reply_to ? replyToComments[comment.reply_to] : null;
         const artistId = comment.artist;
-        const artistName = artistNamesById[artistId] || (language === 'heb' ? 'אמן' : 'Artist');
+        const artistName = language === 'heb'
+            ? (artistNamesById[artistId] || 'אמן')
+            : (artistNamesByIdEng[artistId] || 'Artist');
         return (
             <div
                 key={comment._id}
