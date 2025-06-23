@@ -56,7 +56,7 @@ async function seedUsersAndComments() {
             }
         });
 
-        // Load comments from comments1.json
+        // Load comments from json files
         const comments1Path = path.join(__dirname, "comments1.json");
         const comments1Data = JSON.parse(fs.readFileSync(comments1Path, "utf-8"));
         const comments2Path = path.join(__dirname, "comments2.json");
@@ -111,12 +111,12 @@ async function seedUsersAndComments() {
                 const artistId = artistMap.get(cleanArtistName.toLowerCase());
 
                 if (!userId) {
-                    console.warn(`⚠️  No user found for username: '${username}'`);
+                    console.warn(`No user found for username: '${username}'`);
                     continue;
                 }
 
                 if (!artistId) {
-                    console.warn(`⚠️  No artist found for: '${artistName}' (cleaned: '${cleanArtistName}')`);
+                    console.warn(`No artist found for: '${artistName}' (cleaned: '${cleanArtistName}')`);
                     continue;
                 }
 
@@ -143,7 +143,7 @@ async function seedUsersAndComments() {
         const insertedComments = await Comment.insertMany(
             commentsToInsert.map(item => item.commentData)
         );
-        console.log(`✅ Seeded ${insertedComments.length} comments.`);
+        console.log(`Seeded ${insertedComments.length} comments.`);
 
         // Update the thread comment maps with actual ObjectIds
         let commentIndex = 0;
@@ -178,10 +178,10 @@ async function seedUsersAndComments() {
             }
         }
 
-        console.log("✅ User and comment seeding completed successfully!");
+        console.log("User and comment seeding completed successfully!");
 
     } catch (error) {
-        console.error("❌ Error seeding users and comments:", error);
+        console.error("Error seeding users and comments:", error);
         throw error;
     }
 }

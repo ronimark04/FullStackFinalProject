@@ -20,7 +20,7 @@ async function seedDatabase() {
 
     // Seed areas
     const insertedAreas = await Area.insertMany(areasData);
-    console.log(`✅ Seeded ${insertedAreas.length} areas.`);
+    console.log(`Seeded ${insertedAreas.length} areas.`);
 
     // Create a map of lowercase area names to ObjectIds
     const areaMap = new Map(
@@ -38,7 +38,7 @@ async function seedDatabase() {
         const areaId = areaMap.get(areaName);
 
         if (!areaId) {
-            console.warn(`⚠️  No area found for: '${artist.area}' (artist: ${artist.name.eng || artist.name.heb})`);
+            console.warn(`No area found for: '${artist.area}' (artist: ${artist.name.eng || artist.name.heb})`);
             missingAreaCount++;
         }
 
@@ -50,9 +50,9 @@ async function seedDatabase() {
 
     // Seed artists
     const insertedArtists = await Artist.insertMany(artistsToInsert);
-    console.log(`✅ Seeded ${insertedArtists.length} artists.`);
+    console.log(`Seeded ${insertedArtists.length} artists.`);
     if (missingAreaCount > 0) {
-        console.log(`⚠️  ${missingAreaCount} artists had missing area references.`);
+        console.log(`${missingAreaCount} artists had missing area references.`);
     }
 }
 

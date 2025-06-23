@@ -5,17 +5,17 @@ const Comment = require("../comments/models/mongodb/Comment");
 const ArtistVote = require("../votes/models/mongodb/ArtistVote");
 const CommentVote = require("../votes/models/mongodb/CommentVote");
 
-// Advanced configuration for vote generation
+// Configuration for vote generation
 const VOTE_CONFIG = {
-    // Percentage of artists that will receive votes (0-1)
+    // Percentage of artists that will receive votes (100%)
     artistVotePercentage: 1.0,
-    // Percentage of comments that will receive votes (0-1)
+    // Percentage of comments that will receive votes (100%)
     commentVotePercentage: 1.0,
-    // Average votes per artist (will vary randomly)
+    // Average votes per artist
     avgArtistVotes: 20,
-    // Average votes per comment (will vary randomly)
+    // Average votes per comment
     avgCommentVotes: 10,
-    // Probability of upvote vs downvote (0-1, higher = more upvotes)
+    // Probability of upvote vs downvote
     upvoteProbability: 0.8,
     // Batch size for database operations
     batchSize: 1000,
