@@ -74,7 +74,10 @@ const likeArtist = async (artistId, userId) => {
 
 const deleteArtist = async (artistId) => {
     try {
-        let artist = await Artist.findByIdAndDelete(artistId);
+        let artist = await Artist.findById(artistId);
+        if (artist) {
+            await artist.deleteOne();
+        }
         return artist;
     }
     catch (err) {

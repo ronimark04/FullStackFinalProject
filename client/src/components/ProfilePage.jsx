@@ -148,6 +148,51 @@ const ProfilePage = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    // Helper to refresh all comment-related states
+    const refreshAllComments = async () => {
+        // Fetch user's comments
+        const commentsRes = await fetch(`/comments/user/${userId}`);
+        const commentsData = await commentsRes.json();
+        setComments(commentsData);
+
+        // Fetch user's liked/disliked comments
+        const commentVotesRes = await fetch(`/comment-votes/user/${userId}`);
+        const commentVotesData = await commentVotesRes.json();
+
+        // Fetch liked comments
+        const likedCommentsPromises = commentVotesData.upvotes.map(async (commentId) => {
+            const res = await fetch(`/comments/${commentId}`);
+            return res.json();
+        });
+        const likedCommentsData = await Promise.all(likedCommentsPromises);
+        setLikedComments(likedCommentsData);
+
+        // Fetch disliked comments
+        const dislikedCommentsPromises = commentVotesData.downvotes.map(async (commentId) => {
+            const res = await fetch(`/comments/${commentId}`);
+            return res.json();
+        });
+        const dislikedCommentsData = await Promise.all(dislikedCommentsPromises);
+        setDislikedComments(dislikedCommentsData);
+
+        // Fetch reply_to comments for all
+        const allComments = [...commentsData, ...likedCommentsData, ...dislikedCommentsData];
+        const replyToIds = allComments
+            .filter(comment => comment.reply_to)
+            .map(comment => comment.reply_to);
+        const uniqueReplyToIds = [...new Set(replyToIds)];
+        const replyToCommentsPromises = uniqueReplyToIds.map(async (commentId) => {
+            const res = await fetch(`/comments/${commentId}`);
+            return res.json();
+        });
+        const replyToCommentsData = await Promise.all(replyToCommentsPromises);
+        const replyToMap = {};
+        replyToCommentsData.forEach(comment => {
+            replyToMap[comment._id] = comment;
+        });
+        setReplyToComments(replyToMap);
+    };
+
     const handleEdit = async (commentId) => {
         if (!editText.trim()) return;
         const res = await fetch(`/comments/${commentId}`, {
@@ -163,10 +208,8 @@ const ProfilePage = () => {
         if (res.ok) {
             setEditText('');
             setEditingCommentId(null);
-            // Refresh comments
-            const commentsRes = await fetch(`/comments/user/${userId}`);
-            const commentsData = await commentsRes.json();
-            setComments(commentsData);
+            // Refresh all comments (own, liked, disliked)
+            await refreshAllComments();
         }
     };
 
@@ -189,10 +232,8 @@ const ProfilePage = () => {
                             },
                         });
                         if (res.ok) {
-                            // Refresh comments
-                            const commentsRes = await fetch(`/comments/user/${userId}`);
-                            const commentsData = await commentsRes.json();
-                            setComments(commentsData);
+                            // Refresh all comments (own, liked, disliked)
+                            await refreshAllComments();
                         }
                     }}
                 >

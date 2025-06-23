@@ -130,5 +130,15 @@ artistSchema.pre("remove", async function (next) {
     next();
 });
 
+artistSchema.pre("deleteOne", { document: true, query: false }, async function (next) {
+    const ArtistVote = mongoose.model("ArtistVote");
+    const Comment = mongoose.model("Comment");
+
+    await ArtistVote.deleteMany({ artist: this._id });
+    await Comment.deleteMany({ artist: this._id });
+
+    next();
+});
+
 const Artist = mongoose.model("Artist", artistSchema);
 module.exports = Artist;
