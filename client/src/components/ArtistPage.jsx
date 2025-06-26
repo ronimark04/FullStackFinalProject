@@ -552,33 +552,36 @@ const ArtistPage = () => {
                 {/* Comments full width below */}
                 <div style={{ maxWidth: '1400px', margin: '32px auto 0 auto', width: '100%' }}>
                     <div style={{ background: 'transparent', borderRadius: 16, boxShadow: '0 2px 8px #0001', padding: 24, width: '100%' }}>
-                        <div style={{ marginBottom: 24, display: 'flex', alignItems: 'flex-start' }}>
-                            <CommentInput
-                                value={newCommentText}
-                                onChange={e => setNewCommentText(e.target.value)}
-                                onSubmit={async () => {
-                                    if (!newCommentText.trim()) return;
-                                    const res = await fetch('/comments', {
-                                        method: 'POST',
-                                        headers: {
-                                            'Content-Type': 'application/json',
-                                            'x-auth-token': localStorage.getItem('token'),
-                                        },
-                                        body: JSON.stringify({
-                                            text: newCommentText,
-                                            artist: artistId,
-                                            user: user._id
-                                        }),
-                                    });
-                                    if (res.ok) {
-                                        setNewCommentText('');
-                                        refreshComments();
-                                    }
-                                }}
-                                placeholder="Write a comment..."
-                                dir={isMainlyHebrew(newCommentText) ? 'rtl' : 'ltr'}
-                            />
-                        </div>
+                        {/* Only show comment input if user is logged in */}
+                        {user && (
+                            <div style={{ marginBottom: 24, display: 'flex', alignItems: 'flex-start' }}>
+                                <CommentInput
+                                    value={newCommentText}
+                                    onChange={e => setNewCommentText(e.target.value)}
+                                    onSubmit={async () => {
+                                        if (!newCommentText.trim()) return;
+                                        const res = await fetch('/comments', {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/json',
+                                                'x-auth-token': localStorage.getItem('token'),
+                                            },
+                                            body: JSON.stringify({
+                                                text: newCommentText,
+                                                artist: artistId,
+                                                user: user._id
+                                            }),
+                                        });
+                                        if (res.ok) {
+                                            setNewCommentText('');
+                                            refreshComments();
+                                        }
+                                    }}
+                                    placeholder="Write a comment..."
+                                    dir={isMainlyHebrew(newCommentText) ? 'rtl' : 'ltr'}
+                                />
+                            </div>
+                        )}
                         <ThreadedComments
                             comments={threadedComments}
                             usersById={usersById}
